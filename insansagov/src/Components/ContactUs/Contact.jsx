@@ -20,7 +20,7 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Contact Information */}
-                    <div className="bg-purple-600 rounded-2xl p-8 text-white">
+                    <div className="bg-purple-800 rounded-2xl p-8 text-white">
                         <h2 className="text-2xl font-semibold mb-8">Contact Information</h2>
 
                         <div className="space-y-6">
