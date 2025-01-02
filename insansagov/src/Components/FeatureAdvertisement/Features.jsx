@@ -25,7 +25,7 @@ const FeaturePage = () => {
             </div>
 
             {/* Main Features Section */}
-            <div className="max-w-7xl mx-auto py-20 grid grid-cols-10 gap-x-10">
+            <div className="max-w-7xl mx-auto py-20 md:grid md:grid-cols-10 md:gap-x-10">
                 <div className="text-center flex flex-col justify-center col-span-3">
                     <h2 className="text-4xl font-bold text-gray-900  mb-10">
                         Features Designed for Your Success
