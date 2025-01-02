@@ -17,7 +17,7 @@ const TopAuthorities = () => {
             <TopAuthoritiesCard/>
             <TopAuthoritiesCard/>
         </div>
-        <div className='flex justify-center mb-5'>
+        <div className='flex justify-center mb-20'>
             <ViewMoreButton content={"expand ▼"}/>
         </div>
     </>
