@@ -24,8 +24,10 @@ const Landing = () => {
     className='w-full mb-20'
     src={curvLine}/>
 
+    <div className='md:px-64'>
       <FeaturePage/>
       <Contact />
+    </div>
     </>
     
   )
