@@ -11,18 +11,8 @@ import {
 const FeaturePage = () => {
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Hero Section */}
-            <div className="relative overflow-hidden bg-purple-400 py-20">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-800" />
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        Never Miss an Important Exam Date Again
-                    </h1>
-                    <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-10">
-                        Your go-to platform for accurate, up-to-date, and user-friendly government exam schedules and deadlines.
-                    </p>
-                </div>
-            </div>
+            
+          
 
             {/* Main Features Section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
