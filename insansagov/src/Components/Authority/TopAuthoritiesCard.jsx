@@ -1,12 +1,20 @@
-import React from 'react'
-import logo from '../../assets/Landing/UPSC.webp'
+import React from 'react';
+import logo from '../../assets/Landing/UPSC.webp';
 
 const TopAuthoritiesCard = () => {
   return (
-    <div>
-        <img src={logo} />
-    </div>
-  )
-}
+    <div className="flex flex-col items-center justify-center bg-white rounded-lg p-6 max-w-sm mx-auto hover:scale-110 transition-all duration-300">
+      {/* Logo */}
+      <img
+        src={logo}
+        alt="Authority Logo"
+        className="w-32 h-28 object-contain"
+      />
 
-export default TopAuthoritiesCard
+     
+      <p className="mt-2 text-gray-900 font-medium text-sm">UPSC</p>
+    </div>
+  );
+};
+
+export default TopAuthoritiesCard;
