@@ -7,6 +7,7 @@ import curvLine from '../../assets/Landing/curvLine.svg'
 import TopCategories from '../../Components/Categories/TopCategories'
 import Contact from '../../Components/ContactUs/Contact'
 import FeaturePage from '../../Components/FeatureAdvertisement/Features'
+import FeatureBand from '../../Components/FeatureAdvertisement/FeatureBand'
 
 const Landing = () => {
   return (
@@ -23,7 +24,7 @@ const Landing = () => {
     <img
     className='w-full mb-20'
     src={curvLine}/>
-
+      <FeatureBand />
     <div className='md:px-64'>
       <FeaturePage/>
       <Contact />
