@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(location.pathname==='/' ? false : true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if(location.pathname==='/'){
+        setIsScrolled(window.scrollY > 20);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);

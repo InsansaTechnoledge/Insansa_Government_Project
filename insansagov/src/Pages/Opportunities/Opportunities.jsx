@@ -8,6 +8,7 @@ import {
   MapPin,
   Phone,
   Coins,
+  Notebook,
 } from "lucide-react";
 
 const ModernExamDetailsPage = () => {
@@ -100,12 +101,15 @@ const ModernExamDetailsPage = () => {
   };
 
   return (
-    <div className="pt-20 px-6 max-w-6xl mx-auto space-y-12">
+    <div className="pt-28 px-6 max-w-6xl mx-auto space-y-12">
       {/* Header Section */}
-      <header className="text-center space-y-6">
-        <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
+      <header className="text-center">
+        <h1 className="text-4xl mb-5 font-bold text-gray-900 tracking-tight">
           {data.name}
         </h1>
+        <h2 className="text-2xl mb-16 font-medium">
+            UPSC
+        </h2>
         <div className="flex justify-center flex-wrap gap-4">
           <div className="flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">
             <Calendar className="w-5 h-5" />
@@ -128,16 +132,26 @@ const ModernExamDetailsPage = () => {
           href={data.apply_link}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg shadow hover:bg-blue-700"
+          className="px-6 py-3 text-lg font-medium text-white bg-purple-800 rounded-lg shadow hover:bg-purple-900"
         >
           Apply Now
         </a>
       </div>
 
+      {/* Description Section */}
+      <section className="p-6 bg-white shadow rounded-lg">
+        <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
+          <Notebook className="w-6 h-6 text-purple-600" /> Description
+        </h2>
+        <div className="font-medium text-left">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident at eum repellendus perferendis, mollitia sunt magnam tempore voluptates architecto magni nisi in pariatur sit id qui deserunt distinctio dolorum suscipit itaque odio eius perspiciatis ratione aut! Perferendis quibusdam expedita similique!
+        </div>
+      </section>
+
       {/* Vacancies Section */}
       <section className="p-6 bg-white shadow rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2 mb-6">
-          <Users className="w-6 h-6 text-blue-600" /> Vacancies
+          <Users className="w-6 h-6 text-purple-600" /> Vacancies
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {Object.entries(data.details.vacancies.breakdown).map(([academy, seats]) => (
@@ -148,7 +162,7 @@ const ModernExamDetailsPage = () => {
               <h3 className="text-lg font-medium capitalize">
                 {academy.replace(/_/g, " ")}
               </h3>
-              <p className="text-3xl font-bold text-blue-600">{seats}</p>
+              <p className="text-3xl font-bold text-purple-600">{seats}</p>
             </div>
           ))}
         </div>
@@ -160,7 +174,7 @@ const ModernExamDetailsPage = () => {
       {/* Eligibility Section */}
       <section className="p-6 bg-white shadow rounded-lg space-y-8">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
-          <BookOpen className="w-6 h-6 text-green-600" /> Eligibility Criteria
+          <BookOpen className="w-6 h-6 text-purple-600" /> Eligibility Criteria
         </h2>
 
         {/* Nationality */}
@@ -219,10 +233,10 @@ const ModernExamDetailsPage = () => {
       {/* Fee Details Section */}
       <section className="p-6 bg-white shadow rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
-          <Coins className="w-6 h-6 text-yellow-600" /> Fee Details
+          <Coins className="w-6 h-6 text-purple-600" /> Fee Details
         </h2>
         <p className="text-lg font-medium mt-4">
-          Examination Fee: <span className="text-blue-600">{data.details.fee_details.amount}</span>
+          Examination Fee: <span className="text-purple-600">{data.details.fee_details.amount}</span>
         </p>
         <p className="mt-2 text-gray-700">
           Fee Exemption for: {data.details.fee_details.exempted_categories.join(", ")}
@@ -246,7 +260,7 @@ const ModernExamDetailsPage = () => {
       {/* Exam Centers Section */}
       <section className="p-6 bg-white shadow rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
-          <MapPin className="w-6 h-6 text-red-600" /> Exam Centers
+          <MapPin className="w-6 h-6 text-purple-600" /> Exam Centers
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
           {data.details.exam_centers.map((center, idx) => (
@@ -263,7 +277,7 @@ const ModernExamDetailsPage = () => {
       {/* Contact Details Section */}
       <section className="p-6 bg-white shadow rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
-          <Phone className="w-6 h-6 text-green-600" /> Contact Details
+          <Phone className="w-6 h-6 text-purple-600" /> Contact Details
         </h2>
         <p className="mt-4 text-gray-700">
           Facilitation Counter: {data.details.contact_details.facilitation_counter}
@@ -274,7 +288,7 @@ const ModernExamDetailsPage = () => {
       {/* Scheme of Exam Section */}
       <section className="p-6 bg-white shadow rounded-lg">
         <h2 className="text-2xl font-semibold flex items-center gap-2">
-          <BookOpen className="w-6 h-6 text-orange-600" /> Scheme of Examination
+          <BookOpen className="w-6 h-6 text-purple-600" /> Scheme of Examination
         </h2>
         <div className="mt-4 space-y-6">
           <div>
@@ -320,7 +334,7 @@ const ModernExamDetailsPage = () => {
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-purple-600 hover:underline"
             >
               Document {idx + 1}
             </a>
