@@ -3,10 +3,10 @@ import bank from '../../assets/Landing/bank.png'
 
 const TopCategoriesCard = () => {
   return (
-    <div className='flex flex-col justify-center'>
+    <div className='flex flex-col justify-center hover:cursor-pointer hover:scale-110 transition-all duration-300'>
         <div className='flex justify-center'>
             <img
-            className='w-28'
+            className='w-24'
             src={bank}/>
 
         </div>
