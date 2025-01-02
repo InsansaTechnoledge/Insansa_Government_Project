@@ -1,9 +1,12 @@
-function App() {
+import PageLinks from "./PageLinks";
+import React from 'react'
+
+const App = () => {
   return (
-    <div className="bg-blue-500 text-white p-4 text-center">
-      <h1 className="text-4xl bg-red-400 ">Hello, Tailwind CSS!</h1>
+    <div className="text-center">
+      <PageLinks/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

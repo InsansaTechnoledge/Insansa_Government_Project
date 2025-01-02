@@ -1,11 +1,11 @@
 import React from 'react'
 
-const PageLinks = () => {
+const Hero = () => {
   return (
     <div>
-      page
+      Hero
     </div>
   )
 }
 
-export default PageLinks
+export default Hero
