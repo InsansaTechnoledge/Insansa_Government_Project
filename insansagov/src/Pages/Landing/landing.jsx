@@ -4,6 +4,7 @@ import LatestUpdates from '../../Components/Updates/LatestUpdates'
 import TopAuthorities from '../../Components/Authority/TopAuthorities'
 
 import curvLine from '../../assets/Landing/curvLine.svg'
+import TopCategories from '../../Components/Categories/TopCategories'
 
 const Landing = () => {
   return (
@@ -14,6 +15,7 @@ const Landing = () => {
     <div  className="md:px-64">
       <LatestUpdates/>
       <TopAuthorities/>
+      <TopCategories/>
     </div>
     <img
     className='w-full'
