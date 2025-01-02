@@ -51,12 +51,12 @@ const Navbar = () => {
             <a href="#" className={`${isScrolled ? 'text-gray-900' : 'text-white'
               } hover:text-purple-600 transition-colors`}>Contact</a>
 
-            {/* <button
+            <button
               className={`${isScrolled ? 'bg-purple-600' : 'bg-red-600'
                 } text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors`}
             >
-              Get Started
-            </button> */}
+              signIn
+            </button>
 
           </div>
 
@@ -87,9 +87,9 @@ const Navbar = () => {
           <a href="#" className="block px-3 py-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors">
             Contact
           </a>
-          {/* <button className="w-full mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
-            Get Started
-          </button> */}
+          <button className="w-full mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+            signIn
+          </button>
         </div>
       </div>
     </nav>
