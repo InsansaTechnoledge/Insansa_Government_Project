@@ -1,14 +1,33 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import PaperPlane from '../SubmitAnimation/PaperPlane';
 
 const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
+        const id = document.getElementById("paper");
+        const notid = document.getElementById("notpaper");
+        
+        id.classList.add("flex");
+        id.classList.remove("hidden");
+        notid.classList.add("blur-sm");
+        
+        setTimeout(()=> {
+            id.classList.remove("flex");
+            id.classList.add("hidden");
+            notid.classList.remove("blur-sm");
+        },1500);
        
     };
 
+
     return (
-        <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
+        <>
+        
+            <div id='paper' className='hidden absolute justify-center p-72 z-10'>
+                <PaperPlane/>
+            </div>
+        <div id='notpaper' className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
             {/* Header Section */}
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
@@ -140,6 +159,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

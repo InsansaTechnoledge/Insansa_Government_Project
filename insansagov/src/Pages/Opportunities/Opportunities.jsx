@@ -100,6 +100,11 @@ const ModernExamDetailsPage = () => {
     },
   };
 
+  const documentComponent = () => {
+
+  }
+
+  
   return (
     <div className="pt-28 px-6 max-w-6xl mx-auto space-y-12">
       {/* Header Section */}
