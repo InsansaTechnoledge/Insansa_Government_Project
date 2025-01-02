@@ -79,7 +79,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                         required
                                     />
                                 </div>
@@ -89,7 +89,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                         required
                                     />
                                 </div>
@@ -101,7 +101,7 @@ const Contact = () => {
                                 </label>
                                 <input
                                     type="email"
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                     required
                                 />
                             </div>
@@ -112,7 +112,7 @@ const Contact = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                     required
                                 />
                             </div>
@@ -123,14 +123,14 @@ const Contact = () => {
                                 </label>
                                 <textarea
                                     rows={4}
-                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+                                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                     required
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center space-x-2"
+                                className="w-full bg-purple-800 text-white py-3 px-6 rounded-lg hover:bg-purple-900 transition-colors flex items-center justify-center space-x-2"
                             >
                                 <span>Send Message</span>
                                 <Send className="w-4 h-4" />
