@@ -34,7 +34,11 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <div className="relative group">
               <button className={`flex items-center space-x-1 ${isScrolled ? 'text-gray-900' : 'text-white'
-                } hover:text-purple-600 transition-colors`}>
+                }
+                {
+                ${isScrolled ? 'hover:text-purple-800' : 'hover:text-gray-300'}
+              }
+              transition-colors`}>
                 <span>Categories</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -47,9 +51,17 @@ const Navbar = () => {
               </div>
             </div>
             <a href="#" className={`${isScrolled ? 'text-gray-900' : 'text-white'
-              } hover:text-purple-800 transition-colors`}>About</a>
+              } 
+              {
+                ${isScrolled ? 'hover:text-purple-800' : 'hover:text-gray-300'}
+              }
+              transition-colors`}>About</a>
             <a href="#" className={`${isScrolled ? 'text-gray-900' : 'text-white'
-              } hover:text-purple-800 transition-colors`}>Contact</a>
+              } 
+              {
+                ${isScrolled ? 'hover:text-purple-800' : 'hover:text-gray-300'}
+              }
+              transition-colors`}>Contact</a>
 
             <button
               className={`${isScrolled ? 'bg-purple-800' : 'bg-white'
