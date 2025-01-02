@@ -8,6 +8,7 @@ import TopCategories from '../../Components/Categories/TopCategories'
 import Contact from '../../Components/ContactUs/Contact'
 import FeaturePage from '../../Components/FeatureAdvertisement/Features'
 import FeatureBand from '../../Components/FeatureAdvertisement/FeatureBand'
+import OpportunityCarousel from '../../Components/OpportunityCarousel/OpportunityCarousel'
 
 const Landing = () => {
   return (
@@ -15,8 +16,9 @@ const Landing = () => {
     <div>
       <Hero/>
     </div>
-    <div  className="md:px-64">
+    <div  className="px-5 md:px-64">
       <LatestUpdates/>
+      <OpportunityCarousel/>
       <TopAuthorities/>
       <TopCategories/>
 
@@ -25,7 +27,7 @@ const Landing = () => {
     className='w-full mb-20'
     src={curvLine}/>
       <FeatureBand />
-    <div className='md:px-64'>
+    <div className='px-5 md:px-64'>
       <FeaturePage/>
       <Contact />
     </div>
