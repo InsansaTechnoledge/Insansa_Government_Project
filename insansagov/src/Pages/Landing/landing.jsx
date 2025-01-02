@@ -5,6 +5,7 @@ import TopAuthorities from '../../Components/Authority/TopAuthorities'
 
 import curvLine from '../../assets/Landing/curvLine.svg'
 import TopCategories from '../../Components/Categories/TopCategories'
+import Contact from '../../Components/ContactUs/Contact'
 
 const Landing = () => {
   return (
@@ -16,11 +17,15 @@ const Landing = () => {
       <LatestUpdates/>
       <TopAuthorities/>
       <TopCategories/>
+
     </div>
     <img
     className='w-full'
     src={curvLine}/>
+
+      <Contact />
     </>
+    
   )
 }
 
