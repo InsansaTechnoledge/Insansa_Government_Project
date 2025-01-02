@@ -15,7 +15,7 @@ const Landing = () => {
     <div>
       <Hero/>
     </div>
-    <div  className="md:px-64">
+    <div  className="px-5 md:px-64">
       <LatestUpdates/>
       <TopAuthorities/>
       <TopCategories/>
@@ -25,7 +25,7 @@ const Landing = () => {
     className='w-full mb-20'
     src={curvLine}/>
       <FeatureBand />
-    <div className='md:px-64'>
+    <div className='px-5 md:px-64'>
       <FeaturePage/>
       <Contact />
     </div>
