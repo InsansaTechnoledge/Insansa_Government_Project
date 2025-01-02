@@ -18,7 +18,7 @@ const Landing = () => {
       <TopCategories/>
     </div>
     <img
-    className='w-full'
+    className='w-full mb-20'
     src={curvLine}/>
     </>
   )

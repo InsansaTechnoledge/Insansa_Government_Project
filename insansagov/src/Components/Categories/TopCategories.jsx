@@ -6,7 +6,7 @@ const TopCategories = () => {
   return (
     <>
         <h1 className='flex text-center text-2xl justify-center mb-10 font-bold'>Top Categories</h1>
-        <div className='grid grid-cols-4 gap-x-4 gap-y-8 mb-20'>
+        <div className='grid grid-cols-4 gap-x-4 gap-y-8 mb-16'>
             <TopCategoriesCard/>
             <TopCategoriesCard/>
             <TopCategoriesCard/>
