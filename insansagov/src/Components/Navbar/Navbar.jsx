@@ -6,23 +6,35 @@ const Navbar = () => {
 
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(location.pathname==='/' ? false : true);
+  const [isScrolled, setIsScrolled] = useState(location.pathname === '/' ? false : true);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  useEffect(()=> {
-      if(location.pathname){
-        setIsScrolled(location.pathname==='/' ? false : true);
-      }
-  },[])
+  useEffect(() => {
+    setIsScrolled(location.pathname === '/' ? false : true);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
-      if(location.pathname==='/'){
+      if (location.pathname === '/') {
         setIsScrolled(window.scrollY > 20);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+
+    if (location.pathname === '/') {
+      window.addEventListener('scroll', handleScroll);
+    } else {
+      setIsScrolled(true);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [location.pathname]);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    console.log("Search query:", searchQuery);
+  };
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
@@ -74,6 +86,25 @@ const Navbar = () => {
               }
               transition-colors`}>Contact</a>
 
+            {/* Search Bar */}
+            {location.pathname !== '/' && (
+              <form onSubmit={handleSearch} className="relative">
+                <input
+                  type="text"
+                  className={`px-3 py-2 text-sm rounded-md ${isScrolled ? 'bg-gray-100 text-gray-900' : 'bg-white text-black'} focus:outline-none focus:ring-2 focus:ring-purple-600`}
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <button
+                  type="submit"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-purple-600"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+              </form>
+            )}
+
             <button
               className={`${isScrolled ? 'bg-purple-800' : 'bg-white'
                 }
@@ -81,8 +112,8 @@ const Navbar = () => {
                   ${isScrolled ? 'text-white' : 'text-black'
                 } px-4 py-2 rounded-lg 
                 {
-                  ${isScrolled ? 'hover:bg-purple-900' : 'hover:bg-gray-300' 
-              } 
+                  ${isScrolled ? 'hover:bg-purple-900' : 'hover:bg-gray-300'
+                } 
               transition-colors`}
             >
               signIn

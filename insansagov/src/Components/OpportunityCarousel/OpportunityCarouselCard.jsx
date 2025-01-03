@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Building2, Clock } from 'lucide-react';
 
+
 const OpportunityCarouselCard = ({ title, authority, latestUpdate }) => {
+  const navigate = useNavigate();
   return (
     <div className='w-full bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-100'>
       <div className='p-6 flex flex-col h-full'>
@@ -21,7 +24,7 @@ const OpportunityCarouselCard = ({ title, authority, latestUpdate }) => {
               <Clock className='w-4 h-4 mr-2' />
               <span className='text-sm'>Updated: {latestUpdate}</span>
             </div>
-            <button className='bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors'>
+            <button onClick= {()=> navigate('/opportunity')} className='bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors'>
               View Details
             </button>
           </div>
