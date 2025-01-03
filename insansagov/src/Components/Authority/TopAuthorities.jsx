@@ -2,11 +2,17 @@ import React from 'react'
 import TopAuthoritiesCard from './TopAuthoritiesCard'
 import ViewMoreButton from '../Buttons/ViewMoreButton'
 
-const TopAuthorities = () => {
+const TopAuthorities = (props) => {
 
     return (
     <>
-        <h1 className='flex text-center text-2xl justify-center mb-5 font-bold'>Top Government Authorities</h1>
+        {
+            props.titleHidden
+            ?
+            null
+            :
+            <h1 className='flex text-center text-2xl justify-center mb-5 font-bold'>Top Government Authorities</h1>
+        }
         <div className='grid grid-cols-4 mb-5 gap-4'>
             <TopAuthoritiesCard/>
             <TopAuthoritiesCard/>

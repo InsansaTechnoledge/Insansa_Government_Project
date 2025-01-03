@@ -4,12 +4,14 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Search from '../Search/Search';
 import HeroBg from '../../assets/Landing/heroBg.svg';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
         threshold: 0.1, // Trigger animation when 10% of the element is visible
     });
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (inView) {
@@ -23,6 +25,10 @@ const Hero = () => {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0 },
     };
+
+    const searchHandler = (input) => {
+        navigate(`/search?query=${encodeURIComponent(input)}`);
+    }
 
     return (
         <div className="relative w-full h-screen overflow-hidden">
@@ -63,7 +69,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="relative max-w-2xl mx-auto">
-                            <Search />
+                            <Search searchHandler={searchHandler}/>
                             <div className="absolute right-7 top-1/2 -translate-y-1/2">
                                 <ChevronRight className="w-5 h-5 text-gray-400" />
                             </div>

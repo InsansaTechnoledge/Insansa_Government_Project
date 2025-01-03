@@ -9,7 +9,9 @@ import {
   Phone,
   Coins,
   Notebook,
+  Dock,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ModernExamDetailsPage = () => {
   const data = {
@@ -100,8 +102,22 @@ const ModernExamDetailsPage = () => {
     },
   };
 
-  const documentComponent = () => {
+  const navigate = useNavigate();
 
+  const DocumentComponent = ({link, idx}) => {
+    return(
+      <div 
+        onClick={()=>{navigate(link)}}
+      className="p-6 flex justify-center items-center space-x-2 bg-white shadow rounded-lg hover:scale-105 hover:cursor-pointer">
+        <Dock 
+        className="w-5 h-5  text-purple-600">
+        </Dock>
+        <div className="flex items-center ">
+          Document {idx+1}
+
+        </div>
+      </div>
+    )
   }
 
   
@@ -334,15 +350,8 @@ const ModernExamDetailsPage = () => {
         <h3 className="text-lg font-medium">Useful Links</h3>
         <div className="flex justify-center flex-wrap gap-4">
           {data.document_links.map((link, idx) => (
-            <a
-              key={idx}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-purple-600 hover:underline"
-            >
-              Document {idx + 1}
-            </a>
+            <DocumentComponent link={link} idx={idx}/>
+            
           ))}
         </div>
       </footer>
