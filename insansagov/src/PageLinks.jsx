@@ -13,7 +13,6 @@ import Category from './Pages/Category/Category'
 const SecondRoutes = () => {
     const location = useLocation();
 
-    // Do not render the second Routes block on "/"
     if (location.pathname === '/') {
         return null;
     }
