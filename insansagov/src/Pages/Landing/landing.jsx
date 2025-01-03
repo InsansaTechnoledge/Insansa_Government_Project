@@ -26,10 +26,16 @@ const Landing = () => {
     <img
     className='w-full mb-20'
     src={curvLine}/>
+    <div id='about'>
+
       <FeatureBand />
+      </div>
     <div className='px-5 md:px-64'>
       <FeaturePage/>
-      <Contact />
+      <div id='contact'>
+        <Contact />
+
+      </div>
     </div>
     </>
     

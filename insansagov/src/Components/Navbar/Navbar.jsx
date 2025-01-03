@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
-            <a href='#'>
+            <a href='/'>
           <div className="flex-shrink-0 flex items-center hover:cursor-pointer">
             <div className="h-10 w-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white text-xl font-bold">W</span>
@@ -76,13 +76,13 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <a href="#" className={`${isScrolled ? 'text-gray-900' : 'text-white'
+            <a href="/#about" className={`${isScrolled ? 'text-gray-900' : 'text-white'
               } 
               {
                 ${isScrolled ? 'hover:text-purple-800' : 'hover:text-gray-300'}
               }
               transition-colors`}>About</a>
-            <a href="#" className={`${isScrolled ? 'text-gray-900' : 'text-white'
+            <a href="/#contact" className={`${isScrolled ? 'text-gray-900' : 'text-white'
               } 
               {
                 ${isScrolled ? 'hover:text-purple-800' : 'hover:text-gray-300'}

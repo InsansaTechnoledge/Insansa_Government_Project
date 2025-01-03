@@ -152,7 +152,7 @@ const ModernExamDetailsPage = () => {
             <BookOpen className="w-6 h-6 text-purple-500" />
             Scheme of Examination
           </h2>
-          <div className="flex space-x-5">
+          <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
             {/* IMA, INA, Air Force */}
             <SchemeOfExamSection1 data={data}/>
 
