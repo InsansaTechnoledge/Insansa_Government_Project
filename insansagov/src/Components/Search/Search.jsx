@@ -36,7 +36,7 @@ const Search = (props) => {
                   type="search"
                   value={input}
                   id="default-search" 
-                  class="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 " placeholder="Search Authority, Exams..." required />
+                  class="block w-96 p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-white focus:ring-blue-500 focus:border-blue-500 " placeholder="Search Authority, Exams..."  />
               </div>
           </form>
         </div>

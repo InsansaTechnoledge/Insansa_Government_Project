@@ -22,7 +22,7 @@ const FeatureBand = () => {
     };
 
     return (
-        <div>
+        <div >
             <div className="relative overflow-hidden bg-purple-400 py-20">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-800" />
                 <motion.div

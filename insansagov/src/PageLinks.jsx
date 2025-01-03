@@ -5,6 +5,7 @@ import Opportunities from './Pages/Opportunities/Opportunities'
 import Footer from './Components/Footer/Footer'
 import SearchPage from './Pages/Search/Search'
 import Authority from './Pages/Authority/Authority'
+import ChatBot from './Components/ChatBot/ChatBot'
 
 const PageLinks = () => {
   return (
@@ -23,6 +24,7 @@ const PageLinks = () => {
           </Routes>
 
         </div>
+        <ChatBot/>
         <Footer/>
 
       </Router>
