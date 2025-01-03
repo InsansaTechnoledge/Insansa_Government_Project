@@ -12,7 +12,6 @@ import ErrorPage from './Pages/Error/ErrorPage'
 const SecondRoutes = () => {
     const location = useLocation();
 
-    // Do not render the second Routes block on "/"
     if (location.pathname === '/') {
         return null;
     }
