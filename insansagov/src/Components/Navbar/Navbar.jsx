@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
   const location = useLocation();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(location.pathname === '/' ? false : true);
   const [searchQuery, setSearchQuery] = useState("");
@@ -95,6 +96,12 @@ const Navbar = () => {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e)=>{
+                    if(e.key==='Enter'){
+                      navigate(`/search/?query=${encodeURI(e.target.value)}`)
+                      setSearchQuery(""); 
+                    }
+                  }}
                 />
                 <button
                   type="submit"

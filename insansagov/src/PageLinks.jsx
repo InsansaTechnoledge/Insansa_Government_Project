@@ -23,9 +23,13 @@ const PageLinks = () => {
           <Route path='/opportunity' element={<Opportunities/>} />
           <Route path='/search' element={<SearchPage/>} />
           <Route path='/authority' element={<Authority/>} />
+
           </Routes>
 
         </div>
+          <Routes>
+            <Route path='*' element={<Landing/>}/>
+          </Routes>
         <ChatBot/>
         <Footer/>
 
