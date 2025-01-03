@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Landing from './Pages/Landing/landing'
 import Navbar from './Components/Navbar/Navbar'
 import Opportunities from './Pages/Opportunities/Opportunities'
@@ -9,32 +9,39 @@ import ChatBot from './Components/ChatBot/ChatBot'
 import ScrollToTop from './Components/ScrollTop/ScrollTopTo'
 import ErrorPage from './Pages/Error/ErrorPage'
 
-const PageLinks = () => {
-  return (
-    <>
-      <Router>
-        <ScrollToTop />
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<Landing/>}/>
-        </Routes>
+const SecondRoutes = () => {
+    const location = useLocation();
 
+    // Do not render the second Routes block on "/"
+    if (location.pathname === '/') {
+        return null;
+    }
+
+    return (
         <div className='px-5 md:px-64'>
-        <Routes>
-          <Route path='/opportunity' element={<Opportunities/>} />
-          <Route path='/search' element={<SearchPage/>} />
-          <Route path='/authority' element={<Authority/>} />
-          <Route path='*' element={<ErrorPage/>} />
-          </Routes>
-
+            <Routes>
+                <Route path='/opportunity' element={<Opportunities />} />
+                <Route path='/search' element={<SearchPage />} />
+                <Route path='/authority' element={<Authority />} />
+                <Route path='*' element={<ErrorPage />} />
+            </Routes>
         </div>
-         
-        <ChatBot/>
-        <Footer/>
+    );
+};
 
-      </Router>
-    </>
-  )
-}
+const PageLinks = () => {
+    return (
+        <Router>
+            <ScrollToTop />
+            <Navbar />
+            <Routes>
+                <Route path='/' element={<Landing />} />
+            </Routes>
+            <SecondRoutes />
+            <ChatBot />
+            <Footer />
+        </Router>
+    );
+};
 
-export default PageLinks
+export default PageLinks;
