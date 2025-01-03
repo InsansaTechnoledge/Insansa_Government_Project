@@ -1,17 +1,21 @@
 import React from "react";
 import {
-  Calendar,
-  Users,
   BookOpen,
-  Clock,
-  Link,
-  MapPin,
-  Phone,
-  Coins,
-  Notebook,
-  ArrowRight,
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import FloatingOrbsBackground from "../../Components/OpportunityPageComponents/FloatingOrbsBackground";
+import HeroSection from "../../Components/OpportunityPageComponents/HeroSection";
+import QuickApplyButton from "../../Components/OpportunityPageComponents/QuickApplyButton";
+import VacanciesSection from "../../Components/OpportunityPageComponents/VacanciesSection";
+import NationalitySection from "../../Components/OpportunityPageComponents/NationalitySection";
+import AgeLimitSection from "../../Components/OpportunityPageComponents/AgeLimitSection";
+import EducationSection from "../../Components/OpportunityPageComponents/EducationSection";
+import FeeDetailsSection from "../../Components/OpportunityPageComponents/FeeDetailsSection";
+import ImportantDatesSection from "../../Components/OpportunityPageComponents/ImportantDatesSection";
+import ExamCentresSection from "../../Components/OpportunityPageComponents/ExamCentresSection";
+import SchemeOfExamSection1 from "../../Components/OpportunityPageComponents/SchemeOfExamSection1";
+import SchemeOfExamSection2 from "../../Components/OpportunityPageComponents/SchemeOfExamSection2";
+import ContactDetailsSection from "../../Components/OpportunityPageComponents/ContactDetailsSection";
+import ImportantLinksSection from "../../Components/OpportunityPageComponents/ImportantLinksSection";
 
 const ModernExamDetailsPage = () => {
   const data = {
@@ -105,273 +109,65 @@ const ModernExamDetailsPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900 py-20 px-4">
       {/* Floating Orbs Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-purple-200 opacity-50 blur-3xl"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 rounded-full bg-blue-200 opacity-50 blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 rounded-full bg-purple-300 opacity-50 blur-3xl"></div>
-      </div>
+      <FloatingOrbsBackground />
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto relative">
         {/* Hero Section */}
-        <div className="text-center mb-32">
-          <h2 className="text-purple-600 text-lg mb-4">Union Public Service Commission</h2>
-          <div className="inline-block relative">
-            <h1 className="text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-500 to-purple-500 bg-clip-text text-transparent mb-12">
-              {data.name}
-            </h1>
-
-            {/* Floating Date Cards */}
-            <div className="flex justify-center gap-8 flex-wrap">
-              <div className="transform -rotate-3 bg-purple-100 p-6 rounded-lg shadow-lg">
-                <Calendar className="w-8 h-8 mb-2 text-purple-500" />
-                <p className="text-sm">Notification Date</p>
-                <p className="font-bold">{data.date_of_notification}</p>
-              </div>
-              <div className="transform rotate-3 bg-blue-100 p-6 rounded-lg shadow-lg">
-                <Calendar className="w-8 h-8 mb-2 text-blue-500" />
-                <p className="text-sm">Exam Date</p>
-                <p className="font-bold">{data.date_of_commencement}</p>
-              </div>
-              <div className="transform -rotate-3 bg-purple-100 p-6 rounded-lg shadow-lg">
-                <Clock className="w-8 h-8 mb-2 text-purple-500" />
-                <p className="text-sm">Last Date</p>
-                <p className="font-bold">{data.end_date}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <HeroSection data={data}/>
 
         {/* Quick Apply Button */}
-        <div className="text-center mb-20">
-          <a
-            href={data.apply_link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block group relative overflow-hidden rounded-2xl shadow-lg"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 opacity-90 transition-transform transform group-hover:scale-110"></div>
-            <div className="relative px-12 py-6 flex items-center gap-4">
-              <span className="text-2xl font-bold text-white group-hover:text-blue-600 transition-colors">
-                Apply Now
-              </span>
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/40 group-hover:scale-125 transition-transform">
-                <ArrowRight className="w-6 h-6 text-white group-hover:text-blue-600" />
-              </div>
-            </div>
-          </a>
-        </div>
+        <QuickApplyButton data={data}/>
+
+        <div className="flex w-full flex-wrap space-x-5 space-y-5">
 
         {/* Vacancies Section */}
-        <div className="mb-20 bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-3xl shadow-md">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <Users className="w-8 h-8 text-purple-500" />
-            Vacancies
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-            {Object.entries(data.details.vacancies.breakdown).map(([key, value]) => (
-              <div key={key} className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl blur opacity-25 group-hover:opacity-40 transition-opacity"></div>
-                <div className="relative bg-white p-4 rounded-xl shadow-lg">
-                  <p className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">
-                    {value}
-                  </p>
-                  <p className="text-sm opacity-80">{key.replace(/_/g, " ")}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center text-2xl font-bold text-purple-500">
-            Total Vacancies: {data.details.vacancies.total}
-          </div>
-        </div>
+        <VacanciesSection data={data}/>
 
         {/* Eligibility Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          
           {/* Nationality */}
-          <div className="bg-white shadow-lg p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Users className="w-6 h-6 text-purple-500" />
-              Nationality
-            </h2>
-            <ul className="space-y-4">
-              {data.details.eligibility.nationality.map((item, idx) => (
-                <li key={idx} className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
+            <NationalitySection data={data}/>
+        
           {/* Age Limits */}
-          <div className="bg-white shadow-lg p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Clock className="w-6 h-6 text-purple-500" />
-              Age Limits
-            </h2>
-            <div className="space-y-4">
-              {Object.entries(data.details.eligibility.age_limits).map(([key, value]) => (
-                <div key={key} className="p-4 bg-purple-50 rounded-lg">
-                  <h3 className="font-medium text-purple-500 mb-1">{key.replace(/_/g, " ")}</h3>
-                  <p>{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
+          <AgeLimitSection data={data}/>
+        
         {/* Education & Fee Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           {/* Education */}
-          <div className="lg:col-span-2 bg-white shadow-lg p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <BookOpen className="w-6 h-6 text-purple-500" />
-              Educational Qualifications
-            </h2>
-            <div className="space-y-4">
-              {Object.entries(data.details.eligibility.education).map(([key, value]) => (
-                <div key={key} className="p-4 bg-purple-50 rounded-lg">
-                  <h3 className="font-medium text-purple-500 mb-1">{key.replace(/_/g, " ")}</h3>
-                  <p>{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <EducationSection data={data}/>
 
           {/* Fee Details */}
-          <div className="bg-gradient-to-br from-purple-100 to-blue-100 p-8 rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Coins className="w-6 h-6 text-purple-500" />
-              Fee Details
-            </h2>
-            <div className="text-center mb-6">
-              <p className="text-5xl font-bold text-purple-500 mb-4">{data.details.fee_details.amount}</p>
-              <p className="text-lg">Examination Fee</p>
-            </div>
-            <div className="p-4 bg-white rounded-lg shadow">
-              <p className="text-sm mb-2">Exempted Categories:</p>
-              <p className="font-medium">{data.details.fee_details.exempted_categories.join(", ")}</p>
-            </div>
-          </div>
-        </div>
+          <FeeDetailsSection data={data}/>
 
         {/* Important Dates and Exam Centers */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {/* Important Dates */}
-          <div className="bg-white shadow-lg p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <Calendar className="w-6 h-6 text-purple-500" />
-              Important Dates
-            </h2>
-            <div className="space-y-4">
-              {Object.entries(data.details.important_dates).map(([key, value]) => (
-                <div key={key} className="p-4 bg-purple-50 rounded-lg">
-                  <h3 className="text-sm text-purple-500 mb-1">{key.replace(/_/g, " ")}</h3>
-                  <p className="font-medium">{value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ImportantDatesSection data={data}/>
 
           {/* Exam Centers */}
-          <div className="bg-white shadow-lg p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <MapPin className="w-6 h-6 text-purple-500" />
-              Exam Centers
-            </h2>
-            <div className="grid grid-cols-2 gap-4">
-              {data.details.exam_centers.map((center) => (
-                <div key={center} className="p-4 bg-purple-50 rounded-lg text-center">
-                  <p>{center}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+          <ExamCentresSection data={data}/>
 
         {/* Scheme of Examination */}
-        <div className="bg-white shadow-lg p-8 rounded-2xl mb-20">
+        <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
           <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <BookOpen className="w-6 h-6 text-purple-500" />
             Scheme of Examination
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="flex space-x-5">
             {/* IMA, INA, Air Force */}
-            <div className="p-6 bg-purple-100 rounded-xl">
-              <h3 className="text-xl font-bold mb-4">IMA, INA, Air Force Academy</h3>
-              <div className="space-y-3">
-                {Object.entries(data.details.scheme_of_exam.IMA_INA_AirForce.subjects).map(([subject, marks]) => (
-                  <div key={subject} className="flex justify-between items-center p-3 bg-white rounded-lg">
-                    <span className="capitalize text-purple-500">{subject.replace(/_/g, " ")}</span>
-                    <span className="font-bold text-purple-500">{marks} marks</span>
-                  </div>
-                ))}
-                <div className="mt-4 p-3 bg-purple-200 rounded-lg">
-                  <div className="flex justify-between items-center font-bold">
-                    <span>Total Marks</span>
-                    <span>{data.details.scheme_of_exam.IMA_INA_AirForce.total_marks}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SchemeOfExamSection1 data={data}/>
+
 
             {/* OTA */}
-            <div className="p-6 bg-blue-100 rounded-xl">
-              <h3 className="text-xl font-bold mb-4">OTA</h3>
-              <div className="space-y-3">
-                {Object.entries(data.details.scheme_of_exam.OTA.subjects).map(([subject, marks]) => (
-                  <div key={subject} className="flex justify-between items-center p-3 bg-white rounded-lg">
-                    <span className="capitalize text-blue-500">{subject.replace(/_/g, " ")}</span>
-                    <span className="font-bold text-blue-500">{marks} marks</span>
-                  </div>
-                ))}
-                <div className="mt-4 p-3 bg-blue-200 rounded-lg">
-                  <div className="flex justify-between items-center font-bold">
-                    <span>Total Marks</span>
-                    <span>{data.details.scheme_of_exam.OTA.total_marks}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <SchemeOfExamSection2 data={data}/>
           </div>
         </div>
 
         {/* Contact Details */}
-        <div className="bg-white shadow-lg p-8 rounded-2xl mb-20">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-            <Phone className="w-6 h-6 text-purple-500" />
-            Contact Details
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 bg-purple-50 rounded-lg">
-              <p className="text-sm text-purple-500 mb-1">Facilitation Counter</p>
-              <p className="font-medium">{data.details.contact_details.facilitation_counter}</p>
-            </div>
-            <div className="p-4 bg-purple-50 rounded-lg">
-              <p className="text-sm text-purple-500 mb-1">Address</p>
-              <p className="font-medium">{data.details.contact_details.address}</p>
-            </div>
-          </div>
-        </div>
+        <ContactDetailsSection data={data}/>
 
         {/* Important Links */}
-        <footer className="text-center">
-          <h2 className="text-2xl font-bold mb-6">Important Links</h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {data.document_links.map((link, idx) => (
-              <a
-                key={idx}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-purple-50 rounded-xl hover:bg-purple-100 transition-all shadow"
-              >
-                Document {idx + 1}
-              </a>
-            ))}
-          </div>
-        </footer>
+        <ImportantLinksSection data={data}/>
+        </div>
       </div>
     </div>
   );
