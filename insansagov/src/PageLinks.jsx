@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar/Navbar'
 import Opportunities from './Pages/Opportunities/Opportunities'
 import Footer from './Components/Footer/Footer'
 import SearchPage from './Pages/Search/Search'
+import Authority from './Pages/Authority/Authority'
 
 const PageLinks = () => {
   return (
@@ -18,6 +19,7 @@ const PageLinks = () => {
         <Routes>
           <Route path='/opportunity' element={<Opportunities/>} />
           <Route path='/search' element={<SearchPage/>} />
+          <Route path='/authority' element={<Authority/>} />
           </Routes>
 
         </div>
