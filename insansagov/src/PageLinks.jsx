@@ -7,6 +7,7 @@ import SearchPage from './Pages/Search/Search'
 import Authority from './Pages/Authority/Authority'
 import ChatBot from './Components/ChatBot/ChatBot'
 import ScrollToTop from './Components/ScrollTop/ScrollTopTo'
+import ErrorPage from './Pages/Error/ErrorPage'
 
 const PageLinks = () => {
   return (
@@ -23,12 +24,11 @@ const PageLinks = () => {
           <Route path='/opportunity' element={<Opportunities/>} />
           <Route path='/search' element={<SearchPage/>} />
           <Route path='/authority' element={<Authority/>} />
-
           </Routes>
 
         </div>
           <Routes>
-            <Route path='*' element={<Landing/>}/>
+           
           </Routes>
         <ChatBot/>
         <Footer/>
