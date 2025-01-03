@@ -8,6 +8,7 @@ import Authority from './Pages/Authority/Authority'
 import ChatBot from './Components/ChatBot/ChatBot'
 import ScrollToTop from './Components/ScrollTop/ScrollTopTo'
 import ErrorPage from './Pages/Error/ErrorPage'
+import Category from './Pages/Category/Category'
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -23,6 +24,7 @@ const SecondRoutes = () => {
                 <Route path='/opportunity' element={<Opportunities />} />
                 <Route path='/search' element={<SearchPage />} />
                 <Route path='/authority' element={<Authority />} />
+                <Route path='/category' element={<Category/>} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
         </div>

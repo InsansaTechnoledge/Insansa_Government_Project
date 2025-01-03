@@ -43,7 +43,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
-          <div className="flex-shrink-0 flex items-center">
+            <a href='#'>
+          <div className="flex-shrink-0 flex items-center hover:cursor-pointer">
             <div className="h-10 w-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
               <span className="text-white text-xl font-bold">W</span>
             </div>
@@ -52,6 +53,7 @@ const Navbar = () => {
               My Website
             </span>
           </div>
+            </a>
 
           {/* Desktop Navigation */}
 
