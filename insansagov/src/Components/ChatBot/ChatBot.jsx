@@ -8,6 +8,7 @@ const ChatBot = () => {
         { id: 1, text: "Hello! How can I help you today?", isBot: true },
     ]);
     const [inputText, setInputText] = useState("");
+    const [unreadCount, setUnreadCount] = useState(1);
 
     const handleSend = async (e) => {
         e.preventDefault();
@@ -31,6 +32,11 @@ const ChatBot = () => {
         };
 
         setMessages((prevMessages) => [...prevMessages, newBotMessage]);
+
+        // Increment the unread count if the chat is closed
+        if (!isOpen) {
+            setUnreadCount((prevCount) => prevCount + 1);
+        }
     };
 
     const fetchBotResponse = async (input) => {
@@ -38,14 +44,24 @@ const ChatBot = () => {
         return `I'm here to help with "${input}". Let me know more details!`;
     };
 
+    const handleOpenChat = () => {
+        setIsOpen(true);
+        setUnreadCount(0); // Reset unread count when the chat is opened
+    };
+
     if (!isOpen) {
         return (
             <button
-                onClick={() => setIsOpen(true)}
-                className="fixed bottom-6 right-6 w-14 h-14 bg-purple-500 rounded-full shadow-lg hover:bg-purple-600 transition-all duration-300 flex items-center justify-center text-white animate-bounce"
+                onClick={handleOpenChat}
+                className="fixed bottom-6 right-6 w-20 h-20 bg-purple-500 rounded-full shadow-lg hover:bg-purple-600 transition-all duration-300 flex items-center justify-center text-white animate-bounce"
                 aria-label="Open chat"
             >
-                <MessageCircle size={24} />
+                <MessageCircle size={38} />
+                {unreadCount > 0 && (
+                    <div className="absolute top-0 right-0 h-7 w-7 bg-red-500 text-white text-xs flex items-center justify-center rounded-full shadow-md">
+                        {unreadCount}
+                    </div>
+                )}
             </button>
         );
     }
@@ -76,8 +92,8 @@ const ChatBot = () => {
                             >
                                 <div
                                     className={`max-w-[80%] p-3 rounded-lg ${message.isBot
-                                            ? "bg-white text-gray-800 border shadow-sm"
-                                            : "bg-purple-500 text-white"
+                                        ? "bg-white text-gray-800 border shadow-sm"
+                                        : "bg-purple-500 text-white"
                                         } animate-in slide-in-from-${message.isBot ? "left" : "right"}`}
                                 >
                                     {message.text}

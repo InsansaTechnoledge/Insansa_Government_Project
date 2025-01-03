@@ -5,11 +5,13 @@ import Opportunities from './Pages/Opportunities/Opportunities'
 import Footer from './Components/Footer/Footer'
 import SearchPage from './Pages/Search/Search'
 import ChatBot from './Components/ChatBot/ChatBot'
+import ScrollToTop from './Components/ScrollTop/ScrollTopTo'
 
 const PageLinks = () => {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Navbar/>
         <Routes>
           <Route path='/' element={<Landing/>}/>
