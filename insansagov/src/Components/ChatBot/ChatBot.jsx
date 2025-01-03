@@ -53,12 +53,12 @@ const ChatBot = () => {
         return (
             <button
                 onClick={handleOpenChat}
-                className="fixed bottom-6 right-6 w-20 h-20 bg-purple-500 rounded-full shadow-lg hover:bg-purple-600 transition-all duration-300 flex items-center justify-center text-white animate-bounce"
+                className="fixed bottom-6 right-6 w-14 h-14 bg-purple-500 rounded-full shadow-lg hover:bg-purple-600 transition-all duration-300 flex items-center justify-center text-white animate-bounce"
                 aria-label="Open chat"
             >
-                <MessageCircle size={38} />
+                <MessageCircle size={24} />
                 {unreadCount > 0 && (
-                    <div className="absolute top-0 right-0 h-7 w-7 bg-red-500 text-white text-xs flex items-center justify-center rounded-full shadow-md">
+                    <div className="absolute top-0 right-0 h-5 w-5 bg-red-500 text-white text-xs flex items-center justify-center rounded-full shadow-md">
                         {unreadCount}
                     </div>
                 )}
