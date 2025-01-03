@@ -24,12 +24,11 @@ const PageLinks = () => {
           <Route path='/opportunity' element={<Opportunities/>} />
           <Route path='/search' element={<SearchPage/>} />
           <Route path='/authority' element={<Authority/>} />
+          <Route path='*' element={<ErrorPage/>} />
           </Routes>
 
         </div>
-          <Routes>
-           
-          </Routes>
+         
         <ChatBot/>
         <Footer/>
 
