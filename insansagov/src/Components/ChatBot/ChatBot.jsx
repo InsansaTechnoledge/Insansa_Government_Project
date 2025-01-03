@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import { MessageCircle, Send, X, MinusCircle, User, Bot } from 'lucide-react';
 
 const ChatBot = () => {
+
+
+    const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
     const [messages, setMessages] = useState([
@@ -190,9 +206,10 @@ const ChatBot = () => {
     );
 
     return (
-        <Draggable handle=".drag-handle" bounds="body">
-                {chatWindow}
-        </Draggable>
+
+        <Draggable disabled={!isDesktop} handle=".drag-handle" bounds="body">
+        {chatWindow}
+      </Draggable>
     );
 };
 
