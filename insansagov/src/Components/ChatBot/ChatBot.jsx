@@ -92,8 +92,8 @@ const ChatBot = () => {
     }
 
     const chatWindow = (
-        <div className={`fixed bottom-6 right-6 w-96 ${isMinimized ? 'h-14' : 'h-[600px]'} 
-      bg-white rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden
+        <div className={`z-50 fixed bottom-6 right-6 w-96 ${isMinimized ? 'h-14' : 'h-[600px]'} 
+     rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden
       ${isOpen ? 'animate-in slide-in-from-right' : ''}`}>
             <div className="drag-handle p-3 bg-gradient-to-r from-indigo-500 to-purple-600 
         text-white rounded-t-2xl flex justify-between items-center cursor-move
@@ -116,7 +116,10 @@ const ChatBot = () => {
                         <MinusCircle size={16} />
                     </button>
                     <button
-                        onClick={() => setIsOpen(false)}
+                        onClick={() => {
+                            setIsOpen(false)
+                            setMessages([{ id: 1, text: "Hello! How can I help you today?", isBot: true }]);
+                        }}
                         className="p-1 hover:bg-white/20 rounded-full transition-all duration-300 
               transform hover:scale-110 active:scale-95"
                         aria-label="Close chat"
@@ -128,7 +131,7 @@ const ChatBot = () => {
 
             {!isMinimized && (
                 <>
-                    <div className="flex-1 p-4 overflow-y-auto bg-gray-50 h-[calc(100%-140px)] space-y-4">
+                    <div className="backdrop-blur-md bg-opacity-10 flex-1 p-4 overflow-y-auto bg-gray-900 h-[calc(100%-140px)] space-y-4">
                         {messages.map((message) => (
                             <div
                                 key={message.id}
@@ -159,7 +162,7 @@ const ChatBot = () => {
                         ))}
                     </div>
 
-                    <form onSubmit={handleSend} className="p-4 bg-white border-t">
+                    <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">
                         <div className="flex gap-2 items-center">
                             <input
                                 type="text"
@@ -188,7 +191,7 @@ const ChatBot = () => {
 
     return (
         <Draggable handle=".drag-handle" bounds="body">
-            {chatWindow}
+                {chatWindow}
         </Draggable>
     );
 };
