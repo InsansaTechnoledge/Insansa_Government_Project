@@ -1,5 +1,5 @@
 import express from "express";
-import { getLogos } from "../controller/organisationController";
+import { getLogos } from "../controller/organisationController.js";
 
 
 const router = express.Router();

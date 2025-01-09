@@ -26,11 +26,30 @@ app.use(
 
 app.options('*', cors()); 
 
+// app.use((req, res, next) => {
+//   res.setHeader('Cross-Origin-Opener-Policy', 'unsafe-none'); 
+//   res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin'); 
+//   next();
+// });
+
+// Handle preflight requests
 app.use((req, res, next) => {
-  res.setHeader('Cross-Origin-Opener-Policy', 'unsafe-none'); 
-  res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin'); 
+  res.header("Access-Control-Allow-Origin", process.env.CLIENT_BASE_URL);
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
   next();
 });
+
+
 
 
 export default app;

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TopAuthoritiesCard from './TopAuthoritiesCard';
 import ViewMoreButton from '../Buttons/ViewMoreButton';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'; 
-
+import axios from 'axios';
+import API_BASE_URL from '../../Pages/config';
 
 
 const TopAuthorities = (props) => {
@@ -11,6 +12,18 @@ const TopAuthorities = (props) => {
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
     };
+
+    useEffect(()=>{
+        const fetchLogos = async () => {
+            const response = await axios.get(`${API_BASE_URL}/api/organisation/logo`);
+            
+            if(response.status===200){
+                console.log(response.data);
+            }
+        }
+
+        fetchLogos();
+    },[])
 
     const cards = [
         <TopAuthoritiesCard key={1} />,
