@@ -34,18 +34,6 @@ const TopAuthorities = (props) => {
         fetchLogos();
     },[])
 
-    const cards = [
-        <TopAuthoritiesCard key={1} />,
-        <TopAuthoritiesCard key={2} />,
-        <TopAuthoritiesCard key={3} />,
-        <TopAuthoritiesCard key={4} />,
-        <TopAuthoritiesCard key={5} />,
-        <TopAuthoritiesCard key={6} />,
-        <TopAuthoritiesCard key={7} />,
-        <TopAuthoritiesCard key={8} />
-    ];
-
-    const visibleCards = isExpanded ? cards : cards.slice(0, 8);
 
     return (
         <>

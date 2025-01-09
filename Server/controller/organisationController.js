@@ -29,8 +29,6 @@ export const getLogos = async (req, res) => {
         },
     ]);
 
-    console.log(authorityWithOrganizations);
-
     // Return the data to the frontend
     res.status(200).json(authorityWithOrganizations);
   } catch (error) {
