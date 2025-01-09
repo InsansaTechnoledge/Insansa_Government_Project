@@ -8,8 +8,6 @@ const response = await fetch(imageUrl);
 const imageBuffer = await response.buffer();
 const base64String = imageBuffer.toString('base64');
 
-console.log(base64String);
-
 const AuthoritySchema = new mongoose.Schema({
     name:{
         type: String,
