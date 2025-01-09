@@ -10,6 +10,15 @@ export const getLogos = async (req, res) => {
             localField: "organizations",
             foreignField: "name",
             as: "organizationData",
+            pipeline: [
+                {
+                  $project: {
+                    _id: 1, // Exclude the _id field
+                    name: 1, // Include the name field
+                    logo: 1, // Include the logo field
+                },
+                },
+              ],
           },
         },
         {
@@ -19,8 +28,6 @@ export const getLogos = async (req, res) => {
           },
         },
     ]);
-
-    console.log(authorityWithOrganizations);
 
     // Return the data to the frontend
     res.status(200).json(authorityWithOrganizations);
