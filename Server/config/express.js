@@ -33,12 +33,4 @@ app.use((req, res, next) => {
 });
 
 
-
-
-app.post('/api/createAuthority', (req, res) => {
-  console.log("Request body:", req.body);  // Log to check if the body is parsed
-  res.send("Test");
-});
-
-
 export default app;
