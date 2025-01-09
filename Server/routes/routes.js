@@ -1,8 +1,8 @@
-import organisationRoute from './organisationRoutes.js'
+import organizationRoute from './organizationRoutes.js'
 
 const routes=(app)=>{
 
-    app.use('/api/organisation', organisationRoute);
+    app.use('/api/organization', organizationRoute);
     
 };
 export default routes;
