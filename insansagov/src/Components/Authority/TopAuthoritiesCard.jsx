@@ -1,23 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../assets/Landing/UPSC.webp';
 import { useNavigate } from 'react-router-dom';
 
-const TopAuthoritiesCard = () => {
+const TopAuthoritiesCard = (props) => {
   const navigate = useNavigate();
+
 
   return (
     <div 
-    onClick={()=>navigate('/authority')}
+    onClick={()=>navigate(`/authority?name=${encodeURI(props.name)}`)}
     className="flex flex-col items-center justify-center bg-white rounded-lg p-6 max-w-sm mx-auto hover:scale-110 transition-all duration-300 hover:cursor-pointer">
       {/* Logo */}
       <img
-        src={logo}
+        src={`data:image/png;base64,${props.logo}`}
         alt="Authority Logo"
         className="w-32 h-28 object-contain"
       />
 
      
-      <p className="mt-2 text-gray-900 font-medium text-sm">UPSC</p>
+      <p className="mt-2 text-gray-900 font-medium text-sm">{props.name}</p>
     </div>
   );
 };
