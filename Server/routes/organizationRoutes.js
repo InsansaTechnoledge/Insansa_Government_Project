@@ -1,11 +1,11 @@
 import express from "express";
-import { getLogos,getOrganizations } from "../controller/organizationController.js";
+import { getLogos,getOrganization } from "../controller/organizationController.js";
 
 
 const router = express.Router();
 
 router.get('/logo', getLogos);
-router.get('/:name', getOrganizations);
+router.get('/:name', getOrganization);
 
 
 export default router;
