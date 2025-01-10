@@ -1,4 +1,5 @@
 import Authority from "../models/AuthorityModel.js";
+import Organization from "../models/OrganizationModel.js";
 
 export const getLogos = async (req, res) => {
   try {
@@ -36,3 +37,15 @@ export const getLogos = async (req, res) => {
     res.status(500).json({ error: "An error occurred while fetching logos." });
   }
 };
+
+export const getOrganization = async (req, res) => {
+  try{
+    const Authorityname=req.params.name;
+    const organizations = await Organization.findOne({
+      name: Authorityname,
+    });
+    res.status(201).json(organizations);
+  }catch(error){
+    console.log(err)
+  }
+}

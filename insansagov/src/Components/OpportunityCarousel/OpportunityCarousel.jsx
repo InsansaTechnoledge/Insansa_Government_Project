@@ -4,12 +4,12 @@ import OpportunityCarouselCard from './OpportunityCarouselCard';
 
 const OpportunityCarousel = () => {
   const items = [
-    { title: 'Exam Schedule 2025', authority: 'Education Board', latestUpdate: '1/1/2025' },
-    { title: 'Result Announcement', authority: 'University XYZ', latestUpdate: '12/25/2024' },
-    { title: 'Application Deadline', authority: 'Scholarship Authority', latestUpdate: '12/15/2024' },
-    { title: 'Course Enrollment', authority: 'Online Academy', latestUpdate: '11/30/2024' },
-    { title: 'Internship Program', authority: 'Tech Corp', latestUpdate: '11/20/2024' },
-    { title: 'Job Fair 2025', authority: 'Career Center', latestUpdate: '10/25/2024' }
+    { name: 'Exam Schedule 2025', authority: 'Education Board', date_of_notification: '1/1/2025' },
+    { name: 'Result Announcement', authority: 'University XYZ', date_of_notification: '12/25/2024' },
+    { name: 'Application Deadline', authority: 'Scholarship Authority', date_of_notification: '12/15/2024' },
+    { name: 'Course Enrollment', authority: 'Online Academy', date_of_notification: '11/30/2024' },
+    { name: 'Internship Program', authority: 'Tech Corp', date_of_notification: '11/20/2024' },
+    { name: 'Job Fair 2025', authority: 'Career Center', date_of_notification: '10/25/2024' }
   ];
 
   const [currentPage, setCurrentPage] = useState(0);
@@ -49,7 +49,7 @@ const OpportunityCarousel = () => {
       <div className='relative'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
           {currentItems.map((item, index) => (
-            <OpportunityCarouselCard key={index} {...item} />
+            <OpportunityCarouselCard key={index} item={item} authority={item.authority} />
           ))}
         </div>
 

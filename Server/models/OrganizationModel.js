@@ -20,6 +20,9 @@ const organizationSchema = new mongoose.Schema({
         type: String,
         default:base64String
     },
+    description:{
+        type: String
+    },
     inforamation:[{
         type:Object,
     }],
