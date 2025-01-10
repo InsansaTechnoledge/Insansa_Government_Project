@@ -1,6 +1,13 @@
 import React from 'react'
 
-const SchemeOfExamSection1 = ({data}) => {
+const SchemeOfExamSection1 = ({data,existingSections}) => {
+  if(!data.details.scheme_of_exam || !data.details.scheme_of_exam.IMA_INA_AirForce){
+    return null;
+  }
+  else{
+    existingSections.push("scheme_of_exam");
+  }
+
     return (
         <div className="flex-grow p-6 bg-purple-100 rounded-xl">
           <h3 className="text-xl font-bold mb-4">IMA, INA, Air Force Academy</h3>
