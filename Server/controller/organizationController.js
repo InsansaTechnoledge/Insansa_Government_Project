@@ -38,7 +38,7 @@ export const getLogos = async (req, res) => {
   }
 };
 
-export const getOrganizations = async (req, res) => {
+export const getOrganization = async (req, res) => {
   try{
     console.log(req.params.name);
     const Authorityname=req.params.name;

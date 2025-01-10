@@ -22,7 +22,7 @@ const SecondRoutes = () => {
             <Routes>
                 <Route path='/opportunity' element={<Opportunities />} />
                 <Route path='/search' element={<SearchPage />} />
-                <Route path='/authority' element={<Authority />} />
+                <Route path='/organization' element={<Authority />} />
                 <Route path='/category' element={<Category/>} />
                 <Route path='*' element={<ErrorPage />} />
             </Routes>

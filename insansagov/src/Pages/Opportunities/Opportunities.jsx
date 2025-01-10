@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BookOpen,
 } from "lucide-react";
@@ -16,6 +16,9 @@ import SchemeOfExamSection1 from "../../Components/OpportunityPageComponents/Sch
 import SchemeOfExamSection2 from "../../Components/OpportunityPageComponents/SchemeOfExamSection2";
 import ContactDetailsSection from "../../Components/OpportunityPageComponents/ContactDetailsSection";
 import ImportantLinksSection from "../../Components/OpportunityPageComponents/ImportantLinksSection";
+import { useLocation } from "react-router-dom";
+import API_BASE_URL from "../config";
+import axios from "axios";
 
 const ModernExamDetailsPage = () => {
   const data = {
@@ -106,6 +109,25 @@ const ModernExamDetailsPage = () => {
     },
   };
 
+
+  useEffect(() => {
+    const location = useLocation();
+
+    // Parse the query parameters
+    const queryParams = new URLSearchParams(location.search);
+    const name = queryParams.get("name"); // Access the 'name' parameter
+
+    const fetchOrganization = async () => {
+      const response = await axios.get(`${API_BASE_URL}/api/organization/${name}`);
+      
+      if(response.status===201){
+        console.log(response.data);
+      }
+    }
+
+    fetchOrganization();
+  }, [])
+
   return (
     <div className="min-h-screen bg-white text-gray-900 py-20 px-4">
       {/* Floating Orbs Background */}
@@ -114,59 +136,59 @@ const ModernExamDetailsPage = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto relative">
         {/* Hero Section */}
-        <HeroSection data={data}/>
+        <HeroSection data={data} />
 
         {/* Quick Apply Button */}
-        <QuickApplyButton data={data}/>
+        <QuickApplyButton data={data} />
 
         <div className="flex w-full flex-wrap space-x-5 space-y-5">
 
-        {/* Vacancies Section */}
-        <VacanciesSection data={data}/>
+          {/* Vacancies Section */}
+          <VacanciesSection data={data} />
 
-        {/* Eligibility Grid */}
-          
+          {/* Eligibility Grid */}
+
           {/* Nationality */}
-            <NationalitySection data={data}/>
-        
+          <NationalitySection data={data} />
+
           {/* Age Limits */}
-          <AgeLimitSection data={data}/>
-        
-        {/* Education & Fee Details */}
+          <AgeLimitSection data={data} />
+
+          {/* Education & Fee Details */}
           {/* Education */}
-          <EducationSection data={data}/>
+          <EducationSection data={data} />
 
           {/* Fee Details */}
-          <FeeDetailsSection data={data}/>
+          <FeeDetailsSection data={data} />
 
-        {/* Important Dates and Exam Centers */}
+          {/* Important Dates and Exam Centers */}
           {/* Important Dates */}
-          <ImportantDatesSection data={data}/>
+          <ImportantDatesSection data={data} />
 
           {/* Exam Centers */}
-          <ExamCentresSection data={data}/>
+          <ExamCentresSection data={data} />
 
-        {/* Scheme of Examination */}
-        <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
-          <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-            <BookOpen className="w-6 h-6 text-purple-500" />
-            Scheme of Examination
-          </h2>
-          <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
-            {/* IMA, INA, Air Force */}
-            <SchemeOfExamSection1 data={data}/>
+          {/* Scheme of Examination */}
+          <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
+            <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+              <BookOpen className="w-6 h-6 text-purple-500" />
+              Scheme of Examination
+            </h2>
+            <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
+              {/* IMA, INA, Air Force */}
+              <SchemeOfExamSection1 data={data} />
 
 
-            {/* OTA */}
-            <SchemeOfExamSection2 data={data}/>
+              {/* OTA */}
+              <SchemeOfExamSection2 data={data} />
+            </div>
           </div>
-        </div>
 
-        {/* Contact Details */}
-        <ContactDetailsSection data={data}/>
+          {/* Contact Details */}
+          <ContactDetailsSection data={data} />
 
-        {/* Important Links */}
-        <ImportantLinksSection data={data}/>
+          {/* Important Links */}
+          <ImportantLinksSection data={data} />
         </div>
       </div>
     </div>
