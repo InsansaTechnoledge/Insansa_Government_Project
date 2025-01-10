@@ -5,7 +5,7 @@ const SchemeOfExamSection2 = ({data,existingSections}) => {
     return null;
   }
   else{
-    existingSections("scheme_of_exam");
+    existingSections.push("scheme_of_exam");
   }
   return (
     <div className="flex-grow p-6 bg-blue-100 rounded-xl">

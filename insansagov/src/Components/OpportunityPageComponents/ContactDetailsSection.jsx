@@ -1,7 +1,7 @@
 import React from 'react'
 import { Phone } from 'lucide-react'
 
-const ContactDetailsSection = ({data, xistingSections}) => {
+const ContactDetailsSection = ({data, existingSections}) => {
   if(!data.details.contact_details){
     return null
   }

@@ -30,6 +30,8 @@ const Authority = () => {
     const [organization, setOrganization] = useState();
     const [latestUpdates, setLatestUpdates] = useState();
     const location = useLocation();
+    const [events,setEvents] = useState();
+    const [filteredEvents, setFilteredEvents] = useState();
 
     // Parse the query parameters
     const queryParams = new URLSearchParams(location.search);
@@ -58,6 +60,9 @@ const Authority = () => {
               });
 
               setLatestUpdates(sortedUpdates);
+              setEvents(sortedUpdates);
+              setFilteredEvents(sortedUpdates.slice(0,6));
+              
             
 
         }
@@ -70,6 +75,12 @@ const Authority = () => {
 
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
+        if(!isExpanded){
+            setFilteredEvents(events);
+        }
+        else{
+            setFilteredEvents(events.slice(0,6));
+        }
     };
 
     const visibleCards = isExpanded ? cards : cards.slice(0, 6);
@@ -88,7 +99,7 @@ const Authority = () => {
             <AuthorityLatestUpdates latestUpdates={latestUpdates} name={organization.name}/>
             <div className='font-bold text-2xl flex items-center mb-5'>Events under {organization.name}</div>
             <div className='grid grid-cols-3 gap-7 mb-10'>
-                {organization.inforamation.map((item, index) => (
+                {filteredEvents && filteredEvents.map((item, index) => (
                     <OpportunityCarouselCard index={index} item={item} authority={organization.name} />
                 ))}
             </div>
