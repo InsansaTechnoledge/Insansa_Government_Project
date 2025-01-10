@@ -1,4 +1,4 @@
-import organisationRoute from './organisationRoutes.js'
+import organizationRoute from './organizationRoutes.js'
 import eventRoute from './eventRoutes.js'
 
 const routes=(app)=>{
