@@ -24,7 +24,6 @@ const LatestUpdates = (props) => {
     const fetchLatestUpdates = async () => {
       const response = await axios.get(`${API_BASE_URL}/api/event/latest`);
       if(response.status===200){
-        console.log(response.data);
         
         const sortedUpdates = await response.data.sort((a, b) => {
           const dateA = new Date(a.notificationDate);
@@ -40,7 +39,6 @@ const LatestUpdates = (props) => {
       
         setLatestUpdates(sortedUpdates.slice(0,5)); // Set the sorted data
         setFilteredLatestUpdates(sortedUpdates.slice(0,2));
-        console.log(sortedUpdates.slice(0,5));
       }
     }
 

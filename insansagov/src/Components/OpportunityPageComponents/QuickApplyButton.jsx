@@ -5,7 +5,7 @@ const QuickApplyButton = ({ data }) => {
   return (
     <div className="text-center mb-20">
       <a
-        href={data.apply_link}
+        href={data.apply_link || "/not-found"}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block group relative overflow-hidden rounded-2xl shadow-lg"

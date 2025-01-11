@@ -7,6 +7,7 @@ const LatestUpdateCard = (props) => {
   function formatDate(date) {
     if (!date) return '';
 
+    console.log(moment(date));
     return moment(date).format('MMMM D, YYYY');
   }
 
@@ -34,7 +35,7 @@ const LatestUpdateCard = (props) => {
                 <div className="flex items-center space-x-4 mb-5">
                   <div className="flex items-center text-sm text-gray-500">
                     <Calendar className="mr-2 h-4 w-4" />
-                    <span>{formatDate(props.date)}</span>
+                    <span>{formatDate(props.date.toString())}</span>
                   </div>
                   <div className="flex items-center text-sm text-purple-600">
                     <Tag className="mr-2 h-4 w-4" />

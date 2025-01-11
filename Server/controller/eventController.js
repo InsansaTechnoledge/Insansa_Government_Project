@@ -64,3 +64,32 @@ export const getLatestUpdates = async (req, res) => {
         res.status(500).json({ error: "An error occurred while fetching exams." });
       }
 };
+
+
+export const getEvent = async (req, res) => {
+  try {
+    // Extract organization and examIndex from request parameters
+    const { organization, examIndex } = req.params;
+
+    // Find the organization document
+    const orgDoc = await Organization.findOne({ name: organization });
+
+    if (!orgDoc) {
+      return res.status(404).json({ message: "Organization not found" });
+    }
+
+    // Check if the examIndex is valid
+    if (examIndex < 0 || examIndex >= orgDoc.inforamation.length) {
+      return res.status(400).json({ message: "Invalid exam index" });
+    }
+
+    // Retrieve the specific exam at the given index
+    const exam = orgDoc.inforamation[examIndex];
+
+    // Return the exam
+    res.status(200).json(exam);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};

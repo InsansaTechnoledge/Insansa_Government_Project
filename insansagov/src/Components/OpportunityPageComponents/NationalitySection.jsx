@@ -1,7 +1,14 @@
 import React from 'react'
 import { Users } from 'lucide-react'
 
-const NationalitySection = ({data}) => {
+const NationalitySection = ({data, existingSections}) => {
+  if(!data.details.eligibility || !data.details.eligibility.nationality){
+    return null
+  }
+  else{
+    existingSections.push("eligibility")
+  }
+
     return (
         <div className="flex-grow bg-white shadow-lg p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">

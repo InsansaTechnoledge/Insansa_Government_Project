@@ -40,12 +40,12 @@ export const getLogos = async (req, res) => {
 
 export const getOrganization = async (req, res) => {
   try{
-    console.log(req.params.name);
     const Authorityname=req.params.name;
     const organizations = await Organization.findOne({
       name: Authorityname,
     });
-    console.log(organizations);
     res.status(201).json(organizations);
-  }catch(error){}
+  }catch(error){
+    console.log(err)
+  }
 }

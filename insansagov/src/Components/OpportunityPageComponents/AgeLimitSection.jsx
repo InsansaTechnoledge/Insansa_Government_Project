@@ -1,7 +1,15 @@
 import React from 'react'
 import { Clock } from 'lucide-react'
 
-const AgeLimitSection = ({data}) => {
+const AgeLimitSection = ({data, existingSections}) => {
+
+  if(!data.details.eligibility || !data.details.eligibility.age_limits){
+    return null;
+  }
+  else{
+    existingSections.push("eligibility")
+  }
+
     return (
         <div className="flex-grow bg-white shadow-lg p-8 rounded-2xl">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
