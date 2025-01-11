@@ -3,6 +3,8 @@ import { PlusCircleIcon } from "lucide-react";
 
 const AdditionalDetailsSection = ({ data, existingSections }) => {
   // Recursive function to handle nested JSON objects
+    // if(existingSections.includes("vacancies") && existingSections.includes("eligibility") && )
+
   const renderContent = (data) => {
     if (typeof data === "string") {
       return (
