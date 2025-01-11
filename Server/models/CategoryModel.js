@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 if(process.env.NODE_ENV !== "production"){
     (await import('dotenv')).config();
   }
+import fetch from 'node-fetch';
 const imageUrl = process.env.DEFAULT_LOGO;
 const response = await fetch(imageUrl);
 const imageBuffer = await response.buffer();

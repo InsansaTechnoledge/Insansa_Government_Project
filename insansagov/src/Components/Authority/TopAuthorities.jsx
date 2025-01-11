@@ -23,7 +23,7 @@ const TopAuthorities = (props) => {
 
     useEffect(()=>{
         const fetchLogos = async () => {
-            const response = await axios.get(`${API_BASE_URL}/api/organisation/logo`);
+            const response = await axios.get(`${API_BASE_URL}/api/organization/logo`);
             
             if(response.status===200){
                 setOrganizations(response.data[0].organizations);
