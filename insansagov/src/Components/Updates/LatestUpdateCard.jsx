@@ -6,7 +6,9 @@ const LatestUpdateCard = (props) => {
 
   function formatDate(date) {
     if (!date) return '';
-    return moment(date, "DD-MM-YYYY").format('MMMM D, YYYY');
+
+    console.log(moment(date));
+    return moment(date).format('MMMM D, YYYY');
   }
 
   const navigateToWebsite = (e) => {

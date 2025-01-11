@@ -2,7 +2,7 @@ import React from 'react'
 import bank from '../../assets/Landing/bank.png'
 import { useNavigate } from 'react-router-dom'
 
-const TopCategoriesCard = () => {
+const TopCategoriesCard = (props) => {
   const navigate = useNavigate();
   return (
     <div 
@@ -11,10 +11,11 @@ const TopCategoriesCard = () => {
         <div className='flex justify-center'>
             <img
             className='w-24'
-            src={bank}/>
+            src={`data:image/png;base64,${props.logo}`}
+            alt="Category Logo"/>
 
         </div>
-        <p className='flex justify-center mt-4 text-gray-900 text-sm font-medium'>Bank</p>
+        <p className='flex justify-center mt-4 text-gray-900 text-sm font-medium'>{props.name}</p>
     </div>
   )
 }
