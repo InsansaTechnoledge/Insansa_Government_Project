@@ -10,7 +10,7 @@ const OpportunityCarouselCard = (props) => {
       <div className='p-4 flex flex-col h-full'>
         <div className='flex-1'>
           <h3 className='text-lg font-semibold text-gray-800 mb-2 line-clamp-2'>
-            {props.item.name}
+            {props.item?.name || 'No Name Available'}
           </h3>
           <div className='flex items-center text-gray-600 mb-4'>
             <Building2 className='w-4 h-4 mr-2' />
@@ -22,7 +22,9 @@ const OpportunityCarouselCard = (props) => {
           <div className='flex items-center justify-between'>
             <div className='flex items-center text-gray-500'>
               <Clock className='w-4 h-4 mr-2' />
-              <span className='text-sm'>Updated: {props.item.date_of_notification}</span>
+              <span className='text-sm'>
+                Updated: {props.item?.date_of_notification || 'N/A'}
+              </span>
             </div>
             <button onClick= {()=> navigate(`/opportunity?organization=${encodeURI(props.authority)}&exam=${encodeURI(props.index)}`)} className='bg-purple-600 text-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-purple-700 transition-colors'>
               View Details
