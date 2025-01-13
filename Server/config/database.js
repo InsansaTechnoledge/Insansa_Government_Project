@@ -11,7 +11,7 @@ const connectDB = async () => {
 
         // Add index creation logic here
         const db = mongoose.connection.db;
-        await db.collection("authorizations").createIndex({ name: "text" });
+        await db.collection("authorities").createIndex({ name: "text" });
         await db.collection("organizations").createIndex({ name: "text" });
         await db.collection("categories").createIndex({ name: "text" });
 

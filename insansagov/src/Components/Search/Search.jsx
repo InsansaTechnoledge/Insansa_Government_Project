@@ -11,18 +11,9 @@ const Search = (props) => {
     if(props.input){
       setInput(props.input);
 
-      const fetchSearch = async () => {
-        console.log("FF");
-        const response = await axios.get(`${API_BASE_URL}/api/search/${props.input}`);
-
-        if(response.status===200){
-          console.log(response.data);
-        }
-      }
-
-      fetchSearch();
+      
     }
-  },[])
+  },[props])
 
   const inputChangeHandler = (val) => {
     setInput(val);  
@@ -43,7 +34,7 @@ const Search = (props) => {
                   onKeyDown={(e)=>{
                     if(e.key==="Enter"){
                       props.searchHandler(e.target.value);
-                      e.preventDefault();
+                      e.preventDefault(); 
                     }
                   }}
                   type="search"
