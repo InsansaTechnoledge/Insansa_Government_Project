@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import { MessageCircle, Send, X, MinusCircle, User, Bot } from 'lucide-react';
+import axios from 'axios';
+import API_BASE_URL from '../../Pages/config';
+import parse from 'html-react-parser';
+
 
 const ChatBot = () => {
 
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+            setIsDesktop(window.innerWidth >= 1024);
+        };
 
-    window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
 
     const [isOpen, setIsOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
@@ -28,7 +32,7 @@ const ChatBot = () => {
     const [unreadCount, setUnreadCount] = useState(1);
     const [isBouncing, setIsBouncing] = useState(true);
 
-    
+
     React.useEffect(() => {
         let bounceInterval;
         if (unreadCount > 0 && !isOpen) {
@@ -53,14 +57,57 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        const botResponse = await fetchBotResponse(inputText);
+        // const botResponse = await fetchBotResponse(inputText);
+        console.log(newUserMessage.text)
+        const response = await axios.post(`https://exam-chatbot-omega.vercel.app/api/chatbot`,
+            { "msg": newUserMessage.text },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+        // const botResponse = await axios.get(`https://exam-chatbot-exam-chatbots-projects.vercel.app/`,formData,{
+        //     headers:{
+        //         'Content-Type':'application/json'
+        //     }
+        // });
+
+        const botResponse = response.data;
+        var responseText = ''
+        console.log(botResponse);
+        if (botResponse.exam_details) {
+            responseText = `
+            - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
+            - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
+            - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
+            - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
+            
+            `;
+        }
+        else if (botResponse.start_date) {
+            responseText = `
+            - <b>Start Date:</b> ${botResponse.start_date}<br>
+            `;
+        }
+        else if (botResponse.end_date) {
+            responseText = `
+            - <b>End Date:</b> ${botResponse.end_date}<br>
+            `;
+        }
+        else if (botResponse.link_details) {
+            responseText = `
+            - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
+            - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
+            `;
+        }
 
         const newBotMessage = {
             id: messages.length + 2,
-            text: botResponse,
+            text: responseText,
             isBot: true,
         };
-
+        console.log(parse(responseText));
         setMessages((prevMessages) => [...prevMessages, newBotMessage]);
 
         if (!isOpen) {
@@ -162,11 +209,11 @@ const ChatBot = () => {
                                 )}
                                 <div
                                     className={`max-w-[70%] p-3 rounded-2xl ${message.isBot
-                                            ? "bg-white shadow-sm hover:shadow-md"
-                                            : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+                                        ? "bg-white shadow-sm hover:shadow-md"
+                                        : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
                                         } transition-all duration-300 hover:-translate-y-1`}
                                 >
-                                    <p className="text-sm">{message.text}</p>
+                                    <p className="text-sm">{parse(message.text)}</p>
                                 </div>
                                 {!message.isBot && (
                                     <div className=" w-8 h-8 rounded-full bg-gray-200 border border-gray-400 flex items-center justify-center
@@ -208,8 +255,8 @@ const ChatBot = () => {
     return (
 
         <Draggable disabled={!isDesktop} handle=".drag-handle" bounds="body">
-        {chatWindow}
-      </Draggable>
+            {chatWindow}
+        </Draggable>
     );
 };
 
