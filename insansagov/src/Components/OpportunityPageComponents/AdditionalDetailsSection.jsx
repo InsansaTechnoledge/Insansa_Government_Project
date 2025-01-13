@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { PlusCircleIcon } from "lucide-react";
 
 const AdditionalDetailsSection = ({ data, existingSections }) => {
-  // Recursive function to handle nested JSON objects
-    // if(existingSections.includes("vacancies") && existingSections.includes("eligibility") && )
 
+  // Function to check if data contains at least one key not in existingSections
+  const hasNonExistingSection = (data) => {
+    if (typeof data === "object" && data !== null) {
+      return Object.keys(data).some((key) => !existingSections.includes(key));
+    }
+    return false;
+  };
+
+  // Recursive function to render nested JSON objects
   const renderContent = (data) => {
     if (typeof data === "string") {
       return (
@@ -15,11 +22,10 @@ const AdditionalDetailsSection = ({ data, existingSections }) => {
     }
 
     if (typeof data === "object" && data !== null) {
-        {console.log(existingSections)}
-        return (
-            <div className="space-y-4">
+      return (
+        <div className="space-y-4">
           {Object.entries(data).map(([key, value]) => {
-              if (!existingSections.includes(key)) {
+            if (!existingSections.includes(key)) {
               return (
                 <div
                   key={key}
@@ -35,6 +41,7 @@ const AdditionalDetailsSection = ({ data, existingSections }) => {
                 </div>
               );
             }
+            return null;
           })}
         </div>
       );
@@ -47,6 +54,11 @@ const AdditionalDetailsSection = ({ data, existingSections }) => {
       </div>
     );
   };
+
+  // Check if the section should be displayed
+  if (!hasNonExistingSection(data)) {
+    return null; // Do not render the section
+  }
 
   return (
     <div className="flex-grow lg:col-span-2 bg-white shadow-lg p-8 rounded-2xl">

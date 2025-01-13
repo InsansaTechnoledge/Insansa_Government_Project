@@ -6,7 +6,7 @@ const TopCategoriesCard = (props) => {
   const navigate = useNavigate();
   return (
     <div 
-    onClick={()=>navigate('/category')}
+    onClick={()=>navigate(`/category?name=${encodeURI(props.name)}`)}
     className='flex flex-col justify-center hover:cursor-pointer hover:scale-110 transition-all duration-300'>
         <div className='flex justify-center'>
             <img
