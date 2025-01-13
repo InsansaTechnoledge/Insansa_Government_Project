@@ -18,7 +18,7 @@ const Landing = () => {
     </div>
     <div  className="px-5 md:px-64">
       <LatestUpdates/>
-      <OpportunityCarousel/>
+      {/* <OpportunityCarousel/> */}
       <TopAuthorities/>
       <TopCategories/>
 

@@ -31,7 +31,7 @@ const Category = () => {
         }
 
         fetchCategoryOrganization();
-    },[])
+    },[location])
 
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
