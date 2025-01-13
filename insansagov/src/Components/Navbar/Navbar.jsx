@@ -74,7 +74,7 @@ const Navbar = () => {
                 <span>Categories</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
-              <div className="absolute top-full -left-4 mt-2 w-[480px] rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+              <div className="absolute top-full -left-28 mt-2 w-[480px] rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Browse Categories</h3>
                   <div className="grid grid-cols-2 gap-2">
