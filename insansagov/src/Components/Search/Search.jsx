@@ -1,5 +1,7 @@
+import axios from 'axios';
 import { useScroll } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
+import API_BASE_URL from '../../Pages/config';
 
 
 const Search = (props) => {
@@ -8,6 +10,17 @@ const Search = (props) => {
   useEffect(()=>{
     if(props.input){
       setInput(props.input);
+
+      const fetchSearch = async () => {
+        console.log("FF");
+        const response = await axios.get(`${API_BASE_URL}/api/search/${props.input}`);
+
+        if(response.status===200){
+          console.log(response.data);
+        }
+      }
+
+      fetchSearch();
     }
   },[])
 

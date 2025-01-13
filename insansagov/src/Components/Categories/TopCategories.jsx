@@ -20,6 +20,7 @@ const TopCategories = (props) => {
                 const response = await axios.get(`${API_BASE_URL}/api/category/getCategories`);
                 if (response.status === 200) {
                     setCategories(response.data);
+                    console.log(response.data);
                     setFilteredCategories(response.data.slice(0, 4));
                 }
             } catch (error) {

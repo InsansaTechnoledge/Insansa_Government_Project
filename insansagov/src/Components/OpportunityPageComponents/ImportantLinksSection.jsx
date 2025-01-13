@@ -11,9 +11,9 @@ const ImportantLinksSection = ({data}) => {
                   href={link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-purple-50 rounded-xl hover:bg-purple-100 transition-all shadow"
+                  className="w-full text-center font-medium px-6 py-3 bg-purple-50 rounded-xl hover:bg-purple-100 transition-all shadow"
                 >
-                  Document {idx + 1}
+                  Link {idx + 1}
                 </a>
               ))}
             </div>

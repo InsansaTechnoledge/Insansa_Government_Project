@@ -6,34 +6,57 @@ import ViewMoreButton from '../Buttons/ViewMoreButton';
 const RelatedAuthorities = (props) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [organizations, setOrganizations] = useState();
-    const [filteredOrganisations, setFilteredOrganisations] = useState();
+    const [displayCount, setDisplayCount] = useState(8); // Initial count of displayed items
 
-    const handleToggle = () => {
-        setIsExpanded(!isExpanded);
-        if(!isExpanded){
-            setFilteredOrganisations(organizations);
+    useEffect(()=>{
+        if(props.organizations){
+            console.log(props.organizations);
+            setOrganizations(props.organizations);
         }
-        else{
-            setFilteredOrganisations(organizations.slice(0,8));
-        }
+    },[props]);
+
+    if(!organizations){
+        return <div>Loading!...</div>;
+    }
+
+    // Handle "View More"
+    const handleViewMore = () => {
+        setDisplayCount((prevCount) => Math.min(prevCount + 4, organizations.length));
     };
 
+    // Handle "Close All"
+    const handleCloseAll = () => {
+        setDisplayCount(8);
+    };
+
+    
 
     return (
         <>
             <div className='grid grid-cols-4 mb-5 gap-4'>
                 {/* {visibleCards} */}
                 {
-                    filteredOrganisations && filteredOrganisations.map((org,key) => {
+                    organizations && organizations.slice(0, displayCount).map((org,key) => {
                         return <TopAuthoritiesCard key={key} name={org.name} logo={org.logo} id={org._id}/>
                     })
                 }
             </div>
-            <div className='flex justify-center mb-20'>
-                <ViewMoreButton
-                    content={isExpanded ? "view less ▲" : "View More ▼"}
-                    onClick={handleToggle}
-                />
+            <div className='flex justify-center gap-4 mb-20'>
+                {/* Show "View More" button only if there are more items to load */}
+                {displayCount < organizations.length && (
+                    <ViewMoreButton
+                        content="View More ▼"
+                        onClick={handleViewMore}
+                    />
+                )}
+
+                {/* Always show "Close All" button if more than 8 items are displayed */}
+                {displayCount > 8 && (
+                    <ViewMoreButton
+                        content="Close All ▲"
+                        onClick={handleCloseAll}
+                    />
+                )}
             </div>
         </>
     );
