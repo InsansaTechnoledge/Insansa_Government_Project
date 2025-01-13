@@ -86,9 +86,12 @@ const Hero = () => {
                         <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
                             Trendings
                         </button>
-                        <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all transform hover:scale-105">
-                            About US
-                        </button>
+                        <a href="https://insansa.com" target="_blank" rel="noopener noreferrer">
+                            <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all transform hover:scale-105">
+                                Insansa.com
+                            </button>
+                        </a>
+
                     </motion.div>
                 </div>
 
