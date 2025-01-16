@@ -4,12 +4,14 @@ import { MessageCircle, Send, X, MinusCircle, User, Bot } from 'lucide-react';
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import parse from 'html-react-parser';
+import { useNavigate } from 'react-router-dom'
+import DOMPurify from 'dompurify';
 
 
 const ChatBot = () => {
 
-
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleResize = () => {
@@ -75,8 +77,14 @@ const ChatBot = () => {
 
         const botResponse = response.data;
         var responseText = ''
+        var responseSet = []
+        var responseType = ''
         console.log(botResponse);
         if (botResponse.exam_details) {
+
+            responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url]
+            responseType = 'all'
+
             responseText = `
             - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
             - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
@@ -86,28 +94,39 @@ const ChatBot = () => {
             `;
         }
         else if (botResponse.start_date) {
+            responseType = 'start-date'
+            responseSet = [botResponse.start_date];
+
             responseText = `
             - <b>Start Date:</b> ${botResponse.start_date}<br>
             `;
         }
         else if (botResponse.end_date) {
+            responseType = 'end-date'
+            responseSet = [botResponse.end_date];
+
             responseText = `
             - <b>End Date:</b> ${botResponse.end_date}<br>
             `;
         }
         else if (botResponse.link_details) {
+            responseType = 'link'
+            responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url];
+
             responseText = `
             - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
             - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
             `;
         }
-        else{
+        else {
             responseText = `${botResponse.response}`
         }
 
         const newBotMessage = {
             id: messages.length + 2,
             text: responseText,
+            type: responseType,
+            set: responseSet,
             isBot: true,
         };
         console.log(parse(responseText));
@@ -216,7 +235,69 @@ const ChatBot = () => {
                                         : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
                                         } transition-all duration-300 hover:-translate-y-1`}
                                 >
-                                    <p className="text-sm">{parse(message.text)}</p>
+                                    {
+                                        message.type === 'all'
+                                            ?
+                                            <div className='space-x-2 space-y-2'>
+                                                <p>Details for </p>
+                                                <button className='border rounded px-2 border-gray-500' onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.open(url, "_blank");
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}>Apply Link</button>
+                                                <button className='border rounded px-2 border-gray-500'>Start Date</button>
+                                                <button className='border rounded px-2 border-gray-500'>End Date</button>
+                                                <button className='border rounded px-2 border-gray-500' onClick={() => {
+                                                    const url = message.set[3];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}>More Info</button>
+                                            </div>
+                                            :
+                                            message.type==='start-date'
+                                            ?
+                                            <div className='space-x-2 space-y-2'>
+                                                <p>Details for </p>
+                                                <button className='border rounded px-2 border-gray-500'>Start Date</button>
+                                            </div>
+                                            :
+                                            message.type==='end-date'
+                                            ?
+                                            <div className='space-x-2 space-y-2'>
+                                                <p>Details for </p>
+                                                <button className='border rounded px-2 border-gray-500'>End Date</button>
+                                            </div>
+                                            :
+                                            message.type==='link'
+                                            ?
+                                            <div className='space-x-2 space-y-2'>
+                                                <p>Details for </p>
+                                                <button className='border rounded px-2 border-gray-500' onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.open(url, "_blank");
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}>Apply Link</button>
+                                                <button className='border rounded px-2 border-gray-500' onClick={() => {
+                                                    const url = message.set[3];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}>More Info</button>
+                                            </div>
+                                            :
+                                            <div className="text-sm flex flex-wrap">{message.text}</div>
+                                    }
                                 </div>
                                 {!message.isBot && (
                                     <div className=" w-8 h-8 rounded-full bg-gray-200 border border-gray-400 flex items-center justify-center
@@ -228,13 +309,13 @@ const ChatBot = () => {
                         ))}
 
                         {
-                            messages.length<=1 
-                            ?
-                            <div>
-                                <p className='text-center'> <b>Note:</b></p>
-                            </div>
-                            :
-                            null
+                            messages.length <= 1
+                                ?
+                                <div>
+                                    <p className='text-center'> <b>Note:</b></p>
+                                </div>
+                                :
+                                null
                         }
                     </div>
 
