@@ -55,7 +55,7 @@ const DigitalClock = () => {
                     <NumberBlock number={seconds} label="seconds" />
                     {mode === '12h' && (
                         <div className="ml-4 flex flex-col items-center">
-                            <div className="bg-white bg-opacity-20 rounded-lg p-4 mb-1 h-20 flex items-center justify-center">
+                            <div className="bg-white bg-opacity-20 rounded-lg p-4 mb-1 h-16 flex items-center justify-center">
                                 <span className="font-mono text-xl font-bold text-white">
                                     {ampm}
                                 </span>

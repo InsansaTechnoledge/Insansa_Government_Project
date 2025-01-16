@@ -140,19 +140,21 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
+        // const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
 
-        if (hardcodedResponse) {
-            const newBotMessage = {
-                id: messages.length + 2,
-                text: hardcodedResponse,
-                isBot: true,
-            };
-            setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        } else {
+        // if (hardcodedResponse) {
+        //     const newBotMessage = {
+        //         id: messages.length + 2,
+        //         text: hardcodedResponse,
+        //         isBot: true,
+        //     };
+        //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
+        // } 
+        // else 
+        {
             try {
                 const response = await axios.post(
-                    `https://exam-chatbot-omega.vercel.app/api/chatbot`,
+                    `https://exam-chatbot-omega.vercel.app/api/chatbot1`,
                     { msg: newUserMessage.text },
                     {
                         headers: {

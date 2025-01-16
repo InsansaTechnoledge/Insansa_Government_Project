@@ -40,12 +40,12 @@ const Hero = () => {
                 className="absolute inset-0 w-full h-full object-cover"
             />
 
-            {/* Content Container */}
-            <div className="relative h-full flex flex-col items-center justify-center px-4">
-                <div className='flex justify-center w-full'>
+                {/* <div className='absolute top-14 right-0 z-10'>
                     <DigitalClock />
 
-                </div>
+                </div> */}
+            {/* Content Container */}
+            <div className="relative h-full flex flex-col items-center justify-center px-4">
                 <div className="text-center space-y-6 max-w-full mx-auto" ref={ref}>
                     <motion.h1
                         className="text-4xl md:text-7xl font-bold text-white tracking-tight"
@@ -56,7 +56,6 @@ const Hero = () => {
                     >
                         <span className="block">My Website</span>
                     </motion.h1>
-
 
                     <motion.p
                         className="text-xl md:text-2xl text-gray-200"
