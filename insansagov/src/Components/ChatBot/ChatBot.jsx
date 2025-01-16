@@ -453,15 +453,7 @@ const ChatBot = () => {
                             </div>
                         ))}
 
-                        {
-                            messages.length <= 1
-                                ?
-                                <div>
-                                    <p className='text-center'> <b>Note:</b></p>
-                                </div>
-                                :
-                                null
-                        }
+                        
                     </div>
 
                     <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">

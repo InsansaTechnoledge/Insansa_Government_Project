@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Search, Calendar, Building2, Filter } from "lucide-react";
+import ViewPageButton from "../Buttons/ViewPageButton";
+import { useNavigate } from "react-router-dom";
 
 const AdmitCardDashboard = ({ admitCards = [] }) => {
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("all");
+    const navigate = useNavigate();
 
     const categories = ["All", "Civil Services", "Staff Selection", "Banking", "Defense"];
 
@@ -15,14 +18,18 @@ const AdmitCardDashboard = ({ admitCards = [] }) => {
         return matchesSearch && matchesFilter;
     }) : [];
 
+    const viewAllAdmitCards = () => {
+        navigate('/admit-card');
+    }
+
 
     return (
         <div className="bg-white p-6 rounded-lg ">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Latest Admit Cards</h2>
 
             {/* Search and Filter Section */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <div className="relative flex-1">
+            <div className="flex flex-col justify-end sm:flex-row gap-4 mb-6">
+                {/* <div className="relative flex-1">
                     <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
                     <input
                         type="text"
@@ -31,7 +38,7 @@ const AdmitCardDashboard = ({ admitCards = [] }) => {
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
-                </div>
+                </div> */}
                 <div className="relative">
                     <Filter className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
                     <select
@@ -49,13 +56,16 @@ const AdmitCardDashboard = ({ admitCards = [] }) => {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div>
                 {filteredCards.length > 0 ? (
-                    filteredCards.map((card) => (
+                    <div className="flex flex-col">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredCards.slice(0,3).map((card) => (
                         <div
                             key={card.id}
-                            className="p-4 border rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white"
+                            className="p-4 border border-purple-800 rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-between"
                         >
+                            <div>
                             <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                                 <Building2 className="h-5 w-5" />
                                 {card.organization}
@@ -79,16 +89,35 @@ const AdmitCardDashboard = ({ admitCards = [] }) => {
                                     {card.status.toUpperCase()}
                                 </span>
                             </div>
+                                    </div>
+                            <div>
                             <a
                                 href={card.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block mt-4 px-4 py-2 bg-blue-600 text-white text-center rounded-md hover:bg-blue-700 transition-colors"
+                                className="block mt-4 px-4 py-2 bg-purple-800 text-white text-center rounded-md hover:bg-purple-900 transition-colors"
                             >
                                 Download Admit Card
                             </a>
+                            </div>
                         </div>
-                    ))
+                        
+                    ))}
+                    </div>
+                    {
+                        filteredCards.length>3
+                        ?
+                        <div className='flex justify-center mt-10'>
+
+                            <ViewPageButton onClick={viewAllAdmitCards}/>
+                            </div>
+                        :
+                        null
+                    }
+                    
+                    </div>
+                        
+                    
                 ) : (
                     <p className="text-gray-500">No admit cards found.</p>
                 )}
