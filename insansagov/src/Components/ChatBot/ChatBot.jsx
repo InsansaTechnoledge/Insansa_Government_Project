@@ -101,6 +101,9 @@ const ChatBot = () => {
             - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
             `;
         }
+        else{
+            responseText = `${botResponse.response}`
+        }
 
         const newBotMessage = {
             id: messages.length + 2,
@@ -223,6 +226,16 @@ const ChatBot = () => {
                                 )}
                             </div>
                         ))}
+
+                        {
+                            messages.length<=1 
+                            ?
+                            <div>
+                                <p className='text-center'> <b>Note:</b></p>
+                            </div>
+                            :
+                            null
+                        }
                     </div>
 
                     <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">
