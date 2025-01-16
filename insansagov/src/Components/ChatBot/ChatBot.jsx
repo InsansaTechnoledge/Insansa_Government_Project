@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Draggable from 'react-draggable';
 import { MessageCircle, Send, X, MinusCircle, User, Bot } from 'lucide-react';
 import axios from 'axios';
@@ -11,6 +11,7 @@ const ChatBot = () => {
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
     const navigate = useNavigate();
+    const containerRef = useRef(null)
 
     useEffect(() => {
         const handleResize = () => {
@@ -44,6 +45,14 @@ const ChatBot = () => {
         }
         return () => clearInterval(bounceInterval);
     }, [unreadCount, isOpen]);
+
+    // Scroll to the bottom whenever items change
+    useEffect(() => {
+        containerRef.current?.scrollTo({
+            top: containerRef.current.scrollHeight,
+            behavior: "smooth",
+        });
+    }, [messages]);
 
     const getHardcodedResponse = (input) => {
         const responses = {
@@ -266,6 +275,16 @@ const ChatBot = () => {
         );
     }
 
+    const addMessage = (type, message) => {
+        const newBotMessage = {
+            id: messages.length + 2,
+            type: type,
+            set: [message],
+            isBot: true,
+        }
+
+        setMessages((prev) => [...prev, newBotMessage])
+    }
 
 
     const chatWindow = (
@@ -308,7 +327,10 @@ const ChatBot = () => {
 
             {!isMinimized && (
                 <>
-                    <div className="backdrop-blur-md bg-opacity-10 flex-1 p-4 overflow-y-auto bg-gray-900 h-[calc(100%-140px)] space-y-4">
+                    <div 
+                    ref={containerRef}
+                    className="backdrop-blur-md bg-opacity-10 flex-1 p-4 overflow-y-auto bg-gray-900 h-[calc(100%-140px)] space-y-4"
+                        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
 
                         {messages.length <= 1 && (
                             <div className="max-w-2xl mx-auto my-4">
@@ -375,15 +397,15 @@ const ChatBot = () => {
 
                                 <div
                                     className={`max-w-[70%] p-4 rounded-2xl shadow-lg transition-all duration-300 ${message.isBot
-                                            ? "bg-white shadow-sm"
-                                            : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+                                        ? "bg-white shadow-sm"
+                                        : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
                                         }`}
                                 >
                                     {message.type === "all" && (
-                                        <div className="space-y-4">
+                                        <div className="space-y-2 space-x-2">
                                             <p className="text-sm font-medium">Details for</p>
                                             <button
-                                                className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
                                                     const url = message.set[0];
                                                     if (url.startsWith("http://") || url.startsWith("https://")) {
@@ -395,14 +417,14 @@ const ChatBot = () => {
                                             >
                                                 Apply Link
                                             </button>
-                                            <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                            <button onClick={() => (addMessage("start-date", message.set[1]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
                                                 Start Date
                                             </button>
-                                            <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                            <button onClick={() => (addMessage("end-date", message.set[2]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
                                                 End Date
                                             </button>
                                             <button
-                                                className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
                                                     const url = message.set[3];
                                                     if (url.startsWith("http://") || url.startsWith("https://")) {
@@ -418,23 +440,23 @@ const ChatBot = () => {
                                     )}
                                     {message.type === "start-date" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Details for</p>
+                                            <p className="text-sm font-medium">Start date for</p>
                                             <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
-                                                Start Date
+                                                {message.set[0]}
                                             </button>
                                         </div>
                                     )}
                                     {message.type === "end-date" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Details for</p>
+                                            <p className="text-sm font-medium">End date for</p>
                                             <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
-                                                End Date
+                                                {message.set[0]}
                                             </button>
                                         </div>
                                     )}
                                     {message.type === "link" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Details for</p>
+                                            <p className="text-sm font-medium">Links for</p>
                                             <button
                                                 className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
@@ -451,7 +473,7 @@ const ChatBot = () => {
                                             <button
                                                 className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
-                                                    const url = message.set[3];
+                                                    const url = message.set[1];
                                                     if (url.startsWith("http://") || url.startsWith("https://")) {
                                                         window.location.href = url;
                                                     } else {
@@ -482,7 +504,7 @@ const ChatBot = () => {
                             </div>
                         ))}
 
-                        
+
                     </div>
 
                     <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">
