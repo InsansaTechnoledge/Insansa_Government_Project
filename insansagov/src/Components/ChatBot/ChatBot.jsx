@@ -5,8 +5,6 @@ import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import parse from 'html-react-parser';
 import { useNavigate } from 'react-router-dom'
-import DOMPurify from 'dompurify';
-import { responses } from '../responses/Responses';
 
 
 const ChatBot = () => {
@@ -374,76 +372,107 @@ const ChatBot = () => {
                                         <Bot size={16} />
                                     </div>
                                 )}
+
                                 <div
-                                    className={`max-w-[70%] p-3 rounded-2xl ${message.isBot
-                                        ? "bg-white shadow-sm hover:shadow-md"
-                                        : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
-                                        } transition-all duration-300 hover:-translate-y-1`}
+                                    className={`max-w-[70%] p-4 rounded-2xl shadow-lg transition-all duration-300 ${message.isBot
+                                            ? "bg-white shadow-sm"
+                                            : "bg-gradient-to-r from-indigo-500 to-purple-600 text-white"
+                                        }`}
                                 >
-                                    {
-                                        message.type === 'all'
-                                            ?
-                                            <div className='space-x-2 space-y-2'>
-                                                <p>Details for </p>
-                                                <button className='border rounded px-2 border-gray-500' onClick={() => {
+                                    {message.type === "all" && (
+                                        <div className="space-y-4">
+                                            <p className="text-sm font-medium">Details for</p>
+                                            <button
+                                                className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
                                                     const url = message.set[0];
                                                     if (url.startsWith("http://") || url.startsWith("https://")) {
                                                         window.open(url, "_blank");
                                                     } else {
                                                         console.error("Invalid URL:", url);
                                                     }
-                                                }}>Apply Link</button>
-                                                <button className='border rounded px-2 border-gray-500'>Start Date</button>
-                                                <button className='border rounded px-2 border-gray-500'>End Date</button>
-                                                <button className='border rounded px-2 border-gray-500' onClick={() => {
+                                                }}
+                                            >
+                                                Apply Link
+                                            </button>
+                                            <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                Start Date
+                                            </button>
+                                            <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                End Date
+                                            </button>
+                                            <button
+                                                className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
                                                     const url = message.set[3];
                                                     if (url.startsWith("http://") || url.startsWith("https://")) {
                                                         window.location.href = url;
                                                     } else {
                                                         console.error("Invalid URL:", url);
                                                     }
-                                                }}>More Info</button>
-                                            </div>
-                                            :
-                                            message.type === 'start-date'
-                                                ?
-                                                <div className='space-x-2 space-y-2'>
-                                                    <p>Details for </p>
-                                                    <button className='border rounded px-2 border-gray-500'>Start Date</button>
-                                                </div>
-                                                :
-                                                message.type === 'end-date'
-                                                    ?
-                                                    <div className='space-x-2 space-y-2'>
-                                                        <p>Details for </p>
-                                                        <button className='border rounded px-2 border-gray-500'>End Date</button>
-                                                    </div>
-                                                    :
-                                                    message.type === 'link'
-                                                        ?
-                                                        <div className='space-x-2 space-y-2'>
-                                                            <p>Details for </p>
-                                                            <button className='border rounded px-2 border-gray-500' onClick={() => {
-                                                                const url = message.set[0];
-                                                                if (url.startsWith("http://") || url.startsWith("https://")) {
-                                                                    window.open(url, "_blank");
-                                                                } else {
-                                                                    console.error("Invalid URL:", url);
-                                                                }
-                                                            }}>Apply Link</button>
-                                                            <button className='border rounded px-2 border-gray-500' onClick={() => {
-                                                                const url = message.set[3];
-                                                                if (url.startsWith("http://") || url.startsWith("https://")) {
-                                                                    window.location.href = url;
-                                                                } else {
-                                                                    console.error("Invalid URL:", url);
-                                                                }
-                                                            }}>More Info</button>
-                                                        </div>
-                                                        :
-                                                        <div className="text-sm flex flex-wrap">{message.text}</div>
-                                    }
+                                                }}
+                                            >
+                                                More Info
+                                            </button>
+                                        </div>
+                                    )}
+                                    {message.type === "start-date" && (
+                                        <div className="space-y-4">
+                                            <p className="text-sm font-medium">Details for</p>
+                                            <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                Start Date
+                                            </button>
+                                        </div>
+                                    )}
+                                    {message.type === "end-date" && (
+                                        <div className="space-y-4">
+                                            <p className="text-sm font-medium">Details for</p>
+                                            <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                End Date
+                                            </button>
+                                        </div>
+                                    )}
+                                    {message.type === "link" && (
+                                        <div className="space-y-4">
+                                            <p className="text-sm font-medium">Details for</p>
+                                            <button
+                                                className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.open(url, "_blank");
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                Apply Link
+                                            </button>
+                                            <button
+                                                className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[3];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                More Info
+                                            </button>
+                                        </div>
+                                    )}
+                                    {!["all", "start-date", "end-date", "link"].includes(message.type) && (
+                                        <div className="text-sm flex flex-wrap">
+                                            {message.text}
+                                        </div>
+                                    )}
                                 </div>
+
+
+
+
                                 {!message.isBot && (
                                     <div className=" w-8 h-8 rounded-full bg-gray-200 border border-gray-400 flex items-center justify-center
                     transform hover:scale-110 transition-transform">
