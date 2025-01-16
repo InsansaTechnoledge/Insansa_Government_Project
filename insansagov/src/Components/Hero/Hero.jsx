@@ -4,7 +4,9 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Search from '../Search/Search';
 import HeroBg from '../../assets/Landing/heroBg.svg';
-import { useNavigate } from 'react-router-dom';
+import DigitalClock from '../Clock/Clock';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 const Hero = () => {
     const controls = useAnimation();
@@ -51,6 +53,8 @@ const Hero = () => {
                         <span className="block">My Website</span>
                     </motion.h1>
 
+                    <DigitalClock/>
+
                     <motion.p
                         className="text-xl md:text-2xl text-gray-200"
                         variants={variants}
@@ -83,9 +87,11 @@ const Hero = () => {
                         animate={controls}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
-                            Trendings
-                        </button>
+                        <Link to="/trending">
+                            <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                                Trendings
+                            </button>
+                        </Link>
                         <a href="https://insansa.com" target="_blank" rel="noopener noreferrer" className="relative group">
                             <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold 
                          transition-all duration-300 transform hover:scale-105

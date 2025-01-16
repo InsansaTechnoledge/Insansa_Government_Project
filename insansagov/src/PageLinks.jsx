@@ -10,7 +10,9 @@ import ScrollToTop from './Components/ScrollTop/ScrollTopTo'
 import ErrorPage from './Pages/Error/ErrorPage'
 import Category from './Pages/Category/Category'
 import AdmitCardDashboard from './Components/AdmitCards/AdmitCard'
-import AdmitCard from './Pages/AdmitCard.jsx/AdmitCard'
+import AdmitCard from './Pages/AdmitCard/AdmitCard'
+import Results from './Pages/ResultPage/ResultPage'
+import TrendingPage from './Pages/Trending/Trending'
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -68,6 +70,82 @@ const SecondRoutes = () => {
         },
       ];
 
+    const dummyResults = [
+        {
+            id: 1,
+            organization: "Union Public Service Commission",
+            examName: "Civil Services Exam Result",
+            publishDate: "2025-01-10",
+            category: "civil services",
+            status: "available",
+            link: "https://www.upsc.gov.in/results",
+        },
+        {
+            id: 2,
+            organization: "Staff Selection Commission",
+            examName: "CHSL Tier 1 Result",
+            publishDate: "2025-01-05",
+            category: "staff selection",
+            status: "available",
+            link: "https://ssc.nic.in/results",
+        },
+        {
+            id: 3,
+            organization: "State Bank of India",
+            examName: "Probationary Officer Result",
+            publishDate: "2025-01-12",
+            category: "banking",
+            status: "available",
+            link: "https://sbi.co.in/results",
+        },
+        {
+            id: 4,
+            organization: "Indian Army",
+            examName: "Soldier GD Result",
+            publishDate: "2025-01-08",
+            category: "defense",
+            status: "available",
+            link: "https://joinindianarmy.nic.in/results",
+        },
+        {
+            id: 5,
+            organization: "Institute of Banking Personnel Selection",
+            examName: "Clerk Prelims Result",
+            publishDate: "2025-01-15",
+            category: "banking",
+            status: "available",
+            link: "https://ibps.in/results",
+        },
+    ];
+
+    const trendingItems = [
+        {
+            id: 1,
+            organization: "Union Public Service Commission",
+            examName: "Civil Services Exam Result",
+            type: "result",
+            publishDate: "2025-01-10",
+            link: "https://www.upsc.gov.in/results",
+        },
+        {
+            id: 2,
+            organization: "Staff Selection Commission",
+            examName: "CHSL Admit Card",
+            type: "admitCard",
+            releaseDate: "2025-01-05",
+            link: "https://ssc.nic.in/admit-card",
+        },
+        {
+            id: 3,
+            organization: "State Bank of India",
+            examName: "Clerk Exam Date",
+            type: "examDate",
+            examDate: "2025-01-15",
+            link: "https://sbi.co.in/exam-dates",
+        },
+    ];
+
+
     if (location.pathname === '/') {
         return null;
     }
@@ -80,6 +158,9 @@ const SecondRoutes = () => {
                 <Route path='/organization' element={<Authority />} />
                 <Route path='/category' element={<Category/>} />
                 <Route path='/admit-card' element={<AdmitCard admitCards={admitCards}/>} />
+                <Route path='/results' element={<Results results={dummyResults}/>} />
+                <Route path='/trending' element={<TrendingPage trendingItems={trendingItems} />} />
+
 
                 <Route path='*' element={<ErrorPage />} />
             </Routes>

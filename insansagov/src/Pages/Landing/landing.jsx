@@ -10,6 +10,7 @@ import FeaturePage from '../../Components/FeatureAdvertisement/Features'
 import FeatureBand from '../../Components/FeatureAdvertisement/FeatureBand'
 import OpportunityCarousel from '../../Components/OpportunityCarousel/OpportunityCarousel'
 import AdmitCardDashboard from '../../Components/AdmitCards/AdmitCard'
+import ResultsDashboard from '../../Components/ResultComponent/Results'
 
 const Landing = () => {
 
@@ -66,6 +67,54 @@ const Landing = () => {
     },
   ];
 
+  const dummyResults = [
+    {
+      id: 1,
+      organization: "Union Public Service Commission",
+      examName: "Civil Services Exam Result",
+      publishDate: "2025-01-10",
+      category: "civil services",
+      status: "available",
+      link: "https://www.upsc.gov.in/results",
+    },
+    {
+      id: 2,
+      organization: "Staff Selection Commission",
+      examName: "CHSL Tier 1 Result",
+      publishDate: "2025-01-05",
+      category: "staff selection",
+      status: "available",
+      link: "https://ssc.nic.in/results",
+    },
+    {
+      id: 3,
+      organization: "State Bank of India",
+      examName: "Probationary Officer Result",
+      publishDate: "2025-01-12",
+      category: "banking",
+      status: "available",
+      link: "https://sbi.co.in/results",
+    },
+    {
+      id: 4,
+      organization: "Indian Army",
+      examName: "Soldier GD Result",
+      publishDate: "2025-01-08",
+      category: "defense",
+      status: "available",
+      link: "https://joinindianarmy.nic.in/results",
+    },
+    {
+      id: 5,
+      organization: "Institute of Banking Personnel Selection",
+      examName: "Clerk Prelims Result",
+      publishDate: "2025-01-15",
+      category: "banking",
+      status: "available",
+      link: "https://ibps.in/results",
+    },
+  ];
+
   
   return (
     <>
@@ -80,6 +129,7 @@ const Landing = () => {
       <TopCategories/>
 
       <AdmitCardDashboard admitCards={admitCards} />
+      <ResultsDashboard results={dummyResults} />
 
     </div>
     <img
