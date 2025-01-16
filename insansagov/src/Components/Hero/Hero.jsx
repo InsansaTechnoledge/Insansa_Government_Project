@@ -42,7 +42,11 @@ const Hero = () => {
 
             {/* Content Container */}
             <div className="relative h-full flex flex-col items-center justify-center px-4">
-                <div className="text-center space-y-6 max-w-4xl mx-auto" ref={ref}>
+                <div className='flex justify-center w-full'>
+                    <DigitalClock />
+
+                </div>
+                <div className="text-center space-y-6 max-w-full mx-auto" ref={ref}>
                     <motion.h1
                         className="text-4xl md:text-7xl font-bold text-white tracking-tight"
                         variants={variants}
@@ -53,7 +57,6 @@ const Hero = () => {
                         <span className="block">My Website</span>
                     </motion.h1>
 
-                    <DigitalClock/>
 
                     <motion.p
                         className="text-xl md:text-2xl text-gray-200"
@@ -73,7 +76,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="relative max-w-2xl mx-auto">
-                            <Search searchHandler={searchHandler}/>
+                            <Search searchHandler={searchHandler} />
                             <div className="absolute right-7 top-1/2 -translate-y-1/2">
                                 <ChevronRight className="w-5 h-5 text-gray-400" />
                             </div>
