@@ -9,6 +9,7 @@ import Contact from '../../Components/ContactUs/Contact'
 import FeaturePage from '../../Components/FeatureAdvertisement/Features'
 import FeatureBand from '../../Components/FeatureAdvertisement/FeatureBand'
 import OpportunityCarousel from '../../Components/OpportunityCarousel/OpportunityCarousel'
+import AdmitCardDashboard from '../../Components/AdmitCards/AdmitCard'
 
 const Landing = () => {
   return (
@@ -19,6 +20,7 @@ const Landing = () => {
     <div  className="px-5 md:px-64">
       <LatestUpdates/>
       {/* <OpportunityCarousel/> */}
+      <AdmitCardDashboard/>
       <TopAuthorities/>
       <TopCategories/>
 

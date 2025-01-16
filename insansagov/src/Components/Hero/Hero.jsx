@@ -86,10 +86,23 @@ const Hero = () => {
                         <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
                             Trendings
                         </button>
-                        <a href="https://insansa.com" target="_blank" rel="noopener noreferrer">
-                            <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white/10 transition-all transform hover:scale-105">
+                        <a href="https://insansa.com" target="_blank" rel="noopener noreferrer" className="relative group">
+                            <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold 
+                         transition-all duration-300 transform hover:scale-105
+                         hover:border-purple-200 hover:text-gray-100
+                         hover:shadow-[0_0_20px_rgba(167,139,250,0.4)]">
                                 Insansa.com
                             </button>
+                            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-1.5 
+                       text-sm text-white bg-gray-900/90 rounded-md 
+                       opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100
+                       transition-all duration-300 backdrop-blur-sm
+                       shadow-[0_0_10px_rgba(167,139,250,0.3)]
+                       before:content-[''] before:absolute before:top-full before:left-1/2 
+                       before:-translate-x-1/2 before:border-4 before:border-transparent 
+                       before:border-t-purple-900/90">
+                                Visit our website
+                            </span>
                         </a>
 
                     </motion.div>
