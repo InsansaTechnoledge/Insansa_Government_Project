@@ -1,11 +1,14 @@
 import React from 'react';
 import { Mail, ArrowRight, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle newsletter submission
   };
+
+  const navigate = useNavigate();
 
   return (
     <footer className="bg-gray-900 text-gray-300 mt-36">
@@ -27,7 +30,6 @@ const Footer = () => {
               Insansa Technoledge Pvt. Ltd.
             </p>
 
-
             <div className="flex space-x-6">
               <Twitter className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
               <Facebook className="h-5 w-5 text-gray-400 hover:text-white cursor-pointer transition-colors" />
@@ -41,12 +43,19 @@ const Footer = () => {
             <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
               Components
             </h3>
+
             <ul className="space-y-3">
-              {['Exam Dates', 'Admit Cards', 'Exam Forms', 'Result Declaration', 'Exam related details'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
-                  </a>
+              {[
+                { name: "Exam Dates", link: "/exam-dates" },
+                { name: "Admit Cards", link: "/admit-card" },
+                { name: "Exam Forms", link: "/exam-forms" },
+                { name: "Result Declaration", link: "/results" },
+                { name: "Exam related details", link: "/exam-details" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link to={item.link} className="text-gray-400 hover:text-white transition-colors">
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
