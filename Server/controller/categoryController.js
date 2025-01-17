@@ -3,7 +3,8 @@ import Organization from '../models/OrganizationModel.js';
 
 export const getCategories = async (req, res) => {
     try{
-        const categories = await category.find({},{category:1,logo:1});
+        const categories = await Category.find({},{category:1,logo:1});
+        console.log(categories);
         res.json(categories);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -26,7 +27,7 @@ export const getCategoryOrganizations = async (req,res) => {
         
         const categoryData = await Category.findOne({ category: category });
         
-        const organizationIds = categoryData.Organizations;
+        const organizationIds = categoryData.organizations;
 
         const organizations = await Organization.find({
             _in: {$in: organizationIds}

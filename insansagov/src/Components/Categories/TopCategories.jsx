@@ -20,7 +20,7 @@ const TopCategories = (props) => {
                 const response = await axios.get(`${API_BASE_URL}/api/category/getCategories`);
                 if (response.status === 200) {
                     setCategories(response.data);
-                    console.log(response.data);
+                    console.log('🥳🥳',response.data);
                     setFilteredCategories(response.data.slice(0, 4));
                 }
             } catch (error) {
@@ -39,7 +39,7 @@ const TopCategories = (props) => {
             )}
             <div className="grid grid-cols-4 mb-5 gap-4">
                 {filteredCategories.map((category, key) => (
-                    <TopCategoriesCard key={key} name={category.name} logo={category.logo} id={category._id} />
+                    <TopCategoriesCard key={key} name={category.category} logo={category.logo} id={category._id} />
                 ))}
             </div>
             <div className="flex justify-center gap-4 mb-20">

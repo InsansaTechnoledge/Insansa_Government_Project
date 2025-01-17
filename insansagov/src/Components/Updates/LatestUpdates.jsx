@@ -25,9 +25,10 @@ const LatestUpdates = (props) => {
       const response = await axios.get(`${API_BASE_URL}/api/event/latest`);
       if(response.status===200){
         
+        console.log("✅✅",response.data);
         const sortedUpdates = await response.data.sort((a, b) => {
-          const dateA = new Date(a.notificationDate);
-          const dateB = new Date(b.notificationDate);
+          const dateA = new Date(a.date_of_notification);
+          const dateB = new Date(b.date_of_notification);
       
           // Check if the dates are valid, in case some of the dates are 'Not specified'
           if (isNaN(dateA) || isNaN(dateB)) {

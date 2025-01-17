@@ -1,5 +1,7 @@
 import Authority from "../models/AuthorityModel.js";
 import Organization from "../models/OrganizationModel.js";
+import Category from "../models/categoryModel.js";
+import Event from "../models/EventModel.js";
 
 export const getCentralLogos = async (req, res) => {
   try {
@@ -25,22 +27,22 @@ export const getCentralLogos = async (req, res) => {
 export const getOrganization = async (req, res) => {
   try {
     const Authorityname = req.params.name;
-    const organizations = await Organization.findOne({
+    const organization = await Organization.findOne({
       abbreviation: Authorityname,
     });
 
-    if(!organizations){
+    if(!organization){
       return res.status(404).json({message: "Organization not found!"})
     }
 
-    const eventIds = organizations.events; // Array of event IDs
+    const eventIds = organization.events; // Array of event IDs
 
     // Fetch events using the array of IDs
     const events = await Event.find({
       _id: { $in: eventIds },
     });
 
-    const categoryId = organizations.category;
+    const categoryId = organization.category;
     
     const category = await Category.findOne({ _id: categoryId });
 
@@ -50,8 +52,8 @@ export const getOrganization = async (req, res) => {
       _id: { $in: organizationIds },
     });
 
-    res.status(201).json(organizations,events,relatedOrganizations);
-  } catch (error) {
+    res.status(201).json({organization,events,relatedOrganizations});
+  } catch (err) {
     console.log(err)
   }
 }
