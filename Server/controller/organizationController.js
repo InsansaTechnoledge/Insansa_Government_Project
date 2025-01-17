@@ -1,37 +1,21 @@
 import Authority from "../models/AuthorityModel.js";
 import Organization from "../models/OrganizationModel.js";
 
-export const getLogos = async (req, res) => {
+export const getCentralLogos = async (req, res) => {
   try {
-    const authorityWithOrganizations = await Authority.aggregate([
-        { $match: { name: "Central" } },
-        {
-          $lookup: {
-            from: "organizations",
-            localField: "organizations",
-            foreignField: "name",
-            as: "organizationData",
-            pipeline: [
-                {
-                  $project: {
-                    _id: 1, // Exclude the _id field
-                    name: 1, // Include the name field
-                    logo: 1, // Include the logo field
-                },
-                },
-              ],
-          },
-        },
-        {
-          $project: {
-            _id: 1,
-            organizations: "$organizationData",
-          },
-        },
-    ]);
+    
+    const centralAuthority = await Authority.findOne({type: "Central_Government"})
+
+    const centralOrganizationIds = centralAuthority.organizations;
+
+    const centralOrganizations = await Organization.find(
+      { _id: { $in: centralOrganizationIds } },
+      { _id: 1, abbreviation: 1, logo: 1 } // 1 to include fields, 0 to exclude
+    );
+
 
     // Return the data to the frontend
-    res.status(200).json(authorityWithOrganizations);
+    res.status(200).json(centralOrganizations);
   } catch (error) {
     console.error("Error fetching logos:", error);
     res.status(500).json({ error: "An error occurred while fetching logos." });
@@ -39,13 +23,35 @@ export const getLogos = async (req, res) => {
 };
 
 export const getOrganization = async (req, res) => {
-  try{
-    const Authorityname=req.params.name;
+  try {
+    const Authorityname = req.params.name;
     const organizations = await Organization.findOne({
-      name: Authorityname,
+      abbreviation: Authorityname,
     });
-    res.status(201).json(organizations);
-  }catch(error){
+
+    if(!organizations){
+      return res.status(404).json({message: "Organization not found!"})
+    }
+
+    const eventIds = organizations.events; // Array of event IDs
+
+    // Fetch events using the array of IDs
+    const events = await Event.find({
+      _id: { $in: eventIds },
+    });
+
+    const categoryId = organizations.category;
+    
+    const category = await Category.findOne({ _id: categoryId });
+
+    const organizationIds = category.organizations;
+
+    const relatedOrganizations = await Organization.find({
+      _id: { $in: organizationIds },
+    });
+
+    res.status(201).json(organizations,events,relatedOrganizations);
+  } catch (error) {
     console.log(err)
   }
 }
