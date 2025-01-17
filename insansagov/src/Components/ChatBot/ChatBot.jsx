@@ -152,7 +152,7 @@ const ChatBot = () => {
         } else {
             try {
                 const response = await axios.post(
-                    `https://exam-chatbot-omega.vercel.app/api/chatbot`,
+                    `https://insansachatbot.onrender.com/api/chatbot1`,
                     { msg: newUserMessage.text },
                     {
                         headers: {
