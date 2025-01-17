@@ -140,23 +140,8 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        try {
-            const response = await axios.post(
-                `https://exam-chatbot-omega.vercel.app/api/chatbot1`,
-                { msg: newUserMessage.text },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                }
-            );
+        // const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
 
-<<<<<<< HEAD
-            const botResponse = response.data;
-            let responseText = "";
-            let responseSet = [];
-            let responseType = "";
-=======
         // if (hardcodedResponse) {
         //     const newBotMessage = {
         //         id: messages.length + 2,
@@ -164,8 +149,8 @@ const ChatBot = () => {
         //         isBot: true,
         //     };
         //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        // } 
-        // else 
+        // }
+        // else
         {
             try {
                 const response = await axios.post(
@@ -176,50 +161,84 @@ const ChatBot = () => {
                             'Content-Type': 'application/json',
                         },
                     }
->>>>>>> 9f89792fcc13b1880e2b8eba2d2bb3618a02dbb1
 
-            if (botResponse.exam_details) {
-                responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url];
-                responseType = "all";
 
-                responseText = `
-                - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
-                - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
-                - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
-                - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
+
+                );
+                // const botResponse = await axios.get(`https://exam-chatbot-exam-chatbots-projects.vercel.app/`,formData,{
+                //     headers:{
+                //         'Content-Type':'application/json'
+                //     }
+                // });
+
+                const botResponse = response.data;
+                var responseText = ''
+                var responseSet = []
+                var responseType = ''
+                console.log(botResponse);
+                if (botResponse.exam_details) {
+
+                    responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url]
+                    responseType = 'all'
+
+                    responseText = `
+            - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
+            - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
+            - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
+            - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
+           
             `;
-            } else {
-                responseText = `${botResponse.response}`;
+                }
+                else if (botResponse.start_date) {
+                    responseType = 'start-date'
+                    responseSet = [botResponse.start_date];
+
+                    responseText = `
+            - <b>Start Date:</b> ${botResponse.start_date}<br>
+            `;
+                }
+                else if (botResponse.end_date) {
+                    responseType = 'end-date'
+                    responseSet = [botResponse.end_date];
+
+                    responseText = `
+            - <b>End Date:</b> ${botResponse.end_date}<br>
+            `;
+                }
+                else if (botResponse.link_details) {
+                    responseType = 'link'
+                    responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url];
+
+                    responseText = `
+            - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
+            - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
+            `;
+                }
+                else {
+                    responseText = `${botResponse.response}`
+                }
+
+                const newBotMessage = {
+                    id: messages.length + 2,
+                    text: responseText,
+                    type: responseType,
+                    set: responseSet,
+                    isBot: true,
+                };
+                console.log(parse(responseText));
+                setMessages((prevMessages) => [...prevMessages, newBotMessage]);
+            }
+            catch (err) {
+                console.log(err);
             }
 
-            const newBotMessage = {
-                id: messages.length + 2,
-                text: responseText,
-                type: responseType,
-                set: responseSet,
-                isBot: true,
-            };
-
-            setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        } catch (error) {
-            console.error("Error communicating with chatbot backend:", error);
-
-            const errorBotMessage = {
-                id: messages.length + 2,
-                text: "The chatbot service is currently unavailable. Please try again later.",
-                isBot: true,
-            };
-
-            setMessages((prevMessages) => [...prevMessages, errorBotMessage]);
-        }
-
-        if (!isOpen) {
-            setUnreadCount((prevCount) => prevCount + 1);
-            setIsBouncing(true);
-            setTimeout(() => setIsBouncing(false), 1000);
-        }
-    };
-
+            if (!isOpen) {
+                setUnreadCount((prevCount) => prevCount + 1);
+                setIsBouncing(true);
+                setTimeout(() => setIsBouncing(false), 1000);
+            }
+        };
+    }
 
     const fetchBotResponse = async (input) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -237,19 +256,19 @@ const ChatBot = () => {
         return (
             <button
                 onClick={handleOpenChat}
-                className={`fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 
-          rounded-full shadow-lg hover:shadow-xl transition-all duration-300 
+                className={`fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600
+          rounded-full shadow-lg hover:shadow-xl transition-all duration-300
           flex items-center justify-center text-white group
           ${isBouncing ? 'animate-bounce' : 'hover:scale-110 transform transition-transform duration-300'}`}
                 aria-label="Open chat"
                 onMouseEnter={() => setIsBouncing(true)}
                 onMouseLeave={() => setIsBouncing(false)}
             >
-                <MessageCircle className={`w-8 h-8 transition-transform duration-300 
+                <MessageCircle className={`w-8 h-8 transition-transform duration-300
           ${isBouncing ? 'scale-110' : 'group-hover:scale-110'}`} />
                 {unreadCount > 0 && (
-                    <div className="absolute -top-1 -right-1 h-6 w-6 bg-red-500 text-white text-xs 
-            font-bold flex items-center justify-center rounded-full shadow-lg border-2 
+                    <div className="absolute -top-1 -right-1 h-6 w-6 bg-red-500 text-white text-xs
+            font-bold flex items-center justify-center rounded-full shadow-lg border-2
             border-white animate-pulse">
                         {unreadCount}
                     </div>
@@ -271,10 +290,10 @@ const ChatBot = () => {
 
 
     const chatWindow = (
-        <div className={`z-50 fixed bottom-6 right-6 w-96 ${isMinimized ? 'h-14' : 'h-[600px]'} 
+        <div className={`z-50 fixed bottom-6 right-6 w-96 ${isMinimized ? 'h-14' : 'h-[600px]'}
      rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden
       ${isOpen ? 'animate-in slide-in-from-right' : ''}`}>
-            <div className="drag-handle p-3 bg-gradient-to-r from-indigo-500 to-purple-600 
+            <div className="drag-handle p-3 bg-gradient-to-r from-indigo-500 to-purple-600
         text-white rounded-t-2xl flex justify-between items-center cursor-move
         hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700 transition-all duration-300">
                 {/* <div className="flex items-center gap-2">
@@ -288,7 +307,7 @@ const ChatBot = () => {
                 <div className="flex items-center gap-2">
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="p-1 hover:bg-white/20 rounded-full transition-all duration-300 
+                        className="p-1 hover:bg-white/20 rounded-full transition-all duration-300
               transform hover:scale-110 active:scale-95"
                         aria-label="Minimize chat"
                     >
@@ -299,7 +318,7 @@ const ChatBot = () => {
                             setIsOpen(false)
                             setMessages([{ id: 1, text: "Hello! How can I help you today?", isBot: true }]);
                         }}
-                        className="p-1 hover:bg-white/20 rounded-full transition-all duration-300 
+                        className="p-1 hover:bg-white/20 rounded-full transition-all duration-300
               transform hover:scale-110 active:scale-95"
                         aria-label="Close chat"
                     >
@@ -310,9 +329,9 @@ const ChatBot = () => {
 
             {!isMinimized && (
                 <>
-                    <div 
-                    ref={containerRef}
-                    className="backdrop-blur-md bg-opacity-10 flex-1 p-4 overflow-y-auto bg-gray-900 h-[calc(100%-140px)] space-y-4"
+                    <div
+                        ref={containerRef}
+                        className="backdrop-blur-md bg-opacity-10 flex-1 p-4 overflow-y-auto bg-gray-900 h-[calc(100%-140px)] space-y-4"
                         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
 
                         {messages.length <= 1 && (
@@ -372,7 +391,7 @@ const ChatBot = () => {
                   animate-in slide-in-from-${message.isBot ? 'left' : 'right'}`}
                             >
                                 {message.isBot && (
-                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 
+                                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600
                     flex items-center justify-center text-white transform hover:scale-110 transition-transform">
                                         <Bot size={16} />
                                     </div>
@@ -497,14 +516,14 @@ const ChatBot = () => {
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Type your message..."
-                                className="flex-1 p-3 bg-gray-100 rounded-xl text-sm focus:outline-none 
+                                className="flex-1 p-3 bg-gray-100 rounded-xl text-sm focus:outline-none
                   focus:ring-2 focus:ring-indigo-500 transition-all duration-300
                   hover:bg-gray-50"
                             />
                             <button
                                 type="submit"
-                                className="p-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white 
-                  rounded-xl hover:shadow-lg focus:outline-none focus:ring-2 
+                                className="p-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white
+                  rounded-xl hover:shadow-lg focus:outline-none focus:ring-2
                   focus:ring-indigo-500 transition-all duration-300
                   transform hover:scale-105 active:scale-95"
                             >
