@@ -4,7 +4,9 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Search from '../Search/Search';
 import HeroBg from '../../assets/Landing/heroBg.svg';
-import { useNavigate } from 'react-router-dom';
+import DigitalClock from '../Clock/Clock';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 const Hero = () => {
     const controls = useAnimation();
@@ -38,9 +40,13 @@ const Hero = () => {
                 className="absolute inset-0 w-full h-full object-cover"
             />
 
+                {/* <div className='absolute top-14 right-0 z-10'>
+                    <DigitalClock />
+
+                </div> */}
             {/* Content Container */}
             <div className="relative h-full flex flex-col items-center justify-center px-4">
-                <div className="text-center space-y-6 max-w-4xl mx-auto" ref={ref}>
+                <div className="text-center space-y-6 max-w-full mx-auto" ref={ref}>
                     <motion.h1
                         className="text-4xl md:text-7xl font-bold text-white tracking-tight"
                         variants={variants}
@@ -69,7 +75,7 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="relative max-w-2xl mx-auto">
-                            <Search searchHandler={searchHandler}/>
+                            <Search searchHandler={searchHandler} />
                             <div className="absolute right-7 top-1/2 -translate-y-1/2">
                                 <ChevronRight className="w-5 h-5 text-gray-400" />
                             </div>
@@ -83,9 +89,11 @@ const Hero = () => {
                         animate={controls}
                         transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                        <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
-                            Trendings
-                        </button>
+                        <Link to="/trending">
+                            <button className="px-8 py-3 bg-white text-gray-900 rounded-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                                Trendings
+                            </button>
+                        </Link>
                         <a href="https://insansa.com" target="_blank" rel="noopener noreferrer" className="relative group">
                             <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold 
                          transition-all duration-300 transform hover:scale-105

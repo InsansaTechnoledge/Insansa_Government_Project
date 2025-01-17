@@ -98,7 +98,7 @@ const Authority = () => {
             </div>
             <AuthorityLatestUpdates latestUpdates={latestUpdates} name={organization.name}/>
             <div className='font-bold text-2xl flex items-center mb-5'>Events under {organization.name}</div>
-            <div className='grid grid-cols-3 gap-7 mb-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-7 mb-10'>
                 {filteredEvents && filteredEvents.map((item, index) => (
                     <OpportunityCarouselCard index={index} item={item} authority={organization.name} />
                 ))}

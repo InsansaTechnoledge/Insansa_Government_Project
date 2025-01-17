@@ -140,16 +140,18 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
+        // const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
 
-        if (hardcodedResponse) {
-            const newBotMessage = {
-                id: messages.length + 2,
-                text: hardcodedResponse,
-                isBot: true,
-            };
-            setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        } else {
+        // if (hardcodedResponse) {
+        //     const newBotMessage = {
+        //         id: messages.length + 2,
+        //         text: hardcodedResponse,
+        //         isBot: true,
+        //     };
+        //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
+        // } 
+        // else 
+        {
             try {
                 const response = await axios.post(
                     `https://insansachatbot.onrender.com/api/chatbot1`,
@@ -304,7 +306,7 @@ const ChatBot = () => {
                 </div>
                 <div className="flex items-center gap-2">
                     <button
-                        onClick={() => setIsMinimized(!isMinimized)}
+                        onClick={() => setIsOpen(!isOpen)}
                         className="p-1 hover:bg-white/20 rounded-full transition-all duration-300 
               transform hover:scale-110 active:scale-95"
                         aria-label="Minimize chat"
