@@ -140,105 +140,64 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        // const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
+        try {
+            const response = await axios.post(
+                `https://exam-chatbot-omega.vercel.app/api/chatbot1`,
+                { msg: newUserMessage.text },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
 
-        // if (hardcodedResponse) {
-        //     const newBotMessage = {
-        //         id: messages.length + 2,
-        //         text: hardcodedResponse,
-        //         isBot: true,
-        //     };
-        //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        // } 
-        // else 
-        {
-            try {
-                const response = await axios.post(
-                    `https://exam-chatbot-omega.vercel.app/api/chatbot1`,
-                    { msg: newUserMessage.text },
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    }
+            const botResponse = response.data;
+            let responseText = "";
+            let responseSet = [];
+            let responseType = "";
 
+            if (botResponse.exam_details) {
+                responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url];
+                responseType = "all";
 
-
-                );
-                // const botResponse = await axios.get(`https://exam-chatbot-exam-chatbots-projects.vercel.app/`,formData,{
-                //     headers:{
-                //         'Content-Type':'application/json'
-                //     }
-                // });
-
-                const botResponse = response.data;
-                var responseText = ''
-                var responseSet = []
-                var responseType = ''
-                console.log(botResponse);
-                if (botResponse.exam_details) {
-
-                    responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url]
-                    responseType = 'all'
-
-                    responseText = `
-            - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
-            - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
-            - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
-            - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
-            
+                responseText = `
+                - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
+                - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
+                - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
+                - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
             `;
-                }
-                else if (botResponse.start_date) {
-                    responseType = 'start-date'
-                    responseSet = [botResponse.start_date];
-
-                    responseText = `
-            - <b>Start Date:</b> ${botResponse.start_date}<br>
-            `;
-                }
-                else if (botResponse.end_date) {
-                    responseType = 'end-date'
-                    responseSet = [botResponse.end_date];
-
-                    responseText = `
-            - <b>End Date:</b> ${botResponse.end_date}<br>
-            `;
-                }
-                else if (botResponse.link_details) {
-                    responseType = 'link'
-                    responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url];
-
-                    responseText = `
-            - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
-            - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
-            `;
-                }
-                else {
-                    responseText = `${botResponse.response}`
-                }
-
-                const newBotMessage = {
-                    id: messages.length + 2,
-                    text: responseText,
-                    type: responseType,
-                    set: responseSet,
-                    isBot: true,
-                };
-                console.log(parse(responseText));
-                setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-            }
-            catch (err) {
-                console.log(err);
+            } else {
+                responseText = `${botResponse.response}`;
             }
 
-            if (!isOpen) {
-                setUnreadCount((prevCount) => prevCount + 1);
-                setIsBouncing(true);
-                setTimeout(() => setIsBouncing(false), 1000);
-            }
-        };
-    }
+            const newBotMessage = {
+                id: messages.length + 2,
+                text: responseText,
+                type: responseType,
+                set: responseSet,
+                isBot: true,
+            };
+
+            setMessages((prevMessages) => [...prevMessages, newBotMessage]);
+        } catch (error) {
+            console.error("Error communicating with chatbot backend:", error);
+
+            const errorBotMessage = {
+                id: messages.length + 2,
+                text: "The chatbot service is currently unavailable. Please try again later.",
+                isBot: true,
+            };
+
+            setMessages((prevMessages) => [...prevMessages, errorBotMessage]);
+        }
+
+        if (!isOpen) {
+            setUnreadCount((prevCount) => prevCount + 1);
+            setIsBouncing(true);
+            setTimeout(() => setIsBouncing(false), 1000);
+        }
+    };
+
 
     const fetchBotResponse = async (input) => {
         await new Promise((resolve) => setTimeout(resolve, 1000));
