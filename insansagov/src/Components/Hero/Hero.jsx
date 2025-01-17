@@ -54,7 +54,7 @@ const Hero = () => {
                         animate={controls}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="block">My Website</span>
+                        <span className="block">TrendWave</span>
                     </motion.h1>
 
                     <motion.p
