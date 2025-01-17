@@ -151,10 +151,32 @@ const ChatBot = () => {
                 }
             );
 
+<<<<<<< HEAD
             const botResponse = response.data;
             let responseText = "";
             let responseSet = [];
             let responseType = "";
+=======
+        // if (hardcodedResponse) {
+        //     const newBotMessage = {
+        //         id: messages.length + 2,
+        //         text: hardcodedResponse,
+        //         isBot: true,
+        //     };
+        //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
+        // } 
+        // else 
+        {
+            try {
+                const response = await axios.post(
+                    `https://insansachatbot.onrender.com/api/chatbot1`,
+                    { msg: newUserMessage.text },
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+>>>>>>> 9f89792fcc13b1880e2b8eba2d2bb3618a02dbb1
 
             if (botResponse.exam_details) {
                 responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url];
