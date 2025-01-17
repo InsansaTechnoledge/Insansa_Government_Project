@@ -2,6 +2,7 @@ import organizationRoute from './organizationRoutes.js'
 import eventRoute from './eventRoutes.js'
 import categoryRoute from './categoryRoutes.js'
 import searchRoute from './searchRoutes.js'
+import contactRoute from './contactRoutes.js'
 
 const routes=(app)=>{
 
@@ -9,6 +10,7 @@ const routes=(app)=>{
     app.use('/api/event', eventRoute);
     app.use('/api/category', categoryRoute);
     app.use('/api/search', searchRoute);
+    app.use('/api/contact', contactRoute);
     
 }
 export default routes;
