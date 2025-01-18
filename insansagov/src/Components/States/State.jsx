@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MapPin, Search, ArrowRight, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const StateComponent = () => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -160,9 +161,13 @@ const StateComponent = () => {
     );
 };
 
-const StateCard = ({ state }) => (
+const StateCard = ({ state }) => {
+    
+    const navigate = useNavigate();
+
+    return (
     <div
-        onClick={() => alert(`Navigate to ${state}`)}
+        onClick={() => navigate(`state?name=${encodeURI(state)}`)}
         className="group bg-white p-3 sm:p-4 rounded-xl border border-purple-100 hover:border-purple-400 
              shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative
              overflow-hidden active:bg-purple-50 touch-manipulation"
@@ -179,6 +184,6 @@ const StateCard = ({ state }) => (
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 
                    to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
     </div>
-);
+)};
 
 export default StateComponent;

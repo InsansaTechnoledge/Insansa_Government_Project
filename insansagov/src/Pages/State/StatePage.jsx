@@ -10,20 +10,20 @@ const StatePage = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const location = useLocation();
     const [logo, setLogo] = useState();
-    const [states, setStates] = useState();
+    const [organizations, setOrganizations] = useState();
 
     // Parse the query parameters
     const queryParams = new URLSearchParams(location.search);
-    const state = queryParams.get("state"); 
+    const state = queryParams.get("name"); 
 
     useEffect(() => {
         const fetchStateData = async () => {
             try {
-                const response = await axios.get(`${API_BASE_URL}/api/state/organizations/${state}`);
+                const response = await axios.get(`${API_BASE_URL}/api/state/${state}`);
                 if (response.status === 201) {
                     console.log(response.data);
-                    setLogo(response.data.logo);
-                    setStates(response.data.Organizations.filter(state => state.logo));
+                    setLogo(response.data.stateData.logo);
+                    setOrganizations(response.data.organizations);
                 }
             } catch (error) {
                 console.error('Error fetching state data:', error);
@@ -47,8 +47,8 @@ const StatePage = () => {
 
             <h1 className='font-bold text-2xl text-center mb-10'>Organization under {state}</h1>
             {
-                states && states.length > 0
-                    ? <RelatedAuthorities organizations={states} />
+                organizations && organizations.length > 0
+                    ? <RelatedAuthorities organizations={organizations} />
                     : <div className='text-center'>No states found!</div>
             }
         </div>

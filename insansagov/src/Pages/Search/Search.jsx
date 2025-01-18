@@ -9,6 +9,7 @@ import API_BASE_URL from '../config'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
 import TopCategories from '../../Components/Categories/TopCategories'
 import RelatedCategories from '../../Components/Categories/RelatedCategories'
+import RelatedStates from '../../Components/States/RelatedStates'
 
 const SearchPage = () => {
   const location = useLocation();
@@ -61,7 +62,7 @@ const SearchPage = () => {
       {
         searchData && searchData.authorities && searchData.authorities.length>0
         ?
-        <RelatedCategories categories={searchData.authorities}/>
+        <RelatedStates states={searchData.authorities}/>
         :
         null
       }
