@@ -1,27 +1,53 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Search, Calendar, Building2, Filter } from "lucide-react";
 import ViewPageButton from "../../Components/Buttons/ViewPageButton";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import API_BASE_URL from "../config";
 
-const AdmitCard = ({ admitCards = [] }) => {
+const AdmitCard = () => {
     const [search, setSearch] = useState("");
-    const [filter, setFilter] = useState("all");
-    const navigate = useNavigate();
-    
-    const categories = ["All", "Civil Services", "Staff Selection", "Banking", "Defense"];
+    const [filter, setFilter] = useState("All");
+    const [categories, setCategories] = useState();
+    const [admitCards,setAdmitCards] = useState();
+    const [filteredCards, setFilterCards] = useState();
 
+    // const categories = ["All", "Civil Services", "Staff Selection", "Banking", "Defense"];
 
-    const filteredCards = Array.isArray(admitCards) ? admitCards.filter((card) => {
-        const matchesSearch =
-            card.examName.toLowerCase().includes(search.toLowerCase()) ||
-            card.organization.toLowerCase().includes(search.toLowerCase());
-        const matchesFilter = filter === "all" || card.category.toLowerCase() === filter;
-        return matchesSearch && matchesFilter;
-    }) : [];
+    useEffect(()=>{
+        const fetchAdmitCards = async () => {
+            const response = await axios.get(`${API_BASE_URL}/api/admitCard/`);
+            if(response.status===201){
+                setAdmitCards(response.data);
+            }
+        }
 
-    const viewAllAdmitCards = () => {
-        navigate('/admit-card');
-    }
+        const fetchCategories = async () => {
+            const response = await axios.get(`${API_BASE_URL}/api/category/getcategories`);
+            if(response.status===200){
+                setCategories(response.data.map(cat => cat.category));
+                setCategories(prev => ([
+                    "All",
+                    ...prev
+                ]));
+            }
+        }
+        fetchAdmitCards();
+        fetchCategories();
+
+    },[]);
+
+    useEffect(()=>{
+                if(categories && admitCards){
+                    setFilterCards(Array.isArray(admitCards)
+                    ? admitCards.filter((card) => {
+                        const matchesFilter = filter === "All" || card.category === filter;
+                        return matchesFilter;
+                    })
+                    : []);
+                
+                }
+            },[categories, admitCards, filter]);
 
 
     return (
@@ -47,8 +73,8 @@ const AdmitCard = ({ admitCards = [] }) => {
                         value={filter}
                         onChange={(e) => setFilter(e.target.value)}
                     >
-                        {categories.map((category) => (
-                            <option key={category} value={category.toLowerCase()}>
+                        {categories && categories.map((category) => (
+                            <option key={category} value={category}>
                                 {category}
                             </option>
                         ))}
@@ -58,42 +84,39 @@ const AdmitCard = ({ admitCards = [] }) => {
 
             {/* Cards Grid */}
             <div>
-                {filteredCards.length > 0 ? (
+                {filteredCards && filteredCards.length > 0 ? (
                     <div className="flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredCards.map((card) => (
                         <div
-                            key={card.id}
+                            key={card._id}
                             className="p-4 border border-purple-800 rounded-lg shadow-sm hover:shadow-md transition-shadow bg-white flex flex-col justify-between"
                         >
                             <div>
                             <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
                                 <Building2 className="h-5 w-5" />
-                                {card.organization}
+                                {card.abbreviation}
                             </h3>
-                            <p className="font-medium mb-2">{card.examName}</p>
+                            <p className="font-medium mb-2">{card.name}</p>
                             <div className="text-sm text-gray-600">
                                 <div className="flex items-center gap-2 mb-1">
                                     <Calendar className="h-4 w-4" />
-                                    Released: {new Date(card.releaseDate).toLocaleDateString()}
+                                    Released: {new Date(card.date_of_notification).toLocaleDateString()}
                                 </div>
                                 <div className="flex items-center gap-2 mb-1">
                                     <Calendar className="h-4 w-4" />
-                                    Last Date: {new Date(card.lastDate).toLocaleDateString()}
+                                    Last Date: {new Date(card.end_date).toLocaleDateString()}
                                 </div>
                                 <span
-                                    className={`inline-block mt-2 px-2 py-1 rounded-full text-xs ${card.status === "active"
-                                            ? "bg-green-100 text-green-800"
-                                            : "bg-red-100 text-red-800"
-                                        }`}
+                                    className={`inline-block mt-2 px-2 py-1 rounded-full text-xsbg-green-100 text-green-800`}
                                 >
-                                    {card.status.toUpperCase()}
+                                    ACTIVE
                                 </span>
                             </div>
                                     </div>
                             <div>
                             <a
-                                href={card.link}
+                                href={card.apply_links}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block mt-4 px-4 py-2 bg-purple-800 text-white text-center rounded-md hover:bg-purple-900 transition-colors"
