@@ -26,7 +26,7 @@ const OpportunityCarouselCard = (props) => {
                 Updated: {props.item?.date_of_notification || 'N/A'}
               </span>
             </div>
-            <button onClick= {()=> navigate(`/opportunity?organization=${encodeURI(props.authority)}&exam=${encodeURI(props.index)}`)} className='bg-purple-600 text-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-purple-700 transition-colors'>
+            <button onClick= {()=> navigate(`/opportunity?id=${encodeURI(props.item._id)}`)} className='bg-purple-600 text-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-purple-700 transition-colors'>
               View Details
             </button>
           </div>

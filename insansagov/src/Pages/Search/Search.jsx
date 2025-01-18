@@ -24,6 +24,7 @@ const SearchPage = () => {
       const response = await axios.get(`${API_BASE_URL}/api/search/${queryData}`);
 
       if(response.status===200){
+        console.log(response.data);
         setSearchData(response.data);
       }
     }
@@ -54,6 +55,13 @@ const SearchPage = () => {
         searchData && searchData.categories && searchData.categories.length>0
         ?
         <RelatedCategories categories={searchData.categories}/>
+        :
+        null
+      }
+      {
+        searchData && searchData.authorities && searchData.authorities.length>0
+        ?
+        <RelatedCategories categories={searchData.authorities}/>
         :
         null
       }
