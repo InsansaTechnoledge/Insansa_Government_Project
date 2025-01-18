@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import API_BASE_URL from '../config'
 import axios from 'axios'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
+import BackButton from '../../Components/BackButton/BackButton'
 
 
 
@@ -40,7 +41,10 @@ const Category = () => {
     
 
   return (
+   
+    <>
     <div className='pt-28'>
+              <BackButton />
             <div className='flex flex-col justify-center mb-20'>
                 <img src={`data:image/png;base64,${logo}`} className='w-28 self-center mb-5' />
                 <h1 className='text-3xl self-center font-bold'>{name}</h1>
@@ -55,6 +59,8 @@ const Category = () => {
                 <div className='text-center'>No organizations found!</div>
             }
         </div>
+    </>
+    
   )
 }
 

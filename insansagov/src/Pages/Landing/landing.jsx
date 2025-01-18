@@ -8,9 +8,9 @@ import TopCategories from '../../Components/Categories/TopCategories'
 import Contact from '../../Components/ContactUs/Contact'
 import FeaturePage from '../../Components/FeatureAdvertisement/Features'
 import FeatureBand from '../../Components/FeatureAdvertisement/FeatureBand'
-import OpportunityCarousel from '../../Components/OpportunityCarousel/OpportunityCarousel'
 import AdmitCardDashboard from '../../Components/AdmitCards/AdmitCard'
 import ResultsDashboard from '../../Components/ResultComponent/Results'
+import StateComponent from '../../Components/States/State'
 
 const Landing = () => {
 
@@ -124,9 +124,12 @@ const Landing = () => {
     <div  className="px-5 md:px-64">
       <LatestUpdates/>
       {/* <OpportunityCarousel/> */}
+
+      <StateComponent />
       
       <TopAuthorities/>
       <TopCategories/>
+      
 
       <AdmitCardDashboard admitCards={admitCards} />
       <ResultsDashboard results={dummyResults} />

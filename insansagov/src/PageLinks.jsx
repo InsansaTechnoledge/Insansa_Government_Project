@@ -12,6 +12,7 @@ import Category from './Pages/Category/Category'
 import AdmitCard from './Pages/AdmitCard/AdmitCard'
 import Results from './Pages/ResultPage/ResultPage'
 import TrendingPage from './Pages/Trending/Trending'
+import StatePage from './Pages/State/StatePage'
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -159,6 +160,8 @@ const SecondRoutes = () => {
                 <Route path='/admit-card' element={<AdmitCard admitCards={admitCards}/>} />
                 <Route path='/results' element={<Results results={dummyResults}/>} />
                 <Route path='/trending' element={<TrendingPage trendingItems={trendingItems} />} />
+                <Route path='/state' element={<StatePage />} />
+
 
 
                 <Route path='*' element={<ErrorPage />} />

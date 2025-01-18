@@ -8,6 +8,7 @@ import {
     RefreshCcw,
     ChevronRight,
 } from "lucide-react";
+import BackButton from "../../Components/BackButton/BackButton";
 
 const TrendingPage = ({ trendingItems = [] }) => {
     const [searchQuery, setSearchQuery] = React.useState("");
@@ -125,8 +126,10 @@ const TrendingPage = ({ trendingItems = [] }) => {
 
     return (
         <div className="min-h-screen bg-gray-50/50">
+            
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-32 space-y-6">
                 {/* Header Section */}
+                <BackButton />
                 <div className="bg-white shadow-md rounded-lg overflow-hidden p-6">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 mb-8">
                         <div className="space-y-2">

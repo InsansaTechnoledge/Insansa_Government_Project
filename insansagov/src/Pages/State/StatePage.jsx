@@ -1,0 +1,58 @@
+import React, { useEffect, useState } from 'react';
+import TopAuthorities from '../../Components/Authority/TopAuthorities';
+import { useLocation } from 'react-router-dom';
+import API_BASE_URL from '../config';
+import axios from 'axios';
+import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities';
+import BackButton from '../../Components/BackButton/BackButton';
+
+const StatePage = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const location = useLocation();
+    const [logo, setLogo] = useState();
+    const [states, setStates] = useState();
+
+    // Parse the query parameters
+    const queryParams = new URLSearchParams(location.search);
+    const state = queryParams.get("state"); 
+
+    useEffect(() => {
+        const fetchStateData = async () => {
+            try {
+                const response = await axios.get(`${API_BASE_URL}/api/state/organizations/${state}`);
+                if (response.status === 201) {
+                    console.log(response.data);
+                    setLogo(response.data.logo);
+                    setStates(response.data.Organizations.filter(state => state.logo));
+                }
+            } catch (error) {
+                console.error('Error fetching state data:', error);
+            }
+        };
+
+        fetchStateData();
+    }, [location]);
+
+    const handleToggle = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+    return (
+        <div className='pt-28'>
+            <BackButton/>
+            <div className='flex flex-col justify-center mb-20'>
+                <img src={`data:image/png;base64,${logo}`} className='w-28 self-center mb-5' alt={`${state} logo`} />
+                <h1 className='text-3xl self-center font-bold'>{state}</h1>
+            </div>
+
+            <h1 className='font-bold text-2xl text-center mb-10'>Organization under {state}</h1>
+            {
+                states && states.length > 0
+                    ? <RelatedAuthorities organizations={states} />
+                    : <div className='text-center'>No states found!</div>
+            }
+        </div>
+    );
+};
+
+export default StatePage;
