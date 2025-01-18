@@ -25,8 +25,8 @@ const Category = () => {
             const response = await axios.get(`${API_BASE_URL}/api/category/organizations/${name}`);
             if(response.status===201){
                 console.log(response.data);
-                setLogo(response.data.logo);
-                setOrganizations(response.data.Organizations.filter(org => org.logo));
+                setLogo(response.data.categoryData.logo);
+                setOrganizations(response.data.organizations.filter(org => org.logo));
             }
         }
 

@@ -118,13 +118,13 @@ const ModernExamDetailsPage = () => {
   // Parse the query parameters
   const queryParams = new URLSearchParams(location.search);
   const organization = queryParams.get("organization"); // Access the 'name' parameter
-  const examIndex = queryParams.get("exam");
+  const examId = queryParams.get("id");
   const [data, setData] = useState();
   const existingSections = ['document_links']
 
   useEffect(() => {
     const fetchEvent = async () => {
-      const response = await axios.get(`${API_BASE_URL}/api/event/${organization}/${examIndex}`);
+      const response = await axios.get(`${API_BASE_URL}/api/event/${examId}`);
 
       if (response.status === 200) {
         console.log(response.data);

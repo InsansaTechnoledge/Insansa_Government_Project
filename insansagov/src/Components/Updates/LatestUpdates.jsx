@@ -23,7 +23,7 @@ const LatestUpdates = (props) => {
   useEffect(()=>{
     const fetchLatestUpdates = async () => {
       const response = await axios.get(`${API_BASE_URL}/api/event/latest`);
-      if(response.status===200){
+      if(response.status===201){
         
         console.log("✅✅",response.data);
         const sortedUpdates = await response.data.sort((a, b) => {
@@ -64,7 +64,7 @@ const LatestUpdates = (props) => {
           <div className='space-y-5 mb-10'>
             {
               filteredLatestUpdates && filteredLatestUpdates.map((update, key) => {
-                return <LatestUpdateCard key={key} name={update.examDetails.name} date={update.notificationDate} organization={update.organizationName} apply_link={update.examDetails.apply_link}/>
+                return <LatestUpdateCard key={key} name={update.name} date={update.date_of_notification} organization={update.organizationName} apply_link={update.apply_link}/>
               })
             }
 
