@@ -37,7 +37,7 @@ const RelatedAuthorities = (props) => {
                 {/* {visibleCards} */}
                 {
                     organizations && organizations.slice(0, displayCount).map((org,key) => {
-                        return <TopAuthoritiesCard key={key} name={org.name} logo={org.logo} id={org._id}/>
+                        return <TopAuthoritiesCard key={key} name={org.abbreviation} logo={org.logo} id={org._id}/>
                     })
                 }
             </div>

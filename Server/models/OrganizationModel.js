@@ -13,29 +13,24 @@ const organizationSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    fullName:{
+    abbreviation:{
+        type: String,
+        required: true
+    },
+    description:{
         type: String
     },
     logo:{
         type: String,
         default:base64String
     },
-    description:{
-        type: String
-    },
-    inforamation:[{
-        type:Object,
-    }],
-    // related_organization:[{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref:"organization"
-    // }],
-    related_organization:[{
-        type: String,
-    }],
-    parentAuthority:{
+    events:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref:"Authority"
+        ref: 'Event'
+    }],
+    category:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Category"
     }
     
 });

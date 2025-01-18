@@ -9,20 +9,21 @@ const imageBuffer = await response.buffer();
 const base64String = imageBuffer.toString('base64');
 
 const CategorySchema = new mongoose.Schema({
-    name:{
+    category:{
         type: String,
         required: true
     },
-    logo:{
-        type: String,
-        default:base64String
-    },
-    Organizations: [
+    organizations: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Organization"
         }
-    ]
+    ],
+    logo:{
+        type: String,
+        default:base64String
+    }
+
 });
 
 const Category = mongoose.model('Category', CategorySchema);

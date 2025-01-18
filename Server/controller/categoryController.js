@@ -1,9 +1,10 @@
 import Category from '../models/categoryModel.js';
-import category from '../models/categoryModel.js'
+import Organization from '../models/OrganizationModel.js';
 
 export const getCategories = async (req, res) => {
     try{
-        const categories = await category.find();
+        const categories = await Category.find({},{category:1,logo:1});
+        console.log(categories);
         res.json(categories);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -12,7 +13,7 @@ export const getCategories = async (req, res) => {
 
 export const getCategory = async (req, res) => {
     try {
-        const category = await category.findOne({ name: req.params.name });
+        const category = await category.findOne({ name: req.params.name },{category:1, logo:1});
         res.json(category);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -24,8 +25,18 @@ export const getCategoryOrganizations = async (req,res) => {
         const {category} = req.params;
 
         
-        const categoryData = await Category.findOne({ name: category }).populate('Organizations');
-        res.status(201).json(categoryData)
+        const categoryData = await Category.findOne({ category: category });
+        
+        const organizationIds = categoryData.organizations;
+
+        const organizations = await Organization.find({
+            _in: {$in: organizationIds}
+        },{
+            abbreviation:1,
+            logo:1
+        });
+
+        res.status(201).json(categoryData,organizations)
     }
     catch(err){
         res.status(400).json({"message": err})
