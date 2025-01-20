@@ -28,7 +28,7 @@ const HeroSection = ({ data, organization }) => {
             ?
             <div className="transform rotate-3 bg-purple-300 p-6 rounded-lg shadow-lg">
               <Calendar className="w-8 h-8 mb-2 text-purple-800" />
-              <p className="text-sm text-purple-900">Exam Date</p>
+              <p className="text-sm text-purple-900">Start Date</p>
               <p className="font-bold text-purple-900">{data.date_of_commencement}</p>
             </div>
             :
