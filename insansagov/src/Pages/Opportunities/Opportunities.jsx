@@ -117,9 +117,9 @@ const ModernExamDetailsPage = () => {
   const location = useLocation();
   // Parse the query parameters
   const queryParams = new URLSearchParams(location.search);
-  const organization = queryParams.get("organization"); // Access the 'name' parameter
   const examId = queryParams.get("id");
   const [data, setData] = useState();
+  const [organization, setOrganization] = useState();
   const existingSections = ['document_links']
 
   useEffect(() => {
@@ -128,16 +128,18 @@ const ModernExamDetailsPage = () => {
 
       if (response.status === 200) {
         console.log(response.data);
-        setData(response.data);
+        setData(response.data.exam);
+        setOrganization(response.data.organization.name);
       }
     }
 
     fetchEvent();
   }, [])
 
-  if (!data) {
+  if (!data && !organization) {
     return <div className="pt-20">Loading...</div>
   }
+
 
   return (
     <div className="min-h-screen bg-white text-gray-900 py-20 px-4">

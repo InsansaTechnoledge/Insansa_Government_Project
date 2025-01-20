@@ -5,13 +5,11 @@ export const getStateByName = async (req, res) => {
     try{
 
         const {name} = req.params;
-        console.log(name);
 
         const stateData = await Authority.findOne({
             name: name
         });
         
-        console.log(stateData);
 
         const organizationIds = stateData.organizations;
         

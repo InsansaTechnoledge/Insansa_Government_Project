@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {/* Categories Dropdown */}
             <div className="relative group">
-              <button className={`flex items-center space-x-1 ${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-purple-800 transition-colors`}>
+              <button className={`flex items-center space-x-1 ${isScrolled ? 'text-gray-900' : 'text-white'} ${!isScrolled ? 'hover:text-gray-300' : 'hover:text-purple-800'} transition-colors`}>
                 <span>Categories</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -121,7 +121,7 @@ const Navbar = () => {
 
             {/* States Dropdown */}
             <div className="relative group">
-              <button className={`flex items-center space-x-1 ${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-purple-800 transition-colors`}>
+              <button className={`flex items-center space-x-1 ${isScrolled ? 'text-gray-900' : 'text-white'} ${!isScrolled ? 'hover:text-gray-300' : 'hover:text-purple-800'} transition-colors`}>
                 <span>States</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -150,8 +150,8 @@ const Navbar = () => {
               </div>
             </div>
 
-            <a href="/#about" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-purple-800 transition-colors`}>About</a>
-            <a href="/#contact" className={`${isScrolled ? 'text-gray-900' : 'text-white'} hover:text-purple-800 transition-colors`}>Contact</a>
+            <a href="/#about" className={`${isScrolled ? 'text-gray-900' : 'text-white'} ${!isScrolled ? 'hover:text-gray-300' : 'hover:text-purple-800'} transition-colors`}>About</a>
+            <a href="/#contact" className={`${isScrolled ? 'text-gray-900' : 'text-white'} ${!isScrolled ? 'hover:text-gray-300' : 'hover:text-purple-800'} transition-colors`}>Contact</a>
 
             {/* Search Bar */}
             {location.pathname !== '/' && (

@@ -75,8 +75,8 @@ const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="relative max-w-2xl mx-auto">
-                            <Search searchHandler={searchHandler} />
-                            <div className="absolute right-7 top-1/2 -translate-y-1/2">
+                            <Search searchHandler={searchHandler}/>
+                            <div className="absolute right-7 top-1 translate-y-3">
                                 <ChevronRight className="w-5 h-5 text-gray-400" />
                             </div>
                         </div>

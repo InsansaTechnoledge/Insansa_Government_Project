@@ -1,4 +1,5 @@
 import Event from '../models/EventModel.js'
+import Organization from '../models/OrganizationModel.js';
 
 export const getLatestUpdates = async (req, res) => {
     try {
@@ -58,7 +59,6 @@ export const getLatestUpdates = async (req, res) => {
         ]);
         
 
-        console.log(exams);
         res.status(201).json(exams);
       }
       catch(err){
@@ -76,8 +76,12 @@ export const getEvent = async (req, res) => {
       _id:eventId}
     );
 
+    const organizationId = exam.organization_id;
+
+    const organization = await Organization.findOne({_id: organizationId});
+
     // Return the exam
-    res.status(200).json(exam);
+    res.status(200).json({exam,organization});
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
