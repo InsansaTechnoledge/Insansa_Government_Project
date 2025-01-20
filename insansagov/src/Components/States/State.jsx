@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState ,useEffect} from "react";
 import { MapPin, Search, ArrowRight, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
@@ -15,6 +15,7 @@ const StateComponent = () => {
     const [totalCount, setTotalCount] = useState(0);
 
     const navigate = useNavigate();
+    const [stateCount, setStateCount] = useState();
 
     useEffect(() => {
         if (suggestions) {
@@ -107,6 +108,18 @@ const StateComponent = () => {
             </div>
         );
     };
+    useEffect(() => {
+        const fetchStateCount = async () => {
+            try {
+                const response = await axios.get(`${API_BASE_URL}/api/state/count`);
+                setStateCount(response.data);
+            } catch (error) {
+                console.error('Error fetching state count:', error);
+            }
+        };
+
+        fetchStateCount();
+    },[]);
 
     return (
         <>
@@ -234,11 +247,15 @@ const StateComponent = () => {
                 <div className="bg-purple-900 text-white py-3 px-4 sm:px-8 overflow-x-auto">
                     <div className="flex justify-center space-x-6 sm:space-x-12 text-xs sm:text-sm whitespace-nowrap">
                         <div className="text-center">
-                            <div className="font-bold">15</div>
+                            <div className="font-bold">
+                                {stateCount?.states}
+                            </div>
                             <div className="text-purple-200 text-xs">States</div>
                         </div>
                         <div className="text-center">
-                            <div className="font-bold">100+</div>
+                            <div className="font-bold">
+                                {stateCount?.exams}
+                            </div>
                             <div className="text-purple-200 text-xs">Active Exams</div>
                         </div>
                         <div className="text-center">

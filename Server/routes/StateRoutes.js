@@ -1,8 +1,9 @@
 import express from 'express';
-import { getStateByName } from '../controller/StateController.js';
+import { getStateByName,getCountDetails} from '../controller/StateController.js';
 
 const router = express.Router();
 
-router.get('/:name', getStateByName);
+router.get('/name/:name', getStateByName);
+router.get('/count', getCountDetails);
 
 export default router;

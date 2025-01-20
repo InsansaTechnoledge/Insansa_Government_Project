@@ -1,5 +1,6 @@
 import Authority from '../models/AuthorityModel.js'
 import Organization from '../models/OrganizationModel.js'
+import Event from '../models/EventModel.js'
 
 export const getStateByName = async (req, res) => {
     try{
@@ -24,5 +25,20 @@ export const getStateByName = async (req, res) => {
     }
     catch(err){
         console.log(err);
+    }
+} ;
+
+export const getCountDetails=async (req,res)=>{
+    try{
+        const states=await Authority.countDocuments({type:"State_Government"});
+        const exams=await Event.countDocuments({event_type:"Exam"});
+
+        res.status(201).json({states:states,exams:exams});
+
+
+
+    }catch(err){
+        console.log("error occured: ",err);
+        res.status(400).json({message:"Error occured",states:10,exams:100});
     }
 }
