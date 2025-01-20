@@ -1,5 +1,6 @@
 import Event from '../models/EventModel.js'
 import Organization from '../models/OrganizationModel.js';
+import EventType from '../models/EventTypeModel.js';
 
 export const getLatestUpdates = async (req, res) => {
     try {
@@ -85,5 +86,15 @@ export const getEvent = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const lastupdated = async (req, res) => {
+  try{
+    const update=await EventType.findOne({type:"update"});
+    res.status(201).json({data:update.lastUpdated});
+  }catch(err){
+    console.log("error occured in fetching last updated date:",err);
+    res.status(400).json({message:"Error occured"});
   }
 };

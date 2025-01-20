@@ -258,7 +258,7 @@ const Navbar = () => {
                     onChange={(e) => {
                       inputChangeHandler(e.target.value);
                     }}
-                    autocomplete="off"
+                    autoComplete="off"
                     onFocus={() => searchQuery && setShowDropdown(true)} // Show dropdown if input exists
                     onBlur={() => setTimeout(() => setShowDropdown(false), 1000)} // Delay to allow click selectio
                   />

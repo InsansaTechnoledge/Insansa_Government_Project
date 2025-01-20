@@ -209,7 +209,7 @@ const StateComponent = () => {
                                         }}
                                         placeholder="Search your state..."
                                         className="bg-transparent border-none focus:outline-none text-white placeholder-purple-200 text-sm ml-2 w-48"
-                                        autocomplete="off"
+                                        autoComplete="off"
                                         value={input}
                                     />
                                 </div>

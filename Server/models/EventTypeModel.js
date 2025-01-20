@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const EventTypeSchema = new mongoose.Schema({
     type:{
         type: String,
-        enum:["Exam","AdmitCard","Result"],
+        enum:["Exam","AdmitCard","Result","update"],
     },
     events:[{
         type: mongoose.Schema.Types.ObjectId,
@@ -11,6 +11,7 @@ const EventTypeSchema = new mongoose.Schema({
     }],
     lastUpdated:{
         type: Date,
+        default: Date.now()
     }
 
 });
