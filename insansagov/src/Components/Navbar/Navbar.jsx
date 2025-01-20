@@ -97,7 +97,7 @@ const Navbar = () => {
     }
 
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/search`, { params: { q: query } });
+      const response = await axios.get(`${API_BASE_URL}/api/search/result`, { params: { q: query } });
       setSuggestions(response.data.suggestions);
       setShowDropdown(true);
     } catch (error) {

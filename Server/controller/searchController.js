@@ -45,7 +45,7 @@ export const search = async (req, res) => {
 
 };
 
-export const searchSuggestion = async (req,res) => {
+export const searchSuggestion = async (req, res) => {
   const userInput = req.query.q || '';
   if (!userInput) return res.json({ suggestions: [] });
 
@@ -64,6 +64,25 @@ export const searchSuggestion = async (req,res) => {
       "categories": [...results[2]]
     }
     // const suggestions = [...results[0], ...results[1], ...results[2]];
+    res.status(200).json({ suggestions });
+  } catch (error) {
+    console.error('Error fetching suggestions:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+
+export const searchState = async (req, res) => {
+  try {
+    const userInput = req.query.q || '';
+
+    if (!userInput) return res.json({ suggestions: [] });
+
+    const regex = new RegExp(`^${userInput}`, 'i'); // Matches input starting with userInput
+    const results = await Authority.find({ name: regex }).limit(5);
+
+    // Combine results from all collections
+    const suggestions = [...results];
+
     res.status(200).json({ suggestions });
   } catch (error) {
     console.error('Error fetching suggestions:', error);

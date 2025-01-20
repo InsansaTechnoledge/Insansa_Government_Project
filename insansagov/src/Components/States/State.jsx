@@ -1,10 +1,47 @@
 import React, { useState } from "react";
 import { MapPin, Search, ArrowRight, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { debounce } from "lodash";
+import axios from "axios";
+import API_BASE_URL from "../../Pages/config";
 
 const StateComponent = () => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
     const [activeRegion, setActiveRegion] = useState('North');
+
+    const [input, setInput] = useState("");
+    const [suggestions, setSuggestions] = useState([]);
+    const [showDropdown, setShowDropdown] = useState(false);
+    const navigate = useNavigate();
+
+    const inputChangeHandler = (val) => {
+        setInput(val);
+        fetchSuggestions(val);
+    }
+
+    // Handle suggestion selection
+    const selectSuggestion = (suggestion) => {
+        navigate(`/state/?name=${suggestion}`);
+        setInput(suggestion);
+        setShowDropdown(false);
+    };
+
+    const fetchSuggestions = debounce(async (query) => {
+        if (!query) {
+            setSuggestions([]);
+            setShowDropdown(false);
+            return;
+        }
+
+        try {
+            const response = await axios.get(`${API_BASE_URL}/api/search/state`, { params: { q: query } });
+            setSuggestions(response.data.suggestions);
+            console.log(response.data.suggestions);
+            setShowDropdown(true);
+        } catch (error) {
+            console.error('Error fetching suggestions:', error);
+        }
+    }, 300); // 1000ms debounce delay
 
     // Organized states by region
     const statesByRegion = {
@@ -69,15 +106,52 @@ const StateComponent = () => {
                             </div>
 
                             {/* Desktop Search */}
-                            <div className="hidden md:block">
+                            <div className="hidden md:flex flex-col">
                                 <div className="flex items-center bg-white/10 rounded-full p-2 backdrop-blur-sm">
                                     <Search className="h-4 w-4 text-purple-200 ml-2" />
                                     <input
                                         type="text"
+                                        onChange={(e) => {
+                                            inputChangeHandler(e.target.value);
+                                        }}
                                         placeholder="Search your state..."
                                         className="bg-transparent border-none focus:outline-none text-white placeholder-purple-200 text-sm ml-2 w-48"
+                                        autocomplete="off"
+                                        value={input}
                                     />
                                 </div>
+                                {/* Suggestions Dropdown */}
+                                {showDropdown && suggestions
+                                    ? (
+                                        <div className=' max-w-96 space-x-1'>
+                                            {
+                                                suggestions.length > 0
+                                                    ?
+                                                    (
+                                                        <div className='bg-white'>
+                                                            <ul className="z-40  bg-white border border-gray-300 rounded-lg shadow-md h-fit">
+                                                                {suggestions.map((item, index) => (
+                                                                    <li
+                                                                        key={index}
+                                                                        onClick={() => {
+                                                                            selectSuggestion(item.name)
+                                                                        }} // Select suggestion on click
+                                                                        className="text-black cursor-pointer px-4 py-2 hover:bg-blue-100"
+                                                                    >
+                                                                        {item.name}
+                                                                    </li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )
+                                                    :
+                                                    null
+                                            }
+
+                                        </div>
+                                    )
+                                    :
+                                    null}
                             </div>
                         </div>
 
@@ -157,33 +231,34 @@ const StateComponent = () => {
                 </div>
             </div>
         </>
-        
+
     );
 };
 
 const StateCard = ({ state }) => {
-    
+
     const navigate = useNavigate();
 
     return (
-    <div
-        onClick={() => navigate(`state?name=${encodeURI(state)}`)}
-        className="group bg-white p-3 sm:p-4 rounded-xl border border-purple-100 hover:border-purple-400 
+        <div
+            onClick={() => navigate(`state?name=${encodeURI(state)}`)}
+            className="group bg-white p-3 sm:p-4 rounded-xl border border-purple-100 hover:border-purple-400 
              shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative
              overflow-hidden active:bg-purple-50 touch-manipulation"
-    >
-        <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-purple-500" />
-                <p className="text-xs sm:text-sm font-medium text-gray-700">{state}</p>
-            </div>
-            <ArrowRight className="h-4 w-4 text-purple-400 transform translate-x-2 opacity-0 
+        >
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-purple-500" />
+                    <p className="text-xs sm:text-sm font-medium text-gray-700">{state}</p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-purple-400 transform translate-x-2 opacity-0 
                            group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-        </div>
+            </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 
                    to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-    </div>
-)};
+        </div>
+    )
+};
 
 export default StateComponent;
