@@ -44,6 +44,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(location.pathname === '/' ? false : true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [totalCount, setTotalCount] = useState(0);
 
 
   const [suggestions, setSuggestions] = useState([]);
@@ -71,6 +72,16 @@ const Navbar = () => {
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+      if (suggestions.organizations || suggestions.authorities || suggestions.categories) {
+        const total =
+          (suggestions.organizations?.length || 0) +
+          (suggestions.authorities?.length || 0) +
+          (suggestions.categories?.length || 0);
+        setTotalCount(total);
+      }
+    }, [suggestions]);
+
   const handleSearch = (suggestion) => {
     // e.preventDefault();
     navigate(`/search/?query=${encodeURI(suggestion)}`);
@@ -97,7 +108,7 @@ const Navbar = () => {
     }
 
     try {
-      const response = await axios.get(`${API_BASE_URL}/api/search/result`, { params: { q: query } });
+      const response = await axios.get(`${API_BASE_URL}/api/search/`, { params: { q: query } });
       setSuggestions(response.data.suggestions);
       setShowDropdown(true);
     } catch (error) {
@@ -105,8 +116,55 @@ const Navbar = () => {
     }
   }, 600); // 1000ms debounce delay
 
+  const SuggestionList = ({ title, items, itemKey }) => {
+    if (!items || items.length === 0) return null;
+
+    return (
+      <div className="mb-2">
+        <div className="flex items-center justify-between text-sm font-semibold text-gray-500 px-3 py-2 bg-gray-50 sticky top-0">
+          <span>{title}</span>
+          <span className="bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full text-xs">
+            {items.length}
+          </span>
+        </div>
+        <div className="custom-scrollbar">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => selectSuggestion(item[itemKey])}
+              className="px-4 py-2.5 hover:bg-blue-50 cursor-pointer text-gray-700 text-sm transition-colors duration-150"
+            >
+              {item[itemKey]}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+      <style>
+        {`
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 4px; /* Width of the scrollbar */
+          }
+
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #888; /* Scrollbar thumb color */
+            border-radius: 4px; /* Rounded corners */
+          }
+
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Thumb color on hover */
+          }
+
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent; /* Scrollbar track background */
+          }
+        `}
+      </style>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo and Brand */}
@@ -212,82 +270,51 @@ const Navbar = () => {
                     <Search className="w-5 h-5" />
                   </button>
                 </form>
-                {/* Suggestions Dropdown */}
-                {showDropdown && (suggestions.organizations || suggestions.categories || suggestions.authorities)
-                  ? (
-                    <div className=' absolute flex max-w-96 space-x-1'>
-                      {
-                        suggestions.organizations.length > 0
-                          ?
-                          (
-                            <div className='bg-white'>
-                              <div className='font-bold'>Organizations</div>
-                              <ul className="z-40 bg-white border border-t-gray-300 rounded-lg shadow-md h-fit">
-                                {suggestions.organizations.map((item, index) => (
-                                  <li
-                                    key={index}
-                                    onClick={() => selectSuggestion(item.abbreviation)} // Select suggestion on click
-                                    className="cursor-pointer px-4 py-2 hover:bg-blue-100"
-                                  >
-                                    {item.abbreviation}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )
-                          :
-                          null
-                      }
-                      {
-                        suggestions.authorities.length > 0
-                          ?
-                          (
-                            <div className='bg-white'>
-                              <div className='font-bold'>Authorities</div>
-                              <ul className="z-40  bg-white border border-gray-300 rounded-lg shadow-md h-fit">
-                                {suggestions.authorities && suggestions.authorities.map((item, index) => (
-                                  <li
-                                    key={index}
-                                    onClick={() => {
-                                      selectSuggestion(item.name)
-                                    }} // Select suggestion on click
-                                    className="cursor-pointer px-4 py-2 hover:bg-blue-100"
-                                  >
-                                    {item.name}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )
-                          :
-                          null
-                      }
-                      {
-                        suggestions.categories.length > 0
-                          ?
-                          (
-                            <div className=' bg-white'>
-                              <div className='font-bold'>Categories</div>
-                              <ul className="z-40 bg-white border border-gray-300 rounded-lg shadow-md h-fit">
-                                {suggestions.categories && suggestions.categories.map((item, index) => (
-                                  <li
-                                    key={index}
-                                    onClick={() => selectSuggestion(item.category)} // Select suggestion on click
-                                    className="cursor-pointer px-4 py-2 hover:bg-blue-100"
-                                  >
-                                    {item.category}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          )
-                          :
-                          null
-                      }
+                {showDropdown && (
+                  <div className="custom-scrollbar max-h-72 overflow-auto absolute top-full mt-1 bg-white border border-gray-200 rounded shadow-lg z-50">
+                    {totalCount > 0 && (
+                      <div className="px-3 py-2 bg-gray-100 border-b border-gray-200 text-xs text-gray-500">
+                        Found {totalCount} total matches
+                      </div>
+                    )}
+
+                    <div className="">
+                      {suggestions.organizations?.length > 0 && (
+                        <SuggestionList
+                          title="Organizations"
+                          items={suggestions.organizations}
+                          itemKey="abbreviation"
+                        />
+                      )}
+
+                      {suggestions.authorities?.length > 0 && (
+                        <SuggestionList
+                          title="Authorities"
+                          items={suggestions.authorities}
+                          itemKey="name"
+                        />
+                      )}
+
+                      {suggestions.categories?.length > 0 && (
+                        <SuggestionList
+                          title="Categories"
+                          items={suggestions.categories}
+                          itemKey="category"
+                        />
+                      )}
+
+                      {totalCount===0
+                        ?
+                        (
+                          <div className="px-4 py-3 text-sm text-gray-500">
+                            No suggestions found
+                          </div>
+                        )
+                        :
+                        null}
                     </div>
-                  )
-                  :
-                  null}
+                  </div>
+                )}
               </div>
             )}
 
