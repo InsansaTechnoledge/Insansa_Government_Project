@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown, Search, MapPin } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { debounce } from 'lodash';
+import axios from 'axios';
+import API_BASE_URL from '../../Pages/config';
 
 const categories = [
   { Nameid: 'Defense', name: 'Defense', icon: '🛡️' },
@@ -42,6 +45,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(location.pathname === '/' ? false : true);
   const [searchQuery, setSearchQuery] = useState("");
 
+
+  const [suggestions, setSuggestions] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+
   useEffect(() => {
     setIsScrolled(location.pathname === '/' ? false : true);
   }, [location.pathname]);
@@ -64,11 +71,39 @@ const Navbar = () => {
     };
   }, [location.pathname]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    navigate(`/search/?query=${encodeURI(searchQuery)}`);
+  const handleSearch = (suggestion) => {
+    // e.preventDefault();
+    navigate(`/search/?query=${encodeURI(suggestion)}`);
     setSearchQuery("");
   };
+
+  const inputChangeHandler = (val) => {
+    setSearchQuery(val);
+    fetchSuggestions(val);
+  }
+
+  // Handle suggestion selection
+  const selectSuggestion = (suggestion) => {
+    handleSearch(suggestion);
+    setSearchQuery(suggestion);
+    setShowDropdown(false);
+  };
+
+  const fetchSuggestions = debounce(async (query) => {
+    if (!query) {
+      setSuggestions([]);
+      setShowDropdown(false);
+      return;
+    }
+
+    try {
+      const response = await axios.get(`${API_BASE_URL}/api/search`, { params: { q: query } });
+      setSuggestions(response.data.suggestions);
+      setShowDropdown(true);
+    } catch (error) {
+      console.error('Error fetching suggestions:', error);
+    }
+  }, 600); // 1000ms debounce delay
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
@@ -155,22 +190,107 @@ const Navbar = () => {
 
             {/* Search Bar */}
             {location.pathname !== '/' && (
-              <form onSubmit={handleSearch} className="relative">
-                <input
-                  type="text"
-                  className={`px-3 py-2 text-sm rounded-md ${isScrolled ? 'bg-gray-100 text-gray-900' : 'bg-white text-black'} focus:outline-none focus:ring-2 focus:ring-purple-600`}
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-                <button
-                  type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-purple-600"
-                >
-                  <Search className="w-5 h-5" />
-                </button>
-              </form>
+              <div>
+                <form onSubmit={handleSearch} className="relative">
+                  <input
+                    type="text"
+                    className={`px-3 py-2 text-sm rounded-md ${isScrolled ? 'bg-gray-100 text-gray-900' : 'bg-white text-black'} focus:outline-none focus:ring-2 focus:ring-purple-600`}
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={(e) => {
+                      inputChangeHandler(e.target.value);
+                    }}
+                    autocomplete="off"
+                    onFocus={() => searchQuery && setShowDropdown(true)} // Show dropdown if input exists
+                    onBlur={() => setTimeout(() => setShowDropdown(false), 1000)} // Delay to allow click selectio
+                  />
+
+                  <button
+                    type="submit"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-purple-600"
+                  >
+                    <Search className="w-5 h-5" />
+                  </button>
+                </form>
+                {/* Suggestions Dropdown */}
+                {showDropdown && (suggestions.organizations || suggestions.categories || suggestions.authorities)
+                  ? (
+                    <div className=' absolute flex max-w-96 space-x-1'>
+                      {
+                        suggestions.organizations.length > 0
+                          ?
+                          (
+                            <div className='bg-white'>
+                              <div className='font-bold'>Organizations</div>
+                              <ul className="z-40 bg-white border border-t-gray-300 rounded-lg shadow-md h-fit">
+                                {suggestions.organizations.map((item, index) => (
+                                  <li
+                                    key={index}
+                                    onClick={() => selectSuggestion(item.abbreviation)} // Select suggestion on click
+                                    className="cursor-pointer px-4 py-2 hover:bg-blue-100"
+                                  >
+                                    {item.abbreviation}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )
+                          :
+                          null
+                      }
+                      {
+                        suggestions.authorities.length > 0
+                          ?
+                          (
+                            <div className='bg-white'>
+                              <div className='font-bold'>Authorities</div>
+                              <ul className="z-40  bg-white border border-gray-300 rounded-lg shadow-md h-fit">
+                                {suggestions.authorities && suggestions.authorities.map((item, index) => (
+                                  <li
+                                    key={index}
+                                    onClick={() => {
+                                      selectSuggestion(item.name)
+                                    }} // Select suggestion on click
+                                    className="cursor-pointer px-4 py-2 hover:bg-blue-100"
+                                  >
+                                    {item.name}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )
+                          :
+                          null
+                      }
+                      {
+                        suggestions.categories.length > 0
+                          ?
+                          (
+                            <div className=' bg-white'>
+                              <div className='font-bold'>Categories</div>
+                              <ul className="z-40 bg-white border border-gray-300 rounded-lg shadow-md h-fit">
+                                {suggestions.categories && suggestions.categories.map((item, index) => (
+                                  <li
+                                    key={index}
+                                    onClick={() => selectSuggestion(item.category)} // Select suggestion on click
+                                    className="cursor-pointer px-4 py-2 hover:bg-blue-100"
+                                  >
+                                    {item.category}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )
+                          :
+                          null
+                      }
+                    </div>
+                  )
+                  :
+                  null}
+              </div>
             )}
+
           </div>
 
           {/* Mobile menu button */}
