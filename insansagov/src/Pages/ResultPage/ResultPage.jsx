@@ -110,7 +110,7 @@ const Results = () => {
                                     </div>
                                     <div>
                                         <a
-                                            href={result.apply_links}
+                                            href={result.apply_link}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="block mt-4 px-4 py-2 bg-purple-800 text-white text-center rounded-md hover:bg-purple-900 transition-colors"

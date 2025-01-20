@@ -20,7 +20,7 @@ const EventSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    apply_links:{
+    apply_link:{
             type: String,
             required: true
     },

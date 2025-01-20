@@ -110,7 +110,7 @@ const AdmitCardLanding = () => {
 
                                     <div className="mt-auto">
                                         <a
-                                            href={card.apply_links}
+                                            href={card.apply_link}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="block w-full py-2 bg-purple-100 hover:bg-purple-200 text-purple-900 text-sm font-medium text-center rounded-lg transition-colors duration-200"

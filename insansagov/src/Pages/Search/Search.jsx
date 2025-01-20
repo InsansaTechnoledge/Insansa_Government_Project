@@ -48,21 +48,32 @@ const SearchPage = () => {
       {
         searchData && searchData.organizations && searchData.organizations.length>0
         ?
-        <RelatedAuthorities organizations={searchData.organizations}/>
+        (
+          <>
+            <h1 className='text-lg mb-3'>Organizations</h1>
+            <RelatedAuthorities organizations={searchData.organizations}/>
+          </>
+        )
         :
         null
       }
       {
         searchData && searchData.categories && searchData.categories.length>0
         ?
-        <RelatedCategories categories={searchData.categories}/>
+        <>
+          <h1 className='text-lg mb-3'>Categories</h1>
+          <RelatedCategories categories={searchData.categories}/>
+        </>
         :
         null
       }
       {
         searchData && searchData.authorities && searchData.authorities.length>0
         ?
-        <RelatedStates states={searchData.authorities}/>
+        <>
+          <h1 className='text-lg mb-3'>States</h1>
+          <RelatedStates states={searchData.authorities}/>
+        </>
         :
         null
       }

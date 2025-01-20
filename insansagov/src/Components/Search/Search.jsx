@@ -144,7 +144,7 @@ const Search = (props) => {
 
               {suggestions.authorities?.length > 0 && (
                 <SuggestionList
-                  title="Authorities"
+                  title="States"
                   items={suggestions.authorities}
                   itemKey="name"
                 />
