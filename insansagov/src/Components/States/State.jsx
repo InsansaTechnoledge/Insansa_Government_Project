@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
 import axios from "axios";
 import API_BASE_URL from "../../Pages/config";
+import moment from "moment";
 
 const StateComponent = () => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -14,6 +15,7 @@ const StateComponent = () => {
     const [showDropdown, setShowDropdown] = useState(false);
     const navigate = useNavigate();
     const [stateCount, setStateCount] = useState();
+    const [lastUpdated, setLastUpdated] = useState();
 
     const inputChangeHandler = (val) => {
         setInput(val);
@@ -73,6 +75,16 @@ const StateComponent = () => {
         ]
     };
 
+    function formatDate(date) {
+        if (!date) return '';
+    
+        if (typeof date === 'number') {
+          return moment(date).format('MMMM D, YYYY');
+        }
+    
+        return moment(date, 'YYYY-MM-DD').format('MMMM D, YYYY');
+      }
+
     useEffect(() => {
         const fetchStateCount = async () => {
             try {
@@ -83,7 +95,17 @@ const StateComponent = () => {
             }
         };
 
+        const fetchLastUpdated = async () => {
+            try {
+                const response = await axios.get(`${API_BASE_URL}/api/event/lastupdated`);
+                setLastUpdated(formatDate(response.data.data));
+            } catch (error) {
+                console.error('Error fetching last updated date:', error);
+            }
+        };
+
         fetchStateCount();
+        fetchLastUpdated();
     },[]);
 
     return (
@@ -243,7 +265,7 @@ const StateComponent = () => {
                     {/* Bottom Stats */}
                     <div className="mt-6 sm:mt-8 text-center">
                         <p className="text-xs sm:text-sm text-purple-600">
-                            Last updated: {new Date().toLocaleDateString()}
+                            Last updated: {lastUpdated}
                         </p>
                     </div>
                 </div>
