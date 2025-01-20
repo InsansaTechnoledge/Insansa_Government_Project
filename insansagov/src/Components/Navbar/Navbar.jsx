@@ -35,7 +35,6 @@ const states = [
   { id: 'Odisha', name: 'Odisha' },
   { id: 'Gujarat', name: 'Gujarat' },
   { id: 'Rajasthan', name: 'Rajasthan' },
-  { id: 'West_Bengal', name: 'West Bengal' },
 ];
 
 const Navbar = () => {
@@ -225,7 +224,7 @@ const Navbar = () => {
                     {states.map((state, index) => (
                       <div
                         key={index}
-                        onClick={() => navigate(`/state?name=${encodeURI(state.id)}`)}
+                        onClick={() => navigate(`/state?name=${encodeURI(state.name)}`)}
                         className="flex items-center p-3 rounded-lg hover:bg-purple-50 transition-all duration-150 group cursor-pointer"
                       >
                         <div className="h-10 w-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-purple-200 transition-colors">
