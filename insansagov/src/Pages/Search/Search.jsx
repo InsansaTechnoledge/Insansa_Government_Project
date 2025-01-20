@@ -22,7 +22,7 @@ const SearchPage = () => {
     const fetchSearch = async () => {
       const queryData = queryParams.get("query");
       setQuery(queryData);
-      const response = await axios.get(`${API_BASE_URL}/api/search/${queryData}`);
+      const response = await axios.get(`${API_BASE_URL}/api/search/result/${queryData}`);
 
       if(response.status===200){
         console.log(response.data);

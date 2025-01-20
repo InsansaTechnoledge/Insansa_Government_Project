@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapPin, Search, ArrowRight, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
@@ -12,7 +12,17 @@ const StateComponent = () => {
     const [input, setInput] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [showDropdown, setShowDropdown] = useState(false);
+    const [totalCount, setTotalCount] = useState(0);
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (suggestions) {
+            const total = suggestions.length;
+
+            setTotalCount(total);
+        }
+    }, [suggestions]);
 
     const inputChangeHandler = (val) => {
         setInput(val);
@@ -72,8 +82,56 @@ const StateComponent = () => {
         ]
     };
 
+    const SuggestionList = ({ title, items, itemKey }) => {
+        if (!items || items.length === 0) return null;
+
+        return (
+            <div className="mb-2">
+                <div className="flex items-center justify-between text-sm font-semibold text-gray-500 px-3 py-2 bg-gray-50 sticky top-0">
+                    <span>{title}</span>
+                    <span className="bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full text-xs">
+                        {items.length}
+                    </span>
+                </div>
+                <div className="custom-scrollbar">
+                    {items && items.map((item, index) => (
+                        <div
+                            key={index}
+                            onClick={() => selectSuggestion(item[itemKey])}
+                            className="px-4 py-2.5 hover:bg-blue-50 cursor-pointer text-gray-700 text-sm transition-colors duration-150"
+                        >
+                            {item[itemKey]}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
+
     return (
         <>
+            <style>
+                {`
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 4px; /* Width of the scrollbar */
+          }
+
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #888; /* Scrollbar thumb color */
+            border-radius: 4px; /* Rounded corners */
+          }
+
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Thumb color on hover */
+          }
+
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent; /* Scrollbar track background */
+          }
+        `}
+            </style>
+
+
             <div className="mt-8 mb-8">
 
 
@@ -121,37 +179,37 @@ const StateComponent = () => {
                                     />
                                 </div>
                                 {/* Suggestions Dropdown */}
-                                {showDropdown && suggestions
-                                    ? (
-                                        <div className=' max-w-96 space-x-1'>
-                                            {
-                                                suggestions.length > 0
-                                                    ?
-                                                    (
-                                                        <div className='bg-white'>
-                                                            <ul className="z-40  bg-white border border-gray-300 rounded-lg shadow-md h-fit">
-                                                                {suggestions.map((item, index) => (
-                                                                    <li
-                                                                        key={index}
-                                                                        onClick={() => {
-                                                                            selectSuggestion(item.name)
-                                                                        }} // Select suggestion on click
-                                                                        className="text-black cursor-pointer px-4 py-2 hover:bg-blue-100"
-                                                                    >
-                                                                        {item.name}
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    )
-                                                    :
-                                                    null
-                                            }
+                                <div className="relative">
+                                {showDropdown && suggestions && (
+                                    <div className="custom-scrollbar max-h-72 w-full overflow-auto absolute mt-1 bg-white border border-gray-200 rounded shadow-lg z-50">
 
+
+                                        <div className="">
+                                            {suggestions.length > 0
+                                                ?
+                                                (
+                                                    <SuggestionList
+                                                        title="States"
+                                                        items={suggestions}
+                                                        itemKey="name"
+                                                    />
+                                                )
+                                                :
+                                                null}
+
+                                            {totalCount === 0
+                                                ?
+                                                (
+                                                    <div className="px-4 py-3 text-sm text-gray-500">
+                                                        No suggestions found
+                                                    </div>
+                                                )
+                                                :
+                                                null}
                                         </div>
-                                    )
-                                    :
-                                    null}
+                                    </div>
+                                )}
+                                </div>
                             </div>
                         </div>
 
