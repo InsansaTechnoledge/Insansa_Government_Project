@@ -13,6 +13,7 @@ import AdmitCard from './Pages/AdmitCard/AdmitCard'
 import Results from './Pages/ResultPage/ResultPage'
 import TrendingPage from './Pages/Trending/Trending'
 import StatePage from './Pages/State/StatePage'
+import PrivacyPolicy from './Pages/PrivacyPolicy/Privacy'
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -161,6 +162,7 @@ const SecondRoutes = () => {
                 <Route path='/results' element={<Results results={dummyResults}/>} />
                 <Route path='/trending' element={<TrendingPage trendingItems={trendingItems} />} />
                 <Route path='/state' element={<StatePage />} />
+                <Route path='/privacy-policy' element={<PrivacyPolicy />} />
 
 
 
