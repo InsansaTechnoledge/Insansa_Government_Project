@@ -175,44 +175,69 @@ const ChatBot = () => {
                 var responseText = ''
                 var responseSet = []
                 var responseType = ''
-                console.log(botResponse);
+                console.log(response.data);
                 if (botResponse.exam_details) {
+                    if(!botResponse.exam_details.start_date){
+                        responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.url, botResponse.exam_details.name];
+                        responseType = 'no-date'
 
-                    responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url, botResponse.exam_details.name]
-                    responseType = 'all'
+                        // responseText = `
+                        // - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
+                        // - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>    
+                        // `
+                    }
+                    else if(!botResponse.exam_details.apply_link){
+                        responseSet = [botResponse.exam_details.url, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.name];
+                        responseType = 'no-apply-link'
 
-                    responseText = `
-            - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
-            - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
-            - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
-            - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
-           
-            `;
+                        // responseText = `
+                        //     - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
+                        //     - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
+                        //     - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
+                        // `
+                    }
+                    else{
+
+                        responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url, botResponse.exam_details.name]
+                        responseType = 'all'
+                        
+                    //     responseText = `            
+                    // - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
+                    // - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
+                    // - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
+                    // - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
+                    
+                    // `;
+                    }
                 }
                 else if (botResponse.start_date) {
                     responseType = 'start-date'
-                    responseSet = [botResponse.start_date];
+                    responseSet = [botResponse.start_date.start_date, botResponse.start_date.name];
 
-                    responseText = `
-            - <b>Start Date:</b> ${botResponse.start_date}<br>
-            `;
+            //         responseText = `
+            // - <b>Start Date:</b> ${botResponse.start_date}<br>
+            // `;
                 }
                 else if (botResponse.end_date) {
                     responseType = 'end-date'
-                    responseSet = [botResponse.end_date];
+                    responseSet = [botResponse.end_date.end_date, botResponse.end_date.name];
 
-                    responseText = `
-            - <b>End Date:</b> ${botResponse.end_date}<br>
-            `;
+            //         responseText = `
+            // - <b>End Date:</b> ${botResponse.end_date}<br>
+            // `;
+                }
+                else if(botResponse.date){
+                    responseType = 'date'
+                    responseSet = [botResponse.date.start_date,botResponse.date.end_date, botResponse.date.name];
                 }
                 else if (botResponse.link_details) {
                     responseType = 'link'
-                    responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url];
+                    responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url, botResponse.link_details.name];
 
-                    responseText = `
-            - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
-            - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
-            `;
+            //         responseText = `
+            // - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
+            // - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
+            // `;
                 }
                 else {
                     responseText = `${botResponse.response}`
@@ -440,9 +465,81 @@ const ChatBot = () => {
                                             </button>
                                         </div>
                                     )}
+                                    {
+                                        message.type === "date" && (
+                                            <div className="space-y-2 space-x-2">
+                                            <p className="text-sm font-medium">Details for {message.set[2]}</p>
+                                            <button onClick={() => (addMessage("start-date", message.set[0]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                Start Date
+                                            </button>
+                                            <button onClick={() => (addMessage("end-date", message.set[1]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                End Date
+                                            </button>
+                                        </div>
+                                        )
+                                    }
+                                    {
+                                        message.type === "no-date" && (
+                                            <div className="space-y-2 space-x-2">
+                                            <p className="text-sm font-medium">Details for {message.set[2]}</p>
+                                            <button
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.open(url, "_blank");
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                Apply Link
+                                            </button>
+                                            <button
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[1];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                More Info
+                                            </button>
+                                        </div>
+                                        )
+                                    }
+                                    {
+                                        message.type === "no-apply-link" && (
+                                            <div className="space-y-2 space-x-2">
+                                            <p className="text-sm font-medium">Details for {message.set[3]}</p>
+                                            <button onClick={() => (addMessage("start-date", message.set[1]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                Start Date
+                                            </button>
+                                            <button onClick={() => (addMessage("end-date", message.set[2]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                End Date
+                                            </button>
+                                            <button
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                More Info
+                                            </button>
+                                        </div>
+                                        )
+                                    }
                                     {message.type === "start-date" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Start date for</p>
+                                            <p className="text-sm font-medium">Start date for {message.set[1]}</p>
                                             <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
                                                 {message.set[0]}
                                             </button>
@@ -450,7 +547,7 @@ const ChatBot = () => {
                                     )}
                                     {message.type === "end-date" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">End date for</p>
+                                            <p className="text-sm font-medium">End date for {message.set[1]}</p>
                                             <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
                                                 {message.set[0]}
                                             </button>
@@ -458,7 +555,7 @@ const ChatBot = () => {
                                     )}
                                     {message.type === "link" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Links for</p>
+                                            <p className="text-sm font-medium">Links for {message.set[2]}</p>
                                             <button
                                                 className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
