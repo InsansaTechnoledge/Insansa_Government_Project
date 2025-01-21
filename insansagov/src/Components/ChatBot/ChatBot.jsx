@@ -5,7 +5,7 @@ import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import parse from 'html-react-parser';
 import { useNavigate } from 'react-router-dom'
-import { DotLoader } from 'react-spinners';
+import { DotLoader, SyncLoader } from 'react-spinners';
 
 const ChatBot = () => {
 
@@ -605,13 +605,10 @@ const ChatBot = () => {
                             </div>
                         ))}
 
-                    {
-                        isChatBotLoading
-                        ?
-                        <DotLoader size={30} color={'#8854EB'} loading={true} />
-                        :
-                        null
-                    }
+                    
+                        <DotLoader speedMultiplier={1.6} size={25} color={'#8854EB'} loading={isChatBotLoading} />
+                        {/* <SyncLoader size={6} color={'#8854EB'} loading={true} /> */}
+                        
                     </div>
 
                     <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">
