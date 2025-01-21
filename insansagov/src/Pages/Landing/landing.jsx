@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { Loader2 } from 'lucide-react';
 import curvLine from '../../assets/Landing/curvLine.svg';
 
-// Error Boundary Component
+// Error Boundary for graceful error handling
 class ErrorBoundary extends React.Component {
   state = { hasError: false, error: null };
 
@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// Loading Skeleton Components
+// Skeleton for loading placeholders
 const SkeletonPulse = () => (
   <div className="animate-pulse bg-gray-200 rounded-lg h-full w-full" />
 );
@@ -40,7 +40,7 @@ const ComponentLoader = ({ height = "h-64" }) => (
   </div>
 );
 
-// Lazy loaded components with specific loading states
+// Lazy loading components with specific loading states
 const Hero = React.lazy(() => import('../../Components/Hero/Hero'));
 const LatestUpdates = React.lazy(() => import('../../Components/Updates/LatestUpdates'));
 const TopAuthorities = React.lazy(() => import('../../Components/Authority/TopAuthorities'));
@@ -52,13 +52,12 @@ const AdmitCardDashboard = React.lazy(() => import('../../Components/AdmitCards/
 const ResultsDashboard = React.lazy(() => import('../../Components/ResultComponent/Results'));
 const StateComponent = React.lazy(() => import('../../Components/States/State'));
 
-// Enhanced LazyRender with loading states and error boundary
+// LazyRender component for deferred loading
 const LazyRender = ({ children, height = "h-64", priority = false }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
-    // Preload high priority components
-    rootMargin: priority ? '200px' : '50px',
+    rootMargin: priority ? '200px' : '50px', // Preload margin based on priority
   });
 
   return (
@@ -106,13 +105,13 @@ const Landing = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero section loads immediately with high priority */}
+      {/* Hero section - High Priority */}
       <LazyRender height="h-screen" priority={true}>
         <Hero />
       </LazyRender>
 
       <div className="px-4 md:px-16 lg:px-64 space-y-16">
-        {/* Latest updates and state components load next */}
+        {/* Updates and State Components */}
         <LazyRender height="h-96">
           <LatestUpdates />
         </LazyRender>
@@ -121,7 +120,7 @@ const Landing = () => {
           <StateComponent />
         </LazyRender>
 
-        {/* Grid layout for authorities and categories */}
+        {/* Authorities and Categories */}
         <div className="grid md:grid-cols-1 gap-8">
           <LazyRender height="h-72">
             <TopAuthorities />
@@ -132,7 +131,7 @@ const Landing = () => {
           </LazyRender>
         </div>
 
-        {/* Dashboard components */}
+        {/* Dashboards */}
         <LazyRender height="h-96">
           <AdmitCardDashboard admitCards={admitCards} />
         </LazyRender>
@@ -140,10 +139,9 @@ const Landing = () => {
         <LazyRender height="h-96">
           <ResultsDashboard results={dummyResults} />
         </LazyRender>
-
-
       </div>
 
+      {/* Decorative Line */}
       <img
         className="w-full mb-20 mt-20"
         src={curvLine}
@@ -151,30 +149,25 @@ const Landing = () => {
         loading="lazy"
       />
 
+      {/* Feature Band */}
       <div id="about">
         <LazyRender height="h-48">
           <FeatureBand />
         </LazyRender>
       </div>
 
-
+      {/* Features and Contact */}
       <div className="px-4 md:px-16 lg:px-64 space-y-16">
-        
         <LazyRender height="h-96">
           <FeaturePage />
         </LazyRender>
 
-        {/* Contact section */}
         <div id="contact">
           <LazyRender height="h-80">
             <Contact />
           </LazyRender>
         </div>
       </div>
-
-
-
-
     </div>
   );
 };
