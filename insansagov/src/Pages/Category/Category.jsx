@@ -6,6 +6,7 @@ import API_BASE_URL from '../config'
 import axios from 'axios'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
 import BackButton from '../../Components/BackButton/BackButton'
+import { RingLoader } from 'react-spinners'
 
 
 
@@ -38,7 +39,11 @@ const Category = () => {
         setIsExpanded(!isExpanded);
     };
 
-    
+if(!organizations){
+    return <div className='w-full h-screen flex justify-center'>
+            <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto'/>
+        </div>
+}
 
   return (
    

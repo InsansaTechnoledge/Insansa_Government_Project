@@ -5,6 +5,7 @@ import API_BASE_URL from '../config';
 import axios from 'axios';
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities';
 import BackButton from '../../Components/BackButton/BackButton';
+import { RingLoader } from 'react-spinners';
 
 const StatePage = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -37,11 +38,17 @@ const StatePage = () => {
         setIsExpanded(!isExpanded);
     };
 
+    if(!organizations){
+        return <div className='w-full h-screen flex justify-center'>
+                <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto'/>
+            </div>
+    }
+
     return (
         <div className='pt-28'>
             <BackButton/>
             <div className='flex flex-col justify-center mb-20'>
-                <img src={`data:image/png;base64,${logo}`} className='w-64 self-center' alt={`${state} logo`} />
+                <img src={`data:image/png;base64,${logo}`} className='w-44 self-center' alt={`${state} logo`} />
                 <h1 className='text-3xl self-center font-bold'>{state}</h1>
             </div>
 

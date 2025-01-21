@@ -9,6 +9,7 @@ import axios from 'axios';
 import API_BASE_URL from '../config';
 import AuthorityLatestUpdates from '../../Components/Authority/AuthorityLatesUpdate';
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities';
+import { GridLoader, PacmanLoader, RingLoader } from 'react-spinners';
 
 const cards = [
     { title: 'Exam Schedule 2025', authority: 'Education Board', latestUpdate: '1/1/2025' },
@@ -31,94 +32,105 @@ const Authority = () => {
     const [organization, setOrganization] = useState();
     const [latestUpdates, setLatestUpdates] = useState();
     const location = useLocation();
-    const [events,setEvents] = useState();
+    const [events, setEvents] = useState();
     const [filteredEvents, setFilteredEvents] = useState();
     const [relatedOrganizations, setRelatedOrganizations] = useState();
 
     // Parse the query parameters
     const queryParams = new URLSearchParams(location.search);
     const name = queryParams.get("name"); // Access the 'name' parameter
-    
+
     useEffect(() => {
-        
+
         const fetchOrganization = async () => {
-          const response = await axios.get(`${API_BASE_URL}/api/organization/${name}`);
-          
-          if(response.status===201){
-            console.log("🙂🙂",response.data);
-            setOrganization(response.data.organization);
-            setRelatedOrganizations(response.data.relatedOrganizations);
+            const response = await axios.get(`${API_BASE_URL}/api/organization/${name}`);
 
-            const sortedUpdates = response.data.events.sort((a, b) => {
-                const dateA = new Date(a.notificationDate);
-                const dateB = new Date(b.notificationDate);
-            
-                // Check if the dates are valid, in case some of the dates are 'Not specified'
-                if (isNaN(dateA) || isNaN(dateB)) {
-                  return 0; // Leave invalid dates in their original order
-                }
-            
-                return dateB - dateA; // Descending order
-              });
+            if (response.status === 201) {
+                setOrganization(response.data.organization);
+                setRelatedOrganizations(response.data.relatedOrganizations);
 
-              setLatestUpdates(sortedUpdates);
-              setEvents(sortedUpdates);
-              setFilteredEvents(sortedUpdates.slice(0,6));
-              
-            
+                const sortedUpdates = response.data.events.sort((a, b) => {
+                    const dateA = new Date(a.notificationDate);
+                    const dateB = new Date(b.notificationDate);
 
+                    // Check if the dates are valid, in case some of the dates are 'Not specified'
+                    if (isNaN(dateA) || isNaN(dateB)) {
+                        return 0; // Leave invalid dates in their original order
+                    }
+
+                    return dateB - dateA; // Descending order
+                });
+
+                setLatestUpdates(sortedUpdates);
+                setEvents(sortedUpdates);
+                setFilteredEvents(sortedUpdates.slice(0, 6));
+
+
+
+            }
         }
-        }
-    
+
         fetchOrganization();
-      }, [location])
+    }, [location])
 
-        
+
 
     const handleToggle = () => {
         setIsExpanded(!isExpanded);
-        if(!isExpanded){
+        if (!isExpanded) {
             setFilteredEvents(events);
         }
-        else{
-            setFilteredEvents(events.slice(0,6));
+        else {
+            setFilteredEvents(events.slice(0, 6));
         }
     };
 
     const visibleCards = isExpanded ? cards : cards.slice(0, 6);
 
-    if(!organization){
-        return <div className='pt-20'>Loading...</div>
+    if (!organization) {
+        return <div className='w-full h-screen flex justify-center'>
+            <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto'/>
+        </div>
     }
 
     return (
         <div className='pt-28'>
             <div className='flex flex-col justify-center mb-28'>
-                <img src={`data:image/png;base64,${organization.logo}`} className='w-28 self-center mb-5' />
+                <img src={`data:image/png;base64,${organization.logo}`} className='w-32 self-center mb-5' />
                 <h1 className='text-3xl self-center font-bold mb-5'>{organization.name}</h1>
                 <div className='self-center text-center'>{organization.description}</div>
             </div>
-            <AuthorityLatestUpdates latestUpdates={latestUpdates} name={organization.abbreviation}/>
-            <div className='font-bold text-2xl flex items-center mb-5'>Events under {organization.name}</div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-7 mb-10'>
-                {filteredEvents && filteredEvents.map((item, index) => (
-                    <OpportunityCarouselCard index={index} item={item} authority={organization.abbreviation} />
-                ))}
-            </div>
+
             {
-                events.length > 6
-                ?
-                <div className='flex justify-center mb-20'>
-                    <ViewMoreButton content={isExpanded ? "view less ▲" : "View More ▼"}
-                        onClick={handleToggle} />
-                </div>
-                :
-                null    
-        }
+                filteredEvents.length > 0
+                    ?
+                    <>
+                        <AuthorityLatestUpdates latestUpdates={latestUpdates} name={organization.abbreviation} />
+                        <div className='font-bold text-2xl flex items-center mb-5'>Events under {organization.name}</div>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-7 mb-10'>
+                            {filteredEvents && filteredEvents.map((item, index) => (
+                                <OpportunityCarouselCard index={index} item={item} authority={organization.abbreviation} />
+                            ))}
+                        </div>
+                        {
+                            events.length > 6
+                                ?
+                                <div className='flex justify-center mb-20'>
+                                    <ViewMoreButton content={isExpanded ? "view less ▲" : "View More ▼"}
+                                        onClick={handleToggle} />
+                                </div>
+                                :
+                                null
+                        }
+                    </>
+                    :
+                    <div className='text-center mb-2'>No active events right now :) </div>
+            }
+
             <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
                 Related Authorities
             </h1>
-            <RelatedAuthorities organizations={relatedOrganizations}/>
+            <RelatedAuthorities organizations={relatedOrganizations} />
             {/* <TopAuthorities titleHidden={true} /> */}
         </div>
 

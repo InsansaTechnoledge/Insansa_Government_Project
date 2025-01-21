@@ -16,7 +16,7 @@ const categories = [
   { Nameid: 'Railways', name: 'Railways', icon: '🚂' },
   { Nameid: 'Public Services', name: 'Public Services', icon: '🏢' },
   { Nameid: 'Technical', name: 'Technical', icon: '💻' },
-  { Nameid: 'HigherEducation specialized exams', name: 'Higher Education & Specialized Exams', icon: '📚' },
+  { Nameid: 'Higher Education Specialized Exams', name: 'Higher Education & Specialized Exams', icon: '📚' },
   { Nameid: 'Agriculture', name: 'Agrculture', icon: '🌾' },
 ];
 

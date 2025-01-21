@@ -24,6 +24,7 @@ import PositionSection from "../../Components/OpportunityPageComponents/Position
 import SalarySection from "../../Components/OpportunityPageComponents/SalarySection";
 import SelectionSection from "../../Components/OpportunityPageComponents/SelectionProcessSection";
 import AdditionalDetailsSection from "../../Components/OpportunityPageComponents/AdditionalDetailsSection";
+import { RingLoader } from "react-spinners";
 
 const ModernExamDetailsPage = () => {
   // const data = {
@@ -137,7 +138,9 @@ const ModernExamDetailsPage = () => {
   }, [])
 
   if (!data && !organization) {
-    return <div className="pt-20">Loading...</div>
+    return <div className='w-full h-screen flex justify-center'>
+      <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto' />
+    </div>
   }
 
 
@@ -154,81 +157,81 @@ const ModernExamDetailsPage = () => {
         {/* Quick Apply Button */}
         <QuickApplyButton data={data} />
 
-          {<VacanciesSection data={data} existingSections={existingSections}/>}
+        {<VacanciesSection data={data} existingSections={existingSections} />}
         <div className="flex w-full flex-wrap gap-10">
 
           {/* Vacancies Section */}
-          
+
 
           {/* Eligibility Grid */}
 
           {/* Nationality */}
-          {<NationalitySection data={data} existingSections={existingSections}/>}
-          
+          {<NationalitySection data={data} existingSections={existingSections} />}
+
 
           {/* Age Limits */}
           {
-            <AgeLimitSection data={data} existingSections={existingSections}/>
+            <AgeLimitSection data={data} existingSections={existingSections} />
           }
 
           {/* Education & Fee Details */}
           {/* Education */}
           {
-           <EducationSection data={data} existingSections={existingSections}/>
+            <EducationSection data={data} existingSections={existingSections} />
           }
-          <LocationSection data={data} existingSections={existingSections}/>
-          <PositionSection data={data} existingSections={existingSections}/>
-          <SalarySection data={data} existingSections={existingSections}/>
-          <SelectionSection data={data} existingSections={existingSections}/>
+          <LocationSection data={data} existingSections={existingSections} />
+          <PositionSection data={data} existingSections={existingSections} />
+          <SalarySection data={data} existingSections={existingSections} />
+          <SelectionSection data={data} existingSections={existingSections} />
 
           {/* Fee Details */}
-          { <FeeDetailsSection data={data} existingSections={existingSections}/>}
-          
+          {<FeeDetailsSection data={data} existingSections={existingSections} />}
+
 
           {/* Important Dates and Exam Centers */}
           {/* Important Dates */}
           {
-            <ImportantDatesSection data={data} existingSections={existingSections}/>
+            <ImportantDatesSection data={data} existingSections={existingSections} />
           }
-          
+
 
           {/* Exam Centers */}
-          {<ExamCentresSection data={data} existingSections={existingSections}/>}
-          
+          {<ExamCentresSection data={data} existingSections={existingSections} />}
+
 
           {/* Scheme of Examination */}
           {
             data.details.scheme_of_exam
-            ?
-            <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
-              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <BookOpen className="w-6 h-6 text-purple-500" />
-                Scheme of Examination
-              </h2>
-              <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
-                {/* IMA, INA, Air Force */}
-                {<SchemeOfExamSection1 data={data} existingSections={existingSections}/>}
-                
+              ?
+              <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
+                <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                  <BookOpen className="w-6 h-6 text-purple-500" />
+                  Scheme of Examination
+                </h2>
+                <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
+                  {/* IMA, INA, Air Force */}
+                  {<SchemeOfExamSection1 data={data} existingSections={existingSections} />}
 
 
-                {/* OTA */}
-                {
-                  <SchemeOfExamSection2 data={data} existingSections={existingSections}/>
-                }
+
+                  {/* OTA */}
+                  {
+                    <SchemeOfExamSection2 data={data} existingSections={existingSections} />
+                  }
                 </div>
-            </div>
-            :
-            null
+              </div>
+              :
+              null
           }
 
           {/* Contact Details */}
           {
-            <ContactDetailsSection data={data} existingSections={existingSections}/>
+            <ContactDetailsSection data={data} existingSections={existingSections} />
           }
           {/* Important Links */}
-          <AdditionalDetailsSection data={data.details} existingSections={existingSections}/>
+          <AdditionalDetailsSection data={data.details} existingSections={existingSections} />
           {<ImportantLinksSection data={data} />}
-          
+
         </div>
       </div>
     </div>
