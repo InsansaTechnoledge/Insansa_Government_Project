@@ -41,7 +41,7 @@ const StatePage = () => {
         <div className='pt-28'>
             <BackButton/>
             <div className='flex flex-col justify-center mb-20'>
-                <img src={`data:image/png;base64,${logo}`} className='w-28 self-center mb-5' alt={`${state} logo`} />
+                <img src={`data:image/png;base64,${logo}`} className='w-64 self-center' alt={`${state} logo`} />
                 <h1 className='text-3xl self-center font-bold'>{state}</h1>
             </div>
 

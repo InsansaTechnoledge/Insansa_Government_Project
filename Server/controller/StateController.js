@@ -42,3 +42,18 @@ export const getCountDetails=async (req,res)=>{
         res.status(400).json({message:"Error occured",states:10,exams:100});
     }
 }
+
+export const getStateList = async (req,res) => {
+    try{
+
+        const states = await Authority.find({type:"State_Government"});
+        
+        const stateList = states.map(state => state.name);
+        
+        res.status(200).json(stateList);
+    }
+    catch(err){
+        console.log(err);
+        res.status(400).json("List not available");
+    }
+}

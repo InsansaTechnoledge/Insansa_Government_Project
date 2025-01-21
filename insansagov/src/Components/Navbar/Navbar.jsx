@@ -8,34 +8,37 @@ import API_BASE_URL from '../../Pages/config';
 const categories = [
   { Nameid: 'Defense', name: 'Defense', icon: '🛡️' },
   { Nameid: 'Engineering', name: 'Engineering', icon: '⚙️' },
-  { Nameid: 'Banking_Finance', name: 'Banking & Finance', icon: '💰' },
-  { Nameid: 'Civil_Services', name: 'Civil Services', icon: '🏛️' },
+  { Nameid: 'Banking Finance', name: 'Banking & Finance', icon: '💰' },
+  { Nameid: 'Civil Services', name: 'Civil Services', icon: '🏛️' },
   { Nameid: 'Medical', name: 'Medical', icon: '⚕️' },
-  { Nameid: 'Statistical-Economics_Services', name: 'Statistical & Economics Services', icon: '📊' },
-  { Nameid: 'Academics-Research', name: 'Academics & Research', icon: '🎓' },
+  { Nameid: 'Statistical Economics Services', name: 'Statistical & Economics Services', icon: '📊' },
+  { Nameid: 'Academics Research', name: 'Academics & Research', icon: '🎓' },
   { Nameid: 'Railways', name: 'Railways', icon: '🚂' },
-  { Nameid: 'Public_Services', name: 'Public Services', icon: '🏢' },
+  { Nameid: 'Public Services', name: 'Public Services', icon: '🏢' },
   { Nameid: 'Technical', name: 'Technical', icon: '💻' },
-  { Nameid: 'HigherEducation-specialized_exams', name: 'Higher Education & Specialized Exams', icon: '📚' },
+  { Nameid: 'HigherEducation specialized exams', name: 'Higher Education & Specialized Exams', icon: '📚' },
+  { Nameid: 'Agriculture', name: 'Agrculture', icon: '🌾' },
 ];
 
-const states = [
-  { id: 'Haryana', name: 'Haryana' },
-  { id: 'Himachal_Pradesh', name: 'Himachal Pradesh' },
-  { id: 'Punjab', name: 'Punjab' },
-  { id: 'Uttar_Pradesh', name: 'Uttar Pradesh' },
-  { id: 'Uttarakhand', name: 'Uttarakhand' },
-  { id: 'Andhra_Pradesh', name: 'Andhra Pradesh' },
-  { id: 'Karnataka', name: 'Karnataka' },
-  { id: 'Kerala', name: 'Kerala' },
-  { id: 'Tamil_Nadu', name: 'Tamil Nadu' },
-  { id: 'Madhya_Pradesh', name: 'Madhya Pradesh' },
-  { id: 'Maharashtra', name: 'Maharashtra' },
-  { id: 'Bihar', name: 'Bihar' },
-  { id: 'Odisha', name: 'Odisha' },
-  { id: 'Gujarat', name: 'Gujarat' },
-  { id: 'Rajasthan', name: 'Rajasthan' },
-];
+
+
+// const states = [
+//   { id: 'Haryana', name: 'Haryana' },
+//   { id: 'Himachal_Pradesh', name: 'Himachal Pradesh' },
+//   { id: 'Punjab', name: 'Punjab' },
+//   { id: 'Uttar_Pradesh', name: 'Uttar Pradesh' },
+//   { id: 'Uttarakhand', name: 'Uttarakhand' },
+//   { id: 'Andhra_Pradesh', name: 'Andhra Pradesh' },
+//   { id: 'Karnataka', name: 'Karnataka' },
+//   { id: 'Kerala', name: 'Kerala' },
+//   { id: 'Tamil_Nadu', name: 'Tamil Nadu' },
+//   { id: 'Madhya_Pradesh', name: 'Madhya Pradesh' },
+//   { id: 'Maharashtra', name: 'Maharashtra' },
+//   { id: 'Bihar', name: 'Bihar' },
+//   { id: 'Odisha', name: 'Odisha' },
+//   { id: 'Gujarat', name: 'Gujarat' },
+//   { id: 'Rajasthan', name: 'Rajasthan' },
+// ];
 
 const Navbar = () => {
   const location = useLocation();
@@ -44,10 +47,23 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(location.pathname === '/' ? false : true);
   const [searchQuery, setSearchQuery] = useState("");
   const [totalCount, setTotalCount] = useState(0);
+  const [states, setStates] = useState();
 
 
   const [suggestions, setSuggestions] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+
+  useEffect(()=>{
+
+    const fetchStates = async () => {
+      const response = await axios.get(`${API_BASE_URL}/api/state/list`);
+      if(response.status===200){
+        setStates(response.data);
+      }
+    }
+  
+    fetchStates();
+  },[]);
 
   useEffect(() => {
     setIsScrolled(location.pathname === '/' ? false : true);
@@ -221,10 +237,10 @@ const Navbar = () => {
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Browse States</h3>
                   <div className="grid grid-cols-2 gap-2">
-                    {states.map((state, index) => (
+                    {states && states.map((state, index) => (
                       <div
                         key={index}
-                        onClick={() => navigate(`/state?name=${encodeURI(state.name)}`)}
+                        onClick={() => navigate(`/state?name=${encodeURI(state)}`)}
                         className="flex items-center p-3 rounded-lg hover:bg-purple-50 transition-all duration-150 group cursor-pointer"
                       >
                         <div className="h-10 w-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-purple-200 transition-colors">
@@ -232,7 +248,7 @@ const Navbar = () => {
                         </div>
                         <div className="ml-3">
                           <span className="text-sm font-medium text-gray-900 group-hover:text-purple-700">
-                            {state.name}
+                            {state}
                           </span>
                         </div>
                       </div>
@@ -278,19 +294,20 @@ const Navbar = () => {
                     )}
 
                     <div className="">
+                      
+                    {suggestions.authorities?.length > 0 && (
+                        <SuggestionList
+                          title="States"
+                          items={suggestions.authorities}
+                          itemKey="name"
+                        />
+                      )}
+
                       {suggestions.organizations?.length > 0 && (
                         <SuggestionList
                           title="Organizations"
                           items={suggestions.organizations}
                           itemKey="abbreviation"
-                        />
-                      )}
-
-                      {suggestions.authorities?.length > 0 && (
-                        <SuggestionList
-                          title="States"
-                          items={suggestions.authorities}
-                          itemKey="name"
                         />
                       )}
 

@@ -178,7 +178,7 @@ const ChatBot = () => {
                 console.log(botResponse);
                 if (botResponse.exam_details) {
 
-                    responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url]
+                    responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url, botResponse.exam_details.name]
                     responseType = 'all'
 
                     responseText = `
@@ -405,7 +405,7 @@ const ChatBot = () => {
                                 >
                                     {message.type === "all" && (
                                         <div className="space-y-2 space-x-2">
-                                            <p className="text-sm font-medium">Details for</p>
+                                            <p className="text-sm font-medium">Details for {message.set[4]}</p>
                                             <button
                                                 className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {

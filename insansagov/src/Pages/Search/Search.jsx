@@ -46,6 +46,16 @@ const SearchPage = () => {
 
       <div className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>Your search result for "{query}"</div>
       {
+        searchData && searchData.authorities && searchData.authorities.length>0
+        ?
+        <>
+          <h1 className='text-lg mb-3'>States</h1>
+          <RelatedStates states={searchData.authorities}/>
+        </>
+        :
+        null
+      }
+      {
         searchData && searchData.organizations && searchData.organizations.length>0
         ?
         (
@@ -67,21 +77,12 @@ const SearchPage = () => {
         :
         null
       }
-      {
-        searchData && searchData.authorities && searchData.authorities.length>0
-        ?
-        <>
-          <h1 className='text-lg mb-3'>States</h1>
-          <RelatedStates states={searchData.authorities}/>
-        </>
-        :
-        null
-      }
-      <OpportunityCarousel>
+      
+      {/* <OpportunityCarousel>
         <OpportunityCarouselCard/>
         <OpportunityCarouselCard/>
         <OpportunityCarouselCard/>
-      </OpportunityCarousel>
+      </OpportunityCarousel> */}
 
       <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
           Related Authorities

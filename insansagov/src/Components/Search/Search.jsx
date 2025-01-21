@@ -134,6 +134,13 @@ const Search = (props) => {
             )}
 
             <div className="">
+            {suggestions.authorities?.length > 0 && (
+                <SuggestionList
+                  title="States"
+                  items={suggestions.authorities}
+                  itemKey="name"
+                />
+              )}
               {suggestions.organizations?.length > 0 && (
                 <SuggestionList
                   title="Organizations"
@@ -141,15 +148,6 @@ const Search = (props) => {
                   itemKey="abbreviation"
                 />
               )}
-
-              {suggestions.authorities?.length > 0 && (
-                <SuggestionList
-                  title="States"
-                  items={suggestions.authorities}
-                  itemKey="name"
-                />
-              )}
-
               {suggestions.categories?.length > 0 && (
                 <SuggestionList
                   title="Categories"

@@ -18,15 +18,15 @@ export const search = async (req, res) => {
     // Perform searches in all collections
     const authorities = await db
       .collection("authorities")
-      .find({ $text: { $search: query } })
+      .find({ name: { $regex: `\\b${query}\\b`, $options: "i" } })
       .toArray();
     const organizations = await db
       .collection("organizations")
-      .find({ $text: { $search: query } })
+      .find({ abbreviation: { $regex: `\\b${query}\\b`, $options: "i" } })
       .toArray();
     const categories = await db
       .collection("categories")
-      .find({ $text: { $search: query } })
+      .find({ category: { $regex: `\\b${query}\\b`, $options: "i" } })
       .toArray();
 
     // Return results as separate arrays
@@ -50,7 +50,7 @@ export const searchSuggestion = async (req, res) => {
   if (!userInput) return res.json({ suggestions: [] });
 
   try {
-    const regex = new RegExp(`^${userInput}`, 'i'); // Matches input starting with userInput
+    const regex = new RegExp(`${userInput.split("").join(".*")}`, 'i'); 
     const results = await Promise.all([
       Organization.find({ abbreviation: regex }).limit(5),
       Authority.find({ name: regex }).limit(5),
