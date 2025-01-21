@@ -5,12 +5,13 @@ import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import parse from 'html-react-parser';
 import { useNavigate } from 'react-router-dom'
-
+import { DotLoader } from 'react-spinners';
 
 const ChatBot = () => {
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
     const navigate = useNavigate();
+    const [isChatBotLoading, setIsChatBotLoading] = useState();
     const containerRef = useRef(null)
 
     useEffect(() => {
@@ -153,6 +154,8 @@ const ChatBot = () => {
         // else
         {
             try {
+
+                setIsChatBotLoading(true);
                 const response = await axios.post(
                     `https://insansachatbot.onrender.com/api/chatbot1`,
                     { msg: newUserMessage.text },
@@ -161,9 +164,6 @@ const ChatBot = () => {
                             'Content-Type': 'application/json',
                         },
                     }
-
-
-
                 );
                 // const botResponse = await axios.get(`https://exam-chatbot-exam-chatbots-projects.vercel.app/`,formData,{
                 //     headers:{
@@ -171,6 +171,7 @@ const ChatBot = () => {
                 //     }
                 // });
 
+                setIsChatBotLoading(false);
                 const botResponse = response.data;
                 var responseText = ''
                 var responseSet = []
@@ -408,7 +409,6 @@ const ChatBot = () => {
                                 </div>
                             </div>
                         )}
-
                         {messages.map((message) => (
                             <div
                                 key={message.id}
@@ -600,10 +600,18 @@ const ChatBot = () => {
                                         <User size={16} />
                                     </div>
                                 )}
+
+
                             </div>
                         ))}
 
-
+                    {
+                        isChatBotLoading
+                        ?
+                        <DotLoader size={30} color={'#8854EB'} loading={true} />
+                        :
+                        null
+                    }
                     </div>
 
                     <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">
