@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import logo from '../../assets/Landing/UPSC.webp'
-import LatestUpdates from '../../Components/Updates/LatestUpdates'
 import OpportunityCarouselCard from '../../Components/OpportunityCarousel/OpportunityCarouselCard'
 import ViewMoreButton from '../../Components/Buttons/ViewMoreButton';
-import TopAuthorities from '../../Components/Authority/TopAuthorities';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import API_BASE_URL from '../config';
 import AuthorityLatestUpdates from '../../Components/Authority/AuthorityLatesUpdate';
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities';
-import { GridLoader, PacmanLoader, RingLoader } from 'react-spinners';
+import { RingLoader } from 'react-spinners';
 
 const cards = [
     { title: 'Exam Schedule 2025', authority: 'Education Board', latestUpdate: '1/1/2025' },

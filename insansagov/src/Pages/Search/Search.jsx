@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Search from '../../Components/Search/Search'
-import OpportunityCarousel from '../../Components/OpportunityCarousel/OpportunityCarousel'
-import OpportunityCarouselCard from '../../Components/OpportunityCarousel/OpportunityCarouselCard'
 import TopAuthorities from '../../Components/Authority/TopAuthorities'
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import API_BASE_URL from '../config'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
-import TopCategories from '../../Components/Categories/TopCategories'
 import RelatedCategories from '../../Components/Categories/RelatedCategories'
 import RelatedStates from '../../Components/States/RelatedStates'
 

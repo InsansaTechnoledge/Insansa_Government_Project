@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TopAuthoritiesCard from './TopAuthoritiesCard';
 import ViewMoreButton from '../Buttons/ViewMoreButton';
-import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 

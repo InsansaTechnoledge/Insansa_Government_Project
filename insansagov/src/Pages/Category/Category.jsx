@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import bank from '../../assets/Landing/bank.png'
-import TopAuthorities from '../../Components/Authority/TopAuthorities'
 import { useLocation } from 'react-router-dom'
 import API_BASE_URL from '../config'
 import axios from 'axios'
