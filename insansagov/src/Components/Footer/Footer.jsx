@@ -1,11 +1,27 @@
 import React from 'react';
 import { Mail, ArrowRight, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import API_BASE_URL from '../../Pages/config.js';
 
 const Footer = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle newsletter submission
+    try{
+
+      const email = e.target.email.value;
+      const name = email.split('@')[0];
+    const response = await axios.post(`${API_BASE_URL}/api/subscriber/create`, { email: email, name: name });
+    if (response.status === 201) {
+      alert(response.data);
+    }
+    else {
+      alert(response.data);
+    }
+    }
+    catch(error){
+      console.log("Error",error);
+    }
   };
 
   const navigate = useNavigate();
@@ -89,6 +105,7 @@ const Footer = () => {
               <div className="relative">
                 <input
                   type="email"
+                  name='email'
                   placeholder="youremail@gmail.com"
                   className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 pl-10"
                 />

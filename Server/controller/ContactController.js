@@ -11,9 +11,7 @@ if(process.env.NODE_ENV !== "production"){
     auth: {
       user: process.env.EMAIL, // Your Outlook email address
       pass: process.env.PASSWORD, // Your Outlook email password or app password
-    },
-    logger: true,
-    debug: true
+    }
   });
   
   // Verify transporter configuration
@@ -76,7 +74,7 @@ export const sendMailtoUser = async (req, res) => {
         <p>We value your interest and look forward to assisting you!</p>
 
         <p>Warm regards,</p>
-        <p><b>Insnasa Techknowledge Pvt Ltd</b></p>
+        <p><b>Insansa Techknowledge Pvt. Ltd.</b></p>
         <p>MyWebsite.com</p>
         <p>+91 9724379123 | 0265-4611836</p>
       `,

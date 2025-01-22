@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
+import { startChangeStream } from "./watch.js";
 
 const checkAndDropIndex = async (collection, indexName) => {
     const indexes = await collection.indexes();
     const indexExists = indexes.some(index => index.name === indexName);
     if (indexExists) {
         await collection.dropIndex(indexName);
-        console.log(`Dropped index: ${indexName}`);
     } else {
         console.log(`Index ${indexName} does not exist.`);
     }
@@ -13,9 +13,12 @@ const checkAndDropIndex = async (collection, indexName) => {
 
 const connectDB = async () => {
     try {
-        // Connect to MongoDB
+
+        await mongoose.connection.once('open',async()=>{
+            startChangeStream();
+        })
         await mongoose.connect(process.env.MONGO_URI);
-        console.log(`Database connected successfully on ${process.env.MONGO_URI}`);
+        console.log(`MongoDb connected on ${mongoose.connection.host}`);
 
         const db = mongoose.connection.db;
 
@@ -26,13 +29,10 @@ const connectDB = async () => {
 
         // Create new indexes
         await db.collection("authorities").createIndex({ name: "text" });
-        console.log("Text index created on 'name' field in 'authorities'.");
 
         await db.collection("organizations").createIndex({ abbreviation: "text" });
-        console.log("Text index created on 'abbreviation' field in 'organizations'.");
 
         await db.collection("categories").createIndex({ category: "text" });
-        console.log("Text index created on 'category' field in 'categories'.");
 
     } catch (err) {
         console.error('Database connection failed. Error:', err);
