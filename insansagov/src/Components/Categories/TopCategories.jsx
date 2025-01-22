@@ -3,9 +3,10 @@ import TopCategoriesCard from './TopCategoriesCard';
 import ViewMoreButton from '../Buttons/ViewMoreButton';
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
+import { RingLoader } from 'react-spinners';
 
 const TopCategories = (props) => {
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState();
     const [filteredCategories, setFilteredCategories] = useState([]);
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -29,6 +30,16 @@ const TopCategories = (props) => {
         };
         fetchCategories();
     }, []);
+
+    if(!categories){
+        return <div className='w-full flex flex-col justify-center mb-10'>
+            <h1 className='flex text-center text-2xl justify-center mb-5 font-bold'>Top Categories</h1>
+                <div className='flex justify-center'>
+                <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto'/>
+
+                </div>
+            </div>
+    }
 
     return (
         <>
