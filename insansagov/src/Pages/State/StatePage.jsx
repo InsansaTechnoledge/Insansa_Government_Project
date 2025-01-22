@@ -21,7 +21,7 @@ const StatePage = () => {
             try {
                 const response = await axios.get(`${API_BASE_URL}/api/state/name/${state}`);
                 if (response.status === 201) {
-                    console.log(response.data);
+                    // console.log(response.data);
                     setLogo(response.data.stateData.logo);
                     setOrganizations(response.data.organizations);
                 }

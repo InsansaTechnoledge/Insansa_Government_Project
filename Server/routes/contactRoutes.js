@@ -1,8 +1,9 @@
 import express from 'express';
-import {sendMail} from '../controller/ContactController.js'
+import { sendMailtoQueries,sendMailtoUser } from '../controller/contactController.js'
 
 const router = express.Router();
 
-router.post('/sendMail', sendMail);
+router.post('/sendMail', sendMailtoQueries);
+router.post('/sendMailtoUser', sendMailtoUser);
 
 export default router;

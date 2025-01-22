@@ -10,7 +10,7 @@ const RelatedAuthorities = (props) => {
 
     useEffect(()=>{
         if(props.organizations){
-            console.log("rel",props.organizations);
+            // console.log("rel",props.organizations);
             setOrganizations(props.organizations);
         }
     },[props]);

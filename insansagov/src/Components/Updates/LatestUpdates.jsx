@@ -52,9 +52,9 @@ const LatestUpdates = ({ titleHidden }) => {
 
       {!titleHidden && (
         <div className="space-y-5 mb-10">
-          {filteredLatestUpdates.map((update) => (
+          {filteredLatestUpdates.map((update, index) => (
             <LatestUpdateCard
-              key={update.id}
+              key={update.id || index} 
               name={update.name}
               date={update.date_of_notification}
               organization={update.organizationName}
@@ -62,6 +62,7 @@ const LatestUpdates = ({ titleHidden }) => {
             />
           ))}
         </div>
+
       )}
     </>
   );

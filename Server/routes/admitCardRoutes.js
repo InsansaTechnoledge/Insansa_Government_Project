@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAdmitCards } from '../controller/AdmitCardController.js';
+import { getAdmitCards } from '../controller/admitCardController.js';
 
 const router = express.Router();
 

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
 import PaperPlane from '../SubmitAnimation/PaperPlane';
+import axios from 'axios';
+import API_BASE_URL from '../../Pages/config.js';
 
 const Contact = () => {
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const id = document.getElementById("paper");
         const notid = document.getElementById("notpaper");
@@ -17,6 +19,30 @@ const Contact = () => {
             id.classList.add("hidden");
             notid.classList.remove("blur-sm");
         },1500);
+
+        const formData = new FormData(e.target);
+        const data=Object.fromEntries(formData.entries());
+
+        console.log(data);
+
+        try{
+            const respons= await axios.post(`${API_BASE_URL}/api/contact/sendMail`,data);
+            console.log(respons);
+
+            if(respons.status===201){
+         
+                const respond=await axios.post(`${API_BASE_URL}/api/contact/sendMailtoUser`,
+                    {
+                        firstName:data.firstName,
+                        lastName:data.lastName,
+                        email:data.email
+                    });
+            }else{
+                alert("Email not sent.Try again later!!");
+            }
+        }catch(error){
+            console.error('Error sending email:', error);
+        }
        
     };
 
@@ -90,7 +116,12 @@ const Contact = () => {
                     <div className="bg-white rounded-2xl p-8 shadow-lg">
                         <h2 className="text-2xl font-semibold text-gray-900 mb-8">Send us a Message</h2>
 
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={
+                            (e)=>{
+                                e.preventDefault();
+                                handleSubmit(e);
+                            }} 
+                            className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -98,6 +129,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        name='firstName'
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                         required
                                     />
@@ -108,6 +140,7 @@ const Contact = () => {
                                     </label>
                                     <input
                                         type="text"
+                                        name='lastName'
                                         className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                         required
                                     />
@@ -120,6 +153,7 @@ const Contact = () => {
                                 </label>
                                 <input
                                     type="email"
+                                    name='email'
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                     required
                                 />
@@ -131,6 +165,7 @@ const Contact = () => {
                                 </label>
                                 <input
                                     type="text"
+                                    name='subject'
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                     required
                                 />
@@ -141,6 +176,7 @@ const Contact = () => {
                                     Message
                                 </label>
                                 <textarea
+                                    name='message'
                                     rows={4}
                                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-800 focus:border-transparent"
                                     required
