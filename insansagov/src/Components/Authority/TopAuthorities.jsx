@@ -16,7 +16,7 @@ const TopAuthorities = (props) => {
                 const response = await axios.get(`${API_BASE_URL}/api/organization/logo`);
                 if (response.status === 200) {
                     setOrganizations(response.data);
-                    console.log(response.data);
+                    // console.log(response.data);
                 }
             } catch (error) {
                 console.error("Error fetching organizations:", error);
