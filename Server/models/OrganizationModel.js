@@ -4,7 +4,7 @@ if(process.env.NODE_ENV !== "production"){
   }
 import mongoose from "mongoose";
 const imageUrl = process.env.DEFAULT_LOGO;
-const base64String = "";
+let base64String = "";
 try{
     const response = await fetch(imageUrl);
     const imageBuffer = await response.buffer();
