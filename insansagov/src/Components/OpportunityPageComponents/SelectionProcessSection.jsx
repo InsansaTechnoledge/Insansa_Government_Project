@@ -1,5 +1,5 @@
 import React from 'react'
-import { BookOpen, Map, MapPin , BoxSelectIcon} from 'lucide-react'
+import { BoxSelectIcon} from 'lucide-react'
 
 const SelectionSection = ({data, existingSections}) => {
     if(!data.details.selection_process){

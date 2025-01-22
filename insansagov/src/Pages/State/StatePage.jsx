@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import TopAuthorities from '../../Components/Authority/TopAuthorities';
 import { useLocation } from 'react-router-dom';
 import API_BASE_URL from '../config';
 import axios from 'axios';

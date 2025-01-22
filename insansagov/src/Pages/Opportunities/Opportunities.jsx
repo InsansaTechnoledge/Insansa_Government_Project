@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  BookOpen,
-} from "lucide-react";
 import FloatingOrbsBackground from "../../Components/OpportunityPageComponents/FloatingOrbsBackground";
 import HeroSection from "../../Components/OpportunityPageComponents/HeroSection";
 import QuickApplyButton from "../../Components/OpportunityPageComponents/QuickApplyButton";
@@ -12,11 +9,9 @@ import EducationSection from "../../Components/OpportunityPageComponents/Educati
 import FeeDetailsSection from "../../Components/OpportunityPageComponents/FeeDetailsSection";
 import ImportantDatesSection from "../../Components/OpportunityPageComponents/ImportantDatesSection";
 import ExamCentresSection from "../../Components/OpportunityPageComponents/ExamCentresSection";
-import SchemeOfExamSection1 from "../../Components/OpportunityPageComponents/SchemeOfExamSection1";
-import SchemeOfExamSection2 from "../../Components/OpportunityPageComponents/SchemeOfExamSection2";
 import ContactDetailsSection from "../../Components/OpportunityPageComponents/ContactDetailsSection";
 import ImportantLinksSection from "../../Components/OpportunityPageComponents/ImportantLinksSection";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import API_BASE_URL from "../config";
 import LocationSection from "../../Components/OpportunityPageComponents/LocationSection";
@@ -157,6 +152,11 @@ const ModernExamDetailsPage = () => {
         {/* Quick Apply Button */}
         <QuickApplyButton data={data} />
 
+        {
+          data.details
+          ?
+          <>
+
         {<VacanciesSection data={data} existingSections={existingSections} />}
         <div className="flex w-full flex-wrap gap-10">
 
@@ -200,7 +200,7 @@ const ModernExamDetailsPage = () => {
 
 
           {/* Scheme of Examination */}
-          {
+          {/* {
             data.details.scheme_of_exam
               ?
               <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
@@ -209,12 +209,10 @@ const ModernExamDetailsPage = () => {
                   Scheme of Examination
                 </h2>
                 <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
-                  {/* IMA, INA, Air Force */}
                   {<SchemeOfExamSection1 data={data} existingSections={existingSections} />}
 
 
 
-                  {/* OTA */}
                   {
                     <SchemeOfExamSection2 data={data} existingSections={existingSections} />
                   }
@@ -222,7 +220,7 @@ const ModernExamDetailsPage = () => {
               </div>
               :
               null
-          }
+          } */}
 
           {/* Contact Details */}
           {
@@ -230,9 +228,26 @@ const ModernExamDetailsPage = () => {
           }
           {/* Important Links */}
           <AdditionalDetailsSection data={data.details} existingSections={existingSections} />
-          {<ImportantLinksSection data={data} />}
-
+          {data.document_links.length > 0
+          ?
+          <ImportantLinksSection data={data} />
+          
+          :
+          null
+          }
         </div>
+          </>
+          :
+          <>
+          {data.document_links.length > 0
+            ?
+            <ImportantLinksSection data={data} />
+            :
+            null
+          }
+          </>
+          }
+
       </div>
     </div>
   );

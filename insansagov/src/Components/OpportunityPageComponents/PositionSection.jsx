@@ -1,5 +1,5 @@
 import React from 'react'
-import { BookOpen, Map, MapPin, Award } from 'lucide-react'
+import { Award } from 'lucide-react'
 
 const PositionSection = ({data,existingSections}) => {
     if(!data.details.positions){
@@ -16,7 +16,7 @@ const PositionSection = ({data,existingSections}) => {
             Positions
           </h2>
           {
-            typeof(data.details.positions) == 'string'
+            typeof(data.details.positions) == 'string' || typeof(data.details.positions) == 'number' 
             ?
             <div className='space-y-4'>
               <div className="p-4 bg-purple-50 rounded-lg">
