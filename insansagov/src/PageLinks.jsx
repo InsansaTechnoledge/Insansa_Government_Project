@@ -15,6 +15,7 @@ import TrendingPage from './Pages/Trending/Trending'
 import StatePage from './Pages/State/StatePage'
 import PrivacyPolicy from './Pages/PrivacyPolicy/Privacy'
 import PortalCoverPage from './Pages/FutureStartPage/PortalCoverPage'
+import Unsubscribe from './Pages/Unsubscribe/Unsubscribe'
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -165,10 +166,7 @@ const SecondRoutes = () => {
                 <Route path='/trending' element={<TrendingPage trendingItems={trendingItems} />} />
                 <Route path='/state' element={<StatePage />} />
                 <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-
-
-
-
+                <Route path='/unsubscribe' element={<Unsubscribe />} />
 
                 <Route path='*' element={<ErrorPage />} />
             </Routes>
