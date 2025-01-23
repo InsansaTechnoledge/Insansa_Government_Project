@@ -7,7 +7,7 @@ import { useNavigate, Link } from 'react-router-dom';
 // Lazy-loaded assets and components
 const Search = memo(React.lazy(() => import('../Search/Search')));
 // const HeroBg = React.lazy(() => import('../../assets/Landing/heroBG.svg'));
-import HeroBg from '../../assets/Landing/heroBg.webp';
+import HeroBg from '../../assets/Landing/heroBG2.webp';
 
 const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -35,6 +35,8 @@ const Hero = () => {
         <div className="relative w-full h-screen overflow-hidden">
             <Suspense fallback={<div className="loading">Loading Background...</div>}>
                 <img
+                    width={400}
+                    height={205}
                     src={HeroBg}
                     alt="Hero Background"
                     className="absolute inset-0 w-full h-full object-cover"
@@ -42,13 +44,14 @@ const Hero = () => {
             </Suspense>
 
             <div className="relative h-full flex flex-col items-center justify-center px-4">
-                <div className="text-center space-y-6 max-w-full mx-auto" ref={ref}>
+                <div className="text-center space-y-6 max-w-full mx-auto" >
                     <motion.h1
+                        ref={ref}
                         className="text-4xl md:text-7xl font-bold text-white tracking-tight"
                         variants={variants}
                         initial="hidden"
                         animate={controls}
-                        transition={{ duration: 0.4, delay: 0.2 }}  // Slight delay to avoid blocking LCP
+                        transition={{ duration: 0, delay: 0 }}  // Slight delay to avoid blocking LCP
                     >
                         <span className="block">TrendWave</span>
                     </motion.h1>
