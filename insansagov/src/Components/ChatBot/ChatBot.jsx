@@ -30,19 +30,19 @@ const ChatBot = () => {
     ]);
     const [inputText, setInputText] = useState("");
     const [unreadCount, setUnreadCount] = useState(1);
-    const [isBouncing, setIsBouncing] = useState(true);
+    const [isBouncing, setIsBouncing] = useState(false);
 
 
-    React.useEffect(() => {
-        let bounceInterval;
-        if (unreadCount > 0 && !isOpen) {
-            bounceInterval = setInterval(() => {
-                setIsBouncing(true);
-                setTimeout(() => setIsBouncing(false), 1000);
-            }, 5000);
-        }
-        return () => clearInterval(bounceInterval);
-    }, [unreadCount, isOpen]);
+    // React.useEffect(() => {
+    //     let bounceInterval;
+    //     if (unreadCount > 0 && !isOpen) {
+    //         bounceInterval = setInterval(() => {
+    //             setIsBouncing(true);
+    //             setTimeout(() => setIsBouncing(false), 1000);
+    //         }, 5000);
+    //     }
+    //     return () => clearInterval(bounceInterval);
+    // }, [unreadCount, isOpen]);
 
     // Scroll to the bottom whenever items change
     useEffect(() => {
