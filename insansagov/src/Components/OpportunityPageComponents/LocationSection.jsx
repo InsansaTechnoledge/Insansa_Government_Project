@@ -1,5 +1,5 @@
 import React from 'react'
-import { BookOpen, Map, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 
 const LocationSection = ({data,existingSections}) => {
     if(!data.details.location){

@@ -1,10 +1,11 @@
-import React, { useState ,useEffect} from "react";
-import { MapPin, Search, ArrowRight, X } from "lucide-react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
+import { Search, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { debounce } from "lodash";
 import axios from "axios";
 import API_BASE_URL from "../../Pages/config";
 import moment from "moment";
+const StateCard = lazy(() => import('./StateCard'));
 
 const StateComponent = () => {
     const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -87,13 +88,13 @@ const StateComponent = () => {
 
     function formatDate(date) {
         if (!date) return '';
-    
+
         if (typeof date === 'number') {
-          return moment(date).format('MMMM D, YYYY');
+            return moment(date).format('MMMM D, YYYY');
         }
-    
+
         return moment(date, 'YYYY-MM-DD').format('MMMM D, YYYY');
-      }
+    }
 
     const SuggestionList = ({ title, items, itemKey }) => {
         if (!items || items.length === 0) return null;
@@ -141,7 +142,7 @@ const StateComponent = () => {
 
         fetchStateCount();
         fetchLastUpdated();
-    },[]);
+    }, []);
 
     return (
         <>
@@ -215,35 +216,35 @@ const StateComponent = () => {
                                 </div>
                                 {/* Suggestions Dropdown */}
                                 <div className="relative">
-                                {showDropdown && suggestions && (
-                                    <div className="custom-scrollbar max-h-72 w-full overflow-auto absolute mt-1 bg-white border border-gray-200 rounded shadow-lg z-50">
+                                    {showDropdown && suggestions && (
+                                        <div className="custom-scrollbar max-h-72 w-full overflow-auto absolute mt-1 bg-white border border-gray-200 rounded shadow-lg z-50">
 
 
-                                        <div className="">
-                                            {suggestions.length > 0
-                                                ?
-                                                (
-                                                    <SuggestionList
-                                                        title="States"
-                                                        items={suggestions}
-                                                        itemKey="name"
-                                                    />
-                                                )
-                                                :
-                                                null}
+                                            <div className="">
+                                                {suggestions.length > 0
+                                                    ?
+                                                    (
+                                                        <SuggestionList
+                                                            title="States"
+                                                            items={suggestions}
+                                                            itemKey="name"
+                                                        />
+                                                    )
+                                                    :
+                                                    null}
 
-                                            {totalCount === 0
-                                                ?
-                                                (
-                                                    <div className="px-4 py-3 text-sm text-gray-500">
-                                                        No suggestions found
-                                                    </div>
-                                                )
-                                                :
-                                                null}
+                                                {totalCount === 0
+                                                    ?
+                                                    (
+                                                        <div className="px-4 py-3 text-sm text-gray-500">
+                                                            No suggestions found
+                                                        </div>
+                                                    )
+                                                    :
+                                                    null}
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -310,13 +311,15 @@ const StateComponent = () => {
 
                     {/* States Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                        {activeRegion
-                            ? statesByRegion[activeRegion].map((state, index) => (
-                                <StateCard key={index} state={state} />
-                            ))
-                            : Object.values(statesByRegion).flat().map((state, index) => (
-                                <StateCard key={index} state={state} />
-                            ))}
+                        <Suspense fallback={<div>Loading...</div>}>
+                            {activeRegion
+                                ? statesByRegion[activeRegion].map((state, index) => (
+                                    <StateCard key={index} state={state} />
+                                ))
+                                : Object.values(statesByRegion).flat().map((state, index) => (
+                                    <StateCard key={index} state={state} />
+                                ))}
+                        </Suspense>
                     </div>
 
                     {/* Bottom Stats */}
@@ -332,30 +335,6 @@ const StateComponent = () => {
     );
 };
 
-const StateCard = ({ state }) => {
 
-    const navigate = useNavigate();
-
-    return (
-        <div
-            onClick={() => navigate(`state?name=${encodeURI(state)}`)}
-            className="group bg-white p-3 sm:p-4 rounded-xl border border-purple-100 hover:border-purple-400 
-             shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer relative
-             overflow-hidden active:bg-purple-50 touch-manipulation"
-        >
-            <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-purple-500" />
-                    <p className="text-xs sm:text-sm font-medium text-gray-700">{state}</p>
-                </div>
-                <ArrowRight className="h-4 w-4 text-purple-400 transform translate-x-2 opacity-0 
-                           group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-            </div>
-
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 
-                   to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-        </div>
-    )
-};
 
 export default StateComponent;

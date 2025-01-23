@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import TopAuthoritiesCard from './TopAuthoritiesCard';
-import ViewMoreButton from '../Buttons/ViewMoreButton';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
+const TopAuthoritiesCard = lazy(() => import('./TopAuthoritiesCard'));
+const ViewMoreButton = lazy(()=> import('../Buttons/ViewMoreButton'));
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import { RingLoader } from 'react-spinners';
@@ -53,28 +53,32 @@ const TopAuthorities = (props) => {
                     : <h1 className='flex text-center text-2xl justify-center mb-5 font-bold'>Central Government Authorities</h1>
             }
             <div className='grid grid-cols-4 mb-5 gap-4'>
+                <Suspense fallback={<div>Loading...</div>}>
                 {
                     organizations.slice(0, displayCount).map((org, key) => (
                         <TopAuthoritiesCard key={key} name={org.abbreviation} logo={org.logo} id={org._id} />
                     ))
                 }
+                </Suspense>
             </div>
             <div className='flex justify-center gap-4 mb-20'>
                 {/* Show "View More" button only if there are more items to load */}
+                <Suspense fallback={<div>Loading...</div>}>
                 {displayCount < organizations.length && (
                     <ViewMoreButton
-                        content="View More ▼"
-                        onClick={handleViewMore}
+                    content="View More ▼"
+                    onClick={handleViewMore}
                     />
                 )}
 
                 {/* Always show "Close All" button if more than 8 items are displayed */}
                 {displayCount > 8 && (
                     <ViewMoreButton
-                        content="Close All ▲"
-                        onClick={handleCloseAll}
+                    content="Close All ▲"
+                    onClick={handleCloseAll}
                     />
                 )}
+                </Suspense>
             </div>
         </>
     );

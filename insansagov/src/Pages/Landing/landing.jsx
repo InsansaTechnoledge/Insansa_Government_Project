@@ -121,7 +121,6 @@ const Landing = () => {
           <StateComponent />
         </LazyRender>
 
-        {/* Grid layout for authorities and categories */}
         <div className="grid md:grid-cols-1 gap-8">
           <LazyRender height="h-72">
             <TopAuthorities />
@@ -132,7 +131,6 @@ const Landing = () => {
           </LazyRender>
         </div>
 
-        {/* Dashboard components */}
         <LazyRender height="h-96">
           <AdmitCardDashboard admitCards={admitCards} />
         </LazyRender>

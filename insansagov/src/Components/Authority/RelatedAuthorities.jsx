@@ -4,7 +4,6 @@ import ViewMoreButton from '../Buttons/ViewMoreButton';
 
 
 const RelatedAuthorities = (props) => {
-    const [isExpanded, setIsExpanded] = useState(false);
     const [organizations, setOrganizations] = useState();
     const [displayCount, setDisplayCount] = useState(8); // Initial count of displayed items
 

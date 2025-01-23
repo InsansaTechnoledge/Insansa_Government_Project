@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import LatestUpdateCard from '../Updates/LatestUpdateCard'
 import ViewMoreButton from '../Buttons/ViewMoreButton'
-import axios from 'axios';
-import API_BASE_URL from '../../Pages/config';
 
 const AuthorityLatestUpdates = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);

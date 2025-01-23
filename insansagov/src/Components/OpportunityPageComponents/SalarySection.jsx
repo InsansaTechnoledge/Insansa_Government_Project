@@ -1,5 +1,5 @@
 import React from 'react'
-import { BookOpen, Map, MapPin, CoinsIcon } from 'lucide-react'
+import { CoinsIcon } from 'lucide-react'
 
 const SalarySection = ({data,existingSections}) => {
     if(!data.details.salary){
