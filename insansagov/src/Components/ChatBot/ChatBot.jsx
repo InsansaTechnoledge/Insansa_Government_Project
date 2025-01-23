@@ -2,16 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import Draggable from 'react-draggable';
 import { MessageCircle, Send, X, MinusCircle, User, Bot } from 'lucide-react';
 import axios from 'axios';
-import API_BASE_URL from '../../Pages/config';
 import parse from 'html-react-parser';
-import { useNavigate } from 'react-router-dom'
-import { DotLoader, SyncLoader } from 'react-spinners';
+import { DotLoader} from 'react-spinners';
 
 const ChatBot = () => {
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
-    const navigate = useNavigate();
-    const [isChatBotLoading, setIsChatBotLoading] = useState();
+    const [isChatBotLoading, setIsChatBotLoading] = useState(false);
     const containerRef = useRef(null)
 
     useEffect(() => {
@@ -55,79 +52,6 @@ const ChatBot = () => {
         });
     }, [messages]);
 
-    const getHardcodedResponse = (input) => {
-        const responses = {
-            // General greetings
-            "hi": "Hello there! How can I assist you today?",
-            "Hi": "Hello there! How can I assist you today?",
-            "HI": "Hello there! How can I assist you today?",
-            "hello": "Hello there! How can I assist you today?",
-            "Hello": "Hello there! How can I assist you today?",
-            "HELLO": "Hello there! How can I assist you today?",
-            "hey": "Hello there! How can I assist you today?",
-            "Hey": "Hello there! How can I assist you today?",
-            "HEY": "Hello there! How can I assist you today?",
-            "hiya": "Hello there! How can I assist you today?",
-            "Hiya": "Hello there! How can I assist you today?",
-            "HIYA": "Hello there! How can I assist you today?",
-
-            // How are you variations
-            "how are you?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "How are you?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "HOW ARE YOU?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "how r u?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "How R U?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "how you doing?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "How you doing?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "HOW YOU DOING?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-
-            // Asking for the bot's name
-            "what is your name?": "I am ChatAssistant, your friendly chatbot!",
-            "What is your name?": "I am ChatAssistant, your friendly chatbot!",
-            "WHAT IS YOUR NAME?": "I am ChatAssistant, your friendly chatbot!",
-            "whats your name?": "I am ChatAssistant, your friendly chatbot!",
-            "Whats your name?": "I am ChatAssistant, your friendly chatbot!",
-            "WHATS YOUR NAME?": "I am ChatAssistant, your friendly chatbot!",
-            "who are you?": "I am ChatAssistant, your friendly chatbot!",
-            "Who are you?": "I am ChatAssistant, your friendly chatbot!",
-            "WHO ARE YOU?": "I am ChatAssistant, your friendly chatbot!",
-
-            // Joke request
-            "tell me a joke": "Why don't programmers like nature? It has too many bugs!",
-            "Tell me a joke": "Why don't programmers like nature? It has too many bugs!",
-            "TELL ME A JOKE": "Why don't programmers like nature? It has too many bugs!",
-            "tell me something funny": "Why don't programmers like nature? It has too many bugs!",
-            "Tell me something funny": "Why don't programmers like nature? It has too many bugs!",
-            "TELL ME SOMETHING FUNNY": "Why don't programmers like nature? It has too many bugs!",
-            "make me laugh": "Why don't programmers like nature? It has too many bugs!",
-            "Make me laugh": "Why don't programmers like nature? It has too many bugs!",
-            "MAKE ME LAUGH": "Why don't programmers like nature? It has too many bugs!",
-
-            // Farewell
-            "bye": "Goodbye! Have a great day!",
-            "Bye": "Goodbye! Have a great day!",
-            "BYE": "Goodbye! Have a great day!",
-            "goodbye": "Goodbye! Have a great day!",
-            "Goodbye": "Goodbye! Have a great day!",
-            "GOODBYE": "Goodbye! Have a great day!",
-            "see you": "Goodbye! Have a great day!",
-            "See you": "Goodbye! Have a great day!",
-            "SEE YOU": "Goodbye! Have a great day!",
-            "catch you later": "Goodbye! Have a great day!",
-            "Catch you later": "Goodbye! Have a great day!",
-            "CATCH YOU LATER": "Goodbye! Have a great day!",
-            "take care": "Goodbye! Have a great day!",
-            "Take care": "Goodbye! Have a great day!",
-            "TAKE CARE": "Goodbye! Have a great day!",
-        };
-
-
-
-        const defaultResponse = null; // Return `null` if no hardcoded response exists
-        return responses[input.trim().toLowerCase()] || defaultResponse;
-    };
-
-
     const handleSend = async (e) => {
         e.preventDefault();
         if (inputText.trim() === "") return;
@@ -141,17 +65,6 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        // const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
-
-        // if (hardcodedResponse) {
-        //     const newBotMessage = {
-        //         id: messages.length + 2,
-        //         text: hardcodedResponse,
-        //         isBot: true,
-        //     };
-        //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        // }
-        // else
         {
             try {
 
@@ -165,12 +78,6 @@ const ChatBot = () => {
                         },
                     }
                 );
-                // const botResponse = await axios.get(`https://exam-chatbot-exam-chatbots-projects.vercel.app/`,formData,{
-                //     headers:{
-                //         'Content-Type':'application/json'
-                //     }
-                // });
-
                 setIsChatBotLoading(false);
                 const botResponse = response.data;
                 var responseText = ''
@@ -182,50 +89,30 @@ const ChatBot = () => {
                         responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.url, botResponse.exam_details.name];
                         responseType = 'no-date'
 
-                        // responseText = `
-                        // - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
-                        // - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>    
-                        // `
+                        
                     }
                     else if(!botResponse.exam_details.apply_link){
                         responseSet = [botResponse.exam_details.url, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.name];
                         responseType = 'no-apply-link'
 
-                        // responseText = `
-                        //     - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
-                        //     - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
-                        //     - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
-                        // `
                     }
                     else{
 
                         responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url, botResponse.exam_details.name]
                         responseType = 'all'
                         
-                    //     responseText = `            
-                    // - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
-                    // - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
-                    // - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
-                    // - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
                     
-                    // `;
                     }
                 }
                 else if (botResponse.start_date) {
                     responseType = 'start-date'
                     responseSet = [botResponse.start_date.start_date, botResponse.start_date.name];
 
-            //         responseText = `
-            // - <b>Start Date:</b> ${botResponse.start_date}<br>
-            // `;
                 }
                 else if (botResponse.end_date) {
                     responseType = 'end-date'
                     responseSet = [botResponse.end_date.end_date, botResponse.end_date.name];
 
-            //         responseText = `
-            // - <b>End Date:</b> ${botResponse.end_date}<br>
-            // `;
                 }
                 else if(botResponse.date){
                     responseType = 'date'
@@ -235,10 +122,6 @@ const ChatBot = () => {
                     responseType = 'link'
                     responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url, botResponse.link_details.name];
 
-            //         responseText = `
-            // - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
-            // - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
-            // `;
                 }
                 else {
                     responseText = `${botResponse.response}`
@@ -322,11 +205,7 @@ const ChatBot = () => {
             <div className="drag-handle p-3 bg-gradient-to-r from-indigo-500 to-purple-600
         text-white rounded-t-2xl flex justify-between items-center cursor-move
         hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700 transition-all duration-300">
-                {/* <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-red-400 hover:bg-red-500 transition-colors" />
-                    <div className="w-2 h-2 rounded-full bg-yellow-400 hover:bg-yellow-500 transition-colors" />
-                    <div className="w-2 h-2 rounded-full bg-green-400 hover:bg-green-500 transition-colors" />
-                </div> */}
+                
                 <div className="flex-1 text-center">
                     <h2 className="text-sm font-medium">My Website's Chatbot</h2>
                 </div>

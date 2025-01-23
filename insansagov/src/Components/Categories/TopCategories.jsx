@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import TopCategoriesCard from './TopCategoriesCard';
-import ViewMoreButton from '../Buttons/ViewMoreButton';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+const TopCategoriesCard = lazy(() => import('./TopCategoriesCard'));
+const ViewMoreButton = lazy(() => import('../Buttons/ViewMoreButton'));
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import { RingLoader } from 'react-spinners';
@@ -31,14 +31,14 @@ const TopCategories = (props) => {
         fetchCategories();
     }, []);
 
-    if(!categories){
+    if (!categories) {
         return <div className='w-full flex flex-col justify-center mb-10'>
             <h1 className='flex text-center text-2xl justify-center mb-5 font-bold'>Top Categories</h1>
-                <div className='flex justify-center'>
-                <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto'/>
+            <div className='flex justify-center'>
+                <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto' />
 
-                </div>
             </div>
+        </div>
     }
 
     return (
@@ -49,15 +49,19 @@ const TopCategories = (props) => {
                 </h1>
             )}
             <div className="grid grid-cols-4 mb-5 gap-4">
-                {filteredCategories.map((category, key) => (
-                    <TopCategoriesCard key={key} name={category.category} logo={category.logo} id={category._id} />
-                ))}
+                <Suspense fallback={<div>Loading...</div>}>
+                    {filteredCategories.map((category, key) => (
+                        <TopCategoriesCard key={key} name={category.category} logo={category.logo} id={category._id} />
+                    ))}
+                </Suspense>
             </div>
             <div className="flex justify-center gap-4 mb-20">
-                <ViewMoreButton
-                    content={isExpanded ? 'Close All ▲' : 'View More ▼'}
-                    onClick={handleToggle}
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ViewMoreButton
+                        content={isExpanded ? 'Close All ▲' : 'View More ▼'}
+                        onClick={handleToggle}
+                    />
+                </Suspense>
             </div>
         </>
     );

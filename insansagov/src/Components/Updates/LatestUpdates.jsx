@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import LatestUpdateCard from './LatestUpdateCard';
-import ViewMoreButton from '../Buttons/ViewMoreButton';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
+
+// Lazy load the components
+const LatestUpdateCard = lazy(() => import('./LatestUpdateCard'));
+const ViewMoreButton = lazy(() => import('../Buttons/ViewMoreButton'));
 
 const LatestUpdates = ({ titleHidden }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -44,25 +46,28 @@ const LatestUpdates = ({ titleHidden }) => {
     <>
       <div className="flex justify-between mb-5">
         <div className="font-bold text-2xl flex items-center">Latest Updates</div>
-        <ViewMoreButton
-          content={isExpanded ? 'View Less ▲' : 'View More ▼'}
-          onClick={handleToggle}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <ViewMoreButton
+            content={isExpanded ? 'View Less ▲' : 'View More ▼'}
+            onClick={handleToggle}
+          />
+        </Suspense>
       </div>
 
       {!titleHidden && (
         <div className="space-y-5 mb-10">
-          {filteredLatestUpdates.map((update, index) => (
-            <LatestUpdateCard
-              key={update.id || index} 
-              name={update.name}
-              date={update.date_of_notification}
-              organization={update.organizationName}
-              apply_link={update.apply_link}
-            />
-          ))}
+          <Suspense fallback={<div>Loading updates...</div>}>
+            {filteredLatestUpdates.map((update, index) => (
+              <LatestUpdateCard
+                key={update.id || index}
+                name={update.name}
+                date={update.date_of_notification}
+                organization={update.organizationName}
+                apply_link={update.apply_link}
+              />
+            ))}
+          </Suspense>
         </div>
-
       )}
     </>
   );

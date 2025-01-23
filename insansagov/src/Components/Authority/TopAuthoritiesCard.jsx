@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import logo from '../../assets/Landing/UPSC.webp';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const TopAuthoritiesCard = (props) => {

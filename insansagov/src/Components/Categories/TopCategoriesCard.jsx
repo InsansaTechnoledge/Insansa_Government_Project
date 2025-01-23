@@ -1,5 +1,4 @@
 import React from 'react'
-import bank from '../../assets/Landing/bank.png'
 import { useNavigate } from 'react-router-dom'
 
 const TopCategoriesCard = (props) => {
