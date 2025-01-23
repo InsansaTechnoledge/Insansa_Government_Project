@@ -18,6 +18,7 @@ const TrendingPage = lazy(() => import('./Pages/Trending/Trending'));
 const StatePage = lazy(() => import('./Pages/State/StatePage'));
 const PrivacyPolicy = lazy(() => import('./Pages/PrivacyPolicy/Privacy'));
 const PortalCoverPage = lazy(() => import('./Pages/FutureStartPage/PortalCoverPage'));
+const Unsubscribe = lazy(()=>import('./Pages/Unsubscribe/Unsubscribe')); 
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -40,6 +41,7 @@ const SecondRoutes = () => {
                     <Route path='/state' element={<StatePage />} />
                     <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                     <Route path='*' element={<ErrorPage />} />
+                    <Route path='/unsubscribe' element={<Unsubscribe />} />
                 </Routes>
             </Suspense>
         </div>

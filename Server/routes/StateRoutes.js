@@ -1,5 +1,5 @@
 import express from 'express';
-import { getStateByName,getCountDetails, getStateList} from '../controller/StateController.js';
+import { getStateByName, getCountDetails, getStateList } from '../controller/stateController.js';
 
 const router = express.Router();
 

@@ -17,10 +17,12 @@ export const startChangeStream = async () => {
         );
         update.on('change',async(change)=>{
         
-            const users=await Subscriber.find();
+            const users=await Subscriber.find({isSubscribed:true});
             users.forEach(async user => {
                 try{
-                    await updateMail(user.email,user.name);
+                
+                    await updateMail(user.email,user.name,user.unsubscribeToken);
+                    
                 }catch(error){
                     console.error('Error sending email:', error);
                 }

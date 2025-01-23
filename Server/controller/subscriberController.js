@@ -2,8 +2,9 @@ import crypto from 'crypto';
 import { transporter } from '../controller/contactController.js';
 import Subscriber from '../models/SubscriberModel.js';
 
+
 // subscribed user mailing list
-export const updateMail = async (email, name, unsubscribeToken) => {
+export const updateMail = async (email, name,unsubscribeToken) => {
     try {
         const mailOptions = {
             from: process.env.EMAIL1,
@@ -22,10 +23,11 @@ export const updateMail = async (email, name, unsubscribeToken) => {
                 <p>MyWebsite.com</p>
                 <p>+91 9724379123 | 0265-4611836</p>
                 <br>
-                <form action="http://localhost:3000/api/subscribers/unsubscribe" method="POST" style="display: inline;">
-                    <input type="hidden" name="token" value="${unsubscribeToken}" />
-                    <button type="submit" style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer;">Click here to unsubscribe</button>
-                </form>
+                <a 
+                href="${process.env.CLIENT_BASE_URL}/unsubscribe?token=${unsubscribeToken}"
+                style="background-color:#b621a8; color: white; padding: 10px 20px; text-decoration: none; border: none; cursor: pointer;">
+                    Click here to unsubscribe
+                </a>
             `
         };
         await transporter.sendMail(mailOptions);
@@ -38,9 +40,7 @@ export const updateMail = async (email, name, unsubscribeToken) => {
 
 export const create = async (req, res) => {
     let subscriber = await Subscriber.findOne({ email: req.body.email });
-    if (subscriber) {
-        return res.status(202).json("Subscriber already exists");
-    } else {
+        if(!subscriber){
         try {
             subscriber = new Subscriber({
                 name: req.body.name,
@@ -48,6 +48,7 @@ export const create = async (req, res) => {
                 unsubscribeToken: crypto.randomBytes(16).toString('hex') // Generate a unique unsubscribe token
             });
             await subscriber.save();
+            console.log('Subscriber created:', subscriber);
 
             // Send subscription confirmation email
             subscribeMail(subscriber.email, subscriber.name, subscriber.unsubscribeToken);
@@ -56,8 +57,18 @@ export const create = async (req, res) => {
         } catch (error) {
             console.error('Error creating subscriber:', error);
             res.status(500).json({ message: "Internal Server Error" });
+        }}
+        else if(subscriber.isSubscribed){
+                return res.status(202).json("Subscriber already exists");
+            }
+         else {
+            subscriber.isSubscribed=true;
+            subscriber.save();
+            subscribeMail(subscriber.email, subscriber.name, subscriber.unsubscribeToken);
+            res.status(201).json("Subscriber created successfully");
+
         }
-    }
+    
 };
 
 export const subscribeMail = async (email, name, unsubscribeToken) => {
@@ -78,10 +89,11 @@ export const subscribeMail = async (email, name, unsubscribeToken) => {
                 <p>MyWebsite.com</p>
                 <p>+91 9724379123 | 0265-4611836</p>
                 <br>
-                <form action="http://localhost:3000/api/subscribers/unsubscribe" method="POST" style="display: inline;">
-                    <input type="hidden" name="token" value="${unsubscribeToken}" />
-                    <button type="submit" style="background-color: red; color: white; padding: 10px 20px; border: none; cursor: pointer;">Click here to unsubscribe</button>
-                </form>
+                <a 
+                href="${process.env.CLIENT_BASE_URL}/unsubscribe?token=${unsubscribeToken}"
+                style="background-color:#b621a8; color: white; padding: 10px 20px; text-decoration: none; border: none; cursor: pointer;">
+                    Click here to unsubscribe
+                </a>
             `
         };
 
@@ -96,6 +108,8 @@ export const subscribeMail = async (email, name, unsubscribeToken) => {
 
 export const unsubscribe = async (req, res) => {
     const { token } = req.body;
+
+    console.log("path to un subscribe",token);
 
     if (!token) {
         return res.status(400).send('Invalid unsubscribe request.');
