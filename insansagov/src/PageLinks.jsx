@@ -14,6 +14,7 @@ import Results from './Pages/ResultPage/ResultPage'
 import TrendingPage from './Pages/Trending/Trending'
 import StatePage from './Pages/State/StatePage'
 import PrivacyPolicy from './Pages/PrivacyPolicy/Privacy'
+import PortalCoverPage from './Pages/FutureStartPage/PortalCoverPage'
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -153,6 +154,7 @@ const SecondRoutes = () => {
 
     return (
         <div className='px-5 md:px-64'>
+            
             <Routes>
                 <Route path='/opportunity' element={<Opportunities />} />
                 <Route path='/search' element={<SearchPage />} />
@@ -163,6 +165,8 @@ const SecondRoutes = () => {
                 <Route path='/trending' element={<TrendingPage trendingItems={trendingItems} />} />
                 <Route path='/state' element={<StatePage />} />
                 <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+
+
 
 
 
@@ -177,12 +181,16 @@ const SecondRoutes = () => {
 const PageLinks = () => {
     return (
         <Router>
+            <Routes>
+                <Route path='/cover' element={<PortalCoverPage />} />
+            </Routes>
             <ScrollToTop />
             <Navbar />
             <Routes>
                 <Route path='/' element={<Landing />} />
             </Routes>
             <SecondRoutes />
+           
             <ChatBot />
             <Footer />
         </Router>
