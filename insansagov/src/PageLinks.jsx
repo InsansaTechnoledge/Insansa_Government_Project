@@ -17,6 +17,7 @@ const Results = lazy(() => import('./Pages/ResultPage/ResultPage'));
 const TrendingPage = lazy(() => import('./Pages/Trending/Trending'));
 const StatePage = lazy(() => import('./Pages/State/StatePage'));
 const PrivacyPolicy = lazy(() => import('./Pages/PrivacyPolicy/Privacy'));
+const PortalCoverPage = lazy(() => import('./Pages/FutureStartPage/PortalCoverPage'));
 
 const SecondRoutes = () => {
     const location = useLocation();
@@ -177,6 +178,9 @@ const PageLinks = () => {
     return (
         <Router>
             <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path='/cover' element={<PortalCoverPage />} />
+                </Routes>
                 <ScrollToTop />
                 <Navbar />
                 <Routes>
@@ -186,6 +190,7 @@ const PageLinks = () => {
                 <ChatBot />
                 <Footer />
             </Suspense>
+
         </Router>
     );
 };
