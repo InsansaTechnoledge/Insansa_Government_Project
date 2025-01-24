@@ -1,34 +1,37 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import API_BASE_URL from '../config.js';
 
 const UnsubscribePage = () => {
-    const [isUnsubscribed, setIsUnsubscribed] = useState(false);
+    const [unsubscribedmsg    ,setUnsubscribedMsg] = useState();
     const [errorMessage, setErrorMessage] = useState('');
-    const apiCalledRef = useRef(false); // Ref to track if the API is already called
+    const [isProcessing, setIsProcessing] = useState(false); // State to show loading during API call
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(() => {
+    const handleUnsubscribe = async () => {
         const params = new URLSearchParams(location.search);
         const token = params.get('token');
 
-        if (token && !apiCalledRef.current) {
-            apiCalledRef.current = true; // Mark API as called
-            unsubscribeUser(token);
-        } else if (!token) {
-            setErrorMessage('Invalid token.');
+        if (!token) {
+            setErrorMessage('Invalid or missing token.');
+            return;
         }
-    }, [location]);
 
-    const unsubscribeUser = async (token) => {
+        setIsProcessing(true); // Start loading
+        setErrorMessage(''); // Clear any previous error
+
         try {
             const response = await axios.post(`${API_BASE_URL}/api/subscriber/unsubscribe`, { token });
 
-            if (response.status === 200) {
-                setIsUnsubscribed(true);
-            } else {
+            if (response.status === 201) {
+                setUnsubscribedMsg(response.data);
+            } 
+            else if(response.status===202){
+                setUnsubscribedMsg(response.data);
+            }
+            else {
                 setErrorMessage(response.data.message || 'An error occurred. Please try again.');
             }
         } catch (error) {
@@ -39,6 +42,8 @@ const UnsubscribePage = () => {
             } else {
                 setErrorMessage('An error occurred. Please try again.');
             }
+        } finally {
+            setIsProcessing(false); // End loading
         }
     };
 
@@ -50,9 +55,9 @@ const UnsubscribePage = () => {
         <div className="flex flex-col items-center justify-center min-h-screen bg-white text-gray-800">
             <h1 className="text-6xl font-bold text-purple-500 mb-4">Unsubscribe</h1>
             
-            {isUnsubscribed ? (
+            {unsubscribedmsg ? (
                 <>
-                    <h2 className="text-2xl font-semibold mb-4">You have successfully unsubscribed!</h2>
+                    <h2 className="text-2xl font-semibold mb-4">{unsubscribedmsg}</h2>
                     <p className="text-lg mb-6">You will no longer receive updates.</p>
                 </>
             ) : (
@@ -63,12 +68,26 @@ const UnsubscribePage = () => {
                             <p className="text-lg mb-6 text-red-500">{errorMessage}</p>
                         </>
                     ) : (
-                        <p className="text-lg mb-6">Processing your unsubscribe request...</p>
+                        <p className="text-lg mb-6">Click the button below to confirm your unsubscribe request.</p>
+                    )}
+
+                    {!unsubscribedmsg && (
+                        <button
+                            onClick={handleUnsubscribe}
+                            disabled={isProcessing}
+                            className={`px-4 py-2 ${
+                                isProcessing
+                                    ? 'bg-gray-500 cursor-not-allowed'
+                                    : 'bg-purple-500 hover:bg-purple-600'
+                            } text-white rounded-lg transition-all`}
+                        >
+                            {isProcessing ? 'Processing...' : 'Unsubscribe'}
+                        </button>
                     )}
                 </>
             )}
 
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-6">
                 <button
                     onClick={handleGoHome}
                     className="px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-lg transition-all"
