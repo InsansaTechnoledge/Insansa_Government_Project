@@ -143,6 +143,8 @@ const Landing = () => {
       </div>
 
       <img
+        height={40}
+        width={600}
         className="w-full mb-20 mt-20"
         src={curvLine}
         alt=""

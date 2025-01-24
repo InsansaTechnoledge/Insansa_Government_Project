@@ -4,6 +4,7 @@ const ViewMoreButton = lazy(() => import('../Buttons/ViewMoreButton'));
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import { RingLoader } from 'react-spinners';
+import { debounce } from 'lodash';
 
 const TopCategories = (props) => {
     const [categories, setCategories] = useState();
@@ -16,7 +17,7 @@ const TopCategories = (props) => {
     };
 
     useEffect(() => {
-        const fetchCategories = async () => {
+        const fetchCategories = debounce(async () => {
             try {
                 const response = await axios.get(`${API_BASE_URL}/api/category/getCategories`);
                 if (response.status === 200) {
@@ -27,7 +28,7 @@ const TopCategories = (props) => {
             } catch (error) {
                 console.error('Error fetching categories:', error);
             }
-        };
+        },1000);
         fetchCategories();
     }, []);
 

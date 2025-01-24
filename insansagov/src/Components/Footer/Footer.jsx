@@ -14,9 +14,11 @@ const Footer = () => {
     const response = await axios.post(`${API_BASE_URL}/api/subscriber/create`, { email: email, name: name });
     if (response.status === 201) {
       alert(response.data);
+      e.target.email.value = "";
     }
     else {
       alert(response.data);
+      e.target.email.value = "";
     }
     }
     catch(error){
@@ -106,6 +108,7 @@ const Footer = () => {
                 <input
                   type="email"
                   name='email'
+                  id='email'
                   placeholder="youremail@gmail.com"
                   className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 pl-10"
                 />

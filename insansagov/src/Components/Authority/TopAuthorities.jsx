@@ -4,6 +4,7 @@ const ViewMoreButton = lazy(()=> import('../Buttons/ViewMoreButton'));
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 import { RingLoader } from 'react-spinners';
+import { debounce } from 'lodash';
 
 const TopAuthorities = (props) => {
     const [organizations, setOrganizations] = useState();
@@ -11,7 +12,7 @@ const TopAuthorities = (props) => {
 
     // Fetch data from API
     useEffect(() => {
-        const fetchLogos = async () => {
+        const fetchLogos = debounce(async () => {
             try {
                 const response = await axios.get(`${API_BASE_URL}/api/organization/logo`);
                 if (response.status === 200) {
@@ -21,7 +22,7 @@ const TopAuthorities = (props) => {
             } catch (error) {
                 console.error("Error fetching organizations:", error);
             }
-        };
+        },1000);
         fetchLogos();
     }, []);
 
