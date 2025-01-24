@@ -57,3 +57,17 @@ export const getOrganization = async (req, res) => {
     console.log(err)
   }
 }
+
+export const getMoreOrganization = async (req,res) => {
+  const categoryId = req.params.category;
+
+  const category = await Category.findOne({_id: categoryId});
+  const organizationIds = category.organizations;
+
+  const organizations = await Organization.find({
+    _id: { $in: organizationIds}
+  });
+
+  res.status(201).json(organizations);
+
+}

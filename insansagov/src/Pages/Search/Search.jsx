@@ -7,6 +7,9 @@ import API_BASE_URL from '../config'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
 import RelatedCategories from '../../Components/Categories/RelatedCategories'
 import RelatedStates from '../../Components/States/RelatedStates'
+import MoreAuthorities from '../../Components/Authority/MoreAuthorities'
+import MoreOrganizations from '../../Components/Authority/MoreOrganizations'
+import MoreCategories from '../../Components/Authority/MoreCategories'
 
 const SearchPage = () => {
   const location = useLocation();
@@ -14,9 +17,6 @@ const SearchPage = () => {
   const queryParams = new URLSearchParams(location.search);
   const [searchData, setSearchData] = useState();
   const navigate = useNavigate();
-  const [moreAuthorities, setMoreAuthorities] = useState();
-  const [moreCategories, setMoreCategories] = useState();
-  const [moreOrganizations,setMoreOrganizations] = useState();
 
   useEffect(()=>{
     const fetchSearch = async () => {
@@ -35,28 +35,6 @@ const SearchPage = () => {
 
   const searchHandler = (input) => {
     navigate(`/search?query=${encodeURIComponent(input)}`);
-}
-
-const getMoreAuthorities = async () => {
-  console.log("RR");
-  const response = await axios.get(`${API_BASE_URL}/api/state/more/`);
-  if(response.status===201){
-    setMoreAuthorities(response.data);
-    console.log(response.data);  
-  }}
-
-const getMoreOrganizations = async (categoryId) => {
-  const response = await axios.get(`${API_BASE_URL}/api/organizatoin/more/${categoryId}`);
-  if(response.status===201){
-    setMoreOrganizations(response.data);
-  }
-}
-
-const getMoreCategories = async () => {
-  const response = await axios.get(`${API_BASE_URL}/api/category/more/`);
-  if(response.status===201){
-    setMoreCategories(response.data);
-  }
 }
 
   return (
@@ -110,37 +88,29 @@ const getMoreCategories = async () => {
         searchData && searchData.authorities && searchData.authorities.length>0
         ?
         <>
-        <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
-            More Authorities
-        </h1>
-        {/* {getMoreAuthorities()} */}
-
+        <MoreAuthorities currentAuthority={searchData.authorities[0]}/>
         
         </>
         :
         searchData && searchData.organizations && searchData.organizations.length>0
         ?
         <>
-        <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
-            More Organizations
-        </h1>
         {/* {getMoreOrganizations(searchData.organizations[0].category)} */}
+        <MoreOrganizations currentOrganization={searchData.organizations[0]} />
         
         </>
         :
         searchData && searchData.categories && searchData.categories.length>0
         ?
         <>
-        <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
-            More Categories
-        </h1>
-        {/* {getMoreCategories()} */}
+        
+        <MoreCategories currentCategory={searchData.categories[0]} />
 
         </>
         :
         null
       }
-      <TopAuthorities titleHidden={true}/>
+      {/* <TopAuthorities titleHidden={true}/> */}
     </div>
   )
 }
