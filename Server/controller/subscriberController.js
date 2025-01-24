@@ -6,6 +6,14 @@ import Subscriber from '../models/SubscriberModel.js';
 // subscribed user mailing list
 export const updateMail = async (email, name,unsubscribeToken) => {
     try {
+          if (emailSentCache.has(email)) {
+            console.log(`Email to ${email} already sent recently.`);
+            return;
+        }
+
+        emailSentCache.add(email);
+        setTimeout(() => emailSentCache.delete(email), 60000); 
+
         const mailOptions = {
             from: process.env.EMAIL1,
             to: email,
@@ -20,7 +28,7 @@ export const updateMail = async (email, name,unsubscribeToken) => {
                 <br>
                 <p>Warm regards,</p>
                 <p><b>Insansa Techknowledge Pvt. Ltd.</b></p>
-                <p>MyWebsite.com</p>
+                <p>insansa.com</p>
                 <p>+91 9724379123 | 0265-4611836</p>
                 <br>
                 <a 
@@ -50,7 +58,6 @@ export const create = async (req, res) => {
             await subscriber.save();
             console.log('Subscriber created:', subscriber);
 
-            // Send subscription confirmation email
             subscribeMail(subscriber.email, subscriber.name, subscriber.unsubscribeToken);
 
             res.status(201).json("Subscriber created successfully");

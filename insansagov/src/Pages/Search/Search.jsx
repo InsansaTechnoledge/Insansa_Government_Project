@@ -14,7 +14,10 @@ const SearchPage = () => {
   const queryParams = new URLSearchParams(location.search);
   const [searchData, setSearchData] = useState();
   const navigate = useNavigate();
-  
+  const [moreAuthorities, setMoreAuthorities] = useState();
+  const [moreCategories, setMoreCategories] = useState();
+  const [moreOrganizations,setMoreOrganizations] = useState();
+
   useEffect(()=>{
     const fetchSearch = async () => {
       const queryData = queryParams.get("query");
@@ -31,8 +34,29 @@ const SearchPage = () => {
   },[location])
 
   const searchHandler = (input) => {
-    console.log("🙂");
     navigate(`/search?query=${encodeURIComponent(input)}`);
+}
+
+const getMoreAuthorities = async () => {
+  console.log("RR");
+  const response = await axios.get(`${API_BASE_URL}/api/state/more/`);
+  if(response.status===201){
+    setMoreAuthorities(response.data);
+    console.log(response.data);  
+  }}
+
+const getMoreOrganizations = async (categoryId) => {
+  const response = await axios.get(`${API_BASE_URL}/api/organizatoin/more/${categoryId}`);
+  if(response.status===201){
+    setMoreOrganizations(response.data);
+  }
+}
+
+const getMoreCategories = async () => {
+  const response = await axios.get(`${API_BASE_URL}/api/category/more/`);
+  if(response.status===201){
+    setMoreCategories(response.data);
+  }
 }
 
   return (
@@ -72,6 +96,7 @@ const SearchPage = () => {
           <RelatedCategories categories={searchData.categories}/>
         </>
         :
+
         null
       }
       
@@ -81,9 +106,40 @@ const SearchPage = () => {
         <OpportunityCarouselCard/>
       </OpportunityCarousel> */}
 
-      <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
-          Related Authorities
-      </h1>
+      {
+        searchData && searchData.authorities && searchData.authorities.length>0
+        ?
+        <>
+        <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
+            More Authorities
+        </h1>
+        {/* {getMoreAuthorities()} */}
+
+        
+        </>
+        :
+        searchData && searchData.organizations && searchData.organizations.length>0
+        ?
+        <>
+        <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
+            More Organizations
+        </h1>
+        {/* {getMoreOrganizations(searchData.organizations[0].category)} */}
+        
+        </>
+        :
+        searchData && searchData.categories && searchData.categories.length>0
+        ?
+        <>
+        <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
+            More Categories
+        </h1>
+        {/* {getMoreCategories()} */}
+
+        </>
+        :
+        null
+      }
       <TopAuthorities titleHidden={true}/>
     </div>
   )

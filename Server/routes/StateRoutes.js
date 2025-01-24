@@ -1,10 +1,11 @@
 import express from 'express';
-import { getStateByName, getCountDetails, getStateList } from '../controller/stateController.js';
+import { getStateByName, getCountDetails, getStateList, getMoreAuthorities } from '../controller/StateController.js';
 
 const router = express.Router();
 
-router.get('/name/:name', getStateByName);
 router.get('/count', getCountDetails);
 router.get('/list', getStateList);
+router.get('/more', getMoreAuthorities);
+router.get('/name/:name', getStateByName);
 
 export default router;
