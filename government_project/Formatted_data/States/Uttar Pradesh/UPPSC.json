@@ -1,0 +1,81 @@
+[
+    {
+      "name": "UPPSC Combined State/Upper Subordinate Services Examination (PCS) 2024",
+      "date_of_notification": "January 2, 2024",
+      "date_of_commencement": "January 2, 2024",
+      "end_date": "February 2, 2024",
+      "event_type":"Exam",
+      "apply_link": "https://uppsc.up.nic.in/",
+      "document_links": [
+        "https://uppsc.up.nic.in/View_Enclosure.aspx?ID=1234&flag=E"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 220,
+          "breakdown": {
+            "Deputy Collector": 39,
+            "Deputy Superintendent of Police": 52,
+            "Block Development Officer": 56,
+            "Assistant Commissioner (Commercial Tax)": 73
+          }
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 21,
+            "maximum": 40
+          },
+          "education": "Bachelor's degree from a recognized university"
+        },
+        "selection_process": [
+          "Preliminary Examination",
+          "Main Examination",
+          "Interview"
+        ],
+        "important_dates": {
+          "application_start_date": "January 2, 2024",
+          "application_end_date": "February 2, 2024",
+          "preliminary_exam_date": "December 22, 2024",
+          "main_exam_date": "To be announced"
+        }
+      }
+    },
+    {
+      "name": "UPPSC Assistant Engineer (AE) Recruitment 2024",
+      "date_of_notification": "December 17, 2024",
+      "date_of_commencement": "December 17, 2024",
+      "end_date": "January 16, 2025",
+      "event_type":"Exam",
+      "apply_link": "https://uppsc.up.nic.in/",
+      "document_links": [
+        "https://uppsc.up.nic.in/View_Enclosure.aspx?ID=5678&flag=E"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 604,
+          "breakdown": {
+            "Civil Engineer": 300,
+            "Electrical Engineer": 150,
+            "Mechanical Engineer": 100,
+            "Agricultural Engineer": 54
+          }
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 21,
+            "maximum": 40
+          },
+          "education": "Bachelor's degree in relevant engineering discipline"
+        },
+        "selection_process": [
+          "Written Examination",
+          "Interview"
+        ],
+        "important_dates": {
+          "application_start_date": "December 17, 2024",
+          "application_end_date": "January 16, 2025",
+          "exam_date": "To be announced"
+        }
+      }
+    }
+  ]
+  

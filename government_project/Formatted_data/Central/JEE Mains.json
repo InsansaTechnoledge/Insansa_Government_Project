@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Release of Admit Cards for JEE (Main)-2025 Session-1 (January 2025) scheduled on 28, 29, and 30 January 2025",
+    "date_of_notification": "24-01-2025",
+    "date_of_commencement": "28-01-2025",
+    "end_date": "30-01-2025",
+    "apply_link": "https://examinationservices.nic.in/jeemain2025/AdmitCardAuth",
+    "event_type": "AdmitCard",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/AdmitCard_Release_Notice_28-30Jan2025.pdf"
+    ],
+    "details": {
+      "description": "Admit cards have been released for candidates scheduled to appear on 28th, 29th, and 30th January 2025. Candidates can download their admit cards from the provided link."
+    }
+  },
+  {
+    "name": "Rescheduling of JEE (Main)-2025 Session-1 Examination for Certain Candidates",
+    "date_of_notification": "23-01-2025",
+    "date_of_commencement": "22-01-2025",
+    "end_date": "22-01-2025",
+    "apply_link": null,
+    "event_type": "Exam",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/Rescheduling_Notice_22Jan2025.pdf"
+    ],
+    "details": {
+      "description": "The examination for candidates who appeared at the eTalent center in Bengaluru on 22nd January 2025 (Shift-I) has been rescheduled. Affected candidates are advised to check the official notice for new dates."
+    }
+  },
+  {
+    "name": "Change of Examination Centre for JEE (Main)-2025 Session-1 at Sharjah, UAE",
+    "date_of_notification": "22-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": null,
+    "event_type": "Exam",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/Centre_Change_Notice_Sharjah.pdf"
+    ],
+    "details": {
+      "description": "The examination center for candidates scheduled to appear in Sharjah, UAE, has been changed. Candidates are advised to check the official notice for the updated venue details."
+    }
+  },
+  {
+    "name": "Release of Admit Cards for JEE (Main)-2025 Session-1 (January 2025) scheduled on 22, 23, and 24 January 2025",
+    "date_of_notification": "20-01-2025",
+    "date_of_commencement": "22-01-2025",
+    "end_date": "24-01-2025",
+    "apply_link": "https://examinationservices.nic.in/jeemain2025/AdmitCardAuth",
+    "event_type": "AdmitCard",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/AdmitCard_Release_Notice_22-24Jan2025.pdf"
+    ],
+    "details": {
+      "description": "Admit cards have been released for candidates scheduled to appear on 22nd, 23rd, and 24th January 2025. Candidates can download their admit cards from the provided link."
+    }
+  },
+  {
+    "name": "Discrepancy in Image Uploaded by Candidates for JEE (Main)-2025 Session-1",
+    "date_of_notification": "18-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": null,
+    "event_type": "Exam",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/Image_Discrepancy_Notice.pdf"
+    ],
+    "details": {
+      "description": "Candidates with discrepancies in their uploaded images are advised to rectify them promptly. Detailed instructions are provided in the official notice."
+    }
+  },
+  {
+    "name": "Advance Intimation for Allotment of Examination City for JEE (Main)-2025 Session-1",
+    "date_of_notification": "16-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://examinationservices.nic.in/jeemain2025/CityIntimation",
+    "event_type": "Exam",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/City_Intimation_Notice.pdf"
+    ],
+    "details": {
+      "description": "Candidates can check their allotted examination city for JEE (Main)-2025 Session-1. Please use the provided link to view your examination city details."
+    }
+  },
+  {
+    "name": "Examination Schedule for JEE (Main)-2025 Session-1",
+    "date_of_notification": "10-01-2025",
+    "date_of_commencement": "22-01-2025",
+    "end_date": "30-01-2025",
+    "apply_link": null,
+    "event_type": "Exam",
+    "document_links": [
+      "https://jeemain.nta.nic.in/wp-content/uploads/2025/01/Exam_Schedule_Notice.pdf"
+    ],
+    "details": {
+      "description": "The examination schedule for JEE (Main)-2025 Session-1 has been released. Exams are scheduled between 22nd and 30th January 2025. Refer to the official notice for detailed dates and shifts."
+    }
+  }
+]

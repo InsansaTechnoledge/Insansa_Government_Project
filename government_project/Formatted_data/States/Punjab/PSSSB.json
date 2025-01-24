@@ -1,0 +1,120 @@
+[
+    {
+      "name": "Clerk Recruitment 2024",
+      "date_of_notification": "02-03-2024",
+      "date_of_commencement": "08-03-2024",
+      "end_date": "05-04-2024",
+      "event_type":"Exam",
+      "apply_link": "https://sssb.punjab.gov.in/",
+      "document_links": [
+        "https://sssb.punjab.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 258
+        },
+        "eligibility": {
+          "education": "Bachelor's Degree from a recognized university or institution and possesses at least 120 hours of course with hands-on experience in the use of Personal Computer or Information Technology.",
+          "age_limit": "18 to 37 years"
+        },
+        "fee": {
+          "amount": "General: ₹1000, SC/BC/EWS: ₹250, Ex-Servicemen & Dependent: ₹200, Handicapped: ₹500"
+        },
+        "exam_centers": ["Various cities across Punjab"],
+        "important_dates": {
+          "exam_date": "22-12-2024"
+        },
+        "scheme_of_exam": {
+          "written_exam": {
+            "subjects": "General Knowledge, Mental Ability, Arithmetic Skills, Accounts, English Language, Punjabi Language, Information Technology",
+            "marks": 100,
+            "duration": "2 hours"
+          },
+          "typing_test": {
+            "speed": "30 words per minute in Punjabi and English"
+          }
+        },
+        "contact_details": {
+          "helpline_number": "Not specified",
+          "email": "Not specified"
+        }
+      }
+    },
+    {
+      "name": "Junior Engineer (JE) Recruitment 2024",
+      "date_of_notification": "Not specified",
+      "date_of_commencement": "16-03-2024",
+      "end_date": "02-04-2024",
+      "event_type":"Exam",
+      "apply_link": "https://sssb.punjab.gov.in/",
+      "document_links": [
+        "https://sssb.punjab.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 103
+        },
+        "eligibility": {
+          "education": "Diploma/Degree in Engineering in the relevant discipline from a recognized university or institution.",
+          "age_limit": "18 to 37 years"
+        },
+        "fee": {
+          "amount": "General: ₹1000, SC/BC/EWS: ₹250, Ex-Servicemen & Dependent: ₹200, Handicapped: ₹500"
+        },
+        "exam_centers": ["Various cities across Punjab"],
+        "important_dates": {
+          "exam_date": "Not specified"
+        },
+        "scheme_of_exam": {
+          "written_exam": {
+            "subjects": "Technical subjects related to the discipline, General Knowledge, Reasoning, English Language, Punjabi Language",
+            "marks": 100,
+            "duration": "2 hours"
+          }
+        },
+        "contact_details": {
+          "helpline_number": "Not specified",
+          "email": "Not specified"
+        }
+      }
+    },
+    {
+      "name": "Sewadar and Sewadar Cum Chowkidar Recruitment 2024",
+      "date_of_notification": "Not specified",
+      "date_of_commencement": "Not specified",
+      "end_date": "Not specified",
+      "event_type":"Exam",
+      "apply_link": "https://sssb.punjab.gov.in/",
+      "document_links": [
+        "https://sssb.punjab.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 172
+        },
+        "eligibility": {
+          "education": "Middle Standard (8th) pass from a recognized school.",
+          "age_limit": "18 to 37 years"
+        },
+        "fee": {
+          "amount": "General: ₹1000, SC/BC/EWS: ₹250, Ex-Servicemen & Dependent: ₹200, Handicapped: ₹500"
+        },
+        "exam_centers": ["Various cities across Punjab"],
+        "important_dates": {
+          "exam_date": "Not specified"
+        },
+        "scheme_of_exam": {
+          "written_exam": {
+            "subjects": "General Knowledge, Language Proficiency (Punjabi and English), Numerical Ability",
+            "marks": 100,
+            "duration": "2 hours"
+          }
+        },
+        "contact_details": {
+          "helpline_number": "Not specified",
+          "email": "Not specified"
+        }
+      }
+    }
+  ]
+  

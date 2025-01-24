@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Recruitment for Primary and Secondary School Teachers",
+    "date_of_notification": "15-12-2024",
+    "date_of_commencement": "15-12-2024",
+    "end_date": "31-12-2024",
+    "event_type":"Exam",
+    "apply_link": "https://schooleducation.karnataka.gov.in/en",
+    "document_links": [
+      "https://schooleducation.karnataka.gov.in/en/Teacher_Recruitment_Notification.pdf",
+      "https://schooleducation.karnataka.gov.in/en/Teacher_Recruitment_Application_Form.pdf"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 5000,
+        "breakdown": {
+          "primary_teacher": 3000,
+          "secondary_teacher": 2000,
+          "special_education_teacher": 1000
+        }
+      },
+      "eligibility": {
+        "education": {
+          "primary_teacher": "12th Class pass with Diploma in Elementary Education",
+          "secondary_teacher": "Bachelor's Degree in Education",
+          "special_education_teacher": "Bachelor's Degree in Special Education"
+        },
+        "age_limit": {
+          "minimum": 21,
+          "maximum": 40
+        }
+      },
+      "application_fee": {
+        "general": 500,
+        "sc_st": 250
+      },
+      "selection_process": [
+        "Written Examination",
+        "Interview"
+      ],
+      "important_dates": {
+        "application_start": "15-12-2024",
+        "application_end": "31-12-2024",
+        "exam_date": "To Be Announced"
+      },
+      "contact_details": {
+        "email": "helpdesk@karnatakaeducation.in",
+        "phone": "+91-80-22345678"
+      }
+    }
+  }
+]

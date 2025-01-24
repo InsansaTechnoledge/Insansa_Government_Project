@@ -1,0 +1,33 @@
+[
+    {
+        "name": "Haryana Teacher Eligibility Test (HTET) 2024",
+        "date_of_notification": "04-11-2024",
+        "date_of_commencement": "To be announced",
+        "end_date": "15-11-2024",
+        "event_type":"Exam",
+        "apply_link": "https://bseh.org.in",
+        "document_links": [
+          "https://bseh.org.in/public-notices",
+          "https://bseh.org.in/uploads/files/a8498259d90ea174ff5fa77686a9fb46.pdf"
+        ],
+        "details": {
+          "eligibility": {
+            "education": "Varies by level; refer to official notification for details"
+          },
+          "fee": {
+            "amount": "Refer to official notification",
+            "exemptions": "As per government norms"
+          },
+          "important_dates": {
+            "application_start": "04-11-2024",
+            "application_end": "15-11-2024",
+            "exam_date": "To be announced"
+          },
+          "contact_details": {
+            "helpline": "1800 180 4171",
+            "email": "[email protected]"
+          }
+        }
+      }
+      
+]

@@ -1,0 +1,95 @@
+[
+    {
+      "name": "Assistant Engineer (Civil), Class-2, Narmada, Water Resources, Water Supply and Kalpsar Department",
+      "date_of_notification": "15-12-2024",
+      "date_of_commencement": "01-01-2025",
+      "end_date": "15-01-2025",
+      "apply_link": "https://gpsc.gujarat.gov.in/",
+      "event_type":"Exam",
+      "document_links": [
+        "https://gpsc.gujarat.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 100
+        },
+        "eligibility": {
+          "education": "Bachelor's degree in Civil Engineering",
+          "age_limit": "21 to 35 years"
+        },
+        "fee": {
+          "amount": "₹100",
+          "exemptions": ["SC/ST candidates", "Female candidates", "Economically Weaker Section (EWS) candidates"]
+        },
+        "exam_centers": ["Ahmedabad", "Gandhinagar", "Surat", "Rajkot"],
+        "important_dates": {
+          "preliminary_exam": "15-03-2025",
+          "main_exam": "15-06-2025"
+        },
+        "scheme_of_exam": {
+          "preliminary_exam": {
+            "subjects": ["General Studies", "Civil Engineering"],
+            "marks": 300
+          },
+          "main_exam": {
+            "subjects": ["Civil Engineering Paper 1", "Civil Engineering Paper 2"],
+            "marks": 400
+          },
+          "interview": {
+            "marks": 100
+          }
+        },
+        "contact_details": {
+          "helpline_number": "079-23258980",
+          "email": "psc-complaints@gujarat.gov.in"
+        }
+      }
+    },
+    {
+      "name": "Deputy Section Officer (Secretariat), Class-3, General Administrative Department",
+      "date_of_notification": "20-12-2024",
+      "date_of_commencement": "05-01-2025",
+      "end_date": "20-01-2025",
+      "apply_link": "https://gpsc.gujarat.gov.in/",
+      "event_type":"Exam",
+      "document_links": [
+        "https://gpsc.gujarat.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 50
+        },
+        "eligibility": {
+          "education": "Bachelor's degree in any discipline",
+          "age_limit": "20 to 35 years"
+        },
+        "fee": {
+          "amount": "₹100",
+          "exemptions": ["SC/ST candidates", "Female candidates", "Economically Weaker Section (EWS) candidates"]
+        },
+        "exam_centers": ["Ahmedabad", "Gandhinagar", "Vadodara", "Surat"],
+        "important_dates": {
+          "preliminary_exam": "25-03-2025",
+          "main_exam": "25-06-2025"
+        },
+        "scheme_of_exam": {
+          "preliminary_exam": {
+            "subjects": ["General Studies"],
+            "marks": 200
+          },
+          "main_exam": {
+            "subjects": ["Gujarati Language", "English Language", "General Studies"],
+            "marks": 300
+          },
+          "interview": {
+            "marks": 100
+          }
+        },
+        "contact_details": {
+          "helpline_number": "079-23258980",
+          "email": "psc-complaints@gujarat.gov.in"
+        }
+      }
+    }
+  ]
+  

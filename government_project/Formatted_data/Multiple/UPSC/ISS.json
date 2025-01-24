@@ -1,0 +1,75 @@
+[{
+    "name": "Indian Statistical Service Examination, 2024",
+    "date_of_notification": "10-04-2024",
+    "date_of_commencement": "21-06-2024",
+    "end_date": "23-06-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notifica-IES-ISS-Exam-2024-engl-100424.pdf",
+      "https://upsc.gov.in/examinations/Indian%20Statistical%20Service%20Examination%2C%202024"
+    ],
+    "details": {
+      "vacancies": 30,
+      "eligibility": {
+        "education": "Bachelor's Degree with Statistics/Mathematical Statistics/Applied Statistics as one of the subjects, or a Master's degree in Statistics/Mathematical Statistics/Applied Statistics from a recognized university.",
+        "age_limit": "21 to 30 years as of 01-08-2024"
+      },
+      "application_fee": {
+        "amount": "₹200",
+        "exemptions": ["Female candidates", "SC/ST candidates", "Persons with Benchmark Disabilities"]
+      },
+      "selection_process": {
+        "stages": [
+          "Written Examination",
+          "Interview/Personality Test"
+        ]
+      },
+      "exam_pattern": {
+        "written_exam": {
+          "papers": [
+            {
+              "name": "Paper-I: General English",
+              "duration": "3 hours",
+              "marks": 100
+            },
+            {
+              "name": "Paper-II: General Studies",
+              "duration": "3 hours",
+              "marks": 100
+            },
+            {
+              "name": "Paper-III: Statistics-I (Objective)",
+              "duration": "2 hours",
+              "marks": 200
+            },
+            {
+              "name": "Paper-IV: Statistics-II (Objective)",
+              "duration": "2 hours",
+              "marks": 200
+            },
+            {
+              "name": "Paper-V: Statistics-III (Descriptive)",
+              "duration": "3 hours",
+              "marks": 200
+            },
+            {
+              "name": "Paper-VI: Statistics-IV (Descriptive)",
+              "duration": "3 hours",
+              "marks": 200
+            }
+          ],
+          "total_marks": 1000
+        },
+        "interview": {
+          "marks": 200
+        }
+      },
+      "important_dates": {
+        "last_date_for_receipt_of_applications": "30-04-2024",
+        "date_of_examination": "21-06-2024 to 23-06-2024"
+      },
+      "contact_information": "For more details, refer to the official notification."
+    }
+  }
+]  

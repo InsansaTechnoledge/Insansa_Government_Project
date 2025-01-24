@@ -1,0 +1,113 @@
+[
+    {
+      "name": "Integrated 70th Combined (Preliminary) Competitive Re-Examination",
+      "date_of_notification": "24-12-2024",
+      "date_of_commencement": "04-01-2025",
+      "end_date": "04-01-2025",
+      "event_type":"Exam",
+      "apply_link": "https://www.bpsc.bih.nic.in/",
+      "document_links": [
+        "https://www.bpsc.bih.nic.in/AdmitCard_70th_Pre_ReExam.pdf",
+        "https://www.bpsc.bih.nic.in/Important_Notice_70th_Pre_ReExam.pdf"
+      ],
+      "details": {
+        "notification_number": "70/2024",
+        "vacancies": 2035,
+        "eligibility": {
+          "education": "Bachelor's degree from a recognized university",
+          "age_limit": {
+            "minimum": 20,
+            "maximum": 37
+          }
+        },
+        "application_fee": {
+          "general": 600,
+          "sc_st": 150,
+          "female": 150
+        },
+        "selection_process": [
+          "Preliminary Examination",
+          "Main Examination",
+          "Interview"
+        ],
+        "exam_pattern": {
+          "preliminary": {
+            "subjects": [
+              "General Studies"
+            ],
+            "marks": 150,
+            "duration": "2 hours"
+          },
+          "main": {
+            "subjects": [
+              "General Hindi",
+              "General Studies Paper 1",
+              "General Studies Paper 2",
+              "Optional Paper"
+            ],
+            "marks": 900,
+            "duration": "3 hours each"
+          }
+        },
+        "important_dates": {
+          "admit_card_release": "24-12-2024",
+          "exam_date": "04-01-2025",
+          "result_date": "To Be Announced"
+        },
+        "contact_details": {
+          "email": "bpscpat-bih@nic.in",
+          "phone": "+91-612-2215651"
+        }
+      }
+    },
+    {
+      "name": "School Teacher Competitive Examination (TRE 4.0)",
+      "date_of_notification": "To Be Announced",
+      "date_of_commencement": "To Be Announced",
+      "end_date": "To Be Announced",
+      "event_type":"Exam",
+      "apply_link": "https://www.bpsc.bih.nic.in/",
+      "document_links": [],
+      "details": {
+        "notification_number": "22/2025",
+        "vacancies": 80000,
+        "eligibility": {
+          "education": "Bachelor's degree with B.Ed from a recognized institution",
+          "age_limit": {
+            "minimum": 21,
+            "maximum": 37
+          }
+        },
+        "application_fee": {
+          "general": 750,
+          "sc_st": 200,
+          "female": 200
+        },
+        "selection_process": [
+          "Written Examination",
+          "Interview"
+        ],
+        "exam_pattern": {
+          "written": {
+            "subjects": [
+              "General Studies",
+              "Subject Concerned"
+            ],
+            "marks": 150,
+            "duration": "2 hours"
+          }
+        },
+        "important_dates": {
+          "notification_release": "To Be Announced",
+          "application_start": "To Be Announced",
+          "application_end": "To Be Announced",
+          "exam_date": "To Be Announced"
+        },
+        "contact_details": {
+          "email": "bpscpat-bih@nic.in",
+          "phone": "+91-612-2215651"
+        }
+      }
+    }
+  ]
+  

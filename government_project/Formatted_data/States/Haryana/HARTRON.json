@@ -1,0 +1,39 @@
+[
+    {
+      "name": "Empanelment of Computer Professionals on Job Work Basis",
+      "date_of_notification": "2025-01-01",
+      "date_of_commencement": "2025-01-01",
+      "end_date": "2025-01-31",
+      "event_type":"Exam",
+      "apply_link": "https://www.hartron.org.in/opportunities",
+      "document_links": [
+        "https://www.hartron.org.in/downloads/empanelment-guidelines.pdf",
+        "https://www.hartron.org.in/downloads/application-form.pdf"
+      ],
+      "details": {
+        "positions": [
+          "System Analyst",
+          "Programmer",
+          "Networking Engineer",
+          "Web Designer"
+        ],
+        "eligibility": {
+          "education": "Relevant degree/diploma in Computer Science or related field",
+          "experience": "Minimum 2 years in the respective domain"
+        },
+        "fee": {
+          "amount": "₹500",
+          "payment_mode": "Online"
+        },
+        "important_dates": {
+          "last_date_to_apply": "2025-01-31",
+          "interview_dates": "To be announced"
+        },
+        "contact_details": {
+          "email": "recruitment@hartron.org.in",
+          "phone": "+91-172-2563076"
+        }
+      }
+    }
+  ]
+  

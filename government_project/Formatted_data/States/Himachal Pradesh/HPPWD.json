@@ -1,0 +1,72 @@
+[
+    {
+      "name": "Recruitment of Junior Engineer (Civil), Junior Engineer (Mechanical), Junior Draughtsman, Junior Office Assistant (IT), Steno Typist, Peon, and Chowkidar for Persons with Benchmark Disability",
+      "date_of_notification": "2024-01-05",
+      "date_of_commencement": "2024-01-05",
+      "end_date": "2024-02-05",
+      "event_type":"Exam",
+      "apply_link": "https://hppwd.hp.gov.in/recruitment-hppwd",
+      "document_links": [
+        "https://hppwd.hp.gov.in/sites/default/files/Recruitment_PwBD_2024.pdf"
+      ],
+      "details": {
+        "positions": [
+          "Junior Engineer (Civil)",
+          "Junior Engineer (Mechanical)",
+          "Junior Draughtsman",
+          "Junior Office Assistant (IT)",
+          "Steno Typist",
+          "Peon",
+          "Chowkidar"
+        ],
+        "eligibility": {
+          "education": "Varies by position; refer to the official notification for detailed qualifications.",
+          "age_limit": "Between 18 and 45 years as of 2024-01-01"
+        },
+        "fee": {
+          "amount": "No application fee for Persons with Benchmark Disability",
+          "payment_mode": "Not applicable"
+        },
+        "important_dates": {
+          "last_date_to_apply": "2024-02-05 for Non-Tribal Areas; 2024-02-15 for Tribal Areas"
+        },
+        "contact_details": {
+          "email": "hppwd-recruitment@hp.gov.in",
+          "phone": "+91-177-2620661"
+        }
+      }
+    },
+    {
+      "name": "Recruitment of Para Cook and Para Helper in HPPWD 14th Circle Rohru",
+      "date_of_notification": "2022-10-01",
+      "date_of_commencement": "2022-10-01",
+      "end_date": "2022-10-21",
+      "event_type":"Exam",
+      "apply_link": "https://hppwd.hp.gov.in/recruitment-hppwd",
+      "document_links": [
+        "https://hppwd.hp.gov.in/sites/default/files/Recruitment_Para_Cook_Helper_Rohru_2022.pdf"
+      ],
+      "details": {
+        "positions": [
+          "Para Cook",
+          "Para Helper"
+        ],
+        "eligibility": {
+          "education": "Refer to the official notification for detailed qualifications.",
+          "age_limit": "Between 18 and 45 years as of 2022-10-01"
+        },
+        "fee": {
+          "amount": "No application fee",
+          "payment_mode": "Not applicable"
+        },
+        "important_dates": {
+          "last_date_to_apply": "2022-10-21"
+        },
+        "contact_details": {
+          "email": "hppwd-recruitment@hp.gov.in",
+          "phone": "+91-177-2620661"
+        }
+      }
+    }
+  ]
+  

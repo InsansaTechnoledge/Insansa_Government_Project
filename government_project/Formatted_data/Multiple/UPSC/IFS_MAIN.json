@@ -1,0 +1,62 @@
+[{
+    "name": "Indian Forest Service (Main) Examination, 2024",
+    "date_of_notification": "14-02-2024",
+    "date_of_commencement": "24-11-2024",
+    "end_date": "01-12-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notif-IFSP-24-engl-140224.pdf",
+      "https://upsc.gov.in/sites/default/files/TT-IFSM-Engl-031024.pdf"
+    ],
+    "details": {
+      "vacancies": "To be announced",
+      "eligibility": {
+        "education": "Bachelor’s degree with at least one of the subjects namely Animal Husbandry & Veterinary Science, Botany, Chemistry, Geology, Mathematics, Physics, Statistics, and Zoology or a Bachelor's degree in Agriculture, Forestry, or in Engineering from a recognized university.",
+        "age_limit": "21 to 32 years as of 01-08-2024"
+      },
+      "application_fee": {
+        "amount": "₹100",
+        "exemptions": ["Female candidates", "SC/ST candidates", "Persons with Benchmark Disabilities"]
+      },
+      "selection_process": {
+        "stages": [
+          "Preliminary Examination (Civil Services Preliminary Examination)",
+          "Main Examination",
+          "Personality Test (Interview)"
+        ]
+      },
+      "exam_pattern": {
+        "main_exam": {
+          "papers": [
+            {
+              "name": "Paper-I: General English",
+              "duration": "3 hours",
+              "marks": 300
+            },
+            {
+              "name": "Paper-II: General Knowledge",
+              "duration": "3 hours",
+              "marks": 300
+            },
+            {
+              "name": "Paper-III, IV, V & VI: Any two subjects to be selected from the list of optional subjects. Each subject will have two papers.",
+              "duration": "3 hours each",
+              "marks": "200 each paper"
+            }
+          ],
+          "total_marks": 1400
+        },
+        "personality_test": {
+          "marks": 300
+        }
+      },
+      "important_dates": {
+        "last_date_for_receipt_of_applications": "05-03-2024",
+        "date_of_preliminary_examination": "26-05-2024",
+        "date_of_main_examination": "24-11-2024 to 01-12-2024"
+      },
+      "contact_information": "For more details, refer to the official notification."
+    }
+  } ]
+  

@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Phase XII/Selection Post/2024 - Recruitment for Various Posts",
+      "date_of_notification": "15-12-2024",
+      "date_of_commencement": "15-12-2024",
+      "end_date": "31-12-2024",
+      "event_type":"Exam",
+      "apply_link": "https://www.ssckkr.kar.nic.in/",
+      "document_links": [
+        "https://www.ssckkr.kar.nic.in/Phase_XII_Selection_Post_2024_Notification.pdf",
+        "https://www.ssckkr.kar.nic.in/Phase_XII_Selection_Post_2024_Application_Form.pdf"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 100,
+          "breakdown": {
+            "laboratory_attendant": 20,
+            "junior_engineer": 30,
+            "technical_assistant": 50
+          }
+        },
+        "eligibility": {
+          "education": {
+            "laboratory_attendant": "12th Class pass with Science",
+            "junior_engineer": "Diploma in Engineering",
+            "technical_assistant": "Bachelor's Degree in Science"
+          },
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 30
+          }
+        },
+        "application_fee": {
+          "general": 100,
+          "sc_st": 50
+        },
+        "selection_process": [
+          "Written Examination",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start": "15-12-2024",
+          "application_end": "31-12-2024",
+          "exam_date": "To Be Announced"
+        },
+        "contact_details": {
+          "email": "helpdesk@ssckkr.kar.nic.in",
+          "phone": "+91-80-25502520"
+        }
+      }
+    }
+  ]
+  

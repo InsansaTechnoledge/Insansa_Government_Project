@@ -1,0 +1,37 @@
+[{
+    "name": "Rajasthan Agriculture Department Recruitment 2024",
+    "date_of_notification": "October 21, 2024",
+    "date_of_commencement": "October 21, 2024",
+    "end_date": "November 19, 2024",
+    "event_type":"Exam",
+    "apply_link": "https://rpsc.rajasthan.gov.in/advertisements",
+    "document_links": [
+      "https://rpsc.rajasthan.gov.in/advertisements"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 241,
+        "breakdown": {
+          "Agriculture Officers": 121,
+          "Agriculture Inspectors": 120
+        }
+      },
+      "eligibility": {
+        "age_limit": {
+          "minimum": 21,
+          "maximum": 40
+        },
+        "education": "Bachelor's degree in Agriculture or related field"
+      },
+      "selection_process": [
+        "Written Examination",
+        "Interview"
+      ],
+      "important_dates": {
+        "application_start_date": "October 21, 2024",
+        "application_end_date": "November 19, 2024",
+        "exam_date": "To be announced"
+      }
+    }
+  }
+]  

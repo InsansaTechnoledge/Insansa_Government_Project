@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Assistant Statistical Officer Recruitment 2024",
+        "date_of_notification": "21-11-2023",
+        "date_of_commencement": "21-11-2023",
+        "end_date": "24-12-2023",
+        "event_type":"Exam",
+        "apply_link": "https://www.ossc.gov.in/Public/Pages/View_Content.aspx?id=iQvy8ONZ1XeCyxFZaY2SfA==",
+        "document_links": [
+          "https://www.ossc.gov.in/Public/Pages/View_Content.aspx?id=iQvy8ONZ1XeCyxFZaY2SfA=="
+        ],
+        "details": {
+          "vacancies": {
+            "total": 234,
+            "breakdown": {
+              "general": 117,
+              "sebc": 63,
+              "sc": 39,
+              "st": 15
+            }
+          },
+          "eligibility": {
+            "age_limit": "Minimum 21 years and maximum 38 years as on 01-01-2023",
+            "education": "Bachelor's degree in any discipline with a minimum of 60% marks"
+          },
+          "fee": {
+            "amount": "₹200",
+            "exemptions": ["SC/ST candidates", "PwD candidates"]
+          },
+          "important_dates": {
+            "application_period": "21-11-2023 to 24-12-2023"
+          },
+          "contact_details": {
+            "facilitation_counter": "0671-2304090, 0671-2301107",
+            "email": "ossc@nic.in",
+            "address": "OSSC Office, Bhubaneswar, Odisha"
+          }
+        }
+      }
+      
+]

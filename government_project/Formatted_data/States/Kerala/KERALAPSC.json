@@ -1,0 +1,69 @@
+[
+    {
+      "name": "Recruitment for Police Constable",
+      "date_of_notification": "2024-01-10",
+      "date_of_commencement": "2024-02-01",
+      "end_date": "2024-02-20",
+      "event_type":"Exam",
+      "apply_link": "https://www.keralapsc.gov.in/notifications",
+      "document_links": [
+        "https://www.keralapsc.gov.in/sites/default/files/notifications/police-constable-2024.pdf"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 150,
+          "category": "General"
+        },
+        "eligibility": {
+          "education": "10th Pass",
+          "age_limit": "18 to 30 years"
+        },
+        "fee": {
+          "amount": "₹300",
+          "exemptions": ["SC/ST candidates"]
+        },
+        "important_dates": {
+          "last_date_to_apply": "2024-02-20",
+          "exam_date": "2024-03-15"
+        },
+        "contact_details": {
+          "email": "info@keralapsc.gov.in",
+          "phone": "+91-471-2552001"
+        }
+      }
+    },
+    {
+      "name": "Recruitment for Assistant Engineers",
+      "date_of_notification": "2024-01-15",
+      "date_of_commencement": "2024-02-05",
+      "end_date": "2024-02-25",
+      "event_type":"Exam",
+      "apply_link": "https://www.keralapsc.gov.in/notifications",
+      "document_links": [
+        "https://www.keralapsc.gov.in/sites/default/files/notifications/assistant-engineer-2024.pdf"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 50,
+          "category": "Engineering"
+        },
+        "eligibility": {
+          "education": "Bachelor's Degree in Engineering",
+          "age_limit": "21 to 35 years"
+        },
+        "fee": {
+          "amount": "₹500",
+          "exemptions": ["SC/ST candidates"]
+        },
+        "important_dates": {
+          "last_date_to_apply": "2024-02-25",
+          "exam_date": "2024-03-20"
+        },
+        "contact_details": {
+          "email": "hr@keralapsc.gov.in",
+          "phone": "+91-471-2552002"
+        }
+      }
+    }
+  ]
+  

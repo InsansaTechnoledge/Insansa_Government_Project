@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Gramin Dak Sevak (GDS) Recruitment 2025",
+      "date_of_notification": "01-02-2025",
+      "date_of_commencement": "03-03-2025",
+      "end_date": "28-03-2025",
+      "event_type":"Exam",
+      "apply_link": "https://indiapostgdsonline.gov.in/",
+      "document_links": [
+        "https://indiapostgdsonline.gov.in/Notifications/Model_Notification.pdf"
+      ],
+      "details": {
+        "vacancies": 65200,
+        "eligibility": {
+          "education": "10th Pass",
+          "age_limit": "18 to 32 years"
+        },
+        "selection_process": "Merit-Based",
+        "salary": {
+          "ABPM/GDS": "₹10,000 to ₹24,470 per month",
+          "BPM": "₹12,000 to ₹29,380 per month"
+        }
+      }
+    }
+  ]
+  

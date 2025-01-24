@@ -1,0 +1,39 @@
+[{
+    "name": "Uttar Pradesh Teacher Eligibility Test (UPTET) 2024",
+    "date_of_notification": "October 16, 2024",
+    "date_of_commencement": "December 2024",
+    "end_date": "To be announced",
+    "event_type":"Exam",
+    "apply_link": "https://updeled.gov.in/",
+    "document_links": [
+      "https://updeled.gov.in/"
+    ],
+    "details": {
+      "vacancies": {
+        "total": "To be announced",
+        "breakdown": {
+          "Primary Level Teachers": "To be announced",
+          "Upper Primary Level Teachers": "To be announced"
+        }
+      },
+      "eligibility": {
+        "age_limit": {
+          "minimum": 18,
+          "maximum": "No upper age limit specified"
+        },
+        "education": {
+          "primary_level": "Graduation with D.El.Ed/BTC or equivalent",
+          "upper_primary_level": "Graduation with B.Ed or equivalent"
+        }
+      },
+      "selection_process": [
+        "Written Examination"
+      ],
+      "important_dates": {
+        "application_start_date": "October 16, 2024",
+        "application_end_date": "To be announced",
+        "exam_date": "December 2024"
+      }
+    }
+  }
+]  

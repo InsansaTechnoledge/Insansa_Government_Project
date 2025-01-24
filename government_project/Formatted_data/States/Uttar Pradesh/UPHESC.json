@@ -1,0 +1,36 @@
+[{
+    "name": "UPHESC Assistant Professor Recruitment 2024",
+    "date_of_notification": "June 9, 2024",
+    "date_of_commencement": "June 9, 2024",
+    "end_date": "July 14, 2024",
+    "event_type":"Exam",
+    "apply_link": "https://uphesc.org/en",
+    "document_links": [
+      "https://uphesc.org/en/advertisement"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 1150,
+        "breakdown": {
+          "Social Science": 273,
+          "Other Subjects": 877
+        }
+      },
+      "eligibility": {
+        "age_limit": {
+          "maximum": 62
+        },
+        "education": "Master's degree in relevant subject with NET/SLET/SET or Ph.D."
+      },
+      "selection_process": [
+        "Written Examination",
+        "Interview"
+      ],
+      "important_dates": {
+        "application_start_date": "June 9, 2024",
+        "application_end_date": "July 14, 2024",
+        "exam_date": "To be announced"
+      }
+    }
+  }
+]  

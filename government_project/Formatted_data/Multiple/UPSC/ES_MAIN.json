@@ -1,0 +1,45 @@
+[{
+    "name": "Engineering Services (Main) Examination, 2024",
+    "date_of_notification": "06-09-2023",
+    "date_of_commencement": "23-06-2024",
+    "end_date": "23-06-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notification-ESE-2024-Engl-060923.pdf",
+      "https://upsc.gov.in/sites/default/files/PressNote-ESE-24-Engl-221124.pdf",
+      "https://upsc.gov.in/sites/default/files/TT-ESE-24-Engl-250624.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Civil-I.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Civil-II.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Mechanical-I.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Mechanical-II.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Electrical-I.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Electrical-II.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Electronics-I.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-ESE-2024-Electronics-II.pdf",
+      "https://upsc.gov.in/sites/default/files/ESEM_2024_WR_Eng_30072024.pdf",
+      "https://upsc.gov.in/sites/default/files/FR-ESEM-24-Engl-221124.pdf",
+      "https://upsc.gov.in/sites/default/files/CutOff-ESEM-24-Engl-221124.pdf"
+    ],
+    "details": {
+      "vacancies": 167,
+      "eligibility": {
+        "age_limit": {
+          "maximum": "30 years"
+        },
+        "education": "Bachelor's degree in Engineering from a recognized university or equivalent"
+      },
+      "application_fee": {
+        "amount": "₹200",
+        "exemptions": ["Female candidates", "SC/ST candidates"]
+      },
+      "selection_process": {
+        "written_exam": [
+          "Paper I: General Studies and Engineering Aptitude",
+          "Paper II: Engineering Discipline-specific Paper"
+        ],
+        "interview": "Personality Test"
+      }
+    }
+  }]
+  

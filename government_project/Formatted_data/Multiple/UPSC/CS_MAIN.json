@@ -1,0 +1,82 @@
+[{
+    "name": "Civil Services (Main) Examination, 2024",
+    "date_of_notification": "14-02-2024",
+    "date_of_commencement": "20-09-2024",
+    "end_date": "29-09-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notif-CSP-24-engl-140224.pdf",
+      "https://upsc.gov.in/sites/default/files/TT-CSM-24-engl-090824.pdf"
+    ],
+    "details": {
+      "vacancies": 1056,
+      "eligibility": {
+        "education": "Bachelor’s degree from a recognized university.",
+        "age_limit": "21 to 32 years as of 01-08-2024"
+      },
+      "application_fee": {
+        "amount": "₹100",
+        "exemptions": ["Female candidates", "SC/ST candidates", "Persons with Benchmark Disabilities"]
+      },
+      "selection_process": {
+        "stages": [
+          "Preliminary Examination",
+          "Main Examination",
+          "Personality Test (Interview)"
+        ]
+      },
+      "exam_pattern": {
+        "main_exam": {
+          "papers": [
+            {
+              "name": "Paper-I: Essay",
+              "duration": "3 hours",
+              "marks": 250
+            },
+            {
+              "name": "Paper-II: General Studies I",
+              "duration": "3 hours",
+              "marks": 250
+            },
+            {
+              "name": "Paper-III: General Studies II",
+              "duration": "3 hours",
+              "marks": 250
+            },
+            {
+              "name": "Paper-IV: General Studies III",
+              "duration": "3 hours",
+              "marks": 250
+            },
+            {
+              "name": "Paper-V: General Studies IV",
+              "duration": "3 hours",
+              "marks": 250
+            },
+            {
+              "name": "Paper-VI: Optional Subject Paper 1",
+              "duration": "3 hours",
+              "marks": 250
+            },
+            {
+              "name": "Paper-VII: Optional Subject Paper 2",
+              "duration": "3 hours",
+              "marks": 250
+            }
+          ],
+          "total_marks": 1750
+        },
+        "personality_test": {
+          "marks": 275
+        }
+      },
+      "important_dates": {
+        "last_date_for_receipt_of_applications": "05-03-2024",
+        "date_of_preliminary_examination": "16-06-2024",
+        "date_of_main_examination": "20-09-2024 to 29-09-2024"
+      },
+      "contact_information": "For more details, refer to the official notification."
+    }
+  }
+]  

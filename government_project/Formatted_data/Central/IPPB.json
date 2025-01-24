@@ -1,0 +1,72 @@
+
+  [
+    {
+      "name": "Recruitment of Executives - IPPB 2025",
+      "date_of_notification": "20-01-2025",
+      "date_of_commencement": "22-01-2025",
+      "end_date": "15-02-2025",
+      "apply_link": "https://www.ippbonline.com/web/ippb/current-openings/apply",
+      "event_type": "Exam",
+      "document_links": [
+        "https://www.ippbonline.com/web/ippb/current-openings/executive-notification.pdf"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 120,
+          "breakdown": {
+            "executive": 100,
+            "senior_executive": 20
+          }
+        },
+        "eligibility": {
+          "education": "Graduate from a recognized university",
+          "experience": "Minimum 2 years in relevant field"
+        },
+        "fee": {
+          "amount": "₹750",
+          "exemptions": ["SC/ST/PwD candidates"]
+        },
+        "exam_centers": ["Delhi", "Mumbai", "Chennai", "Kolkata"],
+        "important_dates": {
+          "results": "March 2025",
+          "interviews": "April 2025"
+        }
+      }
+    },
+    {
+      "name": "Assistant Manager Recruitment - NABARD 2025",
+      "date_of_notification": "10-01-2025",
+      "date_of_commencement": "12-01-2025",
+      "end_date": "05-02-2025",
+      "apply_link": "https://www.nabard.org/careers-notices1.aspx",
+      "event_type": "Exam",
+      "document_links": [
+        "https://www.nabard.org/careers-notices/assistant-manager-recruitment.pdf"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 150,
+          "breakdown": {
+            "generalist": 100,
+            "specialist": 50
+          }
+        },
+        "eligibility": {
+          "education": "Graduate/Postgraduate in relevant discipline",
+          "age_limit": "21-30 years"
+        },
+        "fee": {
+          "amount": "₹800",
+          "exemptions": ["SC/ST/PwD candidates"]
+        },
+        "exam_centers": ["Bangalore", "Hyderabad", "Lucknow", "Guwahati"],
+        "important_dates": {
+          "results": "March 2025",
+          "interviews": "April-May 2025"
+        }
+      }
+    }
+  ]
+  
+  
+  

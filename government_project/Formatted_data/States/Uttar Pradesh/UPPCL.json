@@ -1,0 +1,39 @@
+[{
+    "name": "UPPCL Assistant Engineer Recruitment 2025",
+    "date_of_notification": "December 2024",
+    "date_of_commencement": "December 2024",
+    "end_date": "January 2025",
+    "event_type":"Exam",
+    "apply_link": "https://uppcl.org/uppcl/en",
+    "document_links": [
+      "https://uppcl.org/uppcl/en/vacancy-results"
+    ],
+    "details": {
+      "vacancies": {
+        "total": "To be announced",
+        "breakdown": {
+          "Electrical": "To be announced",
+          "Mechanical": "To be announced",
+          "Civil": "To be announced",
+          "Computer Science": "To be announced"
+        }
+      },
+      "eligibility": {
+        "age_limit": {
+          "minimum": 21,
+          "maximum": 40
+        },
+        "education": "Bachelor's degree in relevant engineering discipline"
+      },
+      "selection_process": [
+        "Written Examination",
+        "Interview"
+      ],
+      "important_dates": {
+        "application_start_date": "December 2024",
+        "application_end_date": "January 2025",
+        "exam_date": "To be announced"
+      }
+    }
+  }
+]  

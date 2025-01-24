@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Recruitment for Various Positions in BTSC",
+      "date_of_notification": "15-12-2024",
+      "date_of_commencement": "15-12-2024",
+      "end_date": "31-12-2024",
+      "event_type":"Exam",
+      "apply_link": "https://btsc.bihar.gov.in/index.php/",
+      "document_links": [
+        "https://btsc.bihar.gov.in/index.php/Recruitment_Notification.pdf",
+        "https://btsc.bihar.gov.in/index.php/Recruitment_Application_Form.pdf"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 50,
+          "breakdown": {
+            "engineer": 20,
+            "technician": 15,
+            "support_staff": 15
+          }
+        },
+        "eligibility": {
+          "education": {
+            "engineer": "B.Tech in Civil Engineering",
+            "technician": "Diploma in Civil Engineering",
+            "support_staff": "10th Pass with relevant experience"
+          },
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 40
+          }
+        },
+        "application_fee": {
+          "general": 500,
+          "sc_st": 250
+        },
+        "selection_process": [
+          "Written Examination",
+          "Interview"
+        ],
+        "important_dates": {
+          "application_start": "15-12-2024",
+          "application_end": "31-12-2024",
+          "exam_date": "To Be Announced"
+        },
+        "contact_details": {
+          "email": "helpdesk@btsc.bihar.gov.in",
+          "phone": "+91-612-2225387"
+        }
+      }
+    }
+  ]
+  

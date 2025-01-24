@@ -1,0 +1,47 @@
+[
+    {
+      "name": "RSEB Junior Engineer (JE) Recruitment 2024",
+      "date_of_notification": "December 11, 2024",
+      "date_of_commencement": "January 2025",
+      "end_date": "February 2025",
+      "event_type":"Exam",
+      "apply_link": "https://energy.rajasthan.gov.in/",
+      "document_links": [
+        "https://energy.rajasthan.gov.in/content/raj/energy-department/en/home.html"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 487,
+          "breakdown": {
+            "Junior Engineer (Electrical)": 228,
+            "Junior Engineer (Mechanical)": 25,
+            "Junior Engineer (C&I/Communication)": 11,
+            "Junior Engineer (Fire & Safety)": 2,
+            "Junior Chemist": 5,
+            "Technician-III (ITI)": 216
+          }
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 40
+          },
+          "education": {
+            "Junior Engineer": "Degree or Diploma in relevant engineering discipline",
+            "Junior Chemist": "Master’s Degree in Chemistry",
+            "Technician-III": "ITI certification in relevant trade"
+          }
+        },
+        "selection_process": [
+          "Written Examination",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start_date": "January 2025",
+          "application_end_date": "February 2025",
+          "exam_date": "To be announced"
+        }
+      }
+    }
+  ]
+  

@@ -1,0 +1,35 @@
+[{
+    "name": "Civil Services (Preliminary) Examination, 2024",
+    "date_of_notification": "17-02-2024",
+    "date_of_commencement": "26-05-2024",
+    "end_date": "26-05-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/CS-Prelims-2024-Notification-Engl-170224.pdf",
+      "https://upsc.gov.in/sites/default/files/CS-Prelims-2024-Press-Note-Engl-170224.pdf",
+      "https://upsc.gov.in/sites/default/files/CS-Prelims-2024-Timetable-Engl-170224.pdf"
+    ],
+    "details": {
+      "vacancies": "Varies",
+      "eligibility": {
+        "age_limit": {
+          "minimum": "21 years",
+          "maximum": "32 years"
+        },
+        "education": "Bachelor’s degree from a recognized university"
+      },
+      "application_fee": {
+        "amount": "₹100",
+        "exemptions": ["Female candidates", "SC/ST candidates"]
+      },
+      "selection_process": {
+        "written_exam": [
+          "Paper I: General Studies",
+          "Paper II: Civil Services Aptitude Test (CSAT)"
+        ],
+        "interview": "Personality Test"
+      }
+    }
+  }
+]  

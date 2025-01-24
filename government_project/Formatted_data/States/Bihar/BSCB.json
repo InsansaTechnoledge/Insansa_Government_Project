@@ -1,0 +1,74 @@
+[
+    {
+      "name": "Selection of Nine Experts in Project Implementing Team",
+      "date_of_notification": "17-12-2024",
+      "date_of_commencement": "17-12-2024",
+      "end_date": "23-01-2025",
+      "event_type":"Exam",
+      "apply_link": "https://biharscb.co.in/career/",
+      "document_links": [
+        "https://biharscb.co.in/wp-content/uploads/2024/12/Advertisement_Nine_Experts.pdf",
+        "https://biharscb.co.in/wp-content/uploads/2024/12/Notice_Nine_Experts.pdf",
+        "https://biharscb.co.in/wp-content/uploads/2024/12/Application_Form_Nine_Experts.pdf"
+      ],
+      "details": {
+        "positions": 9,
+        "eligibility": {
+          "education": "Relevant degree in the respective field",
+          "experience": "Minimum 5 years in related domain"
+        },
+        "application_fee": {
+          "general": 1000,
+          "sc_st": 500
+        },
+        "selection_process": [
+          "Written Test",
+          "Interview"
+        ],
+        "important_dates": {
+          "application_start": "17-12-2024",
+          "application_end": "23-01-2025"
+        },
+        "contact_details": {
+          "email": "helpdesk@biharscb.co.in",
+          "phone": "+91-612-2225387"
+        }
+      }
+    },
+    {
+      "name": "Chief Risk Officer on Contract Basis",
+      "date_of_notification": "22-12-2024",
+      "date_of_commencement": "22-12-2024",
+      "end_date": "17-01-2025",
+      "event_type":"Exam",
+      "apply_link": "https://biharscb.co.in/career/",
+      "document_links": [
+        "https://biharscb.co.in/wp-content/uploads/2024/12/Advertisement_CRO.pdf",
+        "https://biharscb.co.in/wp-content/uploads/2024/12/Notice_CRO.pdf",
+        "https://biharscb.co.in/wp-content/uploads/2024/12/Application_Form_CRO.pdf"
+      ],
+      "details": {
+        "positions": 1,
+        "eligibility": {
+          "education": "Graduate with Professional Certification in Financial Risk Management",
+          "experience": "Minimum 10 years in banking/financial sector"
+        },
+        "application_fee": {
+          "general": 1500,
+          "sc_st": 750
+        },
+        "selection_process": [
+          "Interview"
+        ],
+        "important_dates": {
+          "application_start": "22-12-2024",
+          "application_end": "17-01-2025"
+        },
+        "contact_details": {
+          "email": "helpdesk@biharscb.co.in",
+          "phone": "+91-612-2225387"
+        }
+      }
+    }
+  ]
+  

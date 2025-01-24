@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Punjab Civil Services Combined Competitive Examination, 2025",
+    "date_of_notification": "06-01-2025",
+    "date_of_commencement": "Tentative: May 2025",
+    "end_date": "N/A",
+    "event_type":"Exam",
+    "apply_link": "https://www.ppsc.gov.in/",
+    "document_links": [
+      "https://www.ppsc.gov.in/",
+      "https://www.ppsc.gov.in/notice/Notification_PCS_2025.pdf"
+    ],
+    "details": {
+      "exam_centers": ["Ludhiana", "Amritsar", "Jalandhar"],
+      "eligibility": {
+        "education": "Bachelor’s degree in any stream",
+        "age_limit": "21-37 years"
+      },
+      "vacancies": {
+        "total": 75,
+        "civil_services": 50,
+        "police_services": 25
+      }
+    }
+  }
+  
+  ]
+  

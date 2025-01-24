@@ -1,0 +1,30 @@
+[{
+    "name": "Rajasthan Eligibility Examination for Teachers (REET) 2024",
+    "date_of_notification": "12-12-2024",
+    "date_of_commencement": "16-12-2024",
+    "end_date": "15-01-2025",
+    "event_type":"Exam",
+    "apply_link": "https://education.rajasthan.gov.in/home",
+    "document_links": [
+      "https://www.shiksha.com/exams/reet-exam?utm_source=chatgpt.com",
+      "https://www.sarkariresult.com/reet-exam-application-2024?utm_source=chatgpt.com"
+    ],
+    "details": {
+      "vacancies": {
+        "total": "As per official notification",
+        "breakdown": "As per official notification"
+      },
+      "important_dates": {
+        "application_start_date": "16-12-2024",
+        "application_end_date": "15-01-2025",
+        "exam_date": "27-02-2025",
+        "admit_card_available": "19-02-2025"
+      },
+      "fees": {
+        "level_1": "₹550",
+        "level_2": "₹550",
+        "both_levels": "₹750"
+      }
+    }
+  }
+]  

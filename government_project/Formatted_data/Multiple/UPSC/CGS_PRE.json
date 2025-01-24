@@ -1,0 +1,86 @@
+[{
+    "name": "Combined Geo-Scientist (Preliminary) Examination, 2025",
+    "date_of_notification": "04-09-2024",
+    "date_of_commencement": "09-02-2025",
+    "end_date": "24-09-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notif-CGSPE-25-English-04092024_0.pdf"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 85,
+        "breakdown": {
+          "geologist_group_a": 40,
+          "geophysicist_group_a": 21,
+          "chemist_group_a": 19,
+          "scientist_b_hydrogeology_group_a": 4,
+          "scientist_b_chemical_group_a": 1
+        }
+      },
+      "eligibility": {
+        "education": {
+          "geologist_group_a": "Master's degree in Geological Science or Geology or Applied Geology or Geo-Exploration or Mineral Exploration or Engineering Geology or Marine Geology or Earth Science and Resource Management or Oceanography and Coastal Areas Studies or Petroleum Geosciences or Geochemistry or Geological Technology or Geophysical Technology from a recognized university.",
+          "geophysicist_group_a": "M.Sc. in Physics or Applied Physics or M.Sc. (Geophysics) or Integrated M.Sc. (Exploration Geophysics) or M.Sc. (Applied Geophysics) or M.Sc. (Marine Geophysics) or M.Sc. (Tech.) (Applied Geophysics) from a recognized university.",
+          "chemist_group_a": "M.Sc. in Chemistry or Applied Chemistry or Analytical Chemistry from a recognized university.",
+          "scientist_b_hydrogeology_group_a": "Master's degree in Geology or Applied Geology or Marine Geology from a recognized university.",
+          "scientist_b_chemical_group_a": "M.Sc. in Chemistry or Applied Chemistry or Analytical Chemistry from a recognized university."
+        },
+        "age_limit": "21 to 32 years as of 01-01-2025"
+      },
+      "application_fee": {
+        "amount": "₹200",
+        "exemptions": ["Female candidates", "SC/ST candidates", "Persons with Benchmark Disabilities"]
+      },
+      "selection_process": {
+        "stages": [
+          "Preliminary Examination",
+          "Main Examination",
+          "Personality Test"
+        ]
+      },
+      "exam_pattern": {
+        "preliminary_exam": {
+          "papers": [
+            {
+              "name": "Paper-I: General Studies",
+              "duration": "2 hours",
+              "marks": 100
+            },
+            {
+              "name": "Paper-II: Stream Specific Subject",
+              "duration": "2 hours",
+              "marks": 300
+            }
+          ],
+          "total_marks": 400
+        },
+        "main_exam": {
+          "papers": [
+            {
+              "name": "Paper-I: Stream Specific Subject",
+              "duration": "3 hours",
+              "marks": 200
+            },
+            {
+              "name": "Paper-II: Stream Specific Subject",
+              "duration": "3 hours",
+              "marks": 200
+            }
+          ],
+          "total_marks": 400
+        },
+        "personality_test": {
+          "marks": 200
+        }
+      },
+      "important_dates": {
+        "last_date_for_receipt_of_applications": "24-09-2024",
+        "date_of_preliminary_examination": "09-02-2025",
+        "date_of_main_examination": "21-06-2025 to 22-06-2025"
+      },
+      "contact_information": "For more details, refer to the official notification."
+    }
+  }]
+  

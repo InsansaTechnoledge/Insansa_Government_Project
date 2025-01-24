@@ -1,0 +1,50 @@
+[{
+    "name": "Combined Section Officers' (Grade 'B') Limited Departmental Competitive Examination (LDCE), 2024",
+    "date_of_notification": "13-11-2024",
+    "date_of_commencement": "11-01-2025",
+    "end_date": "03-12-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notif-Instr-CSO-GrB-LDCE-24-Engl-131124.pdf"
+    ],
+    "details": {
+      "vacancies": "Various posts across different services",
+      "eligibility": {
+        "service": "Minimum of five years of approved service in the respective feeder cadre",
+        "education": "Bachelor's degree from a recognized university",
+        "age_limit": "Not exceeding 35 years as of 01-07-2024"
+      },
+      "application_fee": {
+        "amount": "₹200",
+        "exemptions": ["Female candidates", "SC/ST candidates", "Persons with Benchmark Disabilities"]
+      },
+      "selection_process": "Written Examination followed by Evaluation of Service Records",
+      "exam_pattern": {
+        "papers": [
+          {
+            "name": "Paper-I: General Studies and General Knowledge of the Constitution of India and Machinery of Government",
+            "type": "Objective",
+            "marks": 150
+          },
+          {
+            "name": "Paper-II: Procedure and Practice in the Government of India Secretariat and Attached Offices",
+            "type": "Objective",
+            "marks": 150
+          },
+          {
+            "name": "Paper-III: Noting and Drafting, Precis Writing",
+            "type": "Descriptive",
+            "marks": 200
+          }
+        ],
+        "total_marks": 500
+      },
+      "important_dates": {
+        "last_date_for_receipt_of_applications": "03-12-2024",
+        "date_of_examination": "11-01-2025 to 12-01-2025"
+      },
+      "contact_information": "For more details, refer to the official notification."
+    }
+  }
+]  

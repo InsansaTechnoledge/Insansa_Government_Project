@@ -1,0 +1,95 @@
+[
+    {
+      "name": "AP Police Sub Inspector Recruitment 2024",
+      "date_of_notification": "November 2024",
+      "date_of_commencement": "To Be Announced",
+      "end_date": "To Be Announced",
+      "event_type":"Exam",
+      "apply_link": "https://slprb.ap.gov.in/",
+      "document_links": [
+        "https://rrbapply.com/ap-police-si-recruitment/"
+      ],
+      "details": {
+        "vacancies": 500,
+        "eligibility": {
+          "education": "Graduation from a recognized university/institute",
+          "age_limit": {
+            "minimum": 20,
+            "maximum": 28
+          }
+        },
+        "application_fee": {
+          "general_obc": 600,
+          "sc_st": 300
+        },
+        "selection_process": [
+          "Preliminary Exam",
+          "Physical Standard Test (PST)",
+          "Physical Efficiency Test (PET)",
+          "Mains Exam",
+          "Document Verification",
+          "Final Merit List"
+        ],
+        "physical_standards": {
+          "men": {
+            "height": "Not less than 167.6 cm",
+            "chest": "Not less than 86.3 cm with a minimum expansion of 5 cm"
+          },
+          "women": {
+            "height": "Not less than 152.5 cm",
+            "weight": "Not less than 40 kg"
+          }
+        },
+        "salary": {
+          "pay_scale": "₹5200 - ₹20200",
+          "grade_pay": "₹2400"
+        }
+      }
+    },
+    {
+      "name": "AP Police Constable Recruitment 2024",
+      "date_of_notification": "November 2024",
+      "date_of_commencement": "To Be Announced",
+      "end_date": "21-11-2024",
+      "event_type":"Exam",
+      "apply_link": "https://slprb.ap.gov.in/",
+      "document_links": [
+        "https://www.mysarkarinaukri.com/find/andhra-pradesh-state-level-police-recruitment-board-jobs/142834"
+      ],
+      "details": {
+        "vacancies": 6100,
+        "eligibility": {
+          "education": "12th pass from a recognized institution",
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 27
+          }
+        },
+        "application_fee": {
+          "general_obc": 300,
+          "sc_st": 150
+        },
+        "selection_process": [
+          "Preliminary Exam",
+          "Physical Measurement Test (PMT)",
+          "Physical Efficiency Test (PET)",
+          "Final Written Exam"
+        ],
+        "physical_standards": {
+          "men": {
+            "height": "Not less than 167.6 cm",
+            "chest": "Not less than 86.3 cm with a minimum expansion of 5 cm"
+          },
+          "women": {
+            "height": "Not less than 152.5 cm",
+            "weight": "Not less than 40 kg"
+          }
+        },
+        "salary": {
+          "pay_scale": "₹5200 - ₹20200",
+          "grade_pay": "₹2400"
+        }
+      }
+    }
+  ]
+  

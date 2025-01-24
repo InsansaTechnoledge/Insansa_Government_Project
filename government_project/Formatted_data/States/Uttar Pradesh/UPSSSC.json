@@ -1,0 +1,97 @@
+[
+    {
+      "name": "UPSSSC Junior Assistant Recruitment 2024",
+      "date_of_notification": "November 26, 2024",
+      "date_of_commencement": "December 23, 2024",
+      "end_date": "January 22, 2025",
+      "event_type":"Exam",
+      "apply_link": "https://upsssc.gov.in/",
+      "document_links": [
+        "https://timesofindia.indiatimes.com/education/news/upsssc-junior-assistant-recruitment-2024-notification-released-for-2702-posts-check-key-dates-eligibility-selection-process-and-more/articleshow/115723319.cms"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 2702,
+          "breakdown": {
+            "General Selection": 2568,
+            "Special Selection": 134
+          }
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 40
+          },
+          "education": "Intermediate (12th) pass from a recognized board",
+          "additional_requirements": [
+            "Valid UPSSSC PET 2023 scorecard",
+            "Hindi typing speed of 25 words per minute",
+            "CCC certificate from DOEACC or equivalent"
+          ]
+        },
+        "selection_process": [
+          "Preliminary Eligibility Test (PET) 2023 score",
+          "Main Examination",
+          "Typing Test",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start_date": "December 23, 2024",
+          "application_end_date": "January 22, 2025",
+          "last_date_for_fee_payment": "January 22, 2025",
+          "last_date_for_application_edit": "January 29, 2025",
+          "exam_date": "To be announced"
+        }
+      }
+    },
+    {
+      "name": "UPSSSC Stenographer Recruitment 2024",
+      "date_of_notification": "December 2, 2024",
+      "date_of_commencement": "December 26, 2024",
+      "end_date": "January 25, 2025",
+      "event_type":"Exam",
+      "apply_link": "https://upsssc.gov.in/",
+      "document_links": [
+        "https://www.jagranjosh.com/articles/upsssc-stenographer-2024-notification-out-for-661-vacancies-at-upsssc-gov-in-check-eligibility-salary-other-details-1733203834-1"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 661,
+          "breakdown": {
+            "UR": 321,
+            "SC": 155,
+            "ST": 14,
+            "OBC": 125,
+            "EWS": 46
+          }
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 40
+          },
+          "education": "Intermediate (12th) pass from a recognized board",
+          "additional_requirements": [
+            "Valid UPSSSC PET 2022 scorecard",
+            "Hindi shorthand speed of 80 words per minute",
+            "Hindi typing speed of 25 words per minute",
+            "CCC certificate from DOEACC or equivalent"
+          ]
+        },
+        "selection_process": [
+          "Preliminary Eligibility Test (PET) 2022 score",
+          "Written Examination",
+          "Skill Test",
+          "Document Verification",
+          "Medical Examination"
+        ],
+        "important_dates": {
+          "application_start_date": "December 26, 2024",
+          "application_end_date": "January 25, 2025",
+          "last_date_for_fee_payment": "February 1, 2025",
+          "exam_date": "To be announced"
+        }
+      }
+    }
+  ]
+  

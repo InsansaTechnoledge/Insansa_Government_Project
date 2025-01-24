@@ -1,0 +1,64 @@
+[{
+    "name": "Indian Forest Service (Preliminary) Examination, 2024",
+    "date_of_notification": "14-02-2024",
+    "date_of_commencement": "26-05-2024",
+    "end_date": "26-05-2024",
+    "apply_link": "https://upsconline.nic.in",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notif-IFSP-24-engl-140224.pdf",
+      "https://upsc.gov.in/sites/default/files/PressNote-IFSP-24-Engl-140224.pdf",
+      "https://upsc.gov.in/sites/default/files/TT-IFSP-24-Engl-140224.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-I.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-II.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-III.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-IV.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-V.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-VI.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-VII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-VIII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-IX.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-X.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XI.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XIII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XIV.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XV.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XVI.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XVII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XVIII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XIX.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XX.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXI.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXIII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXIV.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXV.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXVI.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXVII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXVIII.pdf",
+      "https://upsc.gov.in/sites/default/files/QuestionPaper-IFSP-24-GS-XXIX.pdf"
+    ],
+    "details": {
+      "vacancies": "Varies",
+      "eligibility": {
+        "age_limit": {
+          "minimum": "21 years",
+          "maximum": "32 years"
+        },
+        "education": "Bachelor’s degree in any of the fields related to Forestry or Environmental Science"
+      },
+      "application_fee": {
+        "amount": "₹200",
+        "exemptions": ["Female candidates", "SC/ST candidates"]
+      },
+      "selection_process": {
+        "written_exam": [
+          "General Studies Paper I",
+          "General Studies Paper II"
+        ],
+        "interview": "Personality Test"
+      }
+    }
+  }
+]  

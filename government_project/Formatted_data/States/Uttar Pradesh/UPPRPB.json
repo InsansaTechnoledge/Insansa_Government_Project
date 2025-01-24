@@ -1,0 +1,145 @@
+[
+    {
+      "name": "UP Police Constable Recruitment 2023",
+      "date_of_notification": "December 23, 2023",
+      "date_of_commencement": "December 23, 2023",
+      "end_date": "January 16, 2024",
+      "event_type":"Exam",
+      "apply_link": "https://uppbpb.gov.in/",
+      "document_links": [
+        "https://uppbpb.gov.in/",
+        "https://www.sarkariresult.com/2023/up-police-constable-dec23/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 60244,
+          "breakdown": {
+            "Constable Civil Police": 35500,
+            "Constable PAC": 19200,
+            "Fireman": 10200,
+            "Constable Equestrian Police": 344
+          }
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 22
+          },
+          "education": "12th pass or equivalent from a recognized board"
+        },
+        "selection_process": [
+          "Written Examination",
+          "Physical Efficiency Test (PET)",
+          "Physical Standard Test (PST)",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start_date": "December 23, 2023",
+          "application_end_date": "January 16, 2024",
+          "exam_date": "Postponed until further notice"
+        }
+      }
+    },
+    {
+      "name": "UP Police Computer Operator Grade-A Recruitment 2023",
+      "date_of_notification": "November 2023",
+      "date_of_commencement": "November 2023",
+      "end_date": "December 2023",
+      "event_type":"Exam",
+      "apply_link": "https://uppbpb.gov.in/",
+      "document_links": [
+        "https://uppbpb.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 930
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 18,
+            "maximum": 28
+          },
+          "education": "12th pass with Physics and Mathematics, and 'O' Level Certificate or equivalent"
+        },
+        "selection_process": [
+          "Written Examination",
+          "Typing Test",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start_date": "November 2023",
+          "application_end_date": "December 2023",
+          "exam_date": "To be announced"
+        }
+      }
+    },
+    {
+      "name": "UP Police Programmer Grade-2 Recruitment 2023",
+      "date_of_notification": "November 2023",
+      "date_of_commencement": "November 2023",
+      "end_date": "December 2023",
+      "event_type":"Exam",
+      "apply_link": "https://uppbpb.gov.in/",
+      "document_links": [
+        "https://uppbpb.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 55
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 21,
+            "maximum": 30
+          },
+          "education": "Bachelor's Degree in Computer Science or related field"
+        },
+        "selection_process": [
+          "Written Examination",
+          "Interview",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start_date": "November 2023",
+          "application_end_date": "December 2023",
+          "exam_date": "To be announced"
+        }
+      }
+    },
+    {
+      "name": "UP Police Sub-Inspector (Confidential), Assistant Sub-Inspector (Clerk) & Assistant Sub-Inspector (Accounts) Recruitment 2023",
+      "date_of_notification": "November 2023",
+      "date_of_commencement": "November 2023",
+      "end_date": "December 2023",
+      "event_type":"Exam",
+      "apply_link": "https://uppbpb.gov.in/",
+      "document_links": [
+        "https://uppbpb.gov.in/"
+      ],
+      "details": {
+        "vacancies": {
+          "total": 921
+        },
+        "eligibility": {
+          "age_limit": {
+            "minimum": 21,
+            "maximum": 28
+          },
+          "education": "Bachelor's Degree in any discipline"
+        },
+        "selection_process": [
+          "Written Examination",
+          "Physical Efficiency Test (PET)",
+          "Physical Standard Test (PST)",
+          "Typing Test (for ASI Clerk and Accounts)",
+          "Document Verification"
+        ],
+        "important_dates": {
+          "application_start_date": "November 2023",
+          "application_end_date": "December 2023",
+          "exam_date": "To be announced"
+        }
+      }
+    }
+  ]
+  

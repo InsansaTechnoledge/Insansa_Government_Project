@@ -1,0 +1,128 @@
+[{
+    "name": "Combined Defence Services Examination (I), 2025",
+    "date_of_notification": "11-12-2024",
+    "date_of_commencement": "13-04-2025",
+    "end_date": "31-12-2024",
+    "apply_link": "https://upsconline.nic.in/",
+    "event_type":"Exam",
+    "document_links": [
+      "https://upsc.gov.in/sites/default/files/Notifi-CDSE-I-2025-Engl-11122024.pdf"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 457,
+        "breakdown": {
+          "indian_military_academy": 200,
+          "indian_naval_academy": 45,
+          "air_force_academy": 32,
+          "officers_training_academy_men": 170,
+          "officers_training_academy_women": 10
+        }
+      },
+      "eligibility": {
+        "age_limit": {
+          "indian_military_academy": "Unmarried male candidates born not earlier than 2nd January, 2002 and not later than 1st January, 2007",
+          "indian_naval_academy": "Unmarried male candidates born not earlier than 2nd January, 2002 and not later than 1st January, 2007",
+          "air_force_academy": "20 to 24 years as of 1st January, 2026 (born not earlier than 2nd January, 2002 and not later than 1st January, 2006)",
+          "officers_training_academy": "Unmarried male candidates born not earlier than 2nd January, 2001 and not later than 1st January, 2007; Unmarried women, issueless widows who have not remarried, and issueless divorcees who have not remarried, born not earlier than 2nd January, 2001 and not later than 1st January, 2007"
+        },
+        "education": {
+          "indian_military_academy": "Degree of a recognised University or equivalent.",
+          "indian_naval_academy": "Degree in Engineering from a recognised University/Institution.",
+          "air_force_academy": "Degree of a recognised University (with Physics and Mathematics at 10+2 level) or Bachelor of Engineering.",
+          "officers_training_academy": "Degree of a recognised University or equivalent."
+        }
+      },
+      "fee": {
+        "amount": "₹200",
+        "exemptions": [
+          "Female candidates",
+          "SC/ST candidates"
+        ]
+      },
+      "exam_centers": [
+        "Agartala",
+        "Ahmedabad",
+        "Aizawl",
+        "Allahabad",
+        "Bengaluru",
+        "Bareilly",
+        "Bhopal",
+        "Chandigarh",
+        "Chennai",
+        "Cuttack",
+        "Dehradun",
+        "Delhi",
+        "Dharwad",
+        "Dispur",
+        "Gangtok",
+        "Hyderabad",
+        "Imphal",
+        "Itanagar",
+        "Jaipur",
+        "Jammu",
+        "Jorhat",
+        "Kochi",
+        "Kohima",
+        "Kolkata",
+        "Lucknow",
+        "Madurai",
+        "Mumbai",
+        "Nagpur",
+        "Panaji (Goa)",
+        "Patna",
+        "Port Blair",
+        "Prayagraj (Allahabad)",
+        "Raipur",
+        "Ranchi",
+        "Sambalpur",
+        "Shillong",
+        "Shimla",
+        "Srinagar",
+        "Thiruvananthapuram",
+        "Tirupati",
+        "Udaipur",
+        "Visakhapatnam"
+      ],
+      "important_dates": {
+        "application_start_date": "11-12-2024",
+        "application_end_date": "31-12-2024",
+        "exam_date": "13-04-2025"
+      },
+      "scheme_of_exam": {
+        "indian_military_academy_naval_academy_air_force_academy": {
+          "subjects": {
+            "english": {
+              "duration": "2 hours",
+              "marks": 100
+            },
+            "general_knowledge": {
+              "duration": "2 hours",
+              "marks": 100
+            },
+            "elementary_mathematics": {
+              "duration": "2 hours",
+              "marks": 100
+            }
+          }
+        },
+        "officers_training_academy": {
+          "subjects": {
+            "english": {
+              "duration": "2 hours",
+              "marks": 100
+            },
+            "general_knowledge": {
+              "duration": "2 hours",
+              "marks": 100
+            }
+          }
+        }
+      },
+      "contact_details": {
+        "facilitation_counter": "011-23385271, 011-23381125, 011-23098543",
+        "address": "Union Public Service Commission, Dholpur House, Shahjahan Road, New Delhi – 110069"
+      }
+    }
+  }
+]

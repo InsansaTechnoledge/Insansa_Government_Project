@@ -1,0 +1,41 @@
+[{
+    "name": "Recruitment for Law Clerk cum Research Assistants",
+    "date_of_notification": "28-03-2024",
+    "date_of_commencement": "28-03-2024",
+    "end_date": "To Be Announced",
+    "event_type":"Exam",
+    "apply_link": "https://karnatakajudiciary.kar.nic.in/newwebsite/main_notify.php?p=106&stateNM=",
+    "document_links": [
+      "https://karnatakajudiciary.kar.nic.in/newwebsite/main_notify.php?p=106&stateNM="
+    ],
+    "details": {
+      "vacancies": {
+        "total": 5,
+        "breakdown": {
+          "law_clerk": 5
+        }
+      },
+      "eligibility": {
+        "education": {
+          "law_clerk": "Law degree from a recognized university"
+        },
+        "age_limit": {
+          "minimum": 21,
+          "maximum": 30
+        }
+      },
+      "selection_process": [
+        "Interview"
+      ],
+      "important_dates": {
+        "application_start": "28-03-2024",
+        "application_end": "To Be Announced",
+        "exam_date": "To Be Announced"
+      },
+      "contact_details": {
+        "email": "help@karnatakajudiciary.kar.nic.in",
+        "phone": "+91-80-23388500"
+      }
+    }
+  }
+]  

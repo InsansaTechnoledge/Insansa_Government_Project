@@ -1,0 +1,45 @@
+[{
+    "name": "Punjab Police Constable Recruitment 2024",
+    "date_of_notification": "14-03-2024",
+    "date_of_commencement": "14-03-2024",
+    "end_date": "04-04-2024",
+    "event_type":"Exam",
+    "apply_link": "https://punjabpolice.gov.in/RecruitmentsMain.aspx",
+    "document_links": [
+      "https://punjabpolice.gov.in/RecruitmentsMain.aspx"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 1746,
+        "breakdown": {
+          "District Police Cadre": 970,
+          "Armed Police Cadre": 776
+        }
+      },
+      "eligibility": {
+        "age_limit": {
+          "minimum": 18,
+          "maximum": 28
+        },
+        "education": "10+2 or equivalent from a recognized university with Punjabi as one of the compulsory or elective subjects with at least 60% of marks for General Category candidates and 50% for SC/ST/BC category candidates.",
+        "physical_standards": {
+          "height": {
+            "male": "5 feet 7 inches",
+            "female": "5 feet 2 inches"
+          }
+        }
+      },
+      "selection_process": [
+        "Computer-Based Test",
+        "Physical Measurement Test (PMT)",
+        "Physical Screening Test (PST)",
+        "Document Verification"
+      ],
+      "important_dates": {
+        "application_start_date": "14-03-2024",
+        "application_end_date": "04-04-2024",
+        "exam_date": "To be announced"
+      }
+    }
+  }
+]  
