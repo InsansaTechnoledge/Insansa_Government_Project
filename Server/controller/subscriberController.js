@@ -118,14 +118,21 @@ export const unsubscribe = async (req, res) => {
     try {
         const subscriber = await Subscriber.findOne({ unsubscribeToken: token });
         if (!subscriber) {
-            return res.status(404).send('Subscriber not found.');
+            return res.status(404).json('Subscriber not found.');
         }
+        if(!subscriber.isSubscribed){
+            return res.status(202).json('You Have Unsubscribed already!!!');
+        }
+        else{
 
-        // Update subscription status
+        // Update subscription statuse
         subscriber.isSubscribed = false;
         await subscriber.save();
+        
+        res.status(201).json('You have successfully unsubscribed.');
+    }
 
-        res.status(200).send('You have successfully unsubscribed.');
+        
     } catch (error) {
         console.error('Error processing unsubscribe request:', error);
         res.status(500).send('An error occurred. Please try again.');
