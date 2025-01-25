@@ -1,25 +1,14 @@
 [
-    {
-      "name": "Apprenticeship Training at Kakrapar Gujarat Site",
-      "date_of_notification": "27-12-2024",
-      "date_of_commencement": "27-12-2024",
-      "end_date": "21-01-2025",
-      "event_type":"Exam",
-      "apply_link": "https://www.npcilcareers.co.in/MainSiten/default.aspx",
-      "document_links": [
-        "https://www.npcilcareers.co.in/MainSiten/JobOpportunities/Apprenticeship_2024.pdf"
-      ],
-      "details": {
-        "positions": "Apprentices",
-        "location": "Kakrapar Gujarat Site",
-        "vacancies": "Not specified",
-        "eligibility": {
-          "education": "10th Pass with ITI in relevant trade",
-          "age_limit": "As per NPCIL norms"
-        },
-        "selection_process": "Based on merit",
-        "salary": "As per NPCIL norms"
-      }
-    }
-  ]
-  
+  {
+    "name": "Recruitment of Executive Trainees (2025) in NPCIL through GATE",
+    "date_of_notification": null,
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": null,
+    "event_type": "Recruitment",
+    "document_links": [
+      "https://www.npcilcareers.co.in/ETHQ2025/documents/advt.pdf"
+    ],
+    "details": null
+  }
+]

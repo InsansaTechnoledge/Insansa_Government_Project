@@ -1,26 +1,17 @@
-[{
-    "name": "Department of Medical, Health, and Family Welfare (DMHFW) Recruitment 2024",
-    "date_of_notification": "02-01-2025",
-    "date_of_commencement": "16-12-2024",
-    "end_date": "15-01-2025",
-    "event_type":"Exam",
-    "apply_link": "https://rajswasthya.nic.in/",
-    "document_links": [
-      "https://rajswasthya.nic.in/?utm_source=chatgpt.com"
-    ],
-    "details": {
-      "important_dates": {
-        "application_start_date": "16-12-2024",
-        "application_end_date": "15-01-2025",
-        "fee_payment_end_date": "15-01-2025",
-        "exam_date": "27-02-2025",
-        "admit_card_available": "19-02-2025"
-      },
-      "fees": {
-        "level_1": "₹550",
-        "level_2": "₹550",
-        "both_levels": "₹750"
+[
+    {
+      "name": "Contractual ANM Recruitment 2023 Document Verification",
+      "date_of_notification": "11-01-2025",
+      "date_of_commencement": "15-01-2025",
+      "end_date": "25-01-2025",
+      "apply_link": "https://rajswasthya.nic.in/Index.htm",
+      "event_type": "Exam",
+      "document_links": [
+        "https://rajswasthya.nic.in/PDF/47%20Dt.11.01.2025%20ANM.pdf"
+      ],
+      "details": {
+        "description": "Schedule for document verification of 5,724 candidates for Contractual ANM Recruitment 2023."
       }
     }
-  }
-]  
+  ]
+  

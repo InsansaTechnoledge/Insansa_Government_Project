@@ -1,49 +1,12 @@
 [
     {
-      "name": "MPPGCL Recruitment 2025 for 4300 Vacancies",
-      "date_of_notification": "01-02-2025",
-      "date_of_commencement": "01-02-2025",
-      "end_date": "28-02-2025",
-      "event_type":"Exam",
-      "apply_link": "https://mppgcl.mp.gov.in/",
-      "document_links": [],
-      "details": {
-        "vacancies": {
-          "total": 4300,
-          "positions": [
-            "Junior Engineer",
-            "Technician",
-            "Assistant Engineer",
-            "Plant Assistant",
-            "Accountant",
-            "Supervisor"
-          ]
-        },
-        "eligibility": {
-          "education": "Varies by position; typically requires relevant degree or diploma",
-          "age_limit": "18 to 45 years, varying by position"
-        },
-        "fee": {
-          "amount": "To be announced",
-          "exemptions": "To be announced"
-        },
-        "important_dates": {
-          "application_start_date": "01-02-2025",
-          "application_end_date": "28-02-2025"
-        },
-        "contact_details": {
-          "official_website": "https://mppgcl.mp.gov.in/"
-        }
-      }
-    },
-    {
       "name": "MPPGCL Assistant Engineer Recruitment 2024-25",
       "date_of_notification": "17-10-2024",
       "date_of_commencement": "24-12-2024",
       "end_date": "23-01-2025",
       "event_type":"Exam",
       "apply_link": "https://mppgcl.mp.gov.in/",
-      "document_links": [],
+      "document_links": ["https://mppgcl.mp.gov.in/CAREER/RULEBOOK_AE_GEN_MPPGCL_1072_04032024.pdf","https://mppgcl.mp.gov.in/CAREER/Notice_DV_AE(Gen.)_2024_3443_28062024_ADVT_1072_04032024.pdf"],
       "details": {
         "vacancies": {
           "total": "To be announced",
@@ -62,39 +25,6 @@
         "important_dates": {
           "application_start_date": "24-12-2024",
           "application_end_date": "23-01-2025"
-        },
-        "contact_details": {
-          "official_website": "https://mppgcl.mp.gov.in/"
-        }
-      }
-    },
-    {
-      "name": "MPPGCL Apprentice Recruitment 2024",
-      "date_of_notification": "28-11-2024",
-      "date_of_commencement": "28-11-2024",
-      "end_date": "02-12-2024",
-      "event_type":"Exam",
-      "apply_link": "https://mppgcl.mp.gov.in/",
-      "document_links": [],
-      "details": {
-        "vacancies": {
-          "total": 29,
-          "positions": [
-            "Graduate Apprentice",
-            "Diploma Apprentice"
-          ]
-        },
-        "eligibility": {
-          "education": "BE/B.Tech or Diploma in Mechanical/Electrical/EEE/Electronic and Telecommunication",
-          "age_limit": "As per apprenticeship rules"
-        },
-        "fee": {
-          "amount": "No application fee",
-          "exemptions": "Not applicable"
-        },
-        "important_dates": {
-          "application_start_date": "28-11-2024",
-          "application_end_date": "02-12-2024"
         },
         "contact_details": {
           "official_website": "https://mppgcl.mp.gov.in/"

@@ -1,35 +1,50 @@
-[{
-    "name": "PSCB Recruitment 2024",
-    "date_of_notification": "March 2, 2024",
-    "date_of_commencement": "March 2, 2024",
-    "end_date": "March 16, 2024",
-    "event_type":"Exam",
-    "apply_link": "https://apex.pbcoopbank.in/recruitment/",
+[
+  {
+    "name": "Recruitment for the Post of Clerk in Subordinate Courts of Haryana",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": "15-01-2025",
+    "end_date": "05-02-2025",
+    "apply_link": "https://cdn3.digialm.com/EForms/configuredHtml/32046/79285/Index.html",
+    "event_type": "Exam",
     "document_links": [
-      "https://apex.pbcoopbank.in/recruitment/"
+     
     ],
     "details": {
-      "vacancies": {
-        "total": "To be announced",
-        "breakdown": {
-          "Various Positions": "To be announced"
-        }
-      },
-      "eligibility": {
-        "age_limit": {
-          "minimum": "To be announced",
-          "maximum": "To be announced"
-        },
-        "education": "To be announced"
-      },
-      "selection_process": [
-        "To be announced"
-      ],
-      "important_dates": {
-        "application_start_date": "March 2, 2024",
-        "application_end_date": "March 16, 2024",
-        "exam_date": "To be announced"
-      }
+      "description": "SSSC invites applications for the post of Clerk in the Subordinate Courts of Haryana. Candidates with a bachelor's degree and proficiency in computer operations are encouraged to apply.",
+      "eligibility": "Bachelor's degree in any discipline from a recognized university and proficiency in computer operations.",
+      "selection_process": "The selection process includes a written examination followed by a computer proficiency test."
+    }
+  },
+  {
+    "name": "Recruitment for the Post of Clerk in Subordinate Courts of Punjab",
+    "date_of_notification": "10-01-2025",
+    "date_of_commencement": "10-01-2025",
+    "end_date": "31-01-2025",
+    "apply_link": "https://cdn3.digialm.com/EForms/configuredHtml/32046/76320//Index.html",
+    "event_type": "Exam",
+    "document_links": [
+      
+    ],
+    "details": {
+      "description": "SSSC invites applications for the post of Clerk in the Subordinate Courts of Punjab. Candidates with a bachelor's degree and proficiency in computer operations are encouraged to apply.",
+      "eligibility": "Bachelor's degree in any discipline from a recognized university and proficiency in computer operations.",
+      "selection_process": "The selection process includes a written examination followed by a computer proficiency test."
+    }
+  },
+  {
+    "name": "Recruitment for the Post of Stenographer Grade-III in Subordinate Courts of U.T. Chandigarh",
+    "date_of_notification": "05-01-2025",
+    "date_of_commencement": "05-01-2025",
+    "end_date": "25-01-2025",
+    "apply_link": "https://cdn3.digialm.com/EForms/configuredHtml/32046/83349/Index.html",
+    "event_type": "Exam",
+    "document_links": [
+      "https://sssc.gov.in/Notice/Chandigarh_Steno_Advt_2025.pdf"
+    ],
+    "details": {
+      "description": "SSSC invites applications for the post of Stenographer Grade-III in the Subordinate Courts of U.T. Chandigarh. Candidates with a bachelor's degree and proficiency in stenography are encouraged to apply.",
+      "eligibility": "Bachelor's degree in any discipline from a recognized university and proficiency in stenography.",
+      "selection_process": "The selection process includes an English Shorthand Test, its transcription, and a computer proficiency test."
     }
   }
-]  
+]

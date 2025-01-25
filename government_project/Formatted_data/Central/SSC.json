@@ -1,39 +1,35 @@
-
-  [
-    {
-      "name": "Combined Graduate Level Examination 2025",
-      "date_of_notification": "12-12-2024",
-      "date_of_commencement": "To be announced",
-      "end_date": "To be announced",
-      "apply_link": "https://ssc.nic.in/",
-      "event_type": "Exam",
-      "document_links": [
-        "https://ssc.nic.in/SSCFileServer/PortalManagement/UploadedFiles/Notice_CGLE_12122024.pdf"
-      ]
-    },
-    {
-      "name": "Junior Engineer (Civil, Mechanical & Electrical) Examination 2025",
-      "date_of_notification": "19-12-2024",
-      "date_of_commencement": "To be announced",
-      "end_date": "To be announced",
-      "apply_link": "https://ssc.nic.in/",
-      "event_type": "Exam",
-      "document_links": [
-        "https://ssc.nic.in/SSCFileServer/PortalManagement/UploadedFiles/Notice_JE_19122024.pdf"
-      ]
-    },
-    {
-      "name": "Constable (GD) in CAPFs, SSF, and Rifleman (GD) in Assam Rifles Examination 2025",
-      "date_of_notification": "25-01-2025",
-      "date_of_commencement": "To be announced",
-      "end_date": "To be announced",
-      "apply_link": "https://ssc.nic.in/",
-      "event_type": "Exam",
-      "document_links": [
-        "https://ssc.nic.in/SSCFileServer/PortalManagement/UploadedFiles/Notice_ConstableGD_25012025.pdf"
-      ]
-    }
-  
-  
-  ]
-  
+[
+  {
+    "name": "Combined Graduate Level Examination (CGL) 2025",
+    "date_of_notification": "01-01-2025",
+    "date_of_commencement": "01-01-2025",
+    "end_date": "31-01-2025",
+    "apply_link": "https://ssc.nic.in/Portal/Apply",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": null
+  },
+  {
+    "name": "Combined Higher Secondary Level Examination (CHSL) 2025",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": "15-01-2025",
+    "end_date": "14-02-2025",
+    "apply_link": "https://ssc.nic.in/Portal/Apply",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": null
+  },
+  {
+    "name": "Junior Engineer (Civil, Mechanical, Electrical and Quantity Surveying & Contracts) Examination, 2025",
+    "date_of_notification": "20-01-2025",
+    "date_of_commencement": "20-01-2025",
+    "end_date": "19-02-2025",
+    "apply_link": "https://ssc.nic.in/Portal/Apply",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": null
+  }
+]

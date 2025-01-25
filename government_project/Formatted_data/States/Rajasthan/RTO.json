@@ -1,76 +1,16 @@
 [
     {
-      "name": "JMRC Recruitment 2024 for Junior Engineer and Station Controller/Train Operator",
-      "date_of_notification": "October 8, 2024",
-      "date_of_commencement": "October 8, 2024",
-      "end_date": "December 7, 2024",
-      "event_type":"Exam",
-      "apply_link": "https://transport.rajasthan.gov.in/content/transportportal/en/metro-portal/career/jmrc-recruitment-portal.html",
+      "name": "Direct Recruitment for Company Secretary (CS) - 2021",
+      "date_of_notification": "2021-11-26",
+      "date_of_commencement": "2021-11-26",
+      "end_date": "2021-11-26",
+      "apply_link": "https://transport.rajasthan.gov.in/content/transportportal/en/metro/career/direct-recruitment.html",
+      "event_type": "Result",
       "document_links": [
-        "https://transport.rajasthan.gov.in/content/transportportal/en/metro/career/direct-recruitment.html"
+        "https://transport.rajasthan.gov.in/content/dam/transport/metro/Career/Direct%20Recruitment/Final%20Result%20CS%20-%2020042022.pdf"
       ],
       "details": {
-        "vacancies": {
-          "total": 32,
-          "breakdown": {
-            "Junior Engineer (Civil)": 4,
-            "Junior Engineer (Electrical)": 9,
-            "Junior Engineer (Mechanical)": 1,
-            "Junior Engineer (Electronics)": 6,
-            "Station Controller/Train Operator": 12
-          }
-        },
-        "eligibility": {
-          "age_limit": "Maximum 50 years",
-          "education": "Permanent/Regular Employee with a minimum of 4 years of experience as Junior Engineer in relevant discipline"
-        },
-        "selection_process": "Evaluation of qualifications and experience followed by personal interviews",
-        "important_dates": {
-          "application_start_date": "October 8, 2024",
-          "application_end_date": "December 7, 2024"
-        }
-      }
-    },
-    {
-      "name": "JMRC Recruitment 2024 for Various Posts on Deputation",
-      "date_of_notification": "November 8, 2024",
-      "date_of_commencement": "November 8, 2024",
-      "end_date": "December 7, 2024",
-      "event_type":"Exam",
-      "apply_link": "https://transport.rajasthan.gov.in/content/transportportal/en/metro-portal/career/jmrc-recruitment-portal.html",
-      "document_links": [
-        "https://transport.rajasthan.gov.in/content/transportportal/en/metro/career/deputation.html"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 18,
-          "breakdown": {
-            "Director (Operation and System)": 1,
-            "Director (Project)": 1,
-            "Executive Director (Rolling Stock)": 1,
-            "Executive Director (S and T)": 1,
-            "Executive Director (Civil)": 1,
-            "Executive Director (Operations)": 1,
-            "General Manager (Rolling Stock)": 1,
-            "General Manager (Project Coordination)": 1,
-            "General Manager (Project Planning and PPF)": 1,
-            "General Manager (Civil)": 1,
-            "Private Secretary": 2,
-            "Deputy General Manager (Coordination and Monitoring)": 1,
-            "Deputy General Manager (HR)": 1,
-            "Public Relations Officer": 1,
-            "Patwari/Ameen": 3
-          }
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "Varies by position; generally requires relevant engineering degrees and experience"
-        },
-        "selection_process": "Shortlisting based on qualifications and experience, followed by interviews",
-        "important_dates": {
-          "application_start_date": "November 8, 2024",
-          "application_end_date": "December 7, 2024"
-        }
+        "description": "JMRC conducted a recruitment process for the post of Company Secretary in 2021. The Computer Based Test (CBT) was held on 26th November 2021, and the final result has been declared. For detailed information, refer to the official notification."
       }
     }
   ]

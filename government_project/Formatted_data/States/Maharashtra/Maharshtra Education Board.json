@@ -1,138 +1,44 @@
 [
   {
-    "name": "SSC March 2025 Practical Learning Guidelines for Vocational Subjects X1 91 92 93 under NSQF (Evaluation)",
-    "date_of_notification": null,
-    "date_of_commencement": null,
+    "name": "Regarding Online Admit Cards for February-March 2025 SSC (10th) Examination",
+    "date_of_notification": "2025-01-20",
+    "date_of_commencement": "2025-01-20",
     "end_date": null,
-    "event_type":"Exam",
     "apply_link": "https://mahahsscboard.in/en",
+    "event_type": "AdmitCard",
     "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
+      "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/ssc_online_hall_ticket_850ac96925.pdf"
     ],
     "details": {
-      "description": "Guidelines for practical learning for SSC March 2025 vocational subjects under NSQF.",
-      "eligibility": "Applicable to students enrolled in vocational subjects X1 91 92 93.",
-      "application_process": "Refer to the official guidelines.",
-      "contact": "MSBSHSE"
+      "description": "This notification informs students about the availability of online admit cards for the upcoming SSC examinations scheduled in February-March 2025."
     }
   },
   {
-    "name": "HSC February/March 2025 Timetable General and Bifocal",
-    "date_of_notification": null,
-    "date_of_commencement": null,
+    "name": "Procedure for Online Submission of Marks and Grades for February-March 2025 HSC (12th) and SSC (10th) Examinations",
+    "date_of_notification": "2025-01-18",
+    "date_of_commencement": "2025-01-18",
     "end_date": null,
-    "event_type":"Exam",
     "apply_link": "https://mahahsscboard.in/en",
+    "event_type": "Notification",
     "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
+      "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/prct_oral_grade_mark_suchana_75fe52e6bb.pdf"
     ],
     "details": {
-      "description": "Timetable for HSC February/March 2025 General and Bifocal courses.",
-      "eligibility": "Applicable to HSC students in General and Bifocal streams.",
-      "application_process": "Refer to the official timetable.",
-      "contact": "MSBSHSE"
+      "description": "Guidelines for schools and colleges on the online submission process of marks and grades for practicals, orals, internal evaluations, and other categories for the February-March 2025 examinations."
     }
   },
   {
-    "name": "Timetable for HSC February/March 2025 (Vocational)",
-    "date_of_notification": null,
-    "date_of_commencement": null,
+    "name": "SSC March 2025 Practical Learning Guidelines for Vocational Subjects under NSQF",
+    "date_of_notification": "2025-01-15",
+    "date_of_commencement": "2025-01-15",
     "end_date": null,
-    "event_type":"Exam",
     "apply_link": "https://mahahsscboard.in/en",
+    "event_type": "Notification",
     "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
+      "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/nsqf_letter_bb22a15a58.pdf"
     ],
     "details": {
-      "description": "Timetable for HSC February/March 2025 Vocational courses.",
-      "eligibility": "Applicable to HSC students in Vocational streams.",
-      "application_process": "Refer to the official timetable.",
-      "contact": "MSBSHSE"
-    }
-  },
-  {
-    "name": "Timetable for SSC February/March 2025",
-    "date_of_notification": null,
-    "date_of_commencement": null,
-    "end_date": null,
-    "event_type":"Exam",
-    "apply_link": "https://mahahsscboard.in/en",
-    "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
-    ],
-    "details": {
-      "description": "Timetable for SSC February/March 2025 examinations.",
-      "eligibility": "Applicable to SSC students.",
-      "application_process": "Refer to the official timetable.",
-      "contact": "MSBSHSE"
-    }
-  },
-  {
-    "name": "Regarding 10th March 2025 Exam Date Extension for Regular Fees and Dates for Very Late Application Fees",
-    "date_of_notification": null,
-    "date_of_commencement": null,
-    "end_date": null,
-    "event_type":"Exam",
-    "apply_link": "https://mahahsscboard.in/en",
-    "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
-    ],
-    "details": {
-      "description": "Notification regarding extension of exam dates and fee submission deadlines for 10th March 2025 exams.",
-      "eligibility": "Applicable to students appearing for 10th March 2025 exams.",
-      "application_process": "Refer to the official notification.",
-      "contact": "MSBSHSE"
-    }
-  },
-  {
-    "name": "Regarding 12th February 2025 Exam Date Extension for Regular Fees and Dates for Very Late Application Fees",
-    "date_of_notification": null,
-    "date_of_commencement": null,
-    "end_date": null,
-    "event_type":"Exam",
-    "apply_link": "https://mahahsscboard.in/en",
-    "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
-    ],
-    "details": {
-      "description": "Notification regarding extension of exam dates and fee submission deadlines for 12th February 2025 exams.",
-      "eligibility": "Applicable to students appearing for 12th February 2025 exams.",
-      "application_process": "Refer to the official notification.",
-      "contact": "MSBSHSE"
-    }
-  },
-  {
-    "name": "Date Extension for Enrollment Registration of Private Candidates",
-    "date_of_notification": null,
-    "date_of_commencement": null,
-    "end_date": null,
-    "event_type":"Exam",
-    "apply_link": "https://mahahsscboard.in/en",
-    "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
-    ],
-    "details": {
-      "description": "Notification regarding extension of enrollment registration dates for private candidates.",
-      "eligibility": "Applicable to private candidates seeking enrollment.",
-      "application_process": "Refer to the official notification.",
-      "contact": "MSBSHSE"
-    }
-  },
-  {
-    "name": "Revised Syllabus and Evaluation Scheme for Higher Secondary School Certificate Examination 2025 (12th) of F6, G2, G3 Subjects",
-    "date_of_notification": null,
-    "date_of_commencement": null,
-    "end_date": null,
-    "event_type":"Exam",
-    "apply_link": "https://mahahsscboard.in/en",
-    "document_links": [
-      "https://mahahsscboard.in/en/state-board-strapi-upload.blr1.digitaloceanspaces.com"
-    ],
-    "details": {
-      "description": "Revised syllabus and evaluation scheme for HSC Examination 2025 for specified subjects.",
-      "eligibility": "Applicable to HSC students enrolled in F6, G2, G3 subjects.",
-      "application_process": "Refer to the official syllabus document.",
-      "contact": "MSBSHSE"
+      "description": "This notification provides practical learning guidelines for vocational subjects X1 91, 92, and 93 under the National Skills Qualifications Framework (NSQF) for the March 2025 SSC examinations."
     }
   }
 ]

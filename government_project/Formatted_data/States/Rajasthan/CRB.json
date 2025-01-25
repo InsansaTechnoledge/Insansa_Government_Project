@@ -1,36 +1,45 @@
-[{
-    "name": "Rajasthan Co-operative Recruitment Board (RCRB) Recruitment 2024",
-    "date_of_notification": "12-12-2024",
-    "date_of_commencement": "12-12-2024",
-    "end_date": "11-01-2025",
-    "event_type":"Exam",
-    "apply_link": "https://rajcrb.rajasthan.gov.in/",
-    "document_links": [
-      "https://www.bankersadda.com/rajasthan-co-operative-bank-recruitment-2024/?utm_source=chatgpt.com"
-    ],
-    "details": {
-      "vacancies": {
-        "total": 449,
-        "breakdown": {
-          "senior_manager": 5,
-          "manager_non_tsp": 90,
-          "manager_tsp": 10,
-          "manager_baran_sahariya": 1,
-          "computer_programmer_non_tsp": 7,
-          "banking_assistant_non_tsp": 300,
-          "banking_assistant_tsp": 31,
-          "banking_assistant_baran_sahariya": 5
-        }
-      },
-      "important_dates": {
-        "application_start_date": "12-12-2024",
-        "application_end_date": "11-01-2025",
-        "fee_payment_end_date": "11-01-2025"
-      },
-      "fees": {
-        "general_other_state": "₹1000",
-        "sc_st_obc_ewc_sahariya_divyang": "₹500"
+[
+    {
+      "name": "Recruitment for RCDF",
+      "date_of_notification": "10-12-2024",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rajcrb.rajasthan.gov.in/RecruitmentAdvertisement",
+      "event_type": "Exam",
+      "document_links": [
+        "https://rajcrb.rajasthan.gov.in/Pdfdownload/shortadRCDF1212240256.pdf"
+      ],
+      "details": {
+        "description": "Short advertisement of Recruitment for RCDF."
+      }
+    },
+    {
+      "name": "Recruitment to Various Posts in Apex Bank and DCCBs",
+      "date_of_notification": "10-12-2024",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rajcrb.rajasthan.gov.in/RecruitmentAdvertisement",
+      "event_type": "Exam",
+      "document_links": [
+        "https://rajcrb.rajasthan.gov.in/Pdfdownload/ApexBank_CCB%20Detailed10-12-2024.pdf"
+      ],
+      "details": {
+        "description": "Detailed advertisement for recruitment to various posts in The Rajasthan State CoOperative Bank Ltd. (Apex Bank) and Various District Central Cooperative Banks (DCCBs) of Rajasthan."
+      }
+    },
+    {
+      "name": "Recruitment to Various Posts in RAJFED",
+      "date_of_notification": "10-12-2024",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rajcrb.rajasthan.gov.in/RecruitmentAdvertisement",
+      "event_type": "Exam",
+      "document_links": [
+        "https://rajcrb.rajasthan.gov.in/Pdfdownload/Short_AdvertisemenRecruitment1112240327.pdf"
+      ],
+      "details": {
+        "description": "Detailed advertisement of Recruitment to various posts in the Rajasthan State Co-Operative Marketing Federation Ltd. Jaipur (RAJFED)."
       }
     }
-  }
   ]
+  

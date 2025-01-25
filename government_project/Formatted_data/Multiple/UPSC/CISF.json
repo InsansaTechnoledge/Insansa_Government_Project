@@ -1,65 +1,40 @@
-[{
-    "name": "CISF Assistant Commandants (Executive) Limited Departmental Competitive Examination, 2025",
+{
+    "name": "CISF AC(EXE) LDCE-2025",
     "date_of_notification": "04-12-2024",
     "date_of_commencement": "09-03-2025",
-    "end_date": "24-12-2024",
-    "apply_link": "https://upsconline.nic.in/",
-    "event_type":"Exam",
+    "end_date": "09-03-2025",
+    "apply_link": "https://upsc.gov.in/examinations/active-exams",
+    "event_type": "Exam",
     "document_links": [
       "https://upsc.gov.in/sites/default/files/Notif-CISF-AC-EXE-LDCE-25-Engl-041224.pdf"
     ],
     "details": {
       "vacancies": {
-        "total": 23
+        "total": "Information not specified in the provided sources."
       },
       "eligibility": {
-        "age_limit": "Maximum 35 years as of 01-08-2024; age relaxation as per rules",
-        "education": "Graduation from a recognized university",
-        "service": "Should have completed 4 years of regular service as on 01-01-2025 in the rank of Sub-Inspector (GD)/Inspector (GD) including the period of basic training"
+        "age_limit": "Information not specified in the provided sources.",
+        "education": "Information not specified in the provided sources.",
+        "nationality": "Information not specified in the provided sources."
       },
       "fee": {
-        "amount": "Not specified"
+        "amount": "Information not specified in the provided sources.",
+        "exemptions": "Information not specified in the provided sources."
       },
-      "exam_centers": [
-        "Delhi",
-        "Mumbai",
-        "Kolkata",
-        "Chennai"
-      ],
+      "exam_centers": "Information not specified in the provided sources.",
       "important_dates": {
-        "application_start_date": "04-12-2024",
-        "application_end_date": "24-12-2024",
-        "exam_date": "09-03-2025"
+        "application_correction_window": "Information not specified in the provided sources.",
+        "results": "Information not specified in the provided sources.",
+        "ssb_interviews": "Information not specified in the provided sources."
       },
       "scheme_of_exam": {
-        "written_exam": {
-          "paper_1": {
-            "subject": "General Ability and Intelligence",
-            "duration": "2.5 hours",
-            "marks": 300
-          },
-          "paper_2": {
-            "subject": "Essay, Precis Writing and Comprehension",
-            "duration": "2 hours",
-            "marks": 100
-          }
-        },
-        "physical_efficiency_test": {
-          "events": [
-            "100 meters race",
-            "800 meters race",
-            "Long jump",
-            "Shot put (4 kgs)"
-          ]
-        },
-        "interview": {
-          "marks": 200
-        }
+        "subjects": "Information not specified in the provided sources.",
+        "ssb_test": "Information not specified in the provided sources."
       },
       "contact_details": {
-        "facilitation_counter": "011-23385271, 011-23381125, 011-23098543",
-        "address": "Union Public Service Commission, Dholpur House, Shahjahan Road, New Delhi – 110069"
+        "facilitation_counter": "Information not specified in the provided sources.",
+        "address": "Information not specified in the provided sources."
       }
     }
-  }]
+  }
   

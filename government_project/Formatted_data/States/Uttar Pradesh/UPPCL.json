@@ -1,39 +1,89 @@
-[{
-    "name": "UPPCL Assistant Engineer Recruitment 2025",
-    "date_of_notification": "December 2024",
-    "date_of_commencement": "December 2024",
-    "end_date": "January 2025",
-    "event_type":"Exam",
-    "apply_link": "https://uppcl.org/uppcl/en",
-    "document_links": [
-      "https://uppcl.org/uppcl/en/vacancy-results"
-    ],
-    "details": {
-      "vacancies": {
-        "total": "To be announced",
-        "breakdown": {
-          "Electrical": "To be announced",
-          "Mechanical": "To be announced",
-          "Civil": "To be announced",
-          "Computer Science": "To be announced"
-        }
-      },
-      "eligibility": {
-        "age_limit": {
-          "minimum": 21,
-          "maximum": 40
-        },
-        "education": "Bachelor's degree in relevant engineering discipline"
-      },
-      "selection_process": [
-        "Written Examination",
-        "Interview"
+[
+    {
+      "name": "Assistant Engineer (Trainee) Electrical/Power, Electronics & Telecommunication, and Computer Science/IT Recruitment",
+      "date_of_notification": "15-03-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "AdmitCard",
+      "document_links": [
+        "https://uppcl.org/site/writereaddata/siteContent/202110281842333465JE%20ADVT.pdf"
       ],
-      "important_dates": {
-        "application_start_date": "December 2024",
-        "application_end_date": "January 2025",
-        "exam_date": "To be announced"
+      "details": {
+        "description": "Download admit card for the online exam (CBT) for the post of Assistant Engineer (Trainee) in various disciplines against Advertisement No. 01/VSA/2022/AE/E&M."
+      }
+    },
+    {
+      "name": "Camp Assistant Grade-III Recruitment",
+      "date_of_notification": "15-03-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "AdmitCard",
+      "document_links": [],
+      "details": {
+        "description": "Download admit card for the online exam (CBT) for the post of Camp Assistant Grade-III against Advertisement No. 04/VSA/2021/SS."
+      }
+    },
+    {
+      "name": "Junior Engineer (Trainee) Electrical Recruitment",
+      "date_of_notification": "15-03-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "AdmitCard",
+      "document_links": [],
+      "details": {
+        "description": "Download admit card for the online exam (CBT) for the post of Junior Engineer (Trainee) Electrical against Advertisement No. 07/VSA/2021/JE/Electrical."
+      }
+    },
+    {
+      "name": "Junior Engineer (Trainee) Electrical & Electronics/Telecommunication Selected Candidates List",
+      "date_of_notification": "11-03-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "Result",
+      "document_links": [],
+      "details": {
+        "description": "List of selected candidates for the post of Junior Engineer (Trainee) Electrical & Junior Engineer (Trainee) Electronics/Telecommunication against Advertisement No. 07/VSA/2020/JE/E&M."
+      }
+    },
+    {
+      "name": "Junior Engineer (Trainee) Civil Recruitment",
+      "date_of_notification": "25-02-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "Exam",
+      "document_links": [],
+      "details": {
+        "description": "Download response key and upload objections for the post of Junior Engineer (Trainee) Civil against Advertisement No. 01/VSA/2021/JE/Civil."
+      }
+    },
+    {
+      "name": "Assistant Review Officer Recruitment",
+      "date_of_notification": "10-02-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "AdmitCard",
+      "document_links": [],
+      "details": {
+        "description": "Download admit card for the online exam (CBT) for the post of Assistant Review Officer against Advertisement No. 05/VSA/2021/ARO."
+      }
+    },
+    {
+      "name": "Assistant Accountant Recruitment",
+      "date_of_notification": "10-02-2022",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": null,
+      "event_type": "AdmitCard",
+      "document_links": [],
+      "details": {
+        "description": "Download admit card for the online exam (CBT) for the post of Assistant Accountant against Advertisement No. 06/VSA/2021/AA."
       }
     }
-  }
-]  
+  ]
+      

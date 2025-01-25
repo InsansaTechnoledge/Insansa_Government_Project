@@ -1,33 +1,44 @@
 [
-    {
-      "name": "Recruitment of Senior Residents",
-      "date_of_notification": "26-12-2024",
-      "date_of_commencement": "26-12-2024",
-      "end_date": "To Be Announced",
-      "event_type":"Exam",
-      "apply_link": "https://dmeaponline.com",
-      "document_links": [
-        "https://dme.ap.nic.in/Notification_Senior_Residents_3_2024.pdf"
-      ],
-      "details": {
-        "notification_number": "3/2024",
-        "positions": "Senior Residents in various specialties",
-        "eligibility": {
-          "qualification": "Postgraduate degree (MD/MS/DNB) in the concerned specialty",
-          "age_limit": "Not exceeding 40 years as of the date of notification"
-        },
-        "selection_process": "Based on merit and interview",
-        "application_fee": "₹1000 for General/OBC, ₹500 for SC/ST candidates",
-        "important_dates": {
-          "application_start_date": "26-12-2024",
-          "application_end_date": "To Be Announced",
-          "interview_dates": "To Be Announced"
-        },
-        "contact_details": {
-          "email": "dmeap@nic.in",
-          "phone": "+91-866-2974045"
-        }
+  {
+    "name": "Recruitment for the Post of Senior Residents",
+    "date_of_notification": "26-12-2024",
+    "date_of_commencement": "To be announced",
+    "end_date": "To be announced",
+    "apply_link": "https://dme.ap.nic.in/",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "To be announced",
+        "application_end_date": "To be announced"
+      },
+      "exam_schedule": "To be announced",
+      "contact_details": {
+        "phone": "Not provided",
+        "email": "Not provided"
       }
     }
-  ]
-  
+  },
+  {
+    "name": "GNM December 2024 - Hall Tickets",
+    "date_of_notification": "December 2024",
+    "date_of_commencement": "December 2024",
+    "end_date": "December 2024",
+    "apply_link": "https://dme.ap.nic.in/",
+    "event_type": "AdmitCard",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "To be announced",
+        "application_end_date": "To be announced"
+      },
+      "exam_schedule": "To be announced",
+      "contact_details": {
+        "phone": "Not provided",
+        "email": "Not provided"
+      }
+    }
+  }
+]

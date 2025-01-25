@@ -1,46 +1,4 @@
-[{
-    "name": "RSRTC Recruitment 2024",
-    "date_of_notification": "March 2, 2024",
-    "date_of_commencement": "March 2, 2024",
-    "end_date": "March 16, 2024",
-    "event_type":"Exam",
-    "apply_link": "https://transport.rajasthan.gov.in/rsrtc/",
-    "document_links": [
-      "https://transport.rajasthan.gov.in/rsrtc/"
-    ],
-    "details": {
-      "vacancies": {
-        "total": 1650,
-        "breakdown": {
-          "Driver": 1000,
-          "Conductor": 650
-        }
-      },
-      "eligibility": {
-        "age_limit": {
-          "minimum": 18,
-          "maximum": 35
-        },
-        "education": "10th pass for Driver, 12th pass for Conductor",
-        "physical_standards": {
-          "height": {
-            "male": "5 feet 5 inches",
-            "female": "5 feet 2 inches"
-          },
-          "chest": "33 inches (expandable to 34.5 inches)",
-          "vision": "6/6 in both eyes"
-        }
-      },
-      "selection_process": [
-        "Written Examination",
-        "Physical Efficiency Test",
-        "Medical Examination"
-      ],
-      "important_dates": {
-        "application_start_date": "March 2, 2024",
-        "application_end_date": "March 16, 2024",
-        "exam_date": "To be announced"
-      }
-    }
-  }
+[
+    
 ]
+  

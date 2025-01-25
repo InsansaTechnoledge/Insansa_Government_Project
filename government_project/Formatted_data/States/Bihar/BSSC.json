@@ -1,123 +1,65 @@
 [
-    {
-      "name": "BSSC 2nd Inter Level Combined Competitive Examination 2023",
-      "date_of_notification": "19-09-2023",
-      "date_of_commencement": "To Be Announced",
-      "end_date": "To Be Announced",
-      "event_type":"Exam",
-      "apply_link": "https://bssc.bihar.gov.in/",
-      "document_links": [
-        "https://bssc.bihar.gov.in/Advertisement_02_2023.pdf"
-      ],
-      "details": {
-        "notification_number": "02/2023",
-        "vacancies": 12199,
-        "eligibility": {
-          "education": "10+2 (Intermediate) pass from a recognized board",
-          "age_limit": {
-            "minimum": 18,
-            "maximum": 37
-          }
-        },
-        "application_fee": {
-          "general": 540,
-          "sc_st": 135,
-          "female": 135
-        },
-        "selection_process": [
-          "Preliminary Examination",
-          "Main Examination",
-          "Document Verification"
-        ],
-        "exam_pattern": {
-          "preliminary": {
-            "subjects": [
-              "General Studies",
-              "General Science & Mathematics",
-              "Comprehension/Logic/Reasoning/Mental Ability"
-            ],
-            "marks": 600,
-            "duration": "2 hours 15 minutes"
-          },
-          "main": {
-            "subjects": [
-              "General Hindi",
-              "General Knowledge"
-            ],
-            "marks": 600,
-            "duration": "2 hours 15 minutes each"
-          }
-        },
-        "important_dates": {
-          "application_start": "27-09-2023",
-          "application_end": "11-12-2023",
-          "exam_date": "To Be Announced"
-        },
-        "contact_details": {
-          "email": "bsscpat-bih@nic.in",
-          "phone": "+91-612-2227728"
-        }
-      }
-    },
-    {
-      "name": "BSSC CGL Recruitment 2024",
-      "date_of_notification": "To Be Announced",
-      "date_of_commencement": "To Be Announced",
-      "end_date": "To Be Announced",
-      "event_type":"Exam",
-      "apply_link": "https://bssc.bihar.gov.in/",
-      "document_links": [],
-      "details": {
-        "notification_number": "To Be Announced",
-        "vacancies": 5380,
-        "eligibility": {
-          "education": "Bachelor's degree from a recognized university",
-          "age_limit": {
-            "minimum": 21,
-            "maximum": 37
-          }
-        },
-        "application_fee": {
-          "general": 540,
-          "sc_st": 135,
-          "female": 135
-        },
-        "selection_process": [
-          "Preliminary Examination",
-          "Main Examination",
-          "Interview"
-        ],
-        "exam_pattern": {
-          "preliminary": {
-            "subjects": [
-              "General Studies",
-              "General Science & Mathematics",
-              "Comprehension/Logic/Reasoning/Mental Ability"
-            ],
-            "marks": 600,
-            "duration": "2 hours 15 minutes"
-          },
-          "main": {
-            "subjects": [
-              "General Hindi",
-              "General Studies Paper 1",
-              "General Studies Paper 2"
-            ],
-            "marks": 600,
-            "duration": "2 hours 15 minutes each"
-          }
-        },
-        "important_dates": {
-          "notification_release": "To Be Announced",
-          "application_start": "To Be Announced",
-          "application_end": "To Be Announced",
-          "exam_date": "To Be Announced"
-        },
-        "contact_details": {
-          "email": "bsscpat-bih@nic.in",
-          "phone": "+91-612-2227728"
-        }
+  {
+    "name": "First Inter Level Combined Competitive (Mains) Exam 2023",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": "01-02-2025",
+    "end_date": "15-02-2025",
+    "apply_link": "https://bssc.bihar.gov.in/NoticeBoard.htm",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "01-02-2025",
+        "application_end_date": "15-02-2025"
+      },
+      "exam_schedule": "To be announced",
+      "contact_details": {
+        "phone": "(0612)-2227728",
+        "email": "Not provided"
       }
     }
-  ]
-  
+  },
+  {
+    "name": "Admit Card for First Inter Level Combined Competitive (Mains) Exam 2023",
+    "date_of_notification": "20-02-2025",
+    "date_of_commencement": "25-02-2025",
+    "end_date": "10-03-2025",
+    "apply_link": "https://bssc.bihar.gov.in/NoticeBoard.htm",
+    "event_type": "AdmitCard",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "25-02-2025",
+        "application_end_date": "10-03-2025"
+      },
+      "exam_schedule": "To be announced",
+      "contact_details": {
+        "phone": "(0612)-2227728",
+        "email": "Not provided"
+      }
+    }
+  },
+  {
+    "name": "Result of First Inter Level Combined Competitive (Preliminary) Exam 2023",
+    "date_of_notification": "10-01-2025",
+    "date_of_commencement": "Not applicable",
+    "end_date": "Not applicable",
+    "apply_link": "https://bssc.bihar.gov.in/NoticeBoard.htm",
+    "event_type": "Result",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "Not applicable",
+        "application_end_date": "Not applicable"
+      },
+      "exam_schedule": "Not applicable",
+      "contact_details": {
+        "phone": "(0612)-2227728",
+        "email": "Not provided"
+      }
+    }
+  }
+]

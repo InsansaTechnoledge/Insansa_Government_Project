@@ -1,74 +1,17 @@
-[{
-    "events": [
-      {
-        "name": "Rajasthan Forest Guard Recruitment 2024",
-        "date_of_notification": "August 2024",
-        "date_of_commencement": "August 2024",
-        "end_date": "Not specified",
-        "event_type":"Exam",
-        "apply_link": "https://seepz.in/rajasthan-forest-guard-recruitment/",
-        "document_links": [
-          "https://seepz.in/rajasthan-forest-guard-recruitment/"
-        ],
-        "details": {
-          "vacancies": {
-            "total": 2300
-          },
-          "eligibility": {
-            "age_limit": "Not specified",
-            "education": "Not specified"
-          },
-          "important_dates": {
-            "results": "Not specified"
-          }
-        }
-      },
-      {
-        "name": "RSMSSB Forest Guard (Vanrakshak) 2024",
-        "date_of_notification": "Not specified",
-        "date_of_commencement": "Not specified",
-        "end_date": "Not specified",
-        "event_type":"Exam",
-        "apply_link": "https://dhurina.net/en/rajasthans/rsmssb/rajasthan-forest-guard-vanrakshak-details/",
-        "document_links": [
-          "https://dhurina.net/en/rajasthans/rsmssb/rajasthan-forest-guard-vanrakshak-details/"
-        ],
-        "details": {
-          "vacancies": {
-            "total": "Not specified"
-          },
-          "eligibility": {
-            "age_limit": "Not specified",
-            "education": "Not specified"
-          },
-          "important_dates": {
-            "results": "Not specified"
-          }
-        }
-      },
-      {
-        "name": "Rajasthan Forest Guard Bharti 2025",
-        "date_of_notification": "Not specified",
-        "date_of_commencement": "Not specified",
-        "end_date": "Not specified",
-        "event_type":"Exam",  
-        "apply_link": "https://ekbaraur.in/rajasthan-forest-guard-bharti/",
-        "document_links": [
-          "https://ekbaraur.in/rajasthan-forest-guard-bharti/"
-        ],
-        "details": {
-          "vacancies": {
-            "total": "Not specified"
-          },
-          "eligibility": {
-            "age_limit": "Not specified",
-            "education": "Not specified"
-          },
-          "important_dates": {
-            "results": "Not specified"
-          }
-        }
+[
+    {
+      "name": "Document Verification for Junior Assistant Recruitment Examination-2023",
+      "date_of_notification": "16-08-2024",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://forest.rajasthan.gov.in/content/raj/forest/en/circulars-orders0/non-gazetted.html",
+      "event_type": "Exam",
+      "document_links": [
+        "https://forest.rajasthan.gov.in/content/dam/raj/forest/ForestDepartment/PDFs/orderscircular/NonGazetted/RajKaj%209756978-10110%20dt.%2016.08.2024%20Reg.%20NOC%20for%20Document%20Verification%20of%20Jr.Accountant%20Bharti%202023%20%20Condidates.PDF"
+      ],
+      "details": {
+        "description": "The department has issued a No Objection Certificate (NOC) for document verification pertaining to the Junior Assistant Recruitment Examination-2023. Candidates are advised to refer to the official notification for detailed information."
       }
-    ]
-  }
-]  
+    }
+  ]
+  

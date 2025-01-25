@@ -1,204 +1,53 @@
 [
-    {
-      "name": "Special Competitive Examination (2024)",
-      "date_of_notification": "25-11-2024",
-      "date_of_commencement": "25-11-2024",
-      "end_date": "24-12-2024",
-      "event_type":"Exam",
-      "apply_link": "https://www.tnpsc.gov.in/English/Notification.aspx",
-      "document_links": [
-        "https://www.tnpsc.gov.in/English/Notification.aspx"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "Not specified",
-          "breakdown": {}
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "25-11-2024 to 24-12-2024",
-          "examination_date": "08-02-2025 (FN)"
-        },
-        "contact_details": {
-          "facilitation_counter": "Not specified",
-          "email": "Not specified",
-          "address": "Not specified"
-        }
-      }
-    },
-    {
-      "name": "Combined Civil Services Examination (Group VA Services)",
-      "date_of_notification": "17-10-2024",
-      "date_of_commencement": "17-10-2024",
-      "end_date": "15-11-2024",
-      "event_type":"Exam",
-      "apply_link": "https://www.tnpsc.gov.in/English/Notification.aspx",
-      "document_links": [
-        "https://www.tnpsc.gov.in/English/Notification.aspx"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "Not specified",
-          "breakdown": {}
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "17-10-2024 to 15-11-2024",
-          "examination_date": "04-01-2025 (FN & AN)"
-        },
-        "contact_details": {
-          "facilitation_counter": "Not specified",
-          "email": "Not specified",
-          "address": "Not specified"
-        }
-      }
-    },
-    {
-      "name": "Assistant Public Prosecutor (Grade II)",
-      "date_of_notification": "13-09-2024",
-      "date_of_commencement": "13-09-2024",
-      "end_date": "12-10-2024",
-      "apply_link": "https://www.tnpsc.gov.in/English/Notification.aspx",
-      "document_links": [
-        "https://www.tnpsc.gov.in/English/Notification.aspx"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "Not specified",
-          "breakdown": {}
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "13-09-2024 to 12-10-2024",
-          "examination_date": "14-12-2024 (AN); Re-Examination: 22-02-2025 (FN)"
-        },
-        "contact_details": {
-          "facilitation_counter": "Not specified",
-          "email": "Not specified",
-          "address": "Not specified"
-        }
-      }
-    },
-    {
-      "name": "Combined Technical Services Examination (Interview Posts - II)",
-      "date_of_notification": "30-08-2024",
-      "date_of_commencement": "30-08-2024",
-      "end_date": "28-09-2024",
-      "apply_link": "https://www.tnpsc.gov.in/English/Notification.aspx",
-      "document_links": [
-        "https://www.tnpsc.gov.in/English/Notification.aspx"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "Not specified",
-          "breakdown": {}
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "30-08-2024 to 28-09-2024",
-          "examination_dates": ["18-11-2024", "19-11-2024"]
-        },
-        "contact_details": {
-          "facilitation_counter": "Not specified",
-          "email": "Not specified",
-          "address": "Not specified"
-        }
-      }
-    },
-    {
-      "name": "Combined Technical Services Examination (Diploma/ITI Level)",
-      "date_of_notification": "13-08-2024",
-      "date_of_commencement": "13-08-2024",
-      "end_date": "11-09-2024",
-      "apply_link": "https://www.tnpsc.gov.in/English/Notification.aspx",
-      "document_links": [
-        "https://www.tnpsc.gov.in/English/Notification.aspx"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "Not specified",
-          "breakdown": {}
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "13-08-2024 to 11-09-2024",
-          "examination_dates": ["09-11-2024 (FN)", "11-11-2024 to 16-11-2024"]
-        },
-        "contact_details": {
-          "facilitation_counter": "Not specified",
-          "email": "Not specified",
-          "address": "Not specified"
-        }
-      }
-    },
-    {
-        "name": "Rashtriya Indian Military College (July 2025 Term)",
-        "date_of_notification": "26-07-2024",
-        "date_of_commencement": "26-07-2024",
-        "end_date": "10-10-2024",
-        "apply_link": "https://www.tnpsc.gov.in/English/Notification.aspx",
-        "document_links": [
-          "https://www.tnpsc.gov.in/English/Notification.aspx"
-        ],
-        "details": {
-          "vacancies": {
-            "total": "Not specified",
-            "breakdown": {}
-          },
-          "eligibility": {
-            "age_limit": "Not specified",
-            "education": "Not specified"
-          },
-          "fee": {
-            "amount": "Not specified",
-            "exemptions": []
-          },
-          "important_dates": {
-            "application_period": "26-07-2024 to 10-10-2024",
-            "examination_date": "03-01-2025"
-          },
-          "contact_details": {
-            "facilitation_counter": "Not specified",
-            "email": "Not specified",
-            "address": "Not specified"
-          }
-        }
-      }
-      
+  {
+    "name": "Rashtriya Indian Military College, Dehradun (Jan-2026 Term)",
+    "date_of_notification": "21-01-2025",
+    "date_of_commencement": "21-01-2025",
+    "end_date": "31-03-2025",
+    "apply_link": "https://tnpscexams.in",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "date_of_examination": "01-06-2025"
+    }
+  },
+  {
+    "name": "Special Competitive Examination (2024)",
+    "date_of_notification": "25-11-2024",
+    "date_of_commencement": "25-11-2024",
+    "end_date": "24-12-2024",
+    "apply_link": "https://tnpscexams.in",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "date_of_examination": "08-02-2025"
+    }
+  },
+  {
+    "name": "Combined Civil Services Examination (Group VA Services)",
+    "date_of_notification": "17-10-2024",
+    "date_of_commencement": "17-10-2024",
+    "end_date": "15-11-2024",
+    "apply_link": "https://tnpscexams.in",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "date_of_examination": "04-01-2025"
+    }
+  },
+  {
+    "name": "Assistant Public Prosecutor (Grade II)",
+    "date_of_notification": "13-09-2024",
+    "date_of_commencement": "13-09-2024",
+    "end_date": "12-10-2024",
+    "apply_link": "https://tnpscexams.in",
+    "event_type": "Exam",
+    "document_links": [
+      "https://www.tnpsc.gov.in/Document/english/APP%20GRADE%20II%20ENGLISH_.pdf"
+    ],
+    "details": {
+      "date_of_examination": "14-12-2024",
+      "re_examination_date": "22-02-2025"
+    }
+  }
 ]
-  

@@ -1,117 +1,16 @@
 [
-    {
-      "name": "Driver Recruitment 2024",
-      "date_of_notification": "03-10-2024",
-      "date_of_commencement": "03-10-2024",
-      "end_date": "02-11-2024",
-      "event_type":"Exam",
-      "apply_link": "https://odishapolice.gov.in/",
-      "document_links": [
-        "https://odishapolice.gov.in/"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 100,
-          "breakdown": {
-            "general": 50,
-            "sebc": 20,
-            "sc": 15,
-            "st": 15
-          }
-        },
-        "eligibility": {
-          "age_limit": "Minimum 21 years and maximum 32 years as on 01-01-2024",
-          "education": "10th pass with valid LMV/HMV driving license"
-        },
-        "fee": {
-          "amount": "₹150",
-          "exemptions": ["SC/ST candidates"]
-        },
-        "important_dates": {
-          "application_period": "03-10-2024 to 02-11-2024"
-        },
-        "contact_details": {
-          "facilitation_counter": "0671-2304001",
-          "email": "sphqrs.odpol@nic.in",
-          "address": "State Police Headquarters, Buxi Bazar, Cuttack-753001, Odisha"
-        }
-      }
-    },
-    {
-      "name": "Sepoy/Constable Recruitment 2024",
-      "date_of_notification": "15-09-2024",
-      "date_of_commencement": "15-09-2024",
-      "end_date": "14-10-2024",
-      "event_type":"Exam",
-      "apply_link": "https://odishapolice.gov.in/",
-      "document_links": [
-        "https://odishapolice.gov.in/"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 500,
-          "breakdown": {
-            "general": 250,
-            "sebc": 100,
-            "sc": 75,
-            "st": 75
-          }
-        },
-        "eligibility": {
-          "age_limit": "Minimum 18 years and maximum 23 years as on 01-01-2024",
-          "education": "12th pass"
-        },
-        "fee": {
-          "amount": "₹200",
-          "exemptions": ["SC/ST candidates"]
-        },
-        "important_dates": {
-          "application_period": "15-09-2024 to 14-10-2024"
-        },
-        "contact_details": {
-          "facilitation_counter": "0671-2304001",
-          "email": "sphqrs.odpol@nic.in",
-          "address": "State Police Headquarters, Buxi Bazar, Cuttack-753001, Odisha"
-        }
-      }
-    },
-    {
-      "name": "Junior Clerk Recruitment 2024",
-      "date_of_notification": "20-08-2024",
-      "date_of_commencement": "20-08-2024",
-      "end_date": "19-09-2024",
-      "event_type":"Exam",
-      "apply_link": "https://odishapolice.gov.in/",
-      "document_links": [
-        "https://odishapolice.gov.in/"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 50,
-          "breakdown": {
-            "general": 25,
-            "sebc": 10,
-            "sc": 7,
-            "st": 8
-          }
-        },
-        "eligibility": {
-          "age_limit": "Minimum 18 years and maximum 32 years as on 01-01-2024",
-          "education": "12th pass with typing speed of 40 wpm in English"
-        },
-        "fee": {
-          "amount": "₹100",
-          "exemptions": ["SC/ST candidates"]
-        },
-        "important_dates": {
-          "application_period": "20-08-2024 to 19-09-2024"
-        },
-        "contact_details": {
-          "facilitation_counter": "0671-2304001",
-          "email": "sphqrs.odpol@nic.in",
-          "address": "State Police Headquarters, Buxi Bazar, Cuttack-753001, Odisha"
-        }
-      }
+  {
+    "name": "Recruitment for Sub-Inspector of Police and Equivalent Ranks (CPSE-2024)",
+    "date_of_notification": "01-01-2025",
+    "date_of_commencement": "20-01-2025",
+    "end_date": "10-02-2025",
+    "apply_link": "https://opsi.onlineregistrationforms.com",
+    "event_type": "Exam",
+    "document_links": [
+      "https://odishapolice.gov.in/main/sites/default/files/PDF/Detailed%20Advertisement%20for%20recruitment%20of%20Sub-Inspector%20of%20Police%20and%20equivalent%20rank-2024.pdf"
+    ],
+    "details": {
+      "description": "The Odisha Police Recruitment Board invites online applications for the recruitment of Sub-Inspector of Police and equivalent ranks under the Combined Police Service Examination-2024."
     }
-  ]
-  
+  }
+]

@@ -1,47 +1,24 @@
-[{
-    "name": "Undergraduate Common Entrance Test (UGCET) 2024",
-    "date_of_notification": "2024-03-15",
-    "date_of_commencement": "2024-05-01",
-    "end_date": "2024-05-15",
-    "event_type":"Exam",
+[
+  {
+    "name": "Undergraduate Common Entrance Test (UGCET) 2025",
+    "date_of_notification": "23-01-2025",
+    "date_of_commencement": "23-01-2025",
+    "end_date": "To be announced",
     "apply_link": "https://cetonline.karnataka.gov.in/kea/",
+    "event_type": "Exam",
     "document_links": [
-      "https://cetonline.karnataka.gov.in/kea/UGCET2024/notification.pdf"
+      "https://cetonline.karnataka.gov.in/keawebentry456/ugcet2025/UGCET_Brochure_2025_Engenglish.pdf"
     ],
     "details": {
-      "courses": [
-        "Engineering",
-        "Architecture",
-        "Pharmacy",
-        "Agriculture",
-        "Veterinary Science",
-        "Fisheries",
-        "Sericulture",
-        "Forestry",
-        "Horticulture",
-        "B.Sc. (Agri.)",
-        "B.Sc. (Horti.)",
-        "B.Sc. (Seri.)",
-        "B.Sc. (Forestry)",
-        "B.Sc. (Fisheries)",
-        "B.Sc. (Agri. Marketing & Co-op.)",
-        "B.Sc. (Agri. Business Management)"
-      ],
-      "eligibility": {
-        "education": "12th Class pass from a recognized board with specific subject requirements based on the course",
-        "age_limit": "Minimum age 17 years and maximum age 25 years on 1st May of the examination year"
-      },
-      "fee": {
-        "amount": "₹650 for General category; ₹500 for SC/ST/OBC candidates",
-        "payment_mode": "Online through the official website"
-      },
+      "description": "UGCET 2025 online application process has commenced. Candidates are advised to visit the KEA website for detailed information.",
+      "eligibility": "Candidates who have passed or are appearing for the 2nd PUC/12th standard or equivalent examination.",
       "important_dates": {
-        "last_date_to_apply": "2024-05-15",
-        "exam_date": "2024-06-07 to 2024-06-09"
+        "last_date_to_apply": "To be announced",
+        "exam_date": "To be announced"
       },
       "contact_details": {
-        "email": "kea.cet2024@gmail.com",
-        "phone": "+91-80-23460460"
+        "phone": "080-23460460",
+        "email": "keauthority-ka@nic.in"
       }
     }
   }

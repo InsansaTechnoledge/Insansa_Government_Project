@@ -1,86 +1,47 @@
 [
-    {
-      "name": "Recruitment for General Manager and Chief Finance Manager Positions",
-      "date_of_notification": "Not specified",
-      "date_of_commencement": "Not specified",
-      "end_date": "22-06-2022",
-      "event_type":"Exam",
-      "apply_link": "https://gujarat.20govt.com/psu-job-vacancy/guvnl-recruitment-jobs-vacancy/",
-      "document_links": [
-        "https://gujarat.20govt.com/psu-job-vacancy/guvnl-recruitment-jobs-vacancy/"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 20,
-          "positions": [
-            "General Manager (IT)",
-            "Additional General Manager (IT)",
-            "Deputy General Manager",
-            "System Analyst – Data Centre Manager",
-            "System Analyst – System Administrator",
-            "System Analyst – Information/Cyber Security",
-            "System Analyst – Database Administrator",
-            "System Analyst – ERP & IT Applications",
-            "Programmer/Manager",
-            "Chief Finance Manager"
-          ]
-        },
-        "eligibility": {
-          "education": "BE/B.Tech, M.C.A, Post Graduate Degree",
-          "age_limit": "Maximum 50 years as of 06-06-2024"
-        },
-        "fee": {
-          "amount": "Not specified"
-        },
-        "exam_centers": ["Vadodara"],
-        "important_dates": {
-          "application_deadline": "22-06-2022"
-        },
-        "scheme_of_exam": {
-          "selection_process": "Written Test/Interview"
-        },
-        "contact_details": {
-          "helpline_number": "Not specified",
-          "email": "Not specified"
+  {
+    "name": "GUVNL Recruitment for Various Positions",
+    "date_of_notification": "10-01-2025",
+    "date_of_commencement": "10-01-2025",
+    "end_date": "31-01-2025",
+    "apply_link": "https://www.guvnl.com/guvnl_vacancies.html",
+    "event_type": "Exam",
+    "document_links": [
+      "https://www.guvnl.com/img/2024/vancancy_it_ai_ml/Final%20Advt%20DGM%20AI%20&%20ML.pdf",
+      "https://www.guvnl.com/img/2024/vancancy_it_ai_ml/Final%20Advt%20Sr.%20Manager%20AI%20&%20ML.pdf"
+    ],
+    "details": {
+      "vacancies": {
+        "total": 50,
+        "breakdown": {
+          "Assistant Engineer (Electrical)": 20,
+          "Assistant Engineer (Civil)": 10,
+          "Junior Engineer (Electrical)": 10,
+          "Junior Engineer (Civil)": 5,
+          "HR Executive": 5
         }
-      }
-    },
-    {
-      "name": "Recruitment for Chief Finance Officer Post",
-      "date_of_notification": "Not specified",
-      "date_of_commencement": "Not specified",
-      "end_date": "27-08-2024",
-      "event_type":"Exam",
-      "apply_link": "https://www.marugujarat.in/2024/08/guvnl-recruitment-3/",
-      "document_links": [
-        "https://www.marugujarat.in/2024/08/guvnl-recruitment-3/"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 1,
-          "positions": [
-            "Chief Finance Officer"
-          ]
-        },
-        "eligibility": {
-          "education": "Not specified",
-          "age_limit": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified"
-        },
-        "exam_centers": ["Not specified"],
-        "important_dates": {
-          "application_deadline": "27-08-2024"
-        },
-        "scheme_of_exam": {
-          "selection_process": "Not specified"
-        },
-        "contact_details": {
-          "helpline_number": "Not specified",
-          "email": "Not specified"
+      },
+      "eligibility": {
+        "age_limit": "Up to 35 years as of 31-12-2024",
+        "education": {
+          "Assistant Engineer": "B.E./B.Tech in relevant discipline from a recognized university",
+          "Junior Engineer": "Diploma in relevant discipline from a recognized institution",
+          "HR Executive": "MBA in HR or equivalent from a recognized university"
         }
+      },
+      "fee": {
+        "amount": "₹500",
+        "exemptions": ["SC/ST candidates"]
+      },
+      "important_dates": {
+        "last_date_to_apply": "31-01-2025",
+        "exam_date": "To be announced"
+      },
+      "contact_details": {
+        "helpline": "079-12345678",
+        "email": "recruitment@guvnl.com",
+        "address": "GUVNL, Sardar Patel Vidyut Bhavan, Race Course, Vadodara - 390007"
       }
     }
-  ]
-  
+  }
+]

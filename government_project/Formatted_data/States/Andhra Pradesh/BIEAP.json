@@ -1,83 +1,44 @@
 [
-    {
-      "name": "AP Intermediate 1st Year Examinations 2025",
-      "date_of_notification": "December 11, 2024",
-      "date_of_commencement": "March 1, 2025",
-      "end_date": "March 19, 2025",
-      "event_type":"Exam",
-      "apply_link": "https://bie.ap.gov.in",
-      "document_links": [
-        "https://bie.ap.gov.in/InterFirstYearTimeTable2025.pdf"
-      ],
-      "details": {
-        "exam_timing": "9:00 AM to 12:00 PM",
-        "subjects": [
-          "Part II: 2nd Language Paper 1",
-          "Part I: English Paper 1",
-          "Mathematics Paper 1A",
-          "Botany Paper 1",
-          "Civics Paper 1",
-          "Mathematics Paper 1B",
-          "Zoology Paper 1",
-          "History Paper 1",
-          "Physics Paper 1",
-          "Economics Paper 1",
-          "Chemistry Paper 1",
-          "Commerce Paper 1",
-          "Sociology Paper 1",
-          "Fine Arts, Music Paper 1",
-          "Public Administration Paper 1",
-          "Logic Paper 1",
-          "Bridge Course Mathematics Paper 1 (for Bi.P.C students)"
-        ],
-        "practical_exams": {
-          "dates": "February 10 to February 20, 2025",
-          "sessions": [
-            "9:00 AM to 12:00 PM",
-            "2:00 PM to 5:00 PM"
-          ]
-        }
-      }
-    },
-    {
-      "name": "AP Intermediate 2nd Year Examinations 2025",
-      "date_of_notification": "December 11, 2024",
-      "date_of_commencement": "March 3, 2025",
-      "end_date": "March 20, 2025",
-      "event_type":"Exam",
-      "apply_link": "https://bie.ap.gov.in",
-      "document_links": [
-        "https://bie.ap.gov.in/InterSecondYearTimeTable2025.pdf"
-      ],
-      "details": {
-        "exam_timing": "9:00 AM to 12:00 PM",
-        "subjects": [
-          "Part II: 2nd Language Paper 2",
-          "Part I: English Paper 2",
-          "Mathematics Paper 2A",
-          "Botany Paper 2",
-          "Civics Paper 2",
-          "Mathematics Paper 2B",
-          "Zoology Paper 2",
-          "History Paper 2",
-          "Physics Paper 2",
-          "Economics Paper 2",
-          "Chemistry Paper 2",
-          "Commerce Paper 2",
-          "Sociology Paper 2",
-          "Fine Arts, Music Paper 2",
-          "Public Administration Paper 2",
-          "Logic Paper 2",
-          "Bridge Course Mathematics Paper 2 (for Bi.P.C students)"
-        ],
-        "practical_exams": {
-          "dates": "February 10 to February 20, 2025",
-          "sessions": [
-            "9:00 AM to 12:00 PM",
-            "2:00 PM to 5:00 PM"
-          ]
-        }
+  {
+    "name": "Intermediate Public Examinations March 2025",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": "27-03-2025",
+    "end_date": "16-04-2025",
+    "apply_link": "https://bie.ap.gov.in",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "01-02-2025",
+        "application_end_date": "15-02-2025"
+      },
+      "exam_schedule": "Available in the notification",
+      "contact_details": {
+        "phone": "0866-2974130",
+        "email": "bieap@ap.gov.in"
       }
     }
-  ]
-  
+  },
+  {
+    "name": "Intermediate Public Examinations March 2025 Hall Tickets",
+    "date_of_notification": "10-03-2025",
+    "date_of_commencement": "15-03-2025",
+    "end_date": "26-03-2025",
+    "apply_link": "https://bie.ap.gov.in",
+    "event_type": "AdmitCard",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "application_start_date": "15-03-2025",
+        "application_end_date": "26-03-2025"
+      },
+      "exam_schedule": "Available in the notification",
+      "contact_details": {
+        "phone": "0866-2974130",
+        "email": "bieap@ap.gov.in"
+      }
+    }
+  }
+]

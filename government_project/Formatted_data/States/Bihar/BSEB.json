@@ -1,81 +1,80 @@
 [
-    {
-      "name": "Bihar STET 2024",
-      "date_of_notification": "14-12-2023",
-      "date_of_commencement": "14-12-2023",
-      "end_date": "02-01-2024",
-      "event_type":"Exam",
-      "apply_link": "https://secondary.biharboardonline.com/",
-      "document_links": [
-        "https://secondary.biharboardonline.com/Bihar_STET_2024_Notification.pdf"
-      ],
-      "details": {
-        "notification_number": "Bihar STET 2024",
-        "vacancies": "Various positions for Secondary and Higher Secondary Teachers",
-        "eligibility": {
-          "education": "Post Graduate with relevant subjects and B.Ed.",
-          "age_limit": {
-            "minimum": 18,
-            "maximum": 40
+  {
+    "name": "Bihar Board Intermediate (Class 12) Examination 2025",
+    "date_of_notification": "07-12-2024",
+    "date_of_commencement": "01-02-2025",
+    "end_date": "15-02-2025",
+    "apply_link": "https://secondary.biharboardonline.com/",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "practical_exams": "10-01-2025 to 20-01-2025",
+        "admit_card_release": "21-01-2025"
+      },
+      "exam_schedule": {
+        "streams": {
+          "Science": {
+            "Biology": "01-02-2025 (First Shift)",
+            "Physics": "05-02-2025 (First Shift)",
+            "Chemistry": "07-02-2025 (First Shift)",
+            "Mathematics": "04-02-2025 (First Shift)"
+          },
+          "Arts": {
+            "Philosophy": "01-02-2025 (First Shift)",
+            "Economics": "01-02-2025 (Second Shift)",
+            "Political Science": "04-02-2025 (Second Shift)",
+            "Geography": "05-02-2025 (Second Shift)"
+          },
+          "Commerce": {
+            "Economics": "01-02-2025 (Second Shift)",
+            "Business Studies": "05-02-2025 (First Shift)",
+            "Accountancy": "08-02-2025 (First Shift)"
           }
         },
-        "application_fee": {
-          "general": 960,
-          "sc_st": 760
-        },
-        "selection_process": [
-          "Written Examination",
-          "Interview"
-        ],
-        "important_dates": {
-          "application_start": "14-12-2023",
-          "application_end": "02-01-2024",
-          "exam_date": "To Be Announced"
-        },
-        "contact_details": {
-          "email": "helpdesk@biharboardonline.com",
-          "phone": "+91-612-2226926"
+        "common_subjects": {
+          "English": "06-02-2025 (First Shift for Science and Commerce, Second Shift for Arts)",
+          "Hindi": "08-02-2025 (Second Shift for Arts)"
         }
-      }
-    },
-    {
-      "name": "Bihar Sakshamta Pariksha II (Second) Recruitment 2024",
-      "date_of_notification": "26-04-2024",
-      "date_of_commencement": "26-04-2024",
-      "end_date": "04-05-2024",
-      "event_type":"Exam",
-      "apply_link": "https://secondary.biharboardonline.com/",
-      "document_links": [
-        "https://secondary.biharboardonline.com/Bihar_Sakshamta_Pariksha_II_2024_Notification.pdf"
-      ],
-      "details": {
-        "notification_number": "Bihar Sakshamta Pariksha II 2024",
-        "vacancies": "Various positions for Secondary and Higher Secondary Teachers",
-        "eligibility": {
-          "education": "Post Graduate with relevant subjects and B.Ed.",
-          "age_limit": {
-            "minimum": 18,
-            "maximum": 40
-          }
-        },
-        "application_fee": {
-          "general": 960,
-          "sc_st": 760
-        },
-        "selection_process": [
-          "Written Examination",
-          "Interview"
-        ],
-        "important_dates": {
-          "application_start": "26-04-2024",
-          "application_end": "04-05-2024",
-          "exam_date": "To Be Announced"
-        },
-        "contact_details": {
-          "email": "helpdesk@biharboardonline.com",
-          "phone": "+91-612-2226926"
-        }
-      }
+      },
+      "exam_shifts": {
+        "first_shift": "09:30 AM to 12:45 PM",
+        "second_shift": "02:00 PM to 05:15 PM"
+      },
+      "cool_off_time": "15 minutes at the beginning of each shift"
     }
-  ]
-  
+  },
+  {
+    "name": "Bihar Board Matriculation (Class 10) Examination 2025",
+    "date_of_notification": "07-12-2024",
+    "date_of_commencement": "17-02-2025",
+    "end_date": "25-02-2025",
+    "apply_link": null,
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "important_dates": {
+        "practical_exams": "21-01-2025 to 23-01-2025",
+        "admit_card_release": "08-01-2025"
+      },
+      "exam_schedule": {
+        "subjects": {
+          "Mother Language (Urdu, Bangla, Maithili)": "17-02-2025",
+          "Second Indian Language": "18-02-2025",
+          "English": "19-02-2025",
+          "Mathematics": "20-02-2025",
+          "Science": "21-02-2025",
+          "Social Science": "22-02-2025",
+          "Optional Subject": "23-02-2025"
+        }
+      },
+      "exam_shifts": {
+        "first_shift": "09:30 AM to 12:45 PM",
+        "second_shift": "02:00 PM to 05:15 PM"
+      },
+      "cool_off_time": "15 minutes at the beginning of each shift"
+    }
+  }
+]

@@ -1,189 +1,102 @@
 [
   {
-    "name": "Final Result for recruitment to the post of Radiation Oncologist, Surgical Oncologist & MP cum RSO & Radiation Therapy Technologist (RTT) for ACCC, CH Ambala Cantt. Haryana",
-    "date_of_notification": "03-01-2025",
-    "date_of_commencement": null,
-    "end_date": "03-01-2026",
-    "event_type":"Result",
+    "name": "Qualified Competency Based Test under PNDT Act",
+    "date_of_notification": "24-01-2025",
+    "date_of_commencement": "28-01-2025",
+    "end_date": "23-01-2026",
     "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
+    "event_type": "Exam",
     "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2025/01/Final-Result-Recruitment-ACCC-CH-Ambala-Cantt.pdf"
+      "https://cdnbbsr.s3waas.gov.in/s31177967c7957072da3dc1db4ceb30e7a/uploads/2025/01/202501242144796264.pdf"
     ],
-    "details": {}
-  },
-  {
-    "name": "Public Notice regarding the halt on Advertisement no NHM/PKL/24/754, NHM/PKL/24/788, NHM/PKL/24/1198-99",
-    "date_of_notification": "02-01-2025",
-    "event_type":"Exam",
-    "date_of_commencement": null,
-    "end_date": "01-01-2026",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2025/01/Public-Notice-Halt-Advertisements.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Public notice NHM/PKL/24/1198-99 dated: 16.10.2024",
-    "date_of_notification": "24-12-2024",
-    "date_of_commencement": null,
-    "end_date": "17-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Public-Notice-NHM-PKL-24-1198-99.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Document verification advt. no. NHM/PKL/24/788 dated: 14.08.2024",
-    "date_of_notification": "23-12-2024",
-    "date_of_commencement": null,
-    "end_date": "24-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Document-Verification-Advt-NHM-PKL-24-788.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Notice to the candidates for document verification for the post of Dietician (Ayush)",
-    "date_of_notification": "19-12-2024",
-    "date_of_commencement": null,
-    "end_date": "18-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Notice-Document-Verification-Dietician-Ayush.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Advertisement No. MH/PKL/2024/163 dated: 16.12.2024",
-    "date_of_notification": "17-12-2024",
-    "date_of_commencement": null,
-    "end_date": "17-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Advertisement-MH-PKL-2024-163.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Document verification for the post of multi rehabilitation (NPHCE) worker under NHM on contract basis reference Advt. no. NHM/PKL/24/1198-99 dated 16.10.2024",
-    "date_of_notification": "16-12-2024",
-    "date_of_commencement": null,
-    "end_date": "16-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Document-Verification-Multi-Rehabilitation-NPHCE-Worker.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Document verification Advt. no. NHM/PKL/24/788 and Advt. no. NHM/PKL/24/1198-99",
-    "date_of_notification": "06-12-2024",
-    "date_of_commencement": null,
-    "end_date": "05-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Document-Verification-Advt-NHM-PKL-24-788-1198-99.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Provisional appointment to the post of Laboratory Technician against advertisement no 15/2019, Category No2",
-    "date_of_notification": "04-12-2024",
-    "date_of_commencement": null,
-    "end_date": "03-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Provisional-Appointment-Laboratory-Technician.pdf"
-    ],
-    "details": {}
-  },
-  {
-    "name": "Recruitment of ANM post under NHM Advt. no NHM/PKL/24/1199 and notice no NHM/PKL/24/1470 dated 26.11.2024",
-    "date_of_notification": "04-12-2024",
-    "date_of_commencement": null,
-    "end_date": "03-12-2025",
-    "event_type":"Exam",
-    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-    "document_links": [
-      "https://haryanahealth.gov.in/wp-content/uploads/2024/12/Recruitment-ANM-Post-NHM.pdf"
-    ],
-    "details": {}
-  },
-  
-      {
-        "name": "Date of interview for the post of Oncologist (Radiation & Surgical), Medical Physicist cum Radiation Safety Officer & Radiation Therapy Technologists for ACCC, CH Ambala Cantt",
-        "date_of_notification": "27-11-2024",
-        "date_of_commencement": null,
-        "end_date": "27-11-2025",
-        "event_type":"Exam",
-        "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-        "document_links": [
-          "https://haryanahealth.gov.in/wp-content/uploads/2024/11/Interview-Dates-Oncologist-Medical-Physicist.pdf"
-        ],
-        "details": {}
+    "details": {
+      "vacancies": null,
+      "eligibility": null,
+      "fee": null,
+      "important_dates": {
+        "last_date_to_apply": null,
+        "exam_date": "28-01-2025"
       },
-      {
-        "name": "Public Notice regarding document verification of various posts under NHM reference Advertisement No. NHM/PKL/24/1470 dated 16.11.2024",
-        "date_of_notification": "20-11-2024",
-        "date_of_commencement": null,
-        "end_date": "20-11-2025",
-        "event_type":"Exam",
-        "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-        "document_links": [
-          "https://haryanahealth.gov.in/wp-content/uploads/2024/11/Public-Notice-Document-Verification-NHM.pdf"
-        ],
-        "details": {}
+      "contact_details": null
+    }
+  },
+  {
+    "name": "Revised Public Notice NHM/PKL/25/1874",
+    "date_of_notification": "22-01-2025",
+    "date_of_commencement": "22-01-2025",
+    "end_date": "15-01-2026",
+    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
+    "event_type": "Notice",
+    "document_links": [
+      "https://cdnbbsr.s3waas.gov.in/s31177967c7957072da3dc1db4ceb30e7a/uploads/2025/01/20250122572322063.pdf"
+    ],
+    "details": {
+      "vacancies": null,
+      "eligibility": null,
+      "fee": null,
+      "important_dates": null,
+      "contact_details": null
+    }
+  },
+  {
+    "name": "Walk-In-Drive for Various Positions",
+    "date_of_notification": "22-01-2025",
+    "date_of_commencement": "22-01-2025",
+    "end_date": "25-01-2026",
+    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "vacancies": null,
+      "eligibility": null,
+      "fee": null,
+      "important_dates": {
+        "last_date_to_apply": null,
+        "exam_date": null
       },
-      {
-        "name": "Advertisement for Walk-in Interview for the posts of Medical Officers, Staff Nurses, and Paramedical Staff under NHM",
-        "date_of_notification": "15-11-2024",
-        "date_of_commencement": "20-11-2024",
-        "end_date": "15-12-2024",
-        "event_type":"Exam",
-        "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-        "document_links": [
-          "https://haryanahealth.gov.in/wp-content/uploads/2024/11/Walk-In-Interview-Medical-Officers-NHM.pdf"
-        ],
-        "details": {
-          "vacancies": {
-            "medical_officers": 25,
-            "staff_nurses": 50,
-            "paramedical_staff": 30
-          },
-          "eligibility": {
-            "education": "Relevant qualifications as per NHM guidelines",
-            "age_limit": "21-42 years"
-          }
-        }
+      "contact_details": null
+    }
+  },
+  {
+    "name": "Recruitment of 777 Medical Officers",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": "15-01-2025",
+    "end_date": "15-01-2026",
+    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "vacancies": {
+        "total": 777,
+        "breakdown": null
       },
-      {
-        "name": "Recruitment for the post of Data Entry Operator under NHM reference Advt. no NHM/PKL/24/1098 dated 01.10.2024",
-        "date_of_notification": "10-11-2024",
-        "date_of_commencement": "15-11-2024",
-        "end_date": "30-11-2024",
-        "event_type":"Exam",
-        "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
-        "document_links": [
-          "https://haryanahealth.gov.in/wp-content/uploads/2024/10/Recruitment-Data-Entry-Operator-NHM.pdf"
-        ],
-        "details": {
-          "vacancies": 20,
-          "eligibility": {
-            "education": "Graduation with Diploma in Computer Applications",
-            "typing_speed": "30 WPM in English"
-          },
-          "salary": "₹12,000/month"
-        }
-      }
-    ]
-    
+      "eligibility": null,
+      "fee": null,
+      "important_dates": {
+        "last_date_to_apply": null,
+        "exam_date": null
+      },
+      "contact_details": null
+    }
+  },
+  {
+    "name": "Vacancy under 'Statewide NCD Risk Factor (STEPS) Survey, Haryana'",
+    "date_of_notification": "13-01-2025",
+    "date_of_commencement": "13-01-2025",
+    "end_date": "13-01-2026",
+    "apply_link": "https://haryanahealth.gov.in/notice-category/recruitments/",
+    "event_type": "Notice",
+    "document_links": [
+
+    ],
+    "details": {
+      "vacancies": null,
+      "eligibility": null,
+      "fee": null,
+      "important_dates": null,
+      "contact_details": null
+    }
+  }
+]

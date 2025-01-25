@@ -1,78 +1,146 @@
 [
     {
-      "name": "Assistant Professor (Medical Education) 2024",
-      "date_of_notification": "12-01-2025",
-      "date_of_commencement": "12-01-2025",
-      "end_date": "11-02-2025",
-      "event_type":"Exam",
-      "apply_link": "https://rpsc.rajasthan.gov.in/",
-      "document_links": [
-        "https://www.jansatta.com/education/rpsc-assistant-professor-vacancy-2025-official-notification-out-online-application-begins-from-january-12th/3757272/?utm_source=chatgpt.com"
-      ],
+      "name": "Vidhi Rachanakar - 2024",
+      "date_of_notification": "24-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Exam",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/PressNotes/14FC77ED-9765-423C-8F6C-BFF3F13FB511.pdf"],
       "details": {
-        "vacancies": {
-          "total": 575,
-          "breakdown": "As per official notification"
-        },
-        "eligibility": {
-          "education": "As per official notification",
-          "age_limit": "As per official notification"
-        },
-        "important_dates": {
-          "application_start_date": "12-01-2025",
-          "application_end_date": "11-02-2025"
-        }
+        "description": "Press Note regarding submission of Detailed Application Form for Vidhi Rachanakar - 2024."
       }
     },
     {
-      "name": "Senior Teacher Grade II 2024",
-      "date_of_notification": "26-12-2024",
-      "date_of_commencement": "26-12-2024",
-      "end_date": "24-01-2025",
-      "event_type":"Exam",
-      "apply_link": "https://rpsc.rajasthan.gov.in/",
-      "document_links": [
-        "https://navbharattimes.indiatimes.com/education/jobs-junction/rpsc-teacher-recruitment-2024-notification-pdf-rajasthan-varishth-adhyapak-bharti-tgt-apply-online/articleshow/116243298.cms?utm_source=chatgpt.com"
-      ],
+      "name": "Senior Physical Education Teacher Exam - 2022",
+      "date_of_notification": "24-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/AnswerKeys/8D24E264-E865-46FB-9EDB-5F1CA2D02BE3.pdf"],
       "details": {
-        "vacancies": {
-          "total": 2129,
-          "breakdown": "As per official notification"
-        },
-        "eligibility": {
-          "education": "As per official notification",
-          "age_limit": "As per official notification"
-        },
-        "important_dates": {
-          "application_start_date": "26-12-2024",
-          "application_end_date": "24-01-2025"
-        }
+        "description": "Marks for Senior Physical Education Teacher Exam 2022 have been released."
       }
     },
     {
-      "name": "Rajasthan State and Subordinate Services Combined Competitive Exam (RAS) 2024",
-      "date_of_notification": "19-09-2024",
-      "date_of_commencement": "19-09-2024",
-      "end_date": "18-10-2024",
-      "event_type":"Exam",
-      "apply_link": "https://rpsc.rajasthan.gov.in/",
-      "document_links": [
-        "https://www.jagranjosh.com/articles/rpsc-ras-notification-2024-download-official-pdf-check-post-wise-vacancy-details-1725340563-2?utm_source=chatgpt.com"
-      ],
+      "name": "Assistant Research Officer - (Plant Pathology) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/36070A5F12B643A6B08AA0A0B185EDEE.pdf"],
       "details": {
-        "vacancies": {
-          "total": 733,
-          "breakdown": "As per official notification"
-        },
-        "eligibility": {
-          "education": "As per official notification",
-          "age_limit": "As per official notification"
-        },
-        "important_dates": {
-          "application_start_date": "19-09-2024",
-          "application_end_date": "18-10-2024"
-        }
+        "description": "Result Preamble (Qualified for Interview) for Assistant Research Officer - (Plant Pathology) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Research Officer - (Agronomy) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/55EFC1E40B5E418A8ABAD67C5A61D290.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Research Officer - (Agronomy) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Research Officer - (Entomology) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/315C211E61A147E1AA0D79A9BA1AE060.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Research Officer - (Entomology) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Research Officer - (Horticulture) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/75D3406180DB4F258B600B360781F338.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Research Officer - (Horticulture) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Food Safety Officer - 2022 (TSP/NTSP)",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/5A1A545EF65642859755146D0F3269DE.pdf"],
+      "details": {
+        "description": "Result Preamble (By Court Order) for Food Safety Officer - 2022 (TSP/NTSP)."
+      }
+    },
+    {
+      "name": "Assistant Agriculture Research Officer - (Horticulture) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/378BA60A0897468ABC1D4017230569D1.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Agriculture Research Officer - (Horticulture) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Agriculture Research Officer - (Entomology) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/E8167F4D851249F2AA724B28B1A08220.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Agriculture Research Officer - (Entomology) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Agriculture Research Officer - (Agronomy) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/E77AEB12A4504A72AA1790D3120F8E32.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Agriculture Research Officer - (Agronomy) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Agriculture Research Officer - (Plant Pathology) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/EF287766D3FB48C59CE573C28C4E7C1C.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Agriculture Research Officer - (Plant Pathology) Screening Exam 2022."
+      }
+    },
+    {
+      "name": "Assistant Agriculture Research Officer - (Agriculture Chemistry) Screening Exam 2022",
+      "date_of_notification": "22-01-2025",
+      "date_of_commencement": null,
+      "end_date": null,
+      "apply_link": "https://rpsc.rajasthan.gov.in/news",
+      "event_type": "Result",
+      "document_links": ["https://rpsc.rajasthan.gov.in/Static/Result/21A685F3FA38480A9B9BC3F7149787AA.pdf"],
+      "details": {
+        "description": "Result Preamble (Qualified for Interview) for Assistant Agriculture Research Officer - (Agriculture Chemistry) Screening Exam 2022."
       }
     }
-  ]
-  
+]

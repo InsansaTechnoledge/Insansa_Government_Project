@@ -1,132 +1,32 @@
 [
-    {
-      "name": "Group-5 Staff Nurse, Paramedical, and Other Post Combined Recruitment Test - 2024",
-      "date_of_notification": "To be announced",
-      "date_of_commencement": "To be announced",
-      "end_date": "To be announced",
-      "event_type":"Exam",
-      "apply_link": "https://esb.mp.gov.in/e_default.html",
-      "document_links": [
-        "https://esb.mp.gov.in/e_default.html"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "To be announced"
-        },
-        "eligibility": {
-          "education": "Relevant qualifications as per the post",
-          "age_limit": "As per MPESB norms"
-        },
-        "fee": {
-          "amount": "To be announced"
-        },
-        "exam_centers": ["Various cities across Madhya Pradesh"],
-        "important_dates": {
-          "application_start": "To be announced",
-          "application_end": "To be announced",
-          "exam_date": "To be announced"
-        },
-        "scheme_of_exam": {
-          "written_exam": {
-            "subjects": "Relevant subjects as per the post",
-            "marks": "To be announced",
-            "duration": "To be announced"
-          },
-          "interview": {
-            "marks": "To be announced"
-          }
-        },
-        "contact_details": {
-          "helpline_number": "To be announced",
-          "email": "To be announced"
-        }
-      }
-    },
-    {
-      "name": "Group-2 Sub Group-4 Assistant Auditor and Other Equivalent Posts Recruitment Test - 2024",
-      "date_of_notification": "To be announced",
-      "date_of_commencement": "November 2024",
-      "end_date": "To be announced",
-      "event_type":"Exam",
-      "apply_link": "https://esb.mp.gov.in/e_default.html",
-      "document_links": [
-        "https://esb.mp.gov.in/e_default.html"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "To be announced"
-        },
-        "eligibility": {
-          "education": "Relevant qualifications as per the post",
-          "age_limit": "As per MPESB norms"
-        },
-        "fee": {
-          "amount": "To be announced"
-        },
-        "exam_centers": ["Various cities across Madhya Pradesh"],
-        "important_dates": {
-          "application_start": "To be announced",
-          "application_end": "To be announced",
-          "exam_date": "November 2024"
-        },
-        "scheme_of_exam": {
-          "written_exam": {
-            "subjects": "Relevant subjects as per the post",
-            "marks": "To be announced",
-            "duration": "To be announced"
-          },
-          "interview": {
-            "marks": "To be announced"
-          }
-        },
-        "contact_details": {
-          "helpline_number": "To be announced",
-          "email": "To be announced"
-        }
-      }
-    },
-    {
-      "name": "Assistant Sub Inspector, Head Constable Selection Test - 2024",
-      "date_of_notification": "To be announced",
-      "date_of_commencement": "December 2024",
-      "end_date": "To be announced",
-      "event_type":"Exam",
-      "apply_link": "https://esb.mp.gov.in/e_default.html",
-      "document_links": [
-        "https://esb.mp.gov.in/e_default.html"
-      ],
-      "details": {
-        "vacancies": {
-          "total": "To be announced"
-        },
-        "eligibility": {
-          "education": "Relevant qualifications as per the post",
-          "age_limit": "As per MPESB norms"
-        },
-        "fee": {
-          "amount": "To be announced"
-        },
-        "exam_centers": ["Various cities across Madhya Pradesh"],
-        "important_dates": {
-          "application_start": "To be announced",
-          "application_end": "To be announced",
-          "exam_date": "December 2024"
-        },
-        "scheme_of_exam": {
-          "written_exam": {
-            "subjects": "Relevant subjects as per the post",
-            "marks": "To be announced",
-            "duration": "To be announced"
-          },
-          "interview": {
-            "marks": "To be announced"
-          }
-        },
-        "contact_details": {
-          "helpline_number": "To be announced",
-          "email": "To be announced"
-        }
-      }
-    }
-  ]
-  
+  {
+    "name": "Group-1 Sub Group-1 & Group-2 Sub Group-1 Combined Recruitment Test - 2024",
+    "date_of_notification": "31-12-2024",
+    "date_of_commencement": "25-04-2025",
+    "end_date": "25-04-2025",
+    "apply_link": "https://esb.mp.gov.in/e_default.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {}
+  },
+  {
+    "name": "Group-1 (Sub Group -3) Combined Recruitment Test - 2024",
+    "date_of_notification": "31-12-2024",
+    "date_of_commencement": "15-04-2025",
+    "end_date": "15-04-2025",
+    "apply_link": "https://esb.mp.gov.in/e_default.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {}
+  },
+  {
+    "name": "Group-5 Staff Nurse, Paramedical and Other Post Combined Recruitment Test - 2024",
+    "date_of_notification": "30-12-2024",
+    "date_of_commencement": "15-02-2025",
+    "end_date": null,
+    "apply_link": "https://esb.mp.gov.in/e_default.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {}
+  }
+]

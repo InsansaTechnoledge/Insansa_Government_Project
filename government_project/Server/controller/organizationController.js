@@ -127,8 +127,9 @@ async function processFilesInFolder(folderPath, parentFolderName, type = null) {
                   if (!organization && parentFolderName==='UPSC') {
                       organization=await Organization.findOne({abbreviation:'UPSC'});
                       };
-                  if (!organization) {
-                    console.log("new ", organization);
+                      const organization1='';
+                  if(organization && parentFolderName==='UPSC'){
+                     organization1=await Organization.findOne({abbreviation:'UPSC'});
                   }
                   for(let event of  organizationInfo){
                     console.log(event);
@@ -157,6 +158,11 @@ async function processFilesInFolder(folderPath, parentFolderName, type = null) {
                       
                     }
                     await organization.save();
+
+                    if(organization1 && parentFolderName==='UPSC' && !organization1.events.includes(newEvent._id)){
+                      organization1.events.push(newEvent._id);
+                      await organization1.save();
+                    }
                     
                     let eventType=await EventType.findOne({type:event.event_type});
                     eventType.events.push(newEvent._id); 

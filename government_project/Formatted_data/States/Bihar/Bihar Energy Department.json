@@ -1,43 +1,32 @@
 [
   {
-      "name": "Bihar State Power Holding Company Limited (BSPHCL) Recruitment",
-      "date_of_notification": "01-10-2024",
-      "date_of_commencement": "01-10-2024",
-      "end_date": "15-10-2024",
-      "event_type":"Exam",
-      "apply_link": "https://www.bsphcl.co.in/Recruitment.aspx",
-      "document_links": [
-        "https://www.bsphcl.co.in/Recruitment.aspx"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 4016,
-          "breakdown": {
-            "Assistant Executive Engineer (AEE)": 100,
-            "Junior Electrical Engineer (JEE)": 650,
-            "Correspondence Clerk": 300,
-            "Store Assistant": 250,
-            "Junior Accounts Clerk (JAC)": 800,
-            "Technician Grade-III": 1916
-          }
-        },
-        "eligibility": {
-          "age_limit": "18 to 37 years as of 01-01-2024",
-          "education": "Relevant educational qualification as per the post"
-        },
-        "fee": {
-          "amount": "₹1,500 (General), ₹375 (SC/ST/PwD/Female candidates)"
-        },
-        "important_dates": {
-          "application_period": "01-10-2024 to 15-10-2024",
-          "exam_dates": "To be notified"
-        },
-        "contact_details": {
-          "facilitation_counter": "9513253397",
-          "email": "bsphclrecpat@gmail.com",
-          "website": "https://www.bsphcl.co.in/"
-        }
-      }
+    "name": "Recruitment of Assistant Electrical Engineers",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": "20-01-2025",
+    "end_date": "20-02-2025",
+    "apply_link": "https://state.bihar.gov.in/energy/SectionInformation.html?editForm&rowId=3958",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "description": "The Energy Department of Bihar invites applications for the position of Assistant Electrical Engineer. Candidates with a degree in Electrical Engineering are eligible to apply.",
+      "eligibility": "Bachelor's degree in Electrical Engineering from a recognized university.",
+      "selection_process": "Written examination followed by an interview."
     }
-    
+  },
+  {
+    "name": "Recruitment of Junior Electrical Engineers",
+    "date_of_notification": "10-01-2025",
+    "date_of_commencement": "15-01-2025",
+    "end_date": "15-02-2025",
+    "apply_link": "https://state.bihar.gov.in/energy/SectionInformation.html?editForm&rowId=3958",
+    "event_type": "Exam",
+    "document_links": [
+    ],
+    "details": {
+      "description": "The Energy Department of Bihar is hiring Junior Electrical Engineers. Diploma holders in Electrical Engineering are encouraged to apply.",
+      "eligibility": "Diploma in Electrical Engineering from a recognized institution.",
+      "selection_process": "Written test followed by a personal interview."
+    }
+  }
 ]

@@ -3,7 +3,7 @@ Also If there are any links for documents on the website, then extract informati
 Consider only those events which are currently active or upcoming.
 the keys are in format
 {
-  name:name of event
+  name:name of event which are listed on the page
   date_of_notification:the date when the notification come
   date_of_commencement:date of starting the application
   end_date:ending of the exam date

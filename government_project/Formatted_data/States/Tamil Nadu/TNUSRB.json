@@ -1,81 +1,86 @@
 [
-    {
-      "name": "Common Recruitment of Gr.II Police Constables, Gr.II Jail Warders & Firemen - 2023",
-      "date_of_notification": "07-07-2022",
-      "date_of_commencement": "07-07-2022",
-      "end_date": "Not specified",
-      "event_type":"Exam",
-      "apply_link": "https://www.tnusrb.tn.gov.in/index.php",
-      "document_links": [
-        "https://www.tnusrb.tn.gov.in/index.php"
+  {
+    "name": "Common Recruitment for Gr.II Police Constables, Gr.II Jail Warders & Firemen - 2023",
+    "date_of_notification": "2023-05-01",
+    "date_of_commencement": "2023-05-01",
+    "end_date": "2023-06-01",
+    "apply_link": "https://tnusrb.tn.gov.in",
+    "event_type": "Exam",
+    "document_links": [
+      "https://www.tnusrb.tn.gov.in/pdfs/NotificationCR2023.pdf"
+    ],
+    "details": {
+      "educational_qualification": "Candidates should have a minimum educational qualification of 10th Standard (SSLC) or its equivalent recognized by the Government of Tamil Nadu.",
+      "age_limit": "The applicant should have completed the age of 18 years and should not be aged above 24 years as on 1st July 2023. Age relaxations are applicable as per government norms.",
+      "selection_process": [
+        "Written Examination",
+        "Physical Measurement Test (PMT)",
+        "Endurance Test (ET)",
+        "Physical Efficiency Test (PET)",
+        "Certificate Verification"
       ],
-      "details": {
-        "vacancies": {
-          "total": 3552,
-          "breakdown": {
-            "general": "Not specified",
-            "backward_class": "Not specified",
-            "scheduled_castes": "Not specified",
-            "scheduled_tribes": "Not specified"
-          }
-        },
-        "eligibility": {
-          "age_limit": "Not specified",
-          "education": "10th - SSLC"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "07-07-2022 to Not specified",
-          "examination_date": "Not specified"
-        },
-        "contact_details": {
-          "facilitation_counter": "044-28413658",
-          "email": "tnusrb[at]nic[dot]in",
-          "address": "Tamil Nadu Uniformed Services Recruitment Board, Old COP Office Campus, Pantheon Road, Egmore, Chennai - 600 008"
-        }
-      }
-    },
-    {
-      "name": "Sub-Inspector of Police (Technical) Recruitment",
-      "date_of_notification": "Not specified",
-      "date_of_commencement": "Not specified",
-      "event_type":"Exam",
-      "end_date": "Not specified",
-      "apply_link": "https://www.tnusrb.tn.gov.in/index.php",
-      "document_links": [
-        "https://www.tnusrb.tn.gov.in/index.php"
+      "syllabus": [
+        "General Knowledge",
+        "Psychology"
       ],
-      "details": {
-        "vacancies": {
-          "total": "Not specified",
-          "breakdown": {
-            "general": "Not specified",
-            "backward_class": "Not specified",
-            "scheduled_castes": "Not specified",
-            "scheduled_tribes": "Not specified"
-          }
-        },
-        "eligibility": {
-          "age_limit": "20 to 30 years",
-          "education": "Not specified"
-        },
-        "fee": {
-          "amount": "Not specified",
-          "exemptions": []
-        },
-        "important_dates": {
-          "application_period": "Not specified",
-          "examination_date": "Not specified"
-        },
-        "contact_details": {
-          "facilitation_counter": "044-28413658",
-          "email": "tnusrb[at]nic[dot]in",
-          "address": "Tamil Nadu Uniformed Services Recruitment Board, Old COP Office Campus, Pantheon Road, Egmore, Chennai - 600 008"
-        }
+      "important_dates": {
+        "written_examination": "2023-08-15",
+        "physical_tests": "2023-09-10 to 2023-09-20",
+        "result_declaration": "2023-10-05"
+      },
+      "contact_details": {
+        "helpdesk_numbers": [
+          "044-28413658",
+          "9499008445",
+          "9176243899",
+          "9789035725"
+        ],
+        "email": "tnusrb@nic.in"
       }
     }
-  ]
-  
+  },
+  {
+    "name": "Joint Recruitment of Sub-Inspectors of Police and Station Officers, Fire & Rescue Services Department – 2023",
+    "date_of_notification": "2023-03-15",
+    "date_of_commencement": "2023-03-15",
+    "end_date": "2023-04-15",
+    "apply_link": "https://tnusrb.tn.gov.in",
+    "event_type": "Exam",
+    "document_links": [
+      "https://www.tnusrb.tn.gov.in/pdfs/Notification_en.pdf",
+      "https://www.tnusrb.tn.gov.in/pdfs/AddendumtoNotification(English).pdf"
+    ],
+    "details": {
+      "educational_qualification": "Candidates should have a Bachelor's Degree from any University recognized by UGC / Government on the date of Notifications.",
+      "age_limit": "The applicant should have completed the age of 20 years and should not be aged above 30 years as on 1st July 2023. Age relaxations are applicable as per government norms.",
+      "selection_process": [
+        "Written Examination",
+        "Physical Measurement Test (PMT)",
+        "Endurance Test (ET)",
+        "Physical Efficiency Test (PET)",
+        "Viva-Voce",
+        "Special Marks"
+      ],
+      "syllabus": [
+        "Tamil Language Eligibility Test",
+        "Main Written Examination",
+        "Psychology Test"
+      ],
+      "important_dates": {
+        "written_examination": "2023-06-20",
+        "physical_tests": "2023-07-15 to 2023-07-25",
+        "viva_voce": "2023-08-10",
+        "result_declaration": "2023-08-20"
+      },
+      "contact_details": {
+        "helpdesk_numbers": [
+          "044-28413658",
+          "9499008445",
+          "9176243899",
+          "9789035725"
+        ],
+        "email": "tnusrb@nic.in"
+      }
+    }
+  }
+]

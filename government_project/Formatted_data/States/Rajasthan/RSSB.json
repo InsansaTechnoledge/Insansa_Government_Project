@@ -1,78 +1,86 @@
 [
-    {
-      "name": "Grade 4 Recruitment 2024",
-      "date_of_notification": "21-03-2025",
-      "date_of_commencement": "21-03-2025",
-      "end_date": "19-04-2025",
-      "event_type":"Exam",
-      "apply_link": "https://rssb.rajasthan.gov.in/",
-      "document_links": [
-        "https://www.jagranjosh.com/articles/rssb-grade-4-recruitment-2024-for-52453-posts-notification-pdf-eligibility-salary-apply-online-1733998444-1?utm_source=chatgpt.com"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 52453,
-          "breakdown": "As per official notification"
-        },
-        "eligibility": {
-          "education": "As per official notification",
-          "age_limit": "As per official notification"
-        },
-        "important_dates": {
-          "application_start_date": "21-03-2025",
-          "application_end_date": "19-04-2025"
-        }
-      }
-    },
-    {
-      "name": "Conductor Recruitment 2024",
-      "date_of_notification": "27-03-2025",
-      "date_of_commencement": "27-03-2025",
-      "end_date": "25-04-2025",
-      "event_type":"Exam",
-      "apply_link": "https://rssb.rajasthan.gov.in/",
-      "document_links": [
-        "https://scroll.in/announcements/1077153/rssb-recruitment-2024-apply-for-500-conductor-posts-from-march-27-onwards-details-here?utm_source=chatgpt.com"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 500,
-          "breakdown": "As per official notification"
-        },
-        "eligibility": {
-          "education": "As per official notification",
-          "age_limit": "As per official notification"
-        },
-        "important_dates": {
-          "application_start_date": "27-03-2025",
-          "application_end_date": "25-04-2025"
-        }
-      }
-    },
-    {
-      "name": "Jail Prahari Recruitment 2024",
-      "date_of_notification": "24-12-2024",
-      "date_of_commencement": "24-12-2024",
-      "end_date": "23-01-2025",
-      "event_type":"Exam",
-      "apply_link": "https://rssb.rajasthan.gov.in/",
-      "document_links": [
-        "https://scroll.in/announcements/1077010/rssb-prahari-notification-2024-out-for-803-posts-apply-from-dec-24?utm_source=chatgpt.com"
-      ],
-      "details": {
-        "vacancies": {
-          "total": 803,
-          "breakdown": "As per official notification"
-        },
-        "eligibility": {
-          "education": "As per official notification",
-          "age_limit": "As per official notification"
-        },
-        "important_dates": {
-          "application_start_date": "24-12-2024",
-          "application_end_date": "23-01-2025"
-        }
-      }
+  {
+    "name": "Informatics Assistant 2023",
+    "date_of_notification": "24-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Document Verification",
+    "document_links": [],
+    "details": {
+      "description": "Press Note for Document Verification & Schedule."
     }
-  ]
-  
+  },
+  {
+    "name": "Animal Attendant 2023",
+    "date_of_notification": "24-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "description": "Press note for Question Objection."
+    }
+  },
+  {
+    "name": "LDC Grade II / Junior Assistant 2024",
+    "date_of_notification": "21-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Admit Card",
+    "document_links": [],
+    "details": {
+      "description": "Important Instructions regarding Provisional E-Admit Card."
+    }
+  },
+  {
+    "name": "Junior Engineer (JEN) 2024",
+    "date_of_notification": "21-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "description": "Amended Advertisement."
+    }
+  },
+  {
+    "name": "Supervisor (Women Empowerment) 2024",
+    "date_of_notification": "20-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "description": "Amended Advertisement."
+    }
+  },
+  {
+    "name": "Community Health Officer (Contract) 2022",
+    "date_of_notification": "20-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Result",
+    "document_links": [],
+    "details": {
+      "description": "Office Order Regarding Result."
+    }
+  },
+  {
+    "name": "Surveyor and Mine Foreman (Class-II) 2024",
+    "date_of_notification": "16-01-2025",
+    "date_of_commencement": null,
+    "end_date": null,
+    "apply_link": "https://rssb.org/announce.html",
+    "event_type": "Exam",
+    "document_links": [],
+    "details": {
+      "description": "Exam Date and Time."
+    }
+  }
+]
