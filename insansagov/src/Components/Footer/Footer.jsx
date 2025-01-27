@@ -59,7 +59,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Components
+              What We Serve
             </h3>
 
             <ul className="space-y-3">
@@ -70,10 +70,8 @@ const Footer = () => {
                 { name: "Result Declaration", link: "/results" },
                 { name: "Exam related details", link: "/exam-details" },
               ].map((item) => (
-                <li key={item.name}>
-                  <Link to={item.link} className="text-gray-400 hover:text-white transition-colors">
+                <li key={item.name} className='text-gray-400'>
                     {item.name}
-                  </Link>
                 </li>
               ))}
             </ul>
@@ -85,13 +83,26 @@ const Footer = () => {
               Company
             </h3>
             <ul className="space-y-3">
-              {['About Us', 'Careers', 'Contact', 'Blog'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
+                <li>
+                  <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                    About 
                   </a>
                 </li>
-              ))}
+                {/* <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    Careers
+                  </a>
+                </li> */}
+                <li>
+                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+                {/* <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    Blog
+                  </a>
+                </li> */}
             </ul>
           </div>
 

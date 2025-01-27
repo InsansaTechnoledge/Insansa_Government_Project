@@ -291,8 +291,8 @@ const StateComponent = () => {
                 {/* States Content */}
                 <div className="bg-gradient-to-b from-purple-50 to-white rounded-b-2xl p-4 sm:p-8">
 
-                    <div className="mb-6 overflow-x-auto">
-                        <div className="flex space-x-2 whitespace-nowrap p-1">
+                    <div className="mb-6">
+                        <div className="flex flex-wrap gap-4 whitespace-nowrap p-1">
                             {Object.keys(statesByRegion).map((region) => (
                                 <button
                                     key={region}

@@ -53,7 +53,7 @@ const ResultsDashboard = React.lazy(() => import('../../Components/ResultCompone
 const StateComponent = React.lazy(() => import('../../Components/States/State'));
 
 // Enhanced LazyRender with loading states and error boundary
-const LazyRender = ({ children, height = "h-64", priority = false }) => {
+const LazyRender = ({ children, height = "h-64", priority = false, id}) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -62,7 +62,7 @@ const LazyRender = ({ children, height = "h-64", priority = false }) => {
   });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id={id}>
       {inView ? (
         <ErrorBoundary>
           <Suspense fallback={<ComponentLoader height={height} />}>
@@ -94,25 +94,25 @@ const Landing = () => {
           <LatestUpdates />
         </LazyRender>
 
-        <LazyRender height="h-80">
+        <LazyRender height="h-80" id={"landing-state"}>
           <StateComponent />
         </LazyRender>
 
         <div className="grid md:grid-cols-1 gap-8">
-          <LazyRender height="h-72">
+          <LazyRender height="h-72" id={"landing-authorities"}>
             <TopAuthorities />
           </LazyRender>
 
-          <LazyRender height="h-72">
+          <LazyRender height="h-72" id={"landing-categories"}>
             <TopCategories />
           </LazyRender>
         </div>
 
-        <LazyRender height="h-96">
+        <LazyRender height="h-96" id={"landing-admit"}>
           <AdmitCardDashboard />
         </LazyRender>
 
-        <LazyRender height="h-96">
+        <LazyRender height="h-96" id={"landing-result"}>
           <ResultsDashboard />
         </LazyRender>
 

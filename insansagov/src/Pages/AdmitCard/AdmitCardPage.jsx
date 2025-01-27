@@ -86,8 +86,8 @@ const AdmitCardPage = () => {
                 {filteredCards && filteredCards.length > 0 ? (
                     <div className="flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredCards.map((card) => (
-                        <AdmitCardCard card={card}/>
+                    {filteredCards.map((card, index) => (
+                        <AdmitCardCard card={card} key={index}/>
                     ))}
                     </div>
                     
