@@ -207,7 +207,7 @@ const ChatBot = () => {
         hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700 transition-all duration-300">
                 
                 <div className="flex-1 text-center">
-                    <h2 className="text-sm font-medium">My Website's Chatbot</h2>
+                    <h2 className="text-sm font-medium">AskGyapak</h2>
                 </div>
                 <div className="flex items-center gap-2">
                     <button
@@ -247,7 +247,7 @@ const ChatBot = () => {
                                         <MessageCircle className="w-8 h-8" />
                                     </div>
                                     <h1 className="text-xl font-bold text-center mb-1">
-                                        Welcome to ChatAssistant
+                                        Welcome to AskGyapak your ChatAssistant
                                     </h1>
                                     <p className="text-sm text-center text-blue-100">
                                         Your intelligent conversation partner
@@ -267,8 +267,11 @@ const ChatBot = () => {
                                             </h2>
                                         </div>
                                         <p className="text-gray-600 ml-8 text-sm">
-                                            This is your first important note. I'm here to help you with any questions or tasks you might have.
+                                            <span className="text-blue-600 font-bold mr-1">✖ Close:</span> Deletes all responses. <br />
+                                            <span className="text-yellow-500 font-bold mr-1">➖ Minimize:</span> Saves the chat for later. <br />
+                                            <span className="text-red-500 font-bold mr-1">🔄 Refresh:</span> Deletes all data.
                                         </p>
+
                                     </div>
 
                                     {/* Note 2 */}
@@ -278,13 +281,16 @@ const ChatBot = () => {
                                                 2
                                             </div>
                                             <h2 className="ml-2 font-bold text-gray-800 text-sm">
-                                                Getting Started
+                                                Getting Started with AskGyapak
                                             </h2>
                                         </div>
                                         <p className="text-gray-600 ml-8 text-sm">
-                                            This is your second important note. Feel free to ask anything - I'm designed to be helpful and informative.
+                                            AskGyapak provides all the information you need about any government exam you're searching for.
+                                            Use the <span className="text-blue-600 font-bold">More Info</span> button to visit a detailed page with comprehensive exam details,
+                                            or click <span className="text-green-600 font-bold">Apply</span> to be redirected to the official exam page for applications.
                                         </p>
                                     </div>
+
                                 </div>
                             </div>
                         )}
