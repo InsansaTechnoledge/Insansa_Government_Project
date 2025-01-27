@@ -1,13 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ChevronRight, ChevronDown, ArrowUp } from 'lucide-react';
 
 const PrivacyPolicy = () => {
-    const [expandedSection, setExpandedSection] = useState(null);
+    const [activeSection, setActiveSection] = useState(null);
+    const [showScrollTop, setShowScrollTop] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowScrollTop(window.scrollY > 400);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const sections = [
         {
             id: 'introduction',
             title: '1. Introduction',
-            content: `Welcome to [Website Name] ("we," "our," or "us"), a platform that aggregates information about government examinations, results, and admit cards from various official government websites. This Privacy Policy explains how we collect, use, and protect information when you use our website.`
+            content: `Welcome to gyapak, We are a platform that aggregates information about government examinations, results, and admit cards from various official government websites. This Privacy Policy explains how we collect, use, and protect information when you use our website.`
         },
         {
             id: 'sources',
@@ -36,44 +47,38 @@ const PrivacyPolicy = () => {
             id: 'collection',
             title: '3. Information We Collect From Users',
             subsections: [
-                // {
-                //     title: '3.1 Automatically Collected Information',
-                //     content: [
-                //         'Device information (IP address, browser type, operating system)',
-                //         'Usage statistics (pages visited, search queries, time spent)',
-                //         'Cookies for session management and preferences',
-                //         'Location data (state/region for relevant exam notifications)'
-                //     ]
-                // },
                 {
                     title: '3.1 User-Provided Information (Optional)',
                     content: [
-                        'Email address (if subscribed for updates)',
-                        // 'Preferred exam categories',
-                        // 'State/region preferences',
-                        // 'Notification preferences'
+                        'Email address (if subscribed for updates)'
                     ]
                 }
             ]
         }
     ];
 
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     const TableOfContents = () => (
-        <div className="bg-gray-50 p-4 rounded-lg mb-8 ">
-            <h2 className="text-lg font-semibold mb-4">Table of Contents</h2>
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 border border-blue-100">
+            <h2 className="text-xl font-bold mb-4 text-gray-800">Quick Navigation</h2>
             <nav>
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                     {sections.map(section => (
-                        <li key={section.id}>
+                        <li key={section.id} className="group">
                             <a
                                 href={`#${section.id}`}
-                                className="text-blue-600 hover:text-blue-800 hover:underline"
+                                className="flex items-center text-gray-700 hover:text-blue-600 transition-colors"
                                 onClick={(e) => {
                                     e.preventDefault();
                                     document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
+                                    setActiveSection(section.id);
                                 }}
                             >
-                                {section.title}
+                                <ChevronRight className="w-4 h-4 mr-2 group-hover:text-blue-600" />
+                                <span className="text-sm font-medium">{section.title}</span>
                             </a>
                         </li>
                     ))}
@@ -82,59 +87,101 @@ const PrivacyPolicy = () => {
         </div>
     );
 
-    const Section = ({ section }) => (
-        <div id={section.id} className="mb-8">
-            <h2 className="text-xl font-bold mb-4 text-gray-800">{section.title}</h2>
-            {section.content && (
-                <p className="text-gray-700 mb-4 leading-relaxed">{section.content}</p>
-            )}
-            {section.subsections && (
-                <div className="space-y-6">
-                    {section.subsections.map((subsection, index) => (
-                        <div key={index} className="pl-4 border-l-2 border-gray-200">
-                            <h3 className="text-lg font-semibold mb-3 text-gray-700">{subsection.title}</h3>
-                            <ul className="space-y-2">
-                                {Array.isArray(subsection.content) ? (
-                                    subsection.content.map((item, i) => (
-                                        <li key={i} className="text-gray-600 leading-relaxed flex items-start">
-                                            <span className="mr-2">•</span>
-                                            <span>{item}</span>
-                                        </li>
-                                    ))
-                                ) : (
-                                    <p className="text-gray-600 leading-relaxed">{subsection.content}</p>
-                                )}
-                            </ul>
-                        </div>
-                    ))}
+    const Section = ({ section }) => {
+        const isActive = activeSection === section.id;
+
+        return (
+            <div id={section.id} className="mb-12">
+                <div
+                    className="flex items-center cursor-pointer group"
+                    onClick={() => setActiveSection(isActive ? null : section.id)}
+                >
+                    <h2 className="text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+                        {section.title}
+                    </h2>
+                    {section.subsections && (
+                        <ChevronDown className={`w-5 h-5 ml-2 text-gray-400 transition-transform ${isActive ? 'rotate-180' : ''}`} />
+                    )}
                 </div>
-            )}
-        </div>
-    );
+
+                {section.content && (
+                    <p className="text-gray-600 mt-4 leading-relaxed">{section.content}</p>
+                )}
+
+                {section.subsections && (
+                    <div className={`space-y-8 mt-6 transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-80'}`}>
+                        {section.subsections.map((subsection, index) => (
+                            <div key={index} className="pl-6 border-l-2 border-blue-100">
+                                <h3 className="text-lg font-semibold mb-4 text-gray-700">{subsection.title}</h3>
+                                <ul className="space-y-3">
+                                    {Array.isArray(subsection.content) ? (
+                                        subsection.content.map((item, i) => (
+                                            <li key={i} className="flex items-start text-gray-600">
+                                                <div className="w-2 h-2 mt-2 mr-3 bg-blue-400 rounded-full" />
+                                                <span className="leading-relaxed">{item}</span>
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <p className="text-gray-600 leading-relaxed">{subsection.content}</p>
+                                    )}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        );
+    };
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8 ">
-            <header className="mb-8 text-center mt-32">
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-                <p className="text-gray-600">Last updated: January 21, 2025</p>
-            </header>
+        <div className="min-h-screen ">
+            <div className="max-w-4xl mx-auto px-4 py-12">
+                <header className="mb-12 text-center mt-20">
+                    <h1 className="text-4xl font-bold text-gray-900 mb-3">Privacy Policy</h1>
+                    <p className="text-gray-500">Last updated: January 21, 2025</p>
+                </header>
 
-            <TableOfContents />
+                <div className="grid md:grid-cols-4 gap-8">
+                    <div className="md:col-span-1">
+                        <div className="sticky top-24">
+                            <TableOfContents />
+                        </div>
+                    </div>
 
-            <div className="bg-white rounded-lg shadow-sm p-6">
-                {sections.map(section => (
-                    <Section key={section.id} section={section} />
-                ))}
+                    <div className="md:col-span-3">
+                        <div className="bg-white rounded-xl shadow-sm p-8">
+                            {sections.map(section => (
+                                <Section key={section.id} section={section} />
+                            ))}
+                        </div>
+
+                        <div className="mt-8 p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                            <h3 className="font-semibold text-gray-800 mb-2">
+                                Looking for logo credits?
+                            </h3>
+                            <p className="text-gray-600">
+                                Find the complete list of credits for all logos and backgrounds used in our website{' '}
+                                <a href="/credits" className="text-blue-600 hover:text-blue-800 underline">here</a>.
+                            </p>
+                        </div>
+
+                        <footer className="mt-12 text-center text-gray-600">
+                            <p className="mb-2">For questions about this Privacy Policy, please contact us at:</p>
+                            <p className="font-medium">query.insansa@gmail.com</p>
+                        </footer>
+                    </div>
+                </div>
             </div>
 
-            <h3 className='mt-10 font-semibold'>
-                Credits for all logos/background used in website : <a className='text-blue-500' href='/credits'>here</a>
-            </h3>
-
-            <footer className="mt-8 text-center text-gray-600 text-sm">
-                <p>For questions about this Privacy Policy, please contact us at:</p>
-                <p className="mt-2">Email: privacy@[yourcompany].com</p>
-            </footer>
+            {showScrollTop && (
+                <button
+                    onClick={scrollToTop}
+                    className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
+                    aria-label="Scroll to top"
+                >
+                    <ArrowUp className="w-5 h-5" />
+                </button>
+            )}
         </div>
     );
 };
