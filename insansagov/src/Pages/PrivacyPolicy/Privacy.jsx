@@ -36,22 +36,22 @@ const PrivacyPolicy = () => {
             id: 'collection',
             title: '3. Information We Collect From Users',
             subsections: [
+                // {
+                //     title: '3.1 Automatically Collected Information',
+                //     content: [
+                //         'Device information (IP address, browser type, operating system)',
+                //         'Usage statistics (pages visited, search queries, time spent)',
+                //         'Cookies for session management and preferences',
+                //         'Location data (state/region for relevant exam notifications)'
+                //     ]
+                // },
                 {
-                    title: '3.1 Automatically Collected Information',
+                    title: '3.1 User-Provided Information (Optional)',
                     content: [
-                        'Device information (IP address, browser type, operating system)',
-                        'Usage statistics (pages visited, search queries, time spent)',
-                        'Cookies for session management and preferences',
-                        'Location data (state/region for relevant exam notifications)'
-                    ]
-                },
-                {
-                    title: '3.2 User-Provided Information (Optional)',
-                    content: [
-                        'Email address (if subscribed to notifications)',
-                        'Preferred exam categories',
-                        'State/region preferences',
-                        'Notification preferences'
+                        'Email address (if subscribed for updates)',
+                        // 'Preferred exam categories',
+                        // 'State/region preferences',
+                        // 'Notification preferences'
                     ]
                 }
             ]
@@ -126,6 +126,10 @@ const PrivacyPolicy = () => {
                     <Section key={section.id} section={section} />
                 ))}
             </div>
+
+            <h3 className='mt-10 font-semibold'>
+                Credits for all logos/background used in website : <a className='text-blue-500' href='/credits'>here</a>
+            </h3>
 
             <footer className="mt-8 text-center text-gray-600 text-sm">
                 <p>For questions about this Privacy Policy, please contact us at:</p>

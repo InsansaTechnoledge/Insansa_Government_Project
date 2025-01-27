@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import Credits from './Pages/PrivacyPolicy/Credits';
 
 // Lazy load the components
 const Landing = lazy(() => import('./Pages/Landing/landing'));
@@ -40,8 +41,9 @@ const SecondRoutes = () => {
                     <Route path='/trending' element={<TrendingPage />} />
                     <Route path='/state' element={<StatePage />} />
                     <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-                    <Route path='*' element={<ErrorPage />} />
+                    <Route path='/credits' element={<Credits/>} />
                     <Route path='/unsubscribe' element={<Unsubscribe />} />
+                    <Route path='*' element={<ErrorPage />} />
                 </Routes>
             </Suspense>
         </div>
