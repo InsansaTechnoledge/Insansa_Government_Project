@@ -1,11 +1,29 @@
 import React from 'react';
 import { Mail, ArrowRight, Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import axios from 'axios';
+import API_BASE_URL from '../../Pages/config.js';
 
 const Footer = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle newsletter submission
+    try{
+
+      const email = e.target.email.value;
+      const name = email.split('@')[0];
+    const response = await axios.post(`${API_BASE_URL}/api/subscriber/create`, { email: email, name: name });
+    if (response.status === 201) {
+      alert(response.data);
+      e.target.email.value = "";
+    }
+    else {
+      alert(response.data);
+      e.target.email.value = "";
+    }
+    }
+    catch(error){
+      console.log("Error",error);
+    }
   };
 
   const navigate = useNavigate();
@@ -17,17 +35,17 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-8">
             <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl font-bold">W</span>
+              <div className="h-10 w-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xl font-bold">gyapak</span>
               </div>
-              <span className="text-white text-xl font-bold">My Website</span>
+              {/* <span className="text-white text-xl font-bold">My Website</span> */}
             </div>
 
-            <p className="text-sm text-gray-400 max-w-md text-center">
+            <p className="text-sm text-gray-400 max-w-md ">
               Developed and brought to you by
             </p>
-            <p className="text-base text-gray-200 max-w-md text-center font-semibold">
-              Insansa Technoledge Pvt. Ltd.
+            <p className="text-base text-gray-200 max-w-md  font-semibold">
+              Insansa Techknowledge Pvt. Ltd.
             </p>
 
             <div className="flex space-x-6">
@@ -41,7 +59,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h3 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-              Components
+              What We Serve
             </h3>
 
             <ul className="space-y-3">
@@ -52,10 +70,8 @@ const Footer = () => {
                 { name: "Result Declaration", link: "/results" },
                 { name: "Exam related details", link: "/exam-details" },
               ].map((item) => (
-                <li key={item.name}>
-                  <Link to={item.link} className="text-gray-400 hover:text-white transition-colors">
+                <li key={item.name} className='text-gray-400'>
                     {item.name}
-                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,13 +83,26 @@ const Footer = () => {
               Company
             </h3>
             <ul className="space-y-3">
-              {['About Us', 'Careers', 'Contact', 'Blog'].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
+                <li>
+                  <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                    About 
                   </a>
                 </li>
-              ))}
+                {/* <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    Careers
+                  </a>
+                </li> */}
+                <li>
+                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+                {/* <li>
+                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                    Blog
+                  </a>
+                </li> */}
             </ul>
           </div>
 
@@ -89,6 +118,8 @@ const Footer = () => {
               <div className="relative">
                 <input
                   type="email"
+                  name='email'
+                  id='email'
                   placeholder="youremail@gmail.com"
                   className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 pl-10"
                 />
@@ -109,18 +140,18 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} My Website. All rights reserved.
+              © {new Date().getFullYear()} gyapak.com. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Terms
+              </a> */}
+              <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Cookies
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

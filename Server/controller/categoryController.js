@@ -4,8 +4,7 @@ import Organization from '../models/OrganizationModel.js';
 export const getCategories = async (req, res) => {
     try{
         const categories = await Category.find({},{category:1,logo:1});
-        console.log(categories);
-        res.json(categories);
+        res.status(201).json(categories);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -30,13 +29,13 @@ export const getCategoryOrganizations = async (req,res) => {
         const organizationIds = categoryData.organizations;
 
         const organizations = await Organization.find({
-            _in: {$in: organizationIds}
+            _id: {$in: organizationIds}
         },{
             abbreviation:1,
             logo:1
         });
 
-        res.status(201).json(categoryData,organizations)
+        res.status(201).json({categoryData,organizations})
     }
     catch(err){
         res.status(400).json({"message": err})

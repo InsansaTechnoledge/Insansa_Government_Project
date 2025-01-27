@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import {
-  BookOpen,
-} from "lucide-react";
 import FloatingOrbsBackground from "../../Components/OpportunityPageComponents/FloatingOrbsBackground";
 import HeroSection from "../../Components/OpportunityPageComponents/HeroSection";
 import QuickApplyButton from "../../Components/OpportunityPageComponents/QuickApplyButton";
@@ -12,11 +9,9 @@ import EducationSection from "../../Components/OpportunityPageComponents/Educati
 import FeeDetailsSection from "../../Components/OpportunityPageComponents/FeeDetailsSection";
 import ImportantDatesSection from "../../Components/OpportunityPageComponents/ImportantDatesSection";
 import ExamCentresSection from "../../Components/OpportunityPageComponents/ExamCentresSection";
-import SchemeOfExamSection1 from "../../Components/OpportunityPageComponents/SchemeOfExamSection1";
-import SchemeOfExamSection2 from "../../Components/OpportunityPageComponents/SchemeOfExamSection2";
 import ContactDetailsSection from "../../Components/OpportunityPageComponents/ContactDetailsSection";
 import ImportantLinksSection from "../../Components/OpportunityPageComponents/ImportantLinksSection";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import API_BASE_URL from "../config";
 import LocationSection from "../../Components/OpportunityPageComponents/LocationSection";
@@ -24,6 +19,7 @@ import PositionSection from "../../Components/OpportunityPageComponents/Position
 import SalarySection from "../../Components/OpportunityPageComponents/SalarySection";
 import SelectionSection from "../../Components/OpportunityPageComponents/SelectionProcessSection";
 import AdditionalDetailsSection from "../../Components/OpportunityPageComponents/AdditionalDetailsSection";
+import { RingLoader } from "react-spinners";
 
 const ModernExamDetailsPage = () => {
   // const data = {
@@ -117,27 +113,31 @@ const ModernExamDetailsPage = () => {
   const location = useLocation();
   // Parse the query parameters
   const queryParams = new URLSearchParams(location.search);
-  const organization = queryParams.get("organization"); // Access the 'name' parameter
-  const examIndex = queryParams.get("exam");
+  const examId = queryParams.get("id");
   const [data, setData] = useState();
+  const [organization, setOrganization] = useState();
   const existingSections = ['document_links']
 
   useEffect(() => {
     const fetchEvent = async () => {
-      const response = await axios.get(`${API_BASE_URL}/api/event/${organization}/${examIndex}`);
+      const response = await axios.get(`${API_BASE_URL}/api/event/${examId}`);
 
       if (response.status === 200) {
         console.log(response.data);
-        setData(response.data);
+        setData(response.data.exam);
+        setOrganization(response.data.organization.name);
       }
     }
 
     fetchEvent();
   }, [])
 
-  if (!data) {
-    return <div className="pt-20">Loading...</div>
+  if (!data && !organization) {
+    return <div className='w-full h-screen flex justify-center'>
+      <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto' />
+    </div>
   }
+
 
   return (
     <div className="min-h-screen bg-white text-gray-900 py-20 px-4">
@@ -152,82 +152,102 @@ const ModernExamDetailsPage = () => {
         {/* Quick Apply Button */}
         <QuickApplyButton data={data} />
 
-          {<VacanciesSection data={data} existingSections={existingSections}/>}
+        {
+          data.details
+          ?
+          <>
+
+        {<VacanciesSection data={data} existingSections={existingSections} />}
         <div className="flex w-full flex-wrap gap-10">
 
           {/* Vacancies Section */}
-          
+
 
           {/* Eligibility Grid */}
 
           {/* Nationality */}
-          {<NationalitySection data={data} existingSections={existingSections}/>}
-          
+          {<NationalitySection data={data} existingSections={existingSections} />}
+
 
           {/* Age Limits */}
           {
-            <AgeLimitSection data={data} existingSections={existingSections}/>
+            <AgeLimitSection data={data} existingSections={existingSections} />
           }
 
           {/* Education & Fee Details */}
           {/* Education */}
           {
-           <EducationSection data={data} existingSections={existingSections}/>
+            <EducationSection data={data} existingSections={existingSections} />
           }
-          <LocationSection data={data} existingSections={existingSections}/>
-          <PositionSection data={data} existingSections={existingSections}/>
-          <SalarySection data={data} existingSections={existingSections}/>
-          <SelectionSection data={data} existingSections={existingSections}/>
+          <LocationSection data={data} existingSections={existingSections} />
+          <PositionSection data={data} existingSections={existingSections} />
+          <SalarySection data={data} existingSections={existingSections} />
+          <SelectionSection data={data} existingSections={existingSections} />
 
           {/* Fee Details */}
-          { <FeeDetailsSection data={data} existingSections={existingSections}/>}
-          
+          {<FeeDetailsSection data={data} existingSections={existingSections} />}
+
 
           {/* Important Dates and Exam Centers */}
           {/* Important Dates */}
           {
-            <ImportantDatesSection data={data} existingSections={existingSections}/>
+            <ImportantDatesSection data={data} existingSections={existingSections} />
           }
-          
+
 
           {/* Exam Centers */}
-          {<ExamCentresSection data={data} existingSections={existingSections}/>}
-          
+          {<ExamCentresSection data={data} existingSections={existingSections} />}
+
 
           {/* Scheme of Examination */}
-          {
+          {/* {
             data.details.scheme_of_exam
-            ?
-            <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
-              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <BookOpen className="w-6 h-6 text-purple-500" />
-                Scheme of Examination
-              </h2>
-              <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
-                {/* IMA, INA, Air Force */}
-                {<SchemeOfExamSection1 data={data} existingSections={existingSections}/>}
-                
+              ?
+              <div className="flex flex-col flex-grow bg-white shadow-lg p-8 rounded-2xl mb-20">
+                <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+                  <BookOpen className="w-6 h-6 text-purple-500" />
+                  Scheme of Examination
+                </h2>
+                <div className="flex flex-col gap-y-5 xl:space-x-5  xl:flex-row xl:space-y-0">
+                  {<SchemeOfExamSection1 data={data} existingSections={existingSections} />}
 
 
-                {/* OTA */}
-                {
-                  <SchemeOfExamSection2 data={data} existingSections={existingSections}/>
-                }
+
+                  {
+                    <SchemeOfExamSection2 data={data} existingSections={existingSections} />
+                  }
                 </div>
-            </div>
-            :
-            null
-          }
+              </div>
+              :
+              null
+          } */}
 
           {/* Contact Details */}
           {
-            <ContactDetailsSection data={data} existingSections={existingSections}/>
+            <ContactDetailsSection data={data} existingSections={existingSections} />
           }
           {/* Important Links */}
-          <AdditionalDetailsSection data={data.details} existingSections={existingSections}/>
-          {<ImportantLinksSection data={data} />}
+          <AdditionalDetailsSection data={data.details} existingSections={existingSections} />
+          {data.document_links.length > 0
+          ?
+          <ImportantLinksSection data={data} />
           
+          :
+          null
+          }
         </div>
+          </>
+          :
+          <>
+          {data.document_links.length > 0
+            ?
+            <ImportantLinksSection data={data} />
+            :
+            null
+          }
+          </>
+          }
+
       </div>
     </div>
   );

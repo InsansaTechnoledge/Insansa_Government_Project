@@ -34,7 +34,7 @@ const FeatureBand = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <motion.h1
-                        className="text-4xl md:text-6xl font-bold text-white mb-6"
+                        className="text-4xl xl:text-6xl font-bold text-white mb-6"
                         variants={variants}
                         transition={{ duration: 1 }}
                     >

@@ -5,11 +5,28 @@ import { Calendar, ChevronRight, Tag } from 'lucide-react';
 const LatestUpdateCard = (props) => {
 
   function formatDate(date) {
-    if (!date) return '';
+    if (!date) return ''; 
 
-    console.log(moment(date));
-    return moment(date).format('MMMM D, YYYY');
+    if (typeof date === 'number') {
+      return moment(date).format('MMMM D, YYYY');
+    }
+
+    if (typeof date === 'string') {
+      const possibleFormats = ['YYYY-MM-DD', 'DD-MM-YYYY', 'MM-DD-YYYY'];
+      for (let format of possibleFormats) {
+        const parsedDate = moment(date, format, true);
+        if (parsedDate.isValid()) {
+          return parsedDate.format('MMMM D, YYYY');
+        }
+      }
+    }
+
+    console.error('Invalid date format or input:', date);
+    return ''; 
   }
+
+
+
 
   const navigateToWebsite = (e) => {
     e.preventDefault(); // Prevents default link action

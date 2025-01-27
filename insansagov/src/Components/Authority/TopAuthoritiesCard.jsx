@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import logo from '../../assets/Landing/UPSC.webp';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const TopAuthoritiesCard = (props) => {
@@ -15,6 +14,7 @@ const TopAuthoritiesCard = (props) => {
       <img
         src={`data:image/png;base64,${props.logo}`}
         alt="Authority Logo"
+        // width={60}
         className="w-32 h-28 object-contain"
       />
 

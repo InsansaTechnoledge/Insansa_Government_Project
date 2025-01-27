@@ -13,11 +13,23 @@ const AdditionalDetailsSection = ({ data, existingSections }) => {
 
   // Recursive function to render nested JSON objects
   const renderContent = (data) => {
-    if (typeof data === "string") {
+    if (typeof data === "string" || typeof data === "number") {
       return (
         <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg shadow-sm">
           <p className="text-gray-700">{data}</p>
         </div>
+      );
+    }
+
+    if (Array.isArray(data)) {
+      return (
+        <ul className="list-disc list-inside space-y-2">
+          {data.map((item, index) => (
+            <li key={index} className="pl-4">
+              {renderContent(item)}
+            </li>
+          ))}
+        </ul>
       );
     }
 
@@ -50,10 +62,11 @@ const AdditionalDetailsSection = ({ data, existingSections }) => {
     // Fallback for unexpected data types
     return (
       <div className="p-4 bg-red-50 border border-red-200 rounded-lg shadow-sm">
-        <p className="text-red-700">Invalid Data</p>
+        <p className="text-red-700">Unsupported Data Type</p>
       </div>
     );
   };
+
 
   // Check if the section should be displayed
   if (!hasNonExistingSection(data)) {

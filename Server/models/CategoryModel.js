@@ -4,9 +4,14 @@ if(process.env.NODE_ENV !== "production"){
   }
 import fetch from 'node-fetch';
 const imageUrl = process.env.DEFAULT_LOGO;
-const response = await fetch(imageUrl);
-const imageBuffer = await response.buffer();
-const base64String = imageBuffer.toString('base64');
+let base64String = "";
+try{
+    const response = await fetch(imageUrl);
+    const imageBuffer = await response.buffer();
+     base64String = imageBuffer.toString('base64');
+}catch(error){
+    console.error('Error fetching image:', error);
+}
 
 const CategorySchema = new mongoose.Schema({
     category:{

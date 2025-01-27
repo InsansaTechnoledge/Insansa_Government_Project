@@ -4,13 +4,12 @@ import ViewMoreButton from '../Buttons/ViewMoreButton';
 
 
 const RelatedAuthorities = (props) => {
-    const [isExpanded, setIsExpanded] = useState(false);
     const [organizations, setOrganizations] = useState();
     const [displayCount, setDisplayCount] = useState(8); // Initial count of displayed items
 
     useEffect(()=>{
         if(props.organizations){
-            console.log("rel",props.organizations);
+            // console.log("rel",props.organizations);
             setOrganizations(props.organizations);
         }
     },[props]);
@@ -33,7 +32,7 @@ const RelatedAuthorities = (props) => {
 
     return (
         <>
-            <div className='grid grid-cols-4 mb-5 gap-4'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 mb-5 gap-4'>
                 {/* {visibleCards} */}
                 {
                     organizations && organizations.slice(0, displayCount).map((org,key) => {

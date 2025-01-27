@@ -36,7 +36,7 @@ const OpportunityCarousel = () => {
   return (
     <div className='max-w-6xl mx-auto py-8'>
       <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-2xl md:text-3xl font-bold text-gray-900'>
+        <h1 className='text-2xl xl:text-3xl font-bold text-gray-900'>
           You might be looking for
         </h1>
         <div className='flex items-center space-x-2 text-sm'>
@@ -47,7 +47,7 @@ const OpportunityCarousel = () => {
       </div>
 
       <div className='relative'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
+        <div className='grid grid-cols-1 xl:grid-cols-3 gap-6 mb-8'>
           {currentItems.map((item, index) => (
             <OpportunityCarouselCard key={index} item={item} authority={item.authority} />
           ))}

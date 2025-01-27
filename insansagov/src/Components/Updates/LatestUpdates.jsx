@@ -1,77 +1,76 @@
-import React, { useEffect, useState } from 'react'
-import LatestUpdateCard from './LatestUpdateCard'
-import ViewMoreButton from '../Buttons/ViewMoreButton'
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import axios from 'axios';
 import API_BASE_URL from '../../Pages/config';
 
-const LatestUpdates = (props) => {
+// Lazy load the components
+const LatestUpdateCard = lazy(() => import('./LatestUpdateCard'));
+const ViewMoreButton = lazy(() => import('../Buttons/ViewMoreButton'));
+
+const LatestUpdates = ({ titleHidden }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [latestUpdates,setLatestUpdates] = useState();
-  const [filteredLatestUpdates, setFilteredLatestUpdates] = useState();
+  const [latestUpdates, setLatestUpdates] = useState([]);
+  const [filteredLatestUpdates, setFilteredLatestUpdates] = useState([]);
 
-  const handleToggle = () => {
-    setIsExpanded(!isExpanded);
+  // Toggle View More/View Less
+  const handleToggle = useCallback(() => {
+    setIsExpanded((prev) => !prev);
+    setFilteredLatestUpdates((prevIsExpanded) =>
+      !prevIsExpanded ? latestUpdates : latestUpdates.slice(0, 2)
+    );
+  }, [latestUpdates]);
 
-    if(!isExpanded){
-      setFilteredLatestUpdates(latestUpdates);
-    }
-    else{
-      setFilteredLatestUpdates(latestUpdates.slice(0,2));
-    }
-  };
-
-  useEffect(()=>{
+  // Fetch latest updates from API
+  useEffect(() => {
     const fetchLatestUpdates = async () => {
-      const response = await axios.get(`${API_BASE_URL}/api/event/latest`);
-      if(response.status===200){
-        
-        console.log("✅✅",response.data);
-        const sortedUpdates = await response.data.sort((a, b) => {
-          const dateA = new Date(a.date_of_notification);
-          const dateB = new Date(b.date_of_notification);
-      
-          // Check if the dates are valid, in case some of the dates are 'Not specified'
-          if (isNaN(dateA) || isNaN(dateB)) {
-            return 0; // Leave invalid dates in their original order
-          }
-      
-          return dateB - dateA; // Descending order
-        });
-      
-        setLatestUpdates(sortedUpdates.slice(0,5)); // Set the sorted data
-        setFilteredLatestUpdates(sortedUpdates.slice(0,2));
+      try {
+        const response = await axios.get(`${API_BASE_URL}/api/event/latest`);
+        if (response.status === 201) {
+          const sortedUpdates = response.data.sort((a, b) => {
+            const dateA = new Date(a.date_of_notification);
+            const dateB = new Date(b.date_of_notification);
+            return isNaN(dateA) || isNaN(dateB) ? 0 : dateB - dateA; // Sort by date descending
+          });
+
+          setLatestUpdates(sortedUpdates.slice(0, 5));
+          setFilteredLatestUpdates(sortedUpdates.slice(0, 2));
+        }
+      } catch (error) {
+        console.error('Error fetching latest updates:', error);
       }
-    }
+    };
 
     fetchLatestUpdates();
-  },[])
-
+  }, []);
 
   return (
     <>
-        <div className='flex justify-between mb-5'>
-            <div className='font-bold text-2xl flex items-center'>Latest Updates</div>
-        <ViewMoreButton
-          content={isExpanded ? "view less ▲" : "View More ▼"}
-          onClick={handleToggle}
-        />
+      <div className="flex justify-between mb-5">
+        <div className="font-bold text-2xl flex items-center">Latest Updates</div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ViewMoreButton
+            content={isExpanded ? 'View Less ▲' : 'View More ▼'}
+            onClick={handleToggle}
+          />
+        </Suspense>
+      </div>
+
+      {!titleHidden && (
+        <div className="space-y-5 mb-10">
+          <Suspense fallback={<div>Loading updates...</div>}>
+            {filteredLatestUpdates.map((update, index) => (
+              <LatestUpdateCard
+                key={update.id || index}
+                name={update.name}
+                date={update.date_of_notification}
+                organization={update.organizationName}
+                apply_link={update.apply_link}
+              />
+            ))}
+          </Suspense>
         </div>
-
-      {
-        props.titleHidden
-          ? null
-        :
-          <div className='space-y-5 mb-10'>
-            {
-              filteredLatestUpdates && filteredLatestUpdates.map((update, key) => {
-                return <LatestUpdateCard key={key} name={update.examDetails.name} date={update.notificationDate} organization={update.organizationName} apply_link={update.examDetails.apply_link}/>
-              })
-            }
-
-          </div>
-      }
+      )}
     </>
-  )
-}
+  );
+};
 
-export default LatestUpdates
+export default LatestUpdates;

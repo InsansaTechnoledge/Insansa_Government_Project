@@ -1,157 +1,159 @@
-import React from 'react'
-import Hero from '../../Components/Hero/Hero'
-import LatestUpdates from '../../Components/Updates/LatestUpdates'
-import TopAuthorities from '../../Components/Authority/TopAuthorities'
+import React, { Suspense } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { Loader2 } from 'lucide-react';
+import curvLine from '../../assets/Landing/curvLine.svg';
 
-import curvLine from '../../assets/Landing/curvLine.svg'
-import TopCategories from '../../Components/Categories/TopCategories'
-import Contact from '../../Components/ContactUs/Contact'
-import FeaturePage from '../../Components/FeatureAdvertisement/Features'
-import FeatureBand from '../../Components/FeatureAdvertisement/FeatureBand'
-import AdmitCardDashboard from '../../Components/AdmitCards/AdmitCard'
-import ResultsDashboard from '../../Components/ResultComponent/Results'
-import StateComponent from '../../Components/States/State'
+// Error Boundary Component
+class ErrorBoundary extends React.Component {
+  state = { hasError: false, error: null };
 
-const Landing = () => {
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
 
-  const admitCards = [
-    {
-      id: 1,
-      organization: "UPSC",
-      examName: "Civil Services Preliminary Exam 2025",
-      releaseDate: "2025-01-10",
-      lastDate: "2025-02-15",
-      category: "Civil Services",
-      status: "active",
-      link: "https://example.com/upsc",
-    },
-    {
-      id: 2,
-      organization: "SSC",
-      examName: "Combined Graduate Level Exam 2025",
-      releaseDate: "2025-01-05",
-      lastDate: "2025-01-30",
-      category: "Staff Selection",
-      status: "active",
-      link: "https://example.com/ssc",
-    },
-    {
-      id: 3,
-      organization: "IBPS",
-      examName: "IBPS PO Exam 2025",
-      releaseDate: "2025-01-15",
-      lastDate: "2025-02-20",
-      category: "Banking",
-      status: "active",
-      link: "https://example.com/ibps",
-    },
-    {
-      id: 4,
-      organization: "NDA",
-      examName: "National Defense Academy Exam 2025",
-      releaseDate: "2025-01-18",
-      lastDate: "2025-02-25",
-      category: "Defense",
-      status: "active",
-      link: "https://example.com/nda",
-    },
-    {
-      id: 5,
-      organization: "SSC",
-      examName: "SSC CHSL Exam 2025",
-      releaseDate: "2025-01-02",
-      lastDate: "2025-01-28",
-      category: "Staff Selection",
-      status: "inactive",
-      link: "https://example.com/ssc-chsl",
-    },
-  ];
-
-  const dummyResults = [
-    {
-      id: 1,
-      organization: "Union Public Service Commission",
-      examName: "Civil Services Exam Result",
-      publishDate: "2025-01-10",
-      category: "civil services",
-      status: "available",
-      link: "https://www.upsc.gov.in/results",
-    },
-    {
-      id: 2,
-      organization: "Staff Selection Commission",
-      examName: "CHSL Tier 1 Result",
-      publishDate: "2025-01-05",
-      category: "staff selection",
-      status: "available",
-      link: "https://ssc.nic.in/results",
-    },
-    {
-      id: 3,
-      organization: "State Bank of India",
-      examName: "Probationary Officer Result",
-      publishDate: "2025-01-12",
-      category: "banking",
-      status: "available",
-      link: "https://sbi.co.in/results",
-    },
-    {
-      id: 4,
-      organization: "Indian Army",
-      examName: "Soldier GD Result",
-      publishDate: "2025-01-08",
-      category: "defense",
-      status: "available",
-      link: "https://joinindianarmy.nic.in/results",
-    },
-    {
-      id: 5,
-      organization: "Institute of Banking Personnel Selection",
-      examName: "Clerk Prelims Result",
-      publishDate: "2025-01-15",
-      category: "banking",
-      status: "available",
-      link: "https://ibps.in/results",
-    },
-  ];
-
-  
-  return (
-    <>
-    <div>
-      <Hero/>
-    </div>
-    <div  className="px-5 md:px-64">
-      <LatestUpdates/>
-      {/* <OpportunityCarousel/> */}
-
-      <StateComponent />
-      
-      <TopAuthorities/>
-      <TopCategories/>
-      
-
-      <AdmitCardDashboard admitCards={admitCards} />
-      <ResultsDashboard results={dummyResults} />
-
-    </div>
-    <img
-    className='w-full mb-20'
-    src={curvLine}/>
-    <div id='about'>
-
-      <FeatureBand />
-      </div>
-    <div className='px-5 md:px-64'>
-      <FeaturePage/>
-      <div id='contact'>
-        <Contact />
-
-      </div>
-    </div>
-    </>
-    
-  )
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex flex-col items-center justify-center p-8 text-center">
+          <h2 className="text-lg font-semibold text-gray-900 mb-2">Something went wrong</h2>
+          <button
+            onClick={() => window.location.reload()}
+            className="text-sm text-purple-600 hover:text-purple-800"
+          >
+            Try again
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
 }
 
-export default Landing
+// Loading Skeleton Components
+const SkeletonPulse = () => (
+  <div className="animate-pulse bg-gray-200 rounded-lg h-full w-full" />
+);
+
+const ComponentLoader = ({ height = "h-64" }) => (
+  <div className={`w-full ${height} flex items-center justify-center bg-gray-50 rounded-lg`}>
+    <Loader2 className="w-8 h-8 text-purple-600 animate-spin" />
+  </div>
+);
+
+// Lazy loaded components with specific loading states
+const Hero = React.lazy(() => import('../../Components/Hero/Hero'));
+const LatestUpdates = React.lazy(() => import('../../Components/Updates/LatestUpdates'));
+const TopAuthorities = React.lazy(() => import('../../Components/Authority/TopAuthorities'));
+const TopCategories = React.lazy(() => import('../../Components/Categories/TopCategories'));
+const Contact = React.lazy(() => import('../../Components/ContactUs/Contact'));
+const FeaturePage = React.lazy(() => import('../../Components/FeatureAdvertisement/Features'));
+const FeatureBand = React.lazy(() => import('../../Components/FeatureAdvertisement/FeatureBand'));
+const AdmitCardDashboard = React.lazy(() => import('../../Components/AdmitCards/AdmitCard'));
+const ResultsDashboard = React.lazy(() => import('../../Components/ResultComponent/Results'));
+const StateComponent = React.lazy(() => import('../../Components/States/State'));
+
+// Enhanced LazyRender with loading states and error boundary
+const LazyRender = ({ children, height = "h-64", priority = false, id}) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+    // Preload high priority components
+    rootMargin: priority ? '200px' : '50px',
+  });
+
+  return (
+    <div ref={ref} id={id}>
+      {inView ? (
+        <ErrorBoundary>
+          <Suspense fallback={<ComponentLoader height={height} />}>
+            {children}
+          </Suspense>
+        </ErrorBoundary>
+      ) : (
+        <div className={height}>
+          <SkeletonPulse />
+        </div>
+      )}
+    </div>
+  );
+};
+
+const Landing = () => {
+  
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero section loads immediately with high priority */}
+      <LazyRender height="h-screen" priority={true}>
+        <Hero />
+      </LazyRender>
+
+      <div className="px-4 md:px-16 lg:px-64 space-y-16">
+        {/* Latest updates and state components load next */}
+        <LazyRender height="h-96">
+          <LatestUpdates />
+        </LazyRender>
+
+        <LazyRender height="h-80" id={"landing-state"}>
+          <StateComponent />
+        </LazyRender>
+
+        <div className="grid md:grid-cols-1 gap-8">
+          <LazyRender height="h-72" id={"landing-authorities"}>
+            <TopAuthorities />
+          </LazyRender>
+
+          <LazyRender height="h-72" id={"landing-categories"}>
+            <TopCategories />
+          </LazyRender>
+        </div>
+
+        <LazyRender height="h-96" id={"landing-admit"}>
+          <AdmitCardDashboard />
+        </LazyRender>
+
+        <LazyRender height="h-96" id={"landing-result"}>
+          <ResultsDashboard />
+        </LazyRender>
+
+
+      </div>
+
+      <img
+        height={40}
+        width={600}
+        className="w-full mb-20 mt-20"
+        src={curvLine}
+        alt=""
+        loading="lazy"
+      />
+
+      <div id="about">
+        <LazyRender height="h-48">
+          <FeatureBand />
+        </LazyRender>
+      </div>
+
+
+      <div className="px-4 md:px-16 lg:px-64 space-y-16">
+        
+        <LazyRender height="h-96">
+          <FeaturePage />
+        </LazyRender>
+
+        {/* Contact section */}
+        <div id="contact">
+          <LazyRender height="h-80">
+            <Contact />
+          </LazyRender>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  );
+};
+
+export default Landing;

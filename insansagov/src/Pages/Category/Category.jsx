@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import bank from '../../assets/Landing/bank.png'
-import TopAuthorities from '../../Components/Authority/TopAuthorities'
 import { useLocation } from 'react-router-dom'
 import API_BASE_URL from '../config'
 import axios from 'axios'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
 import BackButton from '../../Components/BackButton/BackButton'
+import { RingLoader } from 'react-spinners'
 
 
 
@@ -25,9 +24,9 @@ const Category = () => {
         const fetchCategoryOrganization = async () => {
             const response = await axios.get(`${API_BASE_URL}/api/category/organizations/${name}`);
             if(response.status===201){
-                console.log(response.data);
-                setLogo(response.data.logo);
-                setOrganizations(response.data.Organizations.filter(org => org.logo));
+                // console.log(response.data);
+                setLogo(response.data.categoryData.logo);
+                setOrganizations(response.data.organizations.filter(org => org.logo));
             }
         }
 
@@ -38,7 +37,11 @@ const Category = () => {
         setIsExpanded(!isExpanded);
     };
 
-    
+if(!organizations){
+    return <div className='w-full h-screen flex justify-center'>
+            <RingLoader size={60} color={'#5B4BEA'} speedMultiplier={2} className='my-auto'/>
+        </div>
+}
 
   return (
    

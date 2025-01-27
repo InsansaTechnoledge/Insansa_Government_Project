@@ -2,16 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import Draggable from 'react-draggable';
 import { MessageCircle, Send, X, MinusCircle, User, Bot } from 'lucide-react';
 import axios from 'axios';
-import API_BASE_URL from '../../Pages/config';
 import parse from 'html-react-parser';
-import { useNavigate } from 'react-router-dom'
-
+import { DotLoader} from 'react-spinners';
 
 const ChatBot = () => {
 
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
-    const navigate = useNavigate();
+    const [isChatBotLoading, setIsChatBotLoading] = useState(false);
     const containerRef = useRef(null)
+    const dragRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -32,19 +31,19 @@ const ChatBot = () => {
     ]);
     const [inputText, setInputText] = useState("");
     const [unreadCount, setUnreadCount] = useState(1);
-    const [isBouncing, setIsBouncing] = useState(true);
+    const [isBouncing, setIsBouncing] = useState(false);
 
 
-    React.useEffect(() => {
-        let bounceInterval;
-        if (unreadCount > 0 && !isOpen) {
-            bounceInterval = setInterval(() => {
-                setIsBouncing(true);
-                setTimeout(() => setIsBouncing(false), 1000);
-            }, 5000);
-        }
-        return () => clearInterval(bounceInterval);
-    }, [unreadCount, isOpen]);
+    // React.useEffect(() => {
+    //     let bounceInterval;
+    //     if (unreadCount > 0 && !isOpen) {
+    //         bounceInterval = setInterval(() => {
+    //             setIsBouncing(true);
+    //             setTimeout(() => setIsBouncing(false), 1000);
+    //         }, 5000);
+    //     }
+    //     return () => clearInterval(bounceInterval);
+    // }, [unreadCount, isOpen]);
 
     // Scroll to the bottom whenever items change
     useEffect(() => {
@@ -53,79 +52,6 @@ const ChatBot = () => {
             behavior: "smooth",
         });
     }, [messages]);
-
-    const getHardcodedResponse = (input) => {
-        const responses = {
-            // General greetings
-            "hi": "Hello there! How can I assist you today?",
-            "Hi": "Hello there! How can I assist you today?",
-            "HI": "Hello there! How can I assist you today?",
-            "hello": "Hello there! How can I assist you today?",
-            "Hello": "Hello there! How can I assist you today?",
-            "HELLO": "Hello there! How can I assist you today?",
-            "hey": "Hello there! How can I assist you today?",
-            "Hey": "Hello there! How can I assist you today?",
-            "HEY": "Hello there! How can I assist you today?",
-            "hiya": "Hello there! How can I assist you today?",
-            "Hiya": "Hello there! How can I assist you today?",
-            "HIYA": "Hello there! How can I assist you today?",
-
-            // How are you variations
-            "how are you?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "How are you?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "HOW ARE YOU?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "how r u?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "How R U?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "how you doing?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "How you doing?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-            "HOW YOU DOING?": "I'm just a bot, but I'm functioning perfectly! How can I help?",
-
-            // Asking for the bot's name
-            "what is your name?": "I am ChatAssistant, your friendly chatbot!",
-            "What is your name?": "I am ChatAssistant, your friendly chatbot!",
-            "WHAT IS YOUR NAME?": "I am ChatAssistant, your friendly chatbot!",
-            "whats your name?": "I am ChatAssistant, your friendly chatbot!",
-            "Whats your name?": "I am ChatAssistant, your friendly chatbot!",
-            "WHATS YOUR NAME?": "I am ChatAssistant, your friendly chatbot!",
-            "who are you?": "I am ChatAssistant, your friendly chatbot!",
-            "Who are you?": "I am ChatAssistant, your friendly chatbot!",
-            "WHO ARE YOU?": "I am ChatAssistant, your friendly chatbot!",
-
-            // Joke request
-            "tell me a joke": "Why don't programmers like nature? It has too many bugs!",
-            "Tell me a joke": "Why don't programmers like nature? It has too many bugs!",
-            "TELL ME A JOKE": "Why don't programmers like nature? It has too many bugs!",
-            "tell me something funny": "Why don't programmers like nature? It has too many bugs!",
-            "Tell me something funny": "Why don't programmers like nature? It has too many bugs!",
-            "TELL ME SOMETHING FUNNY": "Why don't programmers like nature? It has too many bugs!",
-            "make me laugh": "Why don't programmers like nature? It has too many bugs!",
-            "Make me laugh": "Why don't programmers like nature? It has too many bugs!",
-            "MAKE ME LAUGH": "Why don't programmers like nature? It has too many bugs!",
-
-            // Farewell
-            "bye": "Goodbye! Have a great day!",
-            "Bye": "Goodbye! Have a great day!",
-            "BYE": "Goodbye! Have a great day!",
-            "goodbye": "Goodbye! Have a great day!",
-            "Goodbye": "Goodbye! Have a great day!",
-            "GOODBYE": "Goodbye! Have a great day!",
-            "see you": "Goodbye! Have a great day!",
-            "See you": "Goodbye! Have a great day!",
-            "SEE YOU": "Goodbye! Have a great day!",
-            "catch you later": "Goodbye! Have a great day!",
-            "Catch you later": "Goodbye! Have a great day!",
-            "CATCH YOU LATER": "Goodbye! Have a great day!",
-            "take care": "Goodbye! Have a great day!",
-            "Take care": "Goodbye! Have a great day!",
-            "TAKE CARE": "Goodbye! Have a great day!",
-        };
-
-
-
-        const defaultResponse = null; // Return `null` if no hardcoded response exists
-        return responses[input.trim().toLowerCase()] || defaultResponse;
-    };
-
 
     const handleSend = async (e) => {
         e.preventDefault();
@@ -140,19 +66,10 @@ const ChatBot = () => {
         setMessages((prevMessages) => [...prevMessages, newUserMessage]);
         setInputText("");
 
-        // const hardcodedResponse = getHardcodedResponse(newUserMessage.text);
-
-        // if (hardcodedResponse) {
-        //     const newBotMessage = {
-        //         id: messages.length + 2,
-        //         text: hardcodedResponse,
-        //         isBot: true,
-        //     };
-        //     setMessages((prevMessages) => [...prevMessages, newBotMessage]);
-        // }
-        // else
         {
             try {
+
+                setIsChatBotLoading(true);
                 const response = await axios.post(
                     `https://insansachatbot.onrender.com/api/chatbot1`,
                     { msg: newUserMessage.text },
@@ -161,58 +78,51 @@ const ChatBot = () => {
                             'Content-Type': 'application/json',
                         },
                     }
-
-
-
                 );
-                // const botResponse = await axios.get(`https://exam-chatbot-exam-chatbots-projects.vercel.app/`,formData,{
-                //     headers:{
-                //         'Content-Type':'application/json'
-                //     }
-                // });
-
+                setIsChatBotLoading(false);
                 const botResponse = response.data;
                 var responseText = ''
                 var responseSet = []
                 var responseType = ''
-                console.log(botResponse);
+                console.log(response.data);
                 if (botResponse.exam_details) {
+                    if(!botResponse.exam_details.start_date){
+                        responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.url, botResponse.exam_details.name];
+                        responseType = 'no-date'
 
-                    responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url]
-                    responseType = 'all'
+                        
+                    }
+                    else if(!botResponse.exam_details.apply_link){
+                        responseSet = [botResponse.exam_details.url, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.name];
+                        responseType = 'no-apply-link'
 
-                    responseText = `
-            - <b>Apply Link:</b> <a href="${botResponse.exam_details.apply_link}" target="_blank">${botResponse.exam_details.apply_link}</a><br>
-            - <b>Start Date:</b> ${botResponse.exam_details.start_date}<br>
-            - <b>End Date:</b> ${botResponse.exam_details.end_date}<br>
-            - <b>URL:</b> <a href="${botResponse.exam_details.url}" target="_blank">${botResponse.exam_details.url}</a><br>
-           
-            `;
+                    }
+                    else{
+
+                        responseSet = [botResponse.exam_details.apply_link, botResponse.exam_details.start_date, botResponse.exam_details.end_date, botResponse.exam_details.url, botResponse.exam_details.name]
+                        responseType = 'all'
+                        
+                    
+                    }
                 }
                 else if (botResponse.start_date) {
                     responseType = 'start-date'
-                    responseSet = [botResponse.start_date];
+                    responseSet = [botResponse.start_date.start_date, botResponse.start_date.name];
 
-                    responseText = `
-            - <b>Start Date:</b> ${botResponse.start_date}<br>
-            `;
                 }
                 else if (botResponse.end_date) {
                     responseType = 'end-date'
-                    responseSet = [botResponse.end_date];
+                    responseSet = [botResponse.end_date.end_date, botResponse.end_date.name];
 
-                    responseText = `
-            - <b>End Date:</b> ${botResponse.end_date}<br>
-            `;
+                }
+                else if(botResponse.date){
+                    responseType = 'date'
+                    responseSet = [botResponse.date.start_date,botResponse.date.end_date, botResponse.date.name];
                 }
                 else if (botResponse.link_details) {
                     responseType = 'link'
-                    responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url];
+                    responseSet = [botResponse.link_details.apply_link, botResponse.link_details.url, botResponse.link_details.name];
 
-                    responseText = `
-            - <b>Apply Link:</b> <a href="${botResponse.link_details.apply_link}" target="_blank">${botResponse.link_details.apply_link}</a><br>
-            - <b>Link:</b> <a href="${botResponse.link_details.url}" target="_blank">${botResponse.link_details.url}</a><br>
-            `;
                 }
                 else {
                     responseText = `${botResponse.response}`
@@ -290,19 +200,15 @@ const ChatBot = () => {
 
 
     const chatWindow = (
-        <div className={`z-50 fixed bottom-6 right-6 w-96 ${isMinimized ? 'h-14' : 'h-[600px]'}
+        <div className={`z-50 fixed bottom-6 right-6 w-80 md:w-96 ${isMinimized ? 'h-14' : 'h-[600px]'}
      rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden
       ${isOpen ? 'animate-in slide-in-from-right' : ''}`}>
             <div className="drag-handle p-3 bg-gradient-to-r from-indigo-500 to-purple-600
         text-white rounded-t-2xl flex justify-between items-center cursor-move
         hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-700 transition-all duration-300">
-                {/* <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-red-400 hover:bg-red-500 transition-colors" />
-                    <div className="w-2 h-2 rounded-full bg-yellow-400 hover:bg-yellow-500 transition-colors" />
-                    <div className="w-2 h-2 rounded-full bg-green-400 hover:bg-green-500 transition-colors" />
-                </div> */}
+                
                 <div className="flex-1 text-center">
-                    <h2 className="text-sm font-medium">My Website's Chatbot</h2>
+                    <h2 className="text-sm font-medium">AskGyapak</h2>
                 </div>
                 <div className="flex items-center gap-2">
                     <button
@@ -342,7 +248,7 @@ const ChatBot = () => {
                                         <MessageCircle className="w-8 h-8" />
                                     </div>
                                     <h1 className="text-xl font-bold text-center mb-1">
-                                        Welcome to ChatAssistant
+                                        Welcome to AskGyapak your ChatAssistant
                                     </h1>
                                     <p className="text-sm text-center text-blue-100">
                                         Your intelligent conversation partner
@@ -362,8 +268,11 @@ const ChatBot = () => {
                                             </h2>
                                         </div>
                                         <p className="text-gray-600 ml-8 text-sm">
-                                            This is your first important note. I'm here to help you with any questions or tasks you might have.
+                                            <span className="text-blue-600 font-bold mr-1">✖ Close:</span> Deletes all responses. <br />
+                                            <span className="text-yellow-500 font-bold mr-1">➖ Minimize:</span> Saves the chat for later. <br />
+                                            <span className="text-red-500 font-bold mr-1">🔄 Refresh:</span> Deletes all data.
                                         </p>
+
                                     </div>
 
                                     {/* Note 2 */}
@@ -373,17 +282,19 @@ const ChatBot = () => {
                                                 2
                                             </div>
                                             <h2 className="ml-2 font-bold text-gray-800 text-sm">
-                                                Getting Started
+                                                Getting Started with AskGyapak
                                             </h2>
                                         </div>
                                         <p className="text-gray-600 ml-8 text-sm">
-                                            This is your second important note. Feel free to ask anything - I'm designed to be helpful and informative.
+                                            AskGyapak provides all the information you need about any government exam you're searching for.
+                                            Use the <span className="text-blue-600 font-bold">More Info</span> button to visit a detailed page with comprehensive exam details,
+                                            or click <span className="text-green-600 font-bold">Apply</span> to be redirected to the official exam page for applications.
                                         </p>
                                     </div>
+
                                 </div>
                             </div>
                         )}
-
                         {messages.map((message) => (
                             <div
                                 key={message.id}
@@ -405,7 +316,7 @@ const ChatBot = () => {
                                 >
                                     {message.type === "all" && (
                                         <div className="space-y-2 space-x-2">
-                                            <p className="text-sm font-medium">Details for</p>
+                                            <p className="text-sm font-medium">Details for {message.set[4]}</p>
                                             <button
                                                 className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
@@ -440,9 +351,81 @@ const ChatBot = () => {
                                             </button>
                                         </div>
                                     )}
+                                    {
+                                        message.type === "date" && (
+                                            <div className="space-y-2 space-x-2">
+                                            <p className="text-sm font-medium">Details for {message.set[2]}</p>
+                                            <button onClick={() => (addMessage("start-date", message.set[0]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                Start Date
+                                            </button>
+                                            <button onClick={() => (addMessage("end-date", message.set[1]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                End Date
+                                            </button>
+                                        </div>
+                                        )
+                                    }
+                                    {
+                                        message.type === "no-date" && (
+                                            <div className="space-y-2 space-x-2">
+                                            <p className="text-sm font-medium">Details for {message.set[2]}</p>
+                                            <button
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.open(url, "_blank");
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                Apply Link
+                                            </button>
+                                            <button
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[1];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                More Info
+                                            </button>
+                                        </div>
+                                        )
+                                    }
+                                    {
+                                        message.type === "no-apply-link" && (
+                                            <div className="space-y-2 space-x-2">
+                                            <p className="text-sm font-medium">Details for {message.set[3]}</p>
+                                            <button onClick={() => (addMessage("start-date", message.set[1]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                Start Date
+                                            </button>
+                                            <button onClick={() => (addMessage("end-date", message.set[2]))} className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
+                                                End Date
+                                            </button>
+                                            <button
+                                                className="px-3 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
+                                                onClick={() => {
+                                                    const url = message.set[0];
+                                                    if (url.startsWith("http://") || url.startsWith("https://")) {
+                                                        window.location.href = url;
+                                                    } else {
+                                                        console.error("Invalid URL:", url);
+                                                    }
+                                                }}
+                                            >
+                                                More Info
+                                            </button>
+                                        </div>
+                                        )
+                                    }
                                     {message.type === "start-date" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Start date for</p>
+                                            <p className="text-sm font-medium">Start date for {message.set[1]}</p>
                                             <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
                                                 {message.set[0]}
                                             </button>
@@ -450,7 +433,7 @@ const ChatBot = () => {
                                     )}
                                     {message.type === "end-date" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">End date for</p>
+                                            <p className="text-sm font-medium">End date for {message.set[1]}</p>
                                             <button className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800">
                                                 {message.set[0]}
                                             </button>
@@ -458,7 +441,7 @@ const ChatBot = () => {
                                     )}
                                     {message.type === "link" && (
                                         <div className="space-y-4">
-                                            <p className="text-sm font-medium">Links for</p>
+                                            <p className="text-sm font-medium">Links for {message.set[2]}</p>
                                             <button
                                                 className="px-5 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-500 to-purple-700 text-white shadow-md hover:bg-purple-800"
                                                 onClick={() => {
@@ -503,10 +486,15 @@ const ChatBot = () => {
                                         <User size={16} />
                                     </div>
                                 )}
+
+
                             </div>
                         ))}
 
-
+                    
+                        <DotLoader speedMultiplier={1.6} size={25} color={'#8854EB'} loading={isChatBotLoading} />
+                        {/* <SyncLoader size={6} color={'#8854EB'} loading={true} /> */}
+                        
                     </div>
 
                     <form onSubmit={handleSend} className="h-full p-4 border-t-gray-400 bg-white border-t">
@@ -538,7 +526,7 @@ const ChatBot = () => {
 
     return (
 
-        <Draggable disabled={!isDesktop} handle=".drag-handle" bounds="body">
+        <Draggable ref={dragRef} disabled={!isDesktop} handle=".drag-handle" bounds="body">
             {chatWindow}
         </Draggable>
     );
