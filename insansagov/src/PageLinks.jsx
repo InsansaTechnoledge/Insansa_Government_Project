@@ -13,7 +13,7 @@ const ChatBot = lazy(() => import('./Components/ChatBot/ChatBot'));
 const ScrollToTop = lazy(() => import('./Components/ScrollTop/ScrollTopTo'));
 const ErrorPage = lazy(() => import('./Pages/Error/ErrorPage'));
 const Category = lazy(() => import('./Pages/Category/Category'));
-const AdmitCard = lazy(() => import('./Pages/AdmitCard/AdmitCard'));
+const AdmitCardPage = lazy(() => import('./Pages/AdmitCard/AdmitCardPage'));
 const Results = lazy(() => import('./Pages/ResultPage/ResultPage'));
 const TrendingPage = lazy(() => import('./Pages/Trending/Trending'));
 const StatePage = lazy(() => import('./Pages/State/StatePage'));
@@ -36,7 +36,7 @@ const SecondRoutes = () => {
                     <Route path='/search' element={<SearchPage />} />
                     <Route path='/organization' element={<Authority />} />
                     <Route path='/category' element={<Category />} />
-                    <Route path='/admit-card' element={<AdmitCard />} />
+                    <Route path='/admit-card' element={<AdmitCardPage />} />
                     <Route path='/results' element={<Results  />} />
                     <Route path='/trending' element={<TrendingPage />} />
                     <Route path='/state' element={<StatePage />} />

@@ -43,6 +43,7 @@ export const getAllResults = async (req, res) => {
                 name: 1, // Include other fields from Event (example)
                 date_of_notification: 1,
                 end_date: 1,
+                apply_link: 1,
                 organization_id: 1,
                 abbreviation: '$organizationDetails.abbreviation', // Include abbreviation
                 category: '$categoryDetails.category', // Include category field

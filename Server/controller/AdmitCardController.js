@@ -5,7 +5,6 @@ export const getAdmitCards = async (req,res) => {
     const admitCardType = await EventType.findOne({type: "AdmitCard"});
 
     const admitCardIds = admitCardType.events;
-
     const admitCards = await Event.aggregate([
         {
             $match: {
@@ -44,12 +43,14 @@ export const getAdmitCards = async (req,res) => {
                 date_of_notification: 1,
                 end_date: 1,
                 organization_id: 1,
+                apply_link:1,
                 abbreviation: '$organizationDetails.abbreviation', // Include abbreviation
                 category: '$categoryDetails.category', // Include category field
             },
         },
     ]);
+
     
 
-    res.status(201).json(admitCards);    
+    return res.status(201).json(admitCards);    
 }

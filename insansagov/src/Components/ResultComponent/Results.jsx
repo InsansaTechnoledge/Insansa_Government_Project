@@ -34,7 +34,7 @@ const ResultsDashboard = () => {
 
         const fetchCategories = async () => {
             const response = await axios.get(`${API_BASE_URL}/api/category/getcategories`);
-            if(response.status===200){
+            if(response.status===201){
                 setCategories(response.data.map(cat => cat.category));
                 setCategories(prev => ([
                     "All",
@@ -65,10 +65,10 @@ const ResultsDashboard = () => {
 
     return (
         <div className="bg-gradient-to-br from-purple-100 to-white shadow-md rounded-lg p-6 mt-10 mb-10">
-            <div className="flex justify-between items-center mb-6">
-                <div>
-                    <h2 className="text-2xl font-bold text-purple-800">Latest Results</h2>
-                    <p className="text-purple-700 mt-1">Check out the latest examination results</p>
+            <div className="flex flex-col md:flex-row space-y-4 justify-between items-center mb-6">
+                <div className="flex flex-col">
+                    <h2 className="text-center md:text-left text-2xl font-bold text-purple-800">Latest Results</h2>
+                    <p className="text-center text-purple-700 mt-1">Check out the latest examination results</p>
                 </div>
                 <div className="relative">
                     <Filter className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />

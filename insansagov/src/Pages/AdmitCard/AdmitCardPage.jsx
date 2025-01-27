@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Search, Calendar, Building2, Filter } from "lucide-react";
 import axios from "axios";
-import API_BASE_URL from "../config";
+import API_BASE_URL from "../../Pages/config";
 
-const AdmitCard = () => {
+const AdmitCardPage = () => {
     const [search, setSearch] = useState("");
     const [filter, setFilter] = useState("All");
     const [categories, setCategories] = useState();
@@ -22,7 +22,7 @@ const AdmitCard = () => {
 
         const fetchCategories = async () => {
             const response = await axios.get(`${API_BASE_URL}/api/category/getcategories`);
-            if(response.status===200){
+            if(response.status===201){
                 setCategories(response.data.map(cat => cat.category));
                 setCategories(prev => ([
                     "All",
@@ -119,7 +119,7 @@ const AdmitCard = () => {
                                 rel="noopener noreferrer"
                                 className="block mt-4 px-4 py-2 bg-purple-800 text-white text-center rounded-md hover:bg-purple-900 transition-colors"
                             >
-                                Download Admit Card
+                                View Admit Card
                             </a>
                             </div>
                         </div>
@@ -138,4 +138,4 @@ const AdmitCard = () => {
     );
 };
 
-export default AdmitCard;
+export default AdmitCardPage;

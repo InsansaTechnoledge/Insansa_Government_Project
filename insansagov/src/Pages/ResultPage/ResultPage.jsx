@@ -22,7 +22,7 @@ const Results = () => {
 
         const fetchCategories = async () => {
             const response = await axios.get(`${API_BASE_URL}/api/category/getcategories`);
-            if(response.status===200){
+            if(response.status===201){
                 setCategories(response.data.map(cat => cat.category));
                 setCategories(prev => ([
                     "All",
