@@ -79,30 +79,7 @@ const LazyRender = ({ children, height = "h-64", priority = false }) => {
 };
 
 const Landing = () => {
-  const admitCards = [
-    {
-      id: 1,
-      organization: "UPSC",
-      examName: "Civil Services Preliminary Exam 2025",
-      releaseDate: "2025-01-10",
-      lastDate: "2025-02-15",
-      category: "Civil Services",
-      status: "active",
-      link: "https://example.com/upsc",
-    },
-  ];
-
-  const dummyResults = [
-    {
-      id: 1,
-      organization: "Union Public Service Commission",
-      examName: "Civil Services Exam Result",
-      publishDate: "2025-01-10",
-      category: "civil services",
-      status: "available",
-      link: "https://www.upsc.gov.in/results",
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen">
@@ -132,11 +109,11 @@ const Landing = () => {
         </div>
 
         <LazyRender height="h-96">
-          <AdmitCardDashboard admitCards={admitCards} />
+          <AdmitCardDashboard />
         </LazyRender>
 
         <LazyRender height="h-96">
-          <ResultsDashboard results={dummyResults} />
+          <ResultsDashboard />
         </LazyRender>
 
 

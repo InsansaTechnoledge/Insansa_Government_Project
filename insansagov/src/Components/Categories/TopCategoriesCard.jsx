@@ -9,7 +9,7 @@ const TopCategoriesCard = (props) => {
     className='flex flex-col justify-center hover:cursor-pointer hover:scale-110 transition-all duration-300'>
         <div className='flex justify-center'>
             <img
-          className='md:w-20 w-10'
+          className='xl:w-20 w-10'
             src={`data:image/png;base64,${props.logo}`}
             alt="Category Logo"/>
 

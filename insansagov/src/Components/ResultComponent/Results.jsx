@@ -65,9 +65,9 @@ const ResultsDashboard = () => {
 
     return (
         <div className="bg-gradient-to-br from-purple-100 to-white shadow-md rounded-lg p-6 mt-10 mb-10">
-            <div className="flex flex-col md:flex-row space-y-4 justify-between items-center mb-6">
+            <div className="flex flex-col xl:flex-row space-y-4 justify-between items-center mb-6">
                 <div className="flex flex-col">
-                    <h2 className="text-center md:text-left text-2xl font-bold text-purple-800">Latest Results</h2>
+                    <h2 className="text-center xl:text-left text-2xl font-bold text-purple-800">Latest Results</h2>
                     <p className="text-center text-purple-700 mt-1">Check out the latest examination results</p>
                 </div>
                 <div className="relative">

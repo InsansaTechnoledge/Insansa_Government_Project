@@ -43,7 +43,7 @@ const SearchPage = () => {
         <Search input={query} searchHandler={searchHandler}/>
       </div>
 
-      <div className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>Your search result for "{query}"</div>
+      <div className='text-2xl xl:text-3xl font-bold text-gray-900 mb-5'>Your search result for "{query}"</div>
       {
         searchData && searchData.authorities && searchData.authorities.length>0
         ?

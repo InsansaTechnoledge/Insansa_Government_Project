@@ -186,7 +186,7 @@ const StateComponent = () => {
                             </div>
 
                             {/* Mobile Search Toggle */}
-                            <div className="md:hidden flex justify-end">
+                            <div className="xl:hidden flex justify-end">
                                 <button
                                     onClick={() => setIsSearchVisible(!isSearchVisible)}
                                     className="p-2 hover:bg-white/10 rounded-full"
@@ -200,7 +200,7 @@ const StateComponent = () => {
                             </div>
 
                             {/* Desktop Search */}
-                            <div className="hidden md:flex flex-col">
+                            <div className="hidden xl:flex flex-col">
                                 <div className="flex items-center bg-white/10 rounded-full p-2 backdrop-blur-sm">
                                     <Search className="h-4 w-4 text-purple-200 ml-2" />
                                     <input
@@ -251,7 +251,7 @@ const StateComponent = () => {
 
                         {/* Mobile Search Bar */}
                         {isSearchVisible && (
-                            <div className="mt-4 md:hidden">
+                            <div className="mt-4 xl:hidden">
                                 <div className="flex items-center bg-white/10 rounded-full p-2 backdrop-blur-sm">
                                     <Search className="h-4 w-4 text-purple-200 ml-2" />
                                     <input
@@ -310,7 +310,7 @@ const StateComponent = () => {
 
 
                     {/* States Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
                         <Suspense fallback={<div>Loading...</div>}>
                             {activeRegion
                                 ? statesByRegion[activeRegion].map((state, index) => (

@@ -49,7 +49,7 @@ const MoreCategories = ({ currentCategory }) => {
 
     return (
         <>
-            <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-10'>
+            <h1 className='text-2xl xl:text-3xl font-bold text-gray-900 mb-10'>
                 More Categories
             </h1>
             <div className='grid grid-cols-4 mb-5 gap-4'>

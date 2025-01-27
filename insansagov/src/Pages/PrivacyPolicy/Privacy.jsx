@@ -141,14 +141,14 @@ const PrivacyPolicy = () => {
                     <p className="text-gray-500">Last updated: January 21, 2025</p>
                 </header>
 
-                <div className="grid md:grid-cols-4 gap-8">
-                    <div className="md:col-span-1">
+                <div className="grid xl:grid-cols-4 gap-8">
+                    <div className="xl:col-span-1">
                         <div className="sticky top-24">
                             <TableOfContents />
                         </div>
                     </div>
 
-                    <div className="md:col-span-3">
+                    <div className="xl:col-span-3">
                         <div className="bg-white rounded-xl shadow-sm p-8">
                             {sections.map(section => (
                                 <Section key={section.id} section={section} />

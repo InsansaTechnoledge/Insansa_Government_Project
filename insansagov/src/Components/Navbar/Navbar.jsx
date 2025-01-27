@@ -217,7 +217,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center space-x-8">
             {/* Categories Dropdown */}
             <div className="relative group">
               <button className={`flex items-center space-x-1 ${isScrolled ? 'text-gray-900' : 'text-white'} ${!isScrolled ? 'hover:text-gray-300' : 'hover:text-purple-800'} transition-colors`}>
@@ -354,7 +354,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md ${isScrolled ? 'text-gray-900' : 'text-white'}`}
@@ -366,7 +366,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden bg-white`}>
+      <div className={`xl:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden bg-white`}>
         <div className="px-4 pt-2 pb-3 space-y-1">
           <a href="#" className="block px-3 py-2 rounded-md text-gray-700 hover:text-purple-600 hover:bg-purple-50 transition-colors">
             About

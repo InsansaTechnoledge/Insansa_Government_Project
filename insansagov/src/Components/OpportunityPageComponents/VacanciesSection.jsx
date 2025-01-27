@@ -22,7 +22,7 @@ const VacanciesSection = ({ data, existingSections }) => {
 
       {/* Render breakdown if available */}
       {breakdown ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
+        <div className="grid grid-cols-2 xl:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
           {Object.entries(breakdown).map(([key, value]) => {
             if (typeof value !== "number") return null; // Skip invalid values
 

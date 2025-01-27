@@ -29,7 +29,7 @@ const SecondRoutes = () => {
     }
 
     return (
-        <div className='px-5 md:px-64'>
+        <div className='px-5 xl:px-64'>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                     <Route path='/opportunity' element={<Opportunities />} />
@@ -42,8 +42,8 @@ const SecondRoutes = () => {
                     <Route path='/state' element={<StatePage />} />
                     <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                     <Route path='/credits' element={<Credits/>} />
-                    <Route path='/unsubscribe' element={<Unsubscribe />} />
                     <Route path='*' element={<ErrorPage />} />
+                    <Route path='/unsubscribe' element={<Unsubscribe />} />
                 </Routes>
             </Suspense>
         </div>

@@ -208,7 +208,7 @@ const ModernExamDetailsPage = () => {
                   <BookOpen className="w-6 h-6 text-purple-500" />
                   Scheme of Examination
                 </h2>
-                <div className="flex flex-col gap-y-5 md:space-x-5  md:flex-row md:space-y-0">
+                <div className="flex flex-col gap-y-5 xl:space-x-5  xl:flex-row xl:space-y-0">
                   {<SchemeOfExamSection1 data={data} existingSections={existingSections} />}
 
 
