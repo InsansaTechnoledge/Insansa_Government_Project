@@ -1,6 +1,11 @@
-import React from 'react'
+
+import React, { useState } from 'react';
+import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Credits = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 8; // Reduced for better mobile view
 
     const creditData = {
         'Hero Logo': 'https://bharatmaps.gov.in/BharatMaps/Assets/img/top-bg.svg',
@@ -141,25 +146,176 @@ const Credits = () => {
     }
 
 
-    return (
-        <div className='pt-40'>
-            <h1 className='font-bold text-center text-2xl mb-10'>Credits for Logos and Background</h1>
-            <table className='w-full flex-wrap'>
-                <thead className='font-semibold grid grid-cols-4'>
-                    <td className='text-center border-black border'>Logo</td>
-                    <td className='text-center border-black border col-span-3'>Link</td>
-                </thead>
-                <tbody>
-                    {Object.entries(creditData).map(([key, value]) => (
-                        <tr className='grid grid-cols-4'>
-                            <td className='border-black border'>{key}</td>
-                            <td className='border-black border col-span-3'><a href={value} className='text-blue-500'>Link</a></td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    )
-}
+    const filteredData = Object.entries(creditData).filter(([key]) =>
+        key.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-export default Credits
+    const pageCount = Math.ceil(filteredData.length / itemsPerPage);
+    const currentData = filteredData.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pageCount) {
+            setCurrentPage(newPage);
+            // Scroll to top of table on mobile
+            if (window.innerWidth < 768) {
+                document.querySelector('.table-container')?.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
+    // Calculate visible page numbers
+    const getVisiblePages = () => {
+        const delta = 2;
+        const range = [];
+        for (
+            let i = Math.max(1, currentPage - delta);
+            i <= Math.min(pageCount, currentPage + delta);
+            i++
+        ) {
+            range.push(i);
+        }
+
+        if (range[0] > 1) {
+            range.unshift(1);
+            if (range[1] > 2) range.splice(1, 0, '...');
+        }
+        if (range[range.length - 1] < pageCount) {
+            if (range[range.length - 1] < pageCount - 1) range.push('...');
+            range.push(pageCount);
+        }
+        return range;
+    };
+
+    return (
+        <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto mt-8 sm:mt-16 bg-white rounded-lg shadow">
+                {/* Header */}
+                <div className="border-b border-gray-200">
+                    <div className="px-4 py-4 sm:px-6 flex items-center justify-between">
+                        <button
+                            onClick={() => window.history.back()}
+                            className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
+                        >
+                            <ChevronLeft className="w-5 h-5" />
+                            <span className="ml-1">Back</span>
+                        </button>
+                        <h1 className="text-xl sm:text-2xl font-bold text-center text-gray-800">
+                            Credits for Logos and Background
+                        </h1>
+                        <div className="w-20"></div> {/* Spacer for centering */}
+                    </div>
+                </div>
+
+                <div className="p-4 sm:p-6">
+                    {/* Search Bar */}
+                    <div className="mb-6 relative">
+                        <input
+                            type="text"
+                            placeholder="Search credits..."
+                            className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none"
+                            onChange={(e) => {
+                                setSearchTerm(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                        />
+                        <Search className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
+                    </div>
+
+                    {/* Table */}
+                    <div className="table-container overflow-x-auto rounded-lg border border-gray-200">
+                        <table className="w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
+                                <tr>
+                                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600 border-b">
+                                        Logo
+                                    </th>
+                                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600 border-b">
+                                        Source
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody className="bg-white divide-y divide-gray-200">
+                                {currentData.map(([key, value], index) => (
+                                    <tr key={index} className="hover:bg-gray-50 transition-colors">
+                                        <td className="px-4 py-3 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                            {key}
+                                        </td>
+                                        <td className="px-4 py-3">
+                                            <a
+                                                href={value}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 hover:text-blue-800 hover:underline text-sm"
+                                            >
+                                                View Source
+                                            </a>
+                                        </td>
+                                    </tr>
+                                ))}
+                                {currentData.length === 0 && (
+                                    <tr>
+                                        <td colSpan={2} className="px-4 py-8 text-center text-gray-500">
+                                            No results found
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    {/* Pagination */}
+                    <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div className="text-sm text-gray-600">
+                            Showing {(currentPage - 1) * itemsPerPage + 1} to{' '}
+                            {Math.min(currentPage * itemsPerPage, filteredData.length)} of{' '}
+                            {filteredData.length} results
+                        </div>
+
+                        <div className="flex items-center space-x-2">
+                            <button
+                                onClick={() => handlePageChange(currentPage - 1)}
+                                disabled={currentPage === 1}
+                                className="p-2 rounded-md border border-gray-300 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                aria-label="Previous page"
+                            >
+                                <ChevronLeft className="w-5 h-5" />
+                            </button>
+
+                            <div className="flex space-x-1">
+                                {getVisiblePages().map((page, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => typeof page === 'number' && handlePageChange(page)}
+                                        className={`px-3 py-1 rounded-md transition-colors ${page === currentPage
+                                                ? 'bg-blue-600 text-white'
+                                                : page === '...'
+                                                    ? 'cursor-default'
+                                                    : 'hover:bg-gray-100 border border-gray-300'
+                                            }`}
+                                        disabled={page === '...'}
+                                    >
+                                        {page}
+                                    </button>
+                                ))}
+                            </div>
+
+                            <button
+                                onClick={() => handlePageChange(currentPage + 1)}
+                                disabled={currentPage === pageCount}
+                                className="p-2 rounded-md border border-gray-300 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                aria-label="Next page"
+                            >
+                                <ChevronRight className="w-5 h-5" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Credits;
