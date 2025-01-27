@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { transporter } from '../controller/contactController.js';
+import { transporter } from './contactController.js';
 import Subscriber from '../models/SubscriberModel.js';
 
 
