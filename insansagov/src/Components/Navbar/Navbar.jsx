@@ -207,12 +207,12 @@ const Navbar = () => {
           {/* Logo and Brand */}
           <a href='/'>
             <div className="flex-shrink-0 flex items-center hover:cursor-pointer">
-              <div className="h-10 w-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl font-bold">W</span>
+              <div className="h-10 w-32 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xl font-bold">gyapak.com</span>
               </div>
-              <span className={`ml-3 text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                My Website
-              </span>
+              {/* <span className={`ml-3 text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
+               gyapak
+              </span> */}
             </div>
           </a>
 

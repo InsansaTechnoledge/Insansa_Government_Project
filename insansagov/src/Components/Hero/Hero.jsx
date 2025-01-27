@@ -28,11 +28,12 @@ const Hero = () => {
 
             <div className="relative z-10 px-4 text-white">
                 <h1 className="text-6xl font-black tracking-tight mb-4">
-                    TrendWave
+                    gyapak
                 </h1>
-                <p className="text-2xl opacity-80 mb-8">
-                    Stay Ahead, Stay Informed
+                <p className="text-xl font-semibold text-center text-gray-300 opacity-90 mb-6 tracking-wide">
+                    gyapak: Dates You Need to Crack Government Exams
                 </p>
+
 
                 <div className="max-w-md mx-auto mb-8">
                     <Suspense fallback={<div className="h-12 bg-white/20 animate-pulse"></div>}>

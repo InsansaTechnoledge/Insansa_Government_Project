@@ -35,16 +35,16 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-8">
             <div className="flex items-center space-x-3">
-              <div className="h-10 w-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl font-bold">W</span>
+              <div className="h-10 w-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white text-xl font-bold">gyapak</span>
               </div>
-              <span className="text-white text-xl font-bold">My Website</span>
+              {/* <span className="text-white text-xl font-bold">My Website</span> */}
             </div>
 
-            <p className="text-sm text-gray-400 max-w-md text-center">
+            <p className="text-sm text-gray-400 max-w-md ">
               Developed and brought to you by
             </p>
-            <p className="text-base text-gray-200 max-w-md text-center font-semibold">
+            <p className="text-base text-gray-200 max-w-md  font-semibold">
               Insansa Technoledge Pvt. Ltd.
             </p>
 
