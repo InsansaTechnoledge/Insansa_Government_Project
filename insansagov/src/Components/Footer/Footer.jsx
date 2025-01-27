@@ -45,7 +45,7 @@ const Footer = () => {
               Developed and brought to you by
             </p>
             <p className="text-base text-gray-200 max-w-md  font-semibold">
-              Insansa Technoledge Pvt. Ltd.
+              Insansa Techknowledge Pvt. Ltd.
             </p>
 
             <div className="flex space-x-6">
@@ -129,14 +129,14 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} My Website. All rights reserved.
+              © {new Date().getFullYear()} gyapak.com. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               {/* <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Terms
               </a> */}
               <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy
+                Privacy Policy
               </a>
               {/* <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Cookies

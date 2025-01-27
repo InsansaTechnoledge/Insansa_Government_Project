@@ -23,8 +23,6 @@ const Contact = () => {
         const formData = new FormData(e.target);
         const data=Object.fromEntries(formData.entries());
 
-        console.log(data);
-
         try{
             const respons= await axios.post(`${API_BASE_URL}/api/contact/sendMail`,data);
             console.log(respons);
