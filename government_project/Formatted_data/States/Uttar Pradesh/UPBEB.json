@@ -4,9 +4,9 @@
       "date_of_notification": "23-01-2025",
       "date_of_commencement": null,
       "end_date": null,
-      "apply_link": null,
-      "event_type": "Counselling",
-      "document_links": [],
+      "apply_link": "https://updeled.gov.in/",
+      "event_type": "Exam",
+      "document_links": ["https://updeled.gov.in/PDFFile/Press_Release_Phase_2_23012025.pdf"],
       "details": {
         "description": "Notification for the second phase of UPDELED 2024 counselling."
       }
@@ -16,9 +16,9 @@
       "date_of_notification": "24-12-2024",
       "date_of_commencement": null,
       "end_date": null,
-      "apply_link": null,
-      "event_type": "Counselling",
-      "document_links": [],
+      "apply_link": "https://updeled.gov.in/",
+      "event_type": "Exam",
+      "document_links": ["https://updeled.gov.in/PDFFile/Press_Release_Phase_1_24122024.pdf"],
       "details": {
         "description": "Notification for the first phase of UPDELED 2024 counselling."
       }
@@ -28,9 +28,9 @@
       "date_of_notification": "16-10-2024",
       "date_of_commencement": "18-09-2024",
       "end_date": "22-10-2024",
-      "apply_link": "https://updeled.gov.in/Registration/DReghomeD.aspx",
-      "event_type": "Registration",
-      "document_links": [],
+      "apply_link": "https://updeled.gov.in/",
+      "event_type": "Exam",
+      "document_links": ["https://updeled.gov.in/PDFFile/Press_Release.pdf"],
       "details": {
         "description": "Registration notification for UPDELED 2024.",
         "important_dates": {

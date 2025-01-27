@@ -1,89 +1,15 @@
 [
-    {
-      "name": "Assistant Engineer (Trainee) Electrical/Power, Electronics & Telecommunication, and Computer Science/IT Recruitment",
-      "date_of_notification": "15-03-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "AdmitCard",
-      "document_links": [
-        "https://uppcl.org/site/writereaddata/siteContent/202110281842333465JE%20ADVT.pdf"
-      ],
-      "details": {
-        "description": "Download admit card for the online exam (CBT) for the post of Assistant Engineer (Trainee) in various disciplines against Advertisement No. 01/VSA/2022/AE/E&M."
-      }
-    },
-    {
-      "name": "Camp Assistant Grade-III Recruitment",
-      "date_of_notification": "15-03-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "AdmitCard",
-      "document_links": [],
-      "details": {
-        "description": "Download admit card for the online exam (CBT) for the post of Camp Assistant Grade-III against Advertisement No. 04/VSA/2021/SS."
-      }
-    },
-    {
-      "name": "Junior Engineer (Trainee) Electrical Recruitment",
-      "date_of_notification": "15-03-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "AdmitCard",
-      "document_links": [],
-      "details": {
-        "description": "Download admit card for the online exam (CBT) for the post of Junior Engineer (Trainee) Electrical against Advertisement No. 07/VSA/2021/JE/Electrical."
-      }
-    },
-    {
-      "name": "Junior Engineer (Trainee) Electrical & Electronics/Telecommunication Selected Candidates List",
-      "date_of_notification": "11-03-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "Result",
-      "document_links": [],
-      "details": {
-        "description": "List of selected candidates for the post of Junior Engineer (Trainee) Electrical & Junior Engineer (Trainee) Electronics/Telecommunication against Advertisement No. 07/VSA/2020/JE/E&M."
-      }
-    },
-    {
-      "name": "Junior Engineer (Trainee) Civil Recruitment",
-      "date_of_notification": "25-02-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "Exam",
-      "document_links": [],
-      "details": {
-        "description": "Download response key and upload objections for the post of Junior Engineer (Trainee) Civil against Advertisement No. 01/VSA/2021/JE/Civil."
-      }
-    },
-    {
-      "name": "Assistant Review Officer Recruitment",
-      "date_of_notification": "10-02-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "AdmitCard",
-      "document_links": [],
-      "details": {
-        "description": "Download admit card for the online exam (CBT) for the post of Assistant Review Officer against Advertisement No. 05/VSA/2021/ARO."
-      }
-    },
-    {
-      "name": "Assistant Accountant Recruitment",
-      "date_of_notification": "10-02-2022",
-      "date_of_commencement": null,
-      "end_date": null,
-      "apply_link": null,
-      "event_type": "AdmitCard",
-      "document_links": [],
-      "details": {
-        "description": "Download admit card for the online exam (CBT) for the post of Assistant Accountant against Advertisement No. 06/VSA/2021/AA."
-      }
-    }
-  ]
+  {
+    "name": "Director Positions - Application Deadline Extension",
+    "date_of_notification": "15-01-2025",
+    "date_of_commencement": null,
+    "end_date": "15-02-2025",
+    "apply_link": "https://director-recruitment.uppcl.org/registration.php",
+    "event_type": "Exam",
+    "document_links": [
+      "https://uppcl.org/site/writereaddata/siteContent/202501151801428387corrigendum_4.pdf"
+    ]
+  }
+]
+
       

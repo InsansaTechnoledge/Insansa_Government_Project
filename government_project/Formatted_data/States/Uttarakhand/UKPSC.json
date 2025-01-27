@@ -39,7 +39,7 @@
     "date_of_commencement": null,
     "end_date": "25-02-2025",
     "apply_link": "https://psc.uk.gov.in/candidate-corner/recruitment",
-    "event_type": "Answer Key",
+    "event_type": "Result",
     "document_links": ["https://psc.uk.gov.in/public/uploads/answerkey/571396901.pdf","https://psc.uk.gov.in/public/uploads/answerkey/1284665165.pdf","https://psc.uk.gov.in/public/uploads/answerkey/1107594007.pdf"
   ],
     "details": {}
@@ -50,7 +50,7 @@
     "date_of_commencement": null,
     "end_date": "24-02-2025",
     "apply_link": "https://psc.uk.gov.in/candidate-corner/recruitment",
-    "event_type": "Admit Card",
+    "event_type": "AdmitCard",
     "document_links": ["https://psc.uk.gov.in/public/uploads/admitcard/708767994.pdf"],
     "details": {}
   },
@@ -70,7 +70,7 @@
     "date_of_commencement": null,
     "end_date": "28-02-2025",
     "apply_link": "https://psc.uk.gov.in/candidate-corner/recruitment",
-    "event_type": "Admit Card",
+    "event_type": "AdmitCard",
     "document_links": ["https://psc.uk.gov.in/public/uploads/admitcard/1187852705.pdf"],
     "details": {}
   },

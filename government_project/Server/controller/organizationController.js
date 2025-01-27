@@ -127,7 +127,7 @@ async function processFilesInFolder(folderPath, parentFolderName, type = null) {
                   if (!organization && parentFolderName==='UPSC') {
                       organization=await Organization.findOne({abbreviation:'UPSC'});
                       };
-                      const organization1='';
+                      let organization1='';
                   if(organization && parentFolderName==='UPSC'){
                      organization1=await Organization.findOne({abbreviation:'UPSC'});
                   }
@@ -203,12 +203,14 @@ async function processFilesInFolder(folderPath, parentFolderName, type = null) {
                   }
               } 
               else if (baseDir === 'Multiple') {
+              // if(baseDir==='Multiple'){
                   // Process subfolders in the 'multiple' folder dynamically
                   const multipleFolders = fs.readdirSync(folderPath).filter(item => fs.statSync(path.join(folderPath, item)).isDirectory());
                   for (const folder of multipleFolders) {
                       const multipleFolderPath = path.join(folderPath, folder);
                       await processFilesInFolder(multipleFolderPath, folder, 'Multiple_Organizations');
                   }
+                // }
               } else {
                   console.log(`Processing files in ${baseDir} folder...`, folderPath);
   
