@@ -32,7 +32,7 @@ const AdmitCardLanding = () => {
                 ]))
 
             }
-        }
+        }//test comment
         fetchAdmitCards();
         fetchCategories();
     },[]);
