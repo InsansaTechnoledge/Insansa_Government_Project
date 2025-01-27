@@ -95,7 +95,6 @@ const SearchPage = () => {
         searchData && searchData.organizations && searchData.organizations.length>0
         ?
         <>
-        {/* {getMoreOrganizations(searchData.organizations[0].category)} */}
         <MoreOrganizations currentOrganization={searchData.organizations[0]} />
         
         </>
