@@ -53,7 +53,7 @@ const TopAuthorities = (props) => {
                     ? null
                     : <h1 className='flex text-center text-2xl justify-center mb-5 font-bold'>Central Government Authorities</h1>
             }
-            <div className='grid grid-cols-4 mb-5 gap-4'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 mb-5 gap-4'>
                 <Suspense fallback={<div>Loading...</div>}>
                 {
                     organizations.slice(0, displayCount).map((org, key) => (

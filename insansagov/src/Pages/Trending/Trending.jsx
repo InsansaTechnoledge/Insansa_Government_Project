@@ -80,7 +80,7 @@ const TrendingPage = ({ trendingItems = [] }) => {
         };
 
         filterItems();
-    }, [searchQuery, selectedOrg, trendingItems, admitCards, results]);
+    }, [searchQuery, selectedOrg, admitCards, results]);
 
     const organizations = [
         ...new Set([
@@ -157,12 +157,12 @@ const TrendingPage = ({ trendingItems = [] }) => {
                         <button
                             className={`flex-1 px-4 py-2.5 rounded-lg text-white font-medium transition-all duration-200 
                                 ${colorScheme.button} hover:shadow-lg active:scale-98 flex items-center justify-center gap-2`}
-                            onClick={() => window.open(item.link || "#", "_blank")}
+                            onClick={() => window.open(item.apply_link || "#", "_blank")}
                         >
                             <span>{getButtonText()}</span>
                             <ChevronRight className="h-4 w-4" />
                         </button>
-                        <button
+                        {/* <button
                             onClick={() => toggleNotification(item._id)}
                             className={`p-2.5 rounded-lg transition-all duration-200 
                                 ${notifications[item._id]
@@ -171,7 +171,7 @@ const TrendingPage = ({ trendingItems = [] }) => {
                                 }`}
                         >
                             <Bell className={`h-5 w-5 ${notifications[item._id] ? colorScheme.icon : "text-gray-500"}`} />
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
@@ -272,7 +272,7 @@ const TrendingPage = ({ trendingItems = [] }) => {
                         ))}
                     </div>
 
-                    <div className="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {activeTab === "all" && filteredItems.map((item, index) => (
                             <UpdateCard
                                 key={item._id || `all-${index}`}

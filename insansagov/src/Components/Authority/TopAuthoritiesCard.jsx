@@ -14,7 +14,8 @@ const TopAuthoritiesCard = (props) => {
       <img
         src={`data:image/png;base64,${props.logo}`}
         alt="Authority Logo"
-        className="w-32 h-28 object-contain"
+        width={60}
+        // className="w-32 h-28 object-contain"
       />
 
      

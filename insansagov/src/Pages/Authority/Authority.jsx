@@ -44,7 +44,7 @@ const Authority = () => {
 
             if (response.status === 201) {
                 setOrganization(response.data.organization);
-                setRelatedOrganizations(response.data.relatedOrganizations);
+                setRelatedOrganizations(response.data.relatedOrganizations.filter(org => org._id !== response.data.organization._id));
 
                 const sortedUpdates = response.data.events.sort((a, b) => {
                     const dateA = new Date(a.notificationDate);
@@ -124,10 +124,18 @@ const Authority = () => {
                     <div className='text-center mb-2'>No active events right now :) </div>
             }
 
-            <h1 className='text-2xl xl:text-3xl font-bold text-gray-900 mb-5'>
-                Related Authorities
-            </h1>
-            <RelatedAuthorities organizations={relatedOrganizations} />
+            {
+                relatedOrganizations && relatedOrganizations.length > 0
+                ?
+                <>
+                <h1 className='text-2xl xl:text-3xl font-bold text-gray-900 mb-5'>
+                    Related Authorities
+                </h1>
+                <RelatedAuthorities organizations={relatedOrganizations} />
+                </>
+                :
+                null
+            }
             {/* <TopAuthorities titleHidden={true} /> */}
         </div>
 

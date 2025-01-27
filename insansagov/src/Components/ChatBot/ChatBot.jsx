@@ -10,6 +10,7 @@ const ChatBot = () => {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
     const [isChatBotLoading, setIsChatBotLoading] = useState(false);
     const containerRef = useRef(null)
+    const dragRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -199,7 +200,7 @@ const ChatBot = () => {
 
 
     const chatWindow = (
-        <div className={`z-50 fixed bottom-6 right-6 w-96 ${isMinimized ? 'h-14' : 'h-[600px]'}
+        <div className={`z-50 fixed bottom-6 right-6 w-80 md:w-96 ${isMinimized ? 'h-14' : 'h-[600px]'}
      rounded-2xl shadow-2xl transition-all duration-300 overflow-hidden
       ${isOpen ? 'animate-in slide-in-from-right' : ''}`}>
             <div className="drag-handle p-3 bg-gradient-to-r from-indigo-500 to-purple-600
@@ -525,7 +526,7 @@ const ChatBot = () => {
 
     return (
 
-        <Draggable disabled={!isDesktop} handle=".drag-handle" bounds="body">
+        <Draggable ref={dragRef} disabled={!isDesktop} handle=".drag-handle" bounds="body">
             {chatWindow}
         </Draggable>
     );
