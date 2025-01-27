@@ -1,6 +1,5 @@
 import Authority from "../models/AuthorityModel.js";
-import EventType from "../models/EventTypeModel.js";
-import {convertImageToBase64 }from '../controller/organizationController.js'
+import {convertImageToBase64 }from '../config/imageConversion.js';
 import fs from 'fs'
 import { fileURLToPath } from 'url';
 import {dirname} from 'path';
@@ -9,87 +8,102 @@ import path from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export const createAuthority = async (req, res) => {
+  const readAuthorityDataFromFile = (filePath) => {
+    try {
+      const data = fs.readFileSync(filePath, 'utf-8');
+      return JSON.parse(data); 
+    } catch (error) {
+      throw new Error('Error reading authority data file');
+    }
+  };
 
-try {
-    const authority  = req.body;  // names is an array of category names
-
+export const saveOrUpdateAuthorities = async (authorityData) => {
+  try {
     const authorities = [];
+    const errors = []; 
 
-    for (let x of authority) {
-      const imagePath = path.resolve(__dirname, `../AuthorityLogos/${x.name}.png`);
+    for (let x of authorityData) {
+      const imagePath = path.resolve(__dirname, `../data/AuthorityLogos/${x.name}.png`);
       console.log(imagePath);
 
-      // Check if the image exists
-      if (!fs.existsSync(imagePath)) {
-        return res.status(404).json({ message: `${x.name} image not found` });
+      let logo = null; 
+
+      if (fs.existsSync(imagePath)) {
+        try {
+          logo = await convertImageToBase64(imagePath);  // If image exists, convert to base64
+        } catch (imageError) {
+          console.log(`Error converting image for ${x.name}: ${imageError.message}`);
+          errors.push(`Error converting image for ${x.name}`);
+        }
+      } else {
+        console.log(`Image not found for ${x.name}, logo will be set to null.`);
       }
 
-      // Convert the image to base64
-      const logo = await convertImageToBase64(imagePath);
-
-      // Check if the category already exists
       let body = await Authority.findOne({ name: x.name });
 
       if (body) {
-        // If the category exists, update the logo
-        body.logo = logo;
+        body.logo = logo;  
+        console.log(`Updating authority: ${body.name}`);
         await body.save();
       } else {
-        // If the category doesn't exist, create a new one
+
         body = new Authority({
           name: x.name,
-          logo: logo,
-            type: x.type,
+          logo: logo, 
+          type: x.type,
         });
+        console.log(`Creating new authority: ${body.name}`);
         await body.save();
       }
 
-      // Push the category object to the response array
-      authorities.push(body);
+      authorities.push(body);  
     }
+
+    if (errors.length > 0) {
+      console.log("Some authorities had issues with logos:", errors);
+    }
+
+    return authorities;
+  } catch (error) {
+    throw new Error(`Error in saveOrUpdateAuthorities: ${error.message}`);
+  }
+};
+
+export const createAuthorityFunction = async () => {
+  try {
+    const filePath = path.resolve(__dirname, '../data/authorityData.json'); 
+    const authorityData = readAuthorityDataFromFile(filePath); 
+    return await saveOrUpdateAuthorities(authorityData); 
+  } catch (error) {
+    console.error(`Error in createAuthorityFunction: ${error.message}`);
+    throw new Error(error.message);
+  }
+};
+
+
+export const createAuthority = async (req, res) => {
+
+try {
+    const authorityData  = req.body;  
+    const authorities = await saveOrUpdateAuthorities(authorityData);
+ 
     res.status(201).json(authorities);
   } catch (error) {
+    console.error(`Error in createAuthority: ${error.message}`);
     res.status(409).json({ message: error.message });
   }
 };
 
 export const updateLogos = async (req,res) => {
-  const folderPath = path.join(__dirname, '..' , 'AuthorityLogos');  // Folder containing the PNG files
-  console.log(folderPath);
+try{
+  const authorityData = req.body;
+  const authorities = await saveOrUpdateAuthorities(authorityData);
+    res.status(201).json({ message: 'Logo updated successfully',authorities});
+}
+catch(error){
+  console.error(`Error in updateLogos: ${error.message}`);
+  res.status(409).json({ message: error.message });
+}
 
-  // Read all the files from the folder
-  fs.readdir(folderPath, async (err, files) => {
-    console.log(files);
-    if (err) {
-      console.log('Error reading folder:', err);
-      return;
-    }
-
-    for (const file of files) {
-      if (path.extname(file) === '.png') {
-        const authorityName = path.basename(file, '.png');  // Extract the organization name from the filename
-        const filePath = path.join(folderPath, file);
-
-        // Convert the image to base64
-        const base64Image = await convertImageToBase64(filePath);
-
-        // Find the organization by name and update its logo field
-        const updatedauth = await Authority.findOneAndUpdate(
-          { name: authorityName },  // Match the organization by name
-          { $set: { logo: base64Image } },  // Set the base64 encoded image in the logo field
-          { new: true }  // Return the updated document
-        );
-
-        if (updatedauth) {
-          console.log(`Updated logo for ${authorityName}`);
-        } else {
-          console.log(`Organization ${authorityName} not found.`);
-        }
-      }
-
-    }
-    res.status(200).json({ message: 'Logo updated successfully' });
-
-  });
 };
+

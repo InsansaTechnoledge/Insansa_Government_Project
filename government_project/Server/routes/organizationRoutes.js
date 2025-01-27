@@ -6,7 +6,7 @@ const router=express.Router();
 
 
 router.post ('/process-data' , processOrganizationFiles);
-// router.put('/updateFullName', update);
+
 router.put('/updatelogos', updateLogos);
 
 router.post('/create',createOrganization);
