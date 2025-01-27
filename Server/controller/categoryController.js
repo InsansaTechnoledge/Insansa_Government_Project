@@ -4,7 +4,7 @@ import Organization from '../models/OrganizationModel.js';
 export const getCategories = async (req, res) => {
     try{
         const categories = await Category.find({},{category:1,logo:1});
-        res.json(categories);
+        res.status(201).json(categories);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

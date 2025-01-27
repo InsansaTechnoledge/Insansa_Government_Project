@@ -7,6 +7,9 @@ import API_BASE_URL from '../config'
 import RelatedAuthorities from '../../Components/Authority/RelatedAuthorities'
 import RelatedCategories from '../../Components/Categories/RelatedCategories'
 import RelatedStates from '../../Components/States/RelatedStates'
+import MoreAuthorities from '../../Components/Authority/MoreAuthorities'
+import MoreOrganizations from '../../Components/Authority/MoreOrganizations'
+import MoreCategories from '../../Components/Authority/MoreCategories'
 
 const SearchPage = () => {
   const location = useLocation();
@@ -14,7 +17,7 @@ const SearchPage = () => {
   const queryParams = new URLSearchParams(location.search);
   const [searchData, setSearchData] = useState();
   const navigate = useNavigate();
-  
+
   useEffect(()=>{
     const fetchSearch = async () => {
       const queryData = queryParams.get("query");
@@ -31,7 +34,6 @@ const SearchPage = () => {
   },[location])
 
   const searchHandler = (input) => {
-    console.log("🙂");
     navigate(`/search?query=${encodeURIComponent(input)}`);
 }
 
@@ -72,6 +74,7 @@ const SearchPage = () => {
           <RelatedCategories categories={searchData.categories}/>
         </>
         :
+
         null
       }
       
@@ -81,10 +84,33 @@ const SearchPage = () => {
         <OpportunityCarouselCard/>
       </OpportunityCarousel> */}
 
-      <h1 className='text-2xl md:text-3xl font-bold text-gray-900 mb-5'>
-          Related Authorities
-      </h1>
-      <TopAuthorities titleHidden={true}/>
+      {
+        searchData && searchData.authorities && searchData.authorities.length>0
+        ?
+        <>
+        <MoreAuthorities currentAuthority={searchData.authorities[0]}/>
+        
+        </>
+        :
+        searchData && searchData.organizations && searchData.organizations.length>0
+        ?
+        <>
+        {/* {getMoreOrganizations(searchData.organizations[0].category)} */}
+        <MoreOrganizations currentOrganization={searchData.organizations[0]} />
+        
+        </>
+        :
+        searchData && searchData.categories && searchData.categories.length>0
+        ?
+        <>
+        
+        <MoreCategories currentCategory={searchData.categories[0]} />
+
+        </>
+        :
+        null
+      }
+      {/* <TopAuthorities titleHidden={true}/> */}
     </div>
   )
 }

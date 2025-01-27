@@ -57,3 +57,20 @@ export const getStateList = async (req,res) => {
         res.status(400).json("List not available");
     }
 }
+
+export const getMoreAuthorities = async (req,res) => {
+    
+    try{
+        const authorities = await Authority.find({},{
+            _id: 1,
+            logo:1,
+            name:1
+        });
+        
+        res.status(201).json(authorities);
+    }
+    catch(err){
+        console.log(err);
+        res.status(400).json(err);
+    }
+}
